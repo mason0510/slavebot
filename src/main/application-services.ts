@@ -307,7 +307,7 @@ import { SignalIngress } from "./signal-ingress";
 import { SkillMarketplaceService } from "./skill-marketplace-service";
 import { SLACK_DEV_CALLBACK_PATH, startSlackDevCallbackServer } from "./slack-dev-callback-server";
 import { SpeechPreferenceStore } from "./speech-preference-store";
-import { applySystemHttpProxy } from "./system-http-proxy";
+import { applySystemHttpProxy, startSystemHttpProxyRefresh } from "./system-http-proxy";
 import { TeamStore } from "./team-store";
 import { TeamWebRtcBridge } from "./team-webrtc-bridge";
 import { TeamWebRtcClientTransport } from "./team-webrtc-client-transport";
@@ -417,6 +417,7 @@ const DEVELOPMENT_BUNDLE_IDENTIFIER = "com.github.Electron";
 const TEARDOWN_ORDER = {
   // First, so a process that the teardown ends does not count as a crash.
   resourceMonitor: 9,
+  machineProxy: 9.5,
   updater: 10,
   idleRestart: 11,
   hostUpdateCoordinator: 12,
@@ -967,6 +968,8 @@ export async function createApplicationServices({
     app.isPackaged ? "https://api-attendant.mwcpool.uk" : "http://127.0.0.1:3100",
   );
   await applySystemHttpProxy(centralAuthApiUrl);
+  const stopProxyRefresh = startSystemHttpProxyRefresh(centralAuthApiUrl);
+  teardown.push(TEARDOWN_ORDER.machineProxy, "the machine proxy refresh", stopProxyRefresh);
   const centralAuth = new CentralAuthManager({
     apiUrl: centralAuthApiUrl,
     mobileConnectApiUrl: readMobileConnectApiUrl(process.env.OPENBOT_MOBILE_AUTH_API_URL, centralAuthApiUrl),

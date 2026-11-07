@@ -8,29 +8,39 @@
  * Algorithm ApplySystemHttpProxy: before `app.whenReady()`, read the OS proxy and, when one
  * exists, set Chromium `--proxy-server`. After ready, set the same hop on the default session.
  * Prefer HTTPS, then HTTP, then SOCKS. Skip a hop whose TCP port does not accept a connection,
- * then try the next distinct host:port. The HTTP form is one `http://host:port` rule so `wss`
- * does not stay DIRECT. A machine proxy also disables HTTP/2 so Signal can send a classic
+ * then try the next distinct host:port. A closed hop is never applied, including the hop
+ * Chromium `resolveProxy` would still name. The HTTP form is one `http://host:port` rule so
+ * `wss` does not stay DIRECT. A machine proxy also disables HTTP/2 so Signal can send a classic
  * upgrade. No hop does not call `setProxy` and does not set either switch. A process
  * `HTTP_PROXY` is not a machine proxy and is ignored. A listening port does not prove the
  * proxy can reach the origin.
+ *
+ * Algorithm RefreshSystemHttpProxy: every 10 seconds, and before a Signal window opens, read
+ * the OS proxy again. A new accepting hop replaces the session proxy and closes old
+ * connections. No accepting hop clears a previously applied hop to direct. The same hop is
+ * left alone. The process does not need a restart. The command-line switch from startup is
+ * overridden by `setProxy` on the session.
  */
 
-import { execFile, execFileSync, spawnSync } from "node:child_process";
-import { promisify } from "node:util";
+import { execFileSync, spawnSync } from "node:child_process";
 import { createOpenBotLogger } from "@openbot/logging";
 import { app, net, type Session, session } from "electron";
 
-const execFileAsync = promisify(execFile);
+import { proxyRefreshAction } from "./system-http-proxy-choice";
 
 const logger = createOpenBotLogger("system-http-proxy");
 
 const LOOPBACK_BYPASS = "localhost,127.0.0.1,::1,<local>";
 const LOOPBACK_BYPASS_SWITCH = "localhost;127.0.0.1;::1;<local>";
-const PROXY_PROBE_TIMEOUT_MS = 300;
+const PROXY_REFRESH_MS = 10_000;
 
 type ProxyHop = { kind: "direct" } | { kind: "http" | "socks"; host: string; port: number };
+type AcceptingHop = Exclude<ProxyHop, { kind: "direct" }>;
 
 let fetchPatched = false;
+let appliedHopKey: string | null = null;
+let refreshTimer: ReturnType<typeof setInterval> | null = null;
+let refreshChain: Promise<void> = Promise.resolve();
 
 /**
  * Set Chromium's process proxy switch before `app.whenReady()`.
@@ -61,23 +71,60 @@ export function applyStartupChromiumProxy(): void {
  * Does not guarantee the proxy answers, and does not log credentials.
  */
 export async function applySystemHttpProxy(targetUrl: string): Promise<void> {
-  const system = await readMachineProxy(targetUrl);
-  if (!system) {
-    logger.info("No proxy is configured. Account HTTP stays direct.");
-    return;
-  }
-  await applyHop(system, targetUrl);
+  await refreshSystemHttpProxy(targetUrl);
+}
+
+/**
+ * Re-read the OS proxy and switch the default session when the accepting hop changed.
+ *
+ * Guarantees: a closed port is not applied. A new accepting hop replaces the old one and
+ * closes existing connections. No accepting hop clears a hop that was already applied.
+ * The same hop does not call `setProxy`. Does not restart the process, and does not prove
+ * the new hop can reach the account host.
+ */
+export function refreshSystemHttpProxy(targetUrl: string): Promise<void> {
+  refreshChain = refreshChain.then(() => refreshOnce(targetUrl)).catch((error: unknown) => {
+    logger.warn("The machine proxy could not be refreshed.", {
+      message: error instanceof Error ? error.message : String(error),
+    });
+  });
+  return refreshChain;
+}
+
+/**
+ * Keep checking the OS proxy until `stop` is called.
+ *
+ * Guarantees: the first check runs immediately, then every 10 seconds. `stop` clears the
+ * timer. Does not refresh after `stop`. The timer does not hold the process open.
+ */
+export function startSystemHttpProxyRefresh(targetUrl: string): () => void {
+  void refreshSystemHttpProxy(targetUrl);
+  if (refreshTimer) clearInterval(refreshTimer);
+  refreshTimer = setInterval(() => {
+    void refreshSystemHttpProxy(targetUrl);
+  }, PROXY_REFRESH_MS);
+  refreshTimer.unref();
+  return () => {
+    if (!refreshTimer) return;
+    clearInterval(refreshTimer);
+    refreshTimer = null;
+  };
 }
 
 /**
  * Put the same OS hop on one window session before that window opens Signal.
  *
  * Guarantees: when the OS has a proxy, `setProxy` uses one rule for every scheme, including `wss`.
- * No proxy leaves the session unchanged. Does not prove the later socket opens.
+ * No accepting hop sets the window session to direct, so a dead startup hop does not stay.
+ * Does not prove the later socket opens.
  */
 export async function ensureChromiumProxy(target: Session): Promise<void> {
-  const hop = readDarwinProxySync();
-  if (!hop) return;
+  await refreshSystemHttpProxy(signalAccountUrl());
+  const hop = acceptingMachineProxySync();
+  if (!hop) {
+    await target.setProxy({ mode: "direct" });
+    return;
+  }
   await target.setProxy({
     mode: "fixed_servers",
     proxyRules: chromiumProxyRules(hop),
@@ -86,11 +133,71 @@ export async function ensureChromiumProxy(target: Session): Promise<void> {
 }
 
 /**
- * Install one hop on the default session and route Node `fetch` through it.
- * Guarantees: `setProxy` uses `fixed_servers`, not `mode: "system"`.
- * Does not guarantee the hop answers. The log names the proxy Chromium reports for https and wss.
+ * The account URL used when a Signal window refreshes before its own URL is known.
+ * A missing packaged URL still probes the local attendant. Does not open a socket.
  */
-async function applyHop(hop: Exclude<ProxyHop, { kind: "direct" }>, targetUrl: string): Promise<void> {
+function signalAccountUrl(): string {
+  return process.env.OPENBOT_AUTH_API_URL || "https://api-attendant.mwcpool.uk";
+}
+
+/**
+ * Apply one accepting hop, or clear the session when the last hop died.
+ *
+ * Guarantees: `setProxy` runs only when the accepting hop key changed. A dead hop becomes
+ * `mode: "direct"`. Does not use `resolveProxy` to resurrect a port that just failed TCP.
+ */
+async function refreshOnce(targetUrl: string): Promise<void> {
+  const hop = await readAcceptingMachineProxy(targetUrl);
+  const action = proxyRefreshAction(appliedHopKey, hop);
+  if (action === "keep") return;
+  if (action === "direct" || !hop) {
+    await session.defaultSession.setProxy({ mode: "direct" });
+    await session.defaultSession.closeAllConnections();
+    logger.info("Cleared the machine proxy. Account HTTP is direct.", { from: appliedHopKey });
+    appliedHopKey = null;
+    return;
+  }
+  const from = appliedHopKey;
+  await applyHop(hop, targetUrl);
+  appliedHopKey = `${hop.kind}:${hop.host}:${hop.port}`;
+  if (from) {
+    logger.info("Switched the machine proxy.", {
+      from,
+      kind: hop.kind,
+      host: hop.host,
+      port: hop.port,
+    });
+  }
+}
+
+/**
+ * The first OS hop whose TCP port accepts a connection.
+ *
+ * Guarantees: on macOS, a closed scutil hop is null even if Chromium still names it.
+ * Other platforms TCP-check the first `resolveProxy` hop. Does not apply the hop.
+ */
+async function readAcceptingMachineProxy(targetUrl: string): Promise<AcceptingHop | null> {
+  if (process.platform === "darwin") return acceptingMachineProxySync();
+  const resolved = await readSystemProxyHop(targetUrl);
+  if (!resolved || resolved.kind === "direct") return null;
+  if (tcpPortAcceptsSync(resolved.host, resolved.port)) return resolved;
+  logger.info("Skipped a machine proxy that did not accept a connection.", {
+    kind: resolved.kind,
+    host: resolved.host,
+    port: resolved.port,
+  });
+  return null;
+}
+
+/**
+ * Synchronous macOS probe used before a window opens Signal.
+ * A non-macOS process returns null and the async refresh does the check.
+ */
+function acceptingMachineProxySync(): AcceptingHop | null {
+  return readDarwinProxySync();
+}
+
+async function applyHop(hop: AcceptingHop, targetUrl: string): Promise<void> {
   await session.defaultSession.setProxy({
     mode: "fixed_servers",
     proxyRules: chromiumProxyRules(hop),
@@ -109,35 +216,8 @@ async function applyHop(hop: Exclude<ProxyHop, { kind: "direct" }>, targetUrl: s
 }
 
 /**
- * The proxy the machine has enabled. HTTP wins over SOCKS when both are on.
- * A missing proxy is null. This does not add a proxy that the OS did not enable.
- */
-async function readMachineProxy(targetUrl: string): Promise<Exclude<ProxyHop, { kind: "direct" }> | null> {
-  const fromOs = await readDarwinProxy();
-  if (fromOs) return fromOs;
-  const resolved = await readSystemProxyHop(targetUrl);
-  return resolved && resolved.kind !== "direct" ? resolved : null;
-}
-
-/**
- * macOS system proxy from `scutil --proxy`. Other platforms return null and use `resolveProxy`.
- */
-async function readDarwinProxy(): Promise<Exclude<ProxyHop, { kind: "direct" }> | null> {
-  if (process.platform !== "darwin") return null;
-  try {
-    const { stdout } = await execFileAsync("scutil", ["--proxy"], { timeout: 2000 });
-    return preferScutilHop(stdout);
-  } catch (error) {
-    logger.warn("The macOS proxy list could not be read.", {
-      message: error instanceof Error ? error.message : String(error),
-    });
-    return null;
-  }
-}
-
-/**
- * The same OS proxy read, for the startup switch. A read failure is no proxy.
- * Does not use the process environment.
+ * The OS proxy read, for the startup switch and the 10-second refresh.
+ * A read failure is no proxy. Does not use the process environment.
  */
 function readDarwinProxySync(): Exclude<ProxyHop, { kind: "direct" }> | null {
   if (process.platform !== "darwin") return null;
@@ -176,22 +256,37 @@ function preferScutilHop(text: string): Exclude<ProxyHop, { kind: "direct" }> | 
  * Whether `host:port` accepts a TCP connect.
  *
  * Guarantees: a refused, timed-out, or unreachable port is false. A listening port is true.
- * Does not prove the process is a working HTTP or SOCKS proxy.
+ * The packaged app has the Electron RunAsNode fuse off, so this probes with the system
+ * `nc` and never spawns `process.execPath`. Spawning the app binary starts a second
+ * slavebot, times out, and would mark every hop closed.
+ * Does not prove the process is a working HTTP or SOCKS proxy. A missing `nc` is false.
+ * `host` must be a hostname or IP with no spaces; anything else is false.
  */
 function tcpPortAcceptsSync(host: string, port: number): boolean {
-  const script = `"use strict";
-const net = require("net");
-const socket = net.connect(${port}, ${JSON.stringify(host)}, () => process.exit(0));
-socket.on("error", () => process.exit(1));
-setTimeout(() => process.exit(1), ${PROXY_PROBE_TIMEOUT_MS});
-`;
-  const result = spawnSync(process.execPath, ["-e", script], {
-    timeout: PROXY_PROBE_TIMEOUT_MS + 700,
-    env: { ...process.env, ELECTRON_RUN_AS_NODE: "1" },
+  if (!Number.isInteger(port) || port < 1 || port > 65535) return false;
+  if (host.length === 0 || host.length > 253 || /[^\w.:\[\]-]/.test(host)) return false;
+  const probe = tcpProbeCommand(host, port);
+  const result = spawnSync(probe.command, probe.args, {
+    timeout: 2_500,
     stdio: "ignore",
     windowsHide: true,
   });
   return result.status === 0;
+}
+
+/**
+ * The system TCP probe for one hop.
+ *
+ * Guarantees: arguments are passed as an argv list, not a shell string.
+ * macOS uses `/usr/bin/nc -z -G 1` because `-G` is the connect timeout in seconds.
+ * Other platforms use `nc -z -w 1`. Does not fall back to the Electron binary.
+ */
+function tcpProbeCommand(host: string, port: number): { command: string; args: string[] } {
+  const portText = String(port);
+  if (process.platform === "darwin") {
+    return { command: "/usr/bin/nc", args: ["-z", "-G", "1", host, portText] };
+  }
+  return { command: "nc", args: ["-z", "-w", "1", host, portText] };
 }
 
 /** One enabled scutil proxy block, or null when that kind is off. */

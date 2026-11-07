@@ -1,13 +1,22 @@
-# OpenBot / slavebot — feature/mobile-computer-tab 进度
+# slavebot — feature/mobile-computer-tab 进度
 
-更新时间：2026-11-05（America/Los_Angeles）
+更新时间：2026-11-05
+
+## 仓库名
+
+- GitHub fork：`https://github.com/mason0510/slavebot`（由 `mason0510/openbot` 改名）
+- 上游仍是 `git@github.com:nightly-labs/openbot.git`（`origin`，未改）
+- 本地远程 `fork`：`git@github.com:mason0510/slavebot.git`
+- 另有独立仓库 `https://github.com/mason0510/slave`，这次没有改它
 
 ## 分支
 
 - 本地：`feature/mobile-computer-tab`
 - 远程跟踪：`fork/feature/mobile-computer-tab`
-- 仓库路径：`/Volumes/codeMason/code/02-production/openbot`
-- 同步树：`/Volumes/SlavebotBuild/openbot`（此前改动曾双向同步）
+- HEAD：`a93bddc19` feat(mobile): slavebot package, hide QR login, update notify off
+- 工作区干净
+- 本地目录：`/Volumes/codeMason/code/02-production/slavebot`
+- 同步树：`/Volumes/SlavebotBuild/openbot`（未改名）
 
 ## 已完成
 
@@ -26,7 +35,7 @@
    恢复：把 `SHOW_QR_LOGIN` 改回 `true`。
 
 5. **代理健壮性**  
-   `system-http-proxy.ts`：TCP 连不上的 hop 会跳过并尝试下一个 host:port。
+   `system-http-proxy.ts`：TCP 连不上的 hop 会跳过并尝试下一个 host:port。已打进 `/Applications/Slavebot.app`。asar 头哈希 `870b2419c6e0c59d5cc0b5cc27bcf48545b7b487a4c7989ff569c83f59d20ba0`。签名 `Apple Development: Xiaocong Zhang (626YUM2G4S)`。旧 asar：`/Volumes/codeMason/tmp/slavebot-app.asar.before-proxy-probe`。
 
 6. **云测**  
    BrowserStack 账号已用 `browserstack@mail.tap365.org` 激活；曾对 Pixel 8 做过启动冒烟（登录页）。电脑 tab 需登录后才能深测。
