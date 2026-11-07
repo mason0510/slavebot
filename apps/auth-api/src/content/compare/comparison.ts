@@ -54,7 +54,7 @@ export const OPENBOT_PLANS: readonly OpenBotPlan[] = [
   { provider: "opencode", name: "OpenCode", plan: "Free models, or an OpenCode Go key." },
   { provider: "cline", name: "Cline", plan: "Your Cline account, or a Cline API key." },
   { provider: "muse", name: "Muse Code", plan: "Your Meta account, or a Meta API key." },
-  { provider: "pi", name: "Pi", plan: "Included with OpenBot. Sign in to a provider with /login in Pi." },
+  { provider: "pi", name: "Pi", plan: "Included with Slavebot. Sign in to a provider with /login in Pi." },
   { provider: "inception", name: "Inception", plan: "Mercury models, with an Inception API key." },
   { provider: "acp", name: "Custom agent", plan: "Any ACP agent, such as Goose, Qwen Code or GitHub Copilot." },
   { provider: "custom", name: "Your own model", plan: "Any OpenAI-compatible server, also one on your computer." },

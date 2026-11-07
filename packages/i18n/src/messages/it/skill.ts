@@ -14,7 +14,7 @@ export const messages = {
   "skill.loadingDetails": "Caricamento dei dettagli…",
   "skill.emptyEnabled": "Questo agente non ha skill attive.",
   "skill.emptyAssigned": "Questo agente non ha ancora skill assegnate.",
-  "skill.folderSkill": "OpenBot non ha installato questa skill. Modificala o rimuovila in {location}.",
+  "skill.folderSkill": "Slavebot non ha installato questa skill. Modificala o rimuovila in {location}.",
   "skill.moreFor": "Altro per {name}",
   "skill.update": "Aggiorna",
   "skill.updateName": "Aggiorna {name}",
@@ -37,7 +37,7 @@ export const messages = {
     "L'aggiornamento di questa skill sostituisce i file locali con l'ultimo pacchetto della skill. Le tue modifiche nella cartella della skill andranno perse.",
   "skill.confirm.removeModifiedBody":
     "Questa skill ha modifiche locali nel workspace dell'agente. «Rimuovi skill» elimina quei file. I messaggi originali della chat restano.",
-  "skill.confirm.removeBody": "OpenBot rimuoverà questa skill dall'agente. La cronologia della chat resta.",
+  "skill.confirm.removeBody": "Slavebot rimuoverà questa skill dall'agente. La cronologia della chat resta.",
   "skill.confirm.replace": "Sostituisci skill",
   "skill.confirm.remove": "Rimuovi skill",
 
@@ -81,5 +81,5 @@ export const messages = {
   "skill.marketplace.undone": "La modifica a {name} è annullata.",
   "skill.marketplace.confirmAgents": "Agenti: {agents}.",
   "skill.marketplace.limitReason": "Un agente può avere fino a {limit} skill.",
-  "skill.marketplace.cannotRemove": "OpenBot non può rimuovere una skill integrata né una skill che non ha installato.",
+  "skill.marketplace.cannotRemove": "Slavebot non può rimuovere una skill integrata né una skill che non ha installato.",
 } as const satisfies PartialTranslation<typeof source>;

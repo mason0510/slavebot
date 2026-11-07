@@ -14,7 +14,7 @@ export const messages = {
   "skill.loadingDetails": "Chargement des détails…",
   "skill.emptyEnabled": "Cet agent n’a aucune compétence activée.",
   "skill.emptyAssigned": "Cet agent n’a encore aucune compétence attribuée.",
-  "skill.folderSkill": "OpenBot n’a pas installé cette compétence. Modifiez-la ou retirez-la dans {location}.",
+  "skill.folderSkill": "Slavebot n’a pas installé cette compétence. Modifiez-la ou retirez-la dans {location}.",
   "skill.moreFor": "Plus d’options pour {name}",
   "skill.update": "Mettre à jour",
   "skill.updateName": "Mettre à jour {name}",
@@ -37,7 +37,7 @@ export const messages = {
     "La mise à jour de cette compétence remplace les fichiers locaux par le dernier paquet de la compétence. Vos modifications dans ce dossier seront perdues.",
   "skill.confirm.removeModifiedBody":
     "Cette compétence a des modifications locales dans l’espace de travail de l’agent. Le retrait supprime ces fichiers. Les messages d’origine de la discussion restent.",
-  "skill.confirm.removeBody": "OpenBot va retirer cette compétence de l’agent. L’historique de discussion reste.",
+  "skill.confirm.removeBody": "Slavebot va retirer cette compétence de l’agent. L’historique de discussion reste.",
   "skill.confirm.replace": "Remplacer la compétence",
   "skill.confirm.remove": "Retirer la compétence",
 
@@ -82,5 +82,5 @@ export const messages = {
   "skill.marketplace.confirmAgents": "Agents : {agents}.",
   "skill.marketplace.limitReason": "Un agent peut avoir jusqu’à {limit} compétences.",
   "skill.marketplace.cannotRemove":
-    "OpenBot ne peut pas retirer une compétence intégrée ni une compétence qu’il n’a pas installée.",
+    "Slavebot ne peut pas retirer une compétence intégrée ni une compétence qu’il n’a pas installée.",
 } as const satisfies PartialTranslation<typeof source>;

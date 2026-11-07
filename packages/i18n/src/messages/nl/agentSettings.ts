@@ -43,7 +43,7 @@ export const messages = {
   "agentSettings.folders.inShared": "{folder} staat in de gedeelde map, dus {agent} kan de map al wijzigen",
   "agentSettings.folders.inFolder": "{folder} staat in {parent}, en die map is al toegevoegd",
   "agentSettings.folders.protected":
-    "Je kunt {folder} niet toevoegen: de map bevat OpenBot-gegevens of bestanden van andere agents",
+    "Je kunt {folder} niet toevoegen: de map bevat Slavebot-gegevens of bestanden van andere agents",
   "agentSettings.folders.missing": "{folder} is geen map op deze computer",
   "agentSettings.folders.limit": {
     one: "Je kunt maximaal {count} map toevoegen",
@@ -143,7 +143,7 @@ export const messages = {
   "agentSettings.runtime.fullAccessNote":
     "De agent draait met volledige computertoegang vanuit zijn werkruimte en de gedeelde map.",
   "agentSettings.runtime.askNote":
-    "Hij vraagt het je voordat hij een OpenBot-tool gebruikt of een site publiceert, en als de aanbieder om goedkeuring vraagt.",
+    "Hij vraagt het je voordat hij een Slavebot-tool gebruikt of een site publiceert, en als de aanbieder om goedkeuring vraagt.",
   "agentSettings.runtime.fullNote": "Hij handelt zonder te vragen, behalve bij vragen die hij aan jou stelt.",
   "agentSettings.access.workspace": "Alleen werkruimte",
   "agentSettings.access.ask": "Eerst vragen",
@@ -195,7 +195,7 @@ export const messages = {
   "agentSettings.runtime.workspaceEnforcedClaude":
     "Een bestandswijziging buiten vraagt het je eerst. Een opdracht kan niet buiten schrijven.",
   "agentSettings.runtime.workspaceUnlimited":
-    "Computerbesturing en de OpenBot-browser zijn niet beperkt; je kunt Computerbesturing hieronder uitzetten.",
+    "Computerbesturing en de Slavebot-browser zijn niet beperkt; je kunt Computerbesturing hieronder uitzetten.",
   "agentSettings.computerUse.title": "Computerbesturing",
   "agentSettings.computerUse.description": "Laat deze agent apps op deze computer besturen",
   "agentSettings.automation.title": "Lokale scripts",

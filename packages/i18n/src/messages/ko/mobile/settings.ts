@@ -16,7 +16,7 @@ export const messages = {
   "mobile.settings.about.privacy": "개인정보 처리방침",
   "mobile.settings.home.profile": "프로필",
   "mobile.settings.home.preferences": "환경설정",
-  "mobile.settings.home.about": "OpenBot 정보",
+  "mobile.settings.home.about": "Slavebot 정보",
   "mobile.settings.home.support": "지원",
   "mobile.settings.home.supportHint": "도움을 받고 지원 로그를 저장해요",
   "mobile.settings.support.help": "도움 받기",
@@ -31,7 +31,7 @@ export const messages = {
   "mobile.settings.support.clearTitle": "지원 로그를 지울까요?",
   "mobile.settings.support.clearBody": "이 휴대전화의 로그에서 모든 이벤트가 삭제돼요.",
   "mobile.settings.support.logFooter":
-    "로그는 이 휴대전화에만 남고 OpenBot이 전송하지 않아요. 연결 단계, 요청, 오류를 기록해요. 메시지나 파일은 기록하지 않고, 비밀번호와 토큰은 가려요. 공유하기 전에 파일을 확인해 주세요.",
+    "로그는 이 휴대전화에만 남고 Slavebot이 전송하지 않아요. 연결 단계, 요청, 오류를 기록해요. 메시지나 파일은 기록하지 않고, 비밀번호와 토큰은 가려요. 공유하기 전에 파일을 확인해 주세요.",
   "mobile.settings.support.saveFailed": "로그 파일을 저장할 수 없었어요. 다시 시도해 주세요.",
   "mobile.settings.support.sharingUnavailable": "이 휴대전화에서는 공유를 사용할 수 없어요.",
   "mobile.settings.support.recent": "최근 이벤트",
@@ -89,27 +89,27 @@ export const messages = {
   "mobile.settings.feedback.retry": "햅틱 설정 다시 저장",
   "mobile.settings.liveActivities.title": "실시간 현황",
   "mobile.settings.liveActivities.footer":
-    "OpenBot이 실행되는 동안 에이전트 작업, 메시지, 질문, 승인을 잠금 화면과 Dynamic Island에 표시해요.",
+    "Slavebot이 실행되는 동안 에이전트 작업, 메시지, 질문, 승인을 잠금 화면과 Dynamic Island에 표시해요.",
   "mobile.settings.liveActivities.toggle": "에이전트 활동 표시",
   "mobile.settings.liveActivities.retry": "실시간 현황 설정 다시 저장",
   "mobile.settings.notifications.title": "알림",
   "mobile.settings.notifications.toggle": "알림 허용",
   "mobile.settings.notifications.footer":
-    "에이전트가 작업을 마치거나, 오류로 멈추거나, 입력·승인·브라우저 단계가 필요할 때 알려 줘요. 여기나 데스크톱 앱에서 OpenBot을 사용 중일 때는 알림이 오지 않아요. 실시간 현황이 표시되는 동안에는 알림 대신 실시간 현황에 이벤트가 표시돼요.",
+    "에이전트가 작업을 마치거나, 오류로 멈추거나, 입력·승인·브라우저 단계가 필요할 때 알려 줘요. 여기나 데스크톱 앱에서 Slavebot을 사용 중일 때는 알림이 오지 않아요. 실시간 현황이 표시되는 동안에는 알림 대신 실시간 현황에 이벤트가 표시돼요.",
   "mobile.settings.notifications.footerAndroid":
-    "에이전트가 작업을 마치거나, 오류로 멈추거나, 입력·승인·브라우저 단계가 필요할 때 알려 줘요. 여기나 데스크톱 앱에서 OpenBot을 사용 중일 때는 알림이 오지 않아요.",
-  "mobile.settings.notifications.denied": "iOS 설정에서 OpenBot 알림이 꺼져 있어요.",
-  "mobile.settings.notifications.deniedAndroid": "Android 설정에서 OpenBot 알림이 꺼져 있어요.",
+    "에이전트가 작업을 마치거나, 오류로 멈추거나, 입력·승인·브라우저 단계가 필요할 때 알려 줘요. 여기나 데스크톱 앱에서 Slavebot을 사용 중일 때는 알림이 오지 않아요.",
+  "mobile.settings.notifications.denied": "iOS 설정에서 Slavebot 알림이 꺼져 있어요.",
+  "mobile.settings.notifications.deniedAndroid": "Android 설정에서 Slavebot 알림이 꺼져 있어요.",
   "mobile.settings.notifications.openSettings": "iOS 설정 열기",
   "mobile.settings.notifications.openSettingsAndroid": "Android 설정 열기",
   "mobile.settings.notifications.preview": "답변 미리보기 표시",
   "mobile.settings.notifications.previewFooter":
-    "답변의 시작 부분, 질문, 승인할 작업을 표시해요. Apple과 OpenBot 계정 서비스는 이 내용을 읽을 수 없어요.",
+    "답변의 시작 부분, 질문, 승인할 작업을 표시해요. Apple과 Slavebot 계정 서비스는 이 내용을 읽을 수 없어요.",
   "mobile.settings.notifications.previewFooterAndroid":
-    "답변의 시작 부분, 질문, 승인할 작업을 표시해요. Google과 OpenBot 계정 서비스는 이 내용을 읽을 수 없어요.",
+    "답변의 시작 부분, 질문, 승인할 작업을 표시해요. Google과 Slavebot 계정 서비스는 이 내용을 읽을 수 없어요.",
   "mobile.settings.notifications.sound": "소리",
   "mobile.settings.notifications.playSound": "소리 재생",
-  "mobile.settings.notifications.sound.openbot": "OpenBot",
+  "mobile.settings.notifications.sound.openbot": "Slavebot",
   "mobile.settings.notifications.sound.warm": "따뜻한 소리",
   "mobile.settings.notifications.sound.mech": "기계음",
   "mobile.settings.notifications.sound.bubble": "뽀글뽀글",
@@ -117,9 +117,9 @@ export const messages = {
   "mobile.settings.notifications.sound.default": "iOS 기본값",
   "mobile.settings.notifications.sound.defaultAndroid": "Android 기본값",
   "mobile.settings.notifications.soundFooter":
-    "알림과 실시간 현황이 이 소리를 재생해요. 실시간 현황은 화면도 켜요. OpenBot 소리는 작업이 끝났을 때 데스크톱 앱이 재생하는 소리예요. 그 뒤의 네 가지 소리는 데스크톱 소리 테마의 소리예요.",
+    "알림과 실시간 현황이 이 소리를 재생해요. 실시간 현황은 화면도 켜요. Slavebot 소리는 작업이 끝났을 때 데스크톱 앱이 재생하는 소리예요. 그 뒤의 네 가지 소리는 데스크톱 소리 테마의 소리예요.",
   "mobile.settings.notifications.soundFooterAndroid":
-    "알림이 이 소리를 재생해요. OpenBot 소리는 작업이 끝났을 때 데스크톱 앱이 재생하는 소리예요. 그 뒤의 네 가지 소리는 데스크톱 소리 테마의 소리예요.",
+    "알림이 이 소리를 재생해요. Slavebot 소리는 작업이 끝났을 때 데스크톱 앱이 재생하는 소리예요. 그 뒤의 네 가지 소리는 데스크톱 소리 테마의 소리예요.",
   "mobile.settings.notifications.level.all": "모든 활동",
   "mobile.settings.notifications.level.needsMe": "내 입력이 필요할 때만",
   "mobile.settings.notifications.level.nothing": "없음",
@@ -135,7 +135,7 @@ export const messages = {
   "mobile.settings.notifications.serverFooter":
     "이 휴대전화로 알림을 보내는 이 서버의 이벤트예요. 데스크톱 앱에는 별도의 설정이 있어요.",
   "mobile.settings.notifications.serverUnsupported":
-    "이 서버는 알림을 보낼 수 없어요. 서버가 실행되는 컴퓨터에서 OpenBot을 업데이트해 주세요.",
+    "이 서버는 알림을 보낼 수 없어요. 서버가 실행되는 컴퓨터에서 Slavebot을 업데이트해 주세요.",
   "mobile.settings.notifications.thisPhone": "이 휴대전화",
   "mobile.settings.notifications.whatYouHear": "알림 받을 내용",
   "mobile.settings.notifications.wholeServer": "서버 전체",
@@ -149,7 +149,7 @@ export const messages = {
   "mobile.settings.notifications.chooseAgent": "에이전트별로 선택",
   "mobile.settings.notifications.chooseAnotherAgent": "다른 에이전트 선택",
   "mobile.settings.notifications.levelsFooter": "에이전트의 수준을 다시 탭하면 서버 설정을 따라요.",
-  "mobile.settings.notifications.agentsUnsupported": "에이전트별로 선택하려면 이 서버의 OpenBot을 업데이트하세요.",
+  "mobile.settings.notifications.agentsUnsupported": "에이전트별로 선택하려면 이 서버의 Slavebot을 업데이트하세요.",
   "mobile.settings.notifications.agentsOffline": "이 서버가 온라인이면 에이전트가 표시돼요.",
   "mobile.settings.notifications.scopeFooter":
     "선택한 내용은 내 모든 기기에 적용돼요. 음소거는 이 휴대전화에만 적용돼요.",
@@ -177,7 +177,7 @@ export const messages = {
   "mobile.settings.profile.security": "보안",
   "mobile.settings.profile.accountSessions": "계정 세션",
   "mobile.settings.profile.signOutTitle": "로그아웃할까요?",
-  "mobile.settings.profile.signOutBody": "데스크톱의 OpenBot에서 새 코드를 스캔하면 다시 연결할 수 있어요.",
+  "mobile.settings.profile.signOutBody": "데스크톱의 Slavebot에서 새 코드를 스캔하면 다시 연결할 수 있어요.",
   "mobile.settings.profile.signOut": "로그아웃",
   "mobile.settings.voice.title": "음성",
   "mobile.settings.voice.sample": "안녕하세요. 이렇게 답변을 읽어 드릴게요.",
@@ -208,7 +208,7 @@ export const messages = {
   "mobile.settings.voice.supertonic.male": "남성 목소리 {number}",
   "mobile.settings.voice.elevenLabs.title": "ElevenLabs",
   "mobile.settings.voice.elevenLabs.footer":
-    "OpenBot은 내 키로 각 답변의 텍스트를 ElevenLabs에 보내고, 요금은 내 계정에 청구돼요. 키는 이 휴대폰의 키체인에 보관돼요.",
+    "Slavebot은 내 키로 각 답변의 텍스트를 ElevenLabs에 보내고, 요금은 내 계정에 청구돼요. 키는 이 휴대폰의 키체인에 보관돼요.",
   "mobile.settings.voice.elevenLabs.key": "API 키",
   "mobile.settings.voice.elevenLabs.keySaved": "이 휴대폰에 저장됨",
   "mobile.settings.voice.elevenLabs.chooseVoice": "목소리 선택",
@@ -218,7 +218,7 @@ export const messages = {
   "mobile.settings.voice.elevenLabs.removeBody": "Supertonic 3가 다시 답변을 읽어요.",
   "mobile.settings.voice.elevenLabs.saveKey": "키 저장",
   "mobile.settings.voice.elevenLabs.testing": "키 확인 중",
-  "mobile.settings.voice.elevenLabs.keyHint": "OpenBot은 저장하기 전에 처음 두 권한을 확인해요.",
+  "mobile.settings.voice.elevenLabs.keyHint": "Slavebot은 저장하기 전에 처음 두 권한을 확인해요.",
   "mobile.settings.voice.elevenLabs.testFailed": "ElevenLabs가 응답하지 않았어요. 다시 시도하세요.",
   "mobile.settings.voice.elevenLabs.getKey": "API 키 받기",
   "mobile.settings.voice.engine.supertonicReady": "이 휴대폰에서 · {voice}",
@@ -259,5 +259,5 @@ export const messages = {
   "mobile.settings.voice.tab.listening": "듣기",
   "mobile.settings.voice.tab.speaking": "말하기",
   "mobile.settings.voice.elevenLabs.recognitionFooter":
-    "OpenBot은 일회용 토큰으로 음성을 ElevenLabs에 스트리밍하고, ElevenLabs가 계정에 요금을 청구해요. 키는 이 휴대폰에 남아 있어요.",
+    "Slavebot은 일회용 토큰으로 음성을 ElevenLabs에 스트리밍하고, ElevenLabs가 계정에 요금을 청구해요. 키는 이 휴대폰에 남아 있어요.",
 } as const satisfies PartialTranslation<typeof source>;

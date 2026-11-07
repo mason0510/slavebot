@@ -203,8 +203,8 @@ export const messages = {
   "workflow.github.filter.branch": "Branche de base",
   "workflow.github.filter.titleValue": "Titre contient « {text} »",
   "workflow.github.filter.branchValue": "Branche de base : {branch}",
-  "workflow.github.alert.missing": "OpenBot ne voit pas {repository} sur GitHub.",
-  "workflow.github.alert.readOnly": "OpenBot ne peut pas modifier les issues et pull requests de {repository}.",
+  "workflow.github.alert.missing": "Slavebot ne voit pas {repository} sur GitHub.",
+  "workflow.github.alert.readOnly": "Slavebot ne peut pas modifier les issues et pull requests de {repository}.",
   "workflow.github.alert.eventsOff": "GitHub n’envoie pas encore d’événements de {repository}.",
   "workflow.github.alert.noEvent":
     "Le déclencheur n’est pas un événement GitHub. Choisissez un dépôt et prenez le numéro dans l’entrée.",
@@ -212,7 +212,7 @@ export const messages = {
     "{action} ne fonctionne que sur les pull requests. Le déclencheur démarre sur des issues.",
   "workflow.github.history.name": "Événements",
   "workflow.github.history.none": "Aucun",
-  "workflow.github.history.offline": "OpenBot était hors ligne",
+  "workflow.github.history.offline": "Slavebot était hors ligne",
   "workflow.github.history.waitingGroup": "En attente",
   "workflow.github.history.startedGroup": "Exécutions lancées",
   "workflow.github.history.skippedGroup": "Ignorés",
@@ -418,9 +418,9 @@ export const messages = {
   "workflow.canvas.version.run": "Avant une exécution",
   "workflow.canvas.deleteUndo.title": "{name} supprimé",
   "workflow.canvas.deleteUndo.action": "Annuler",
-  "workflow.page.failed": "OpenBot n’a pas pu effectuer cette action. Réessayez.",
+  "workflow.page.failed": "Slavebot n’a pas pu effectuer cette action. Réessayez.",
   "workflow.page.conflict": "Modifié sur un autre appareil. Annulez pour récupérer vos modifications.",
   "workflow.page.needsNewerApp":
-    "Ce workflow contient des étapes d’une version plus récente d’OpenBot. Mettez OpenBot à jour pour le modifier.",
+    "Ce workflow contient des étapes d’une version plus récente d’Slavebot. Mettez Slavebot à jour pour le modifier.",
   "workflow.page.manageOnly": "Pour modifier ce workflow, il vous faut l’accès Gérer sur chacun de ses agents.",
 } as const satisfies PartialTranslation<typeof source>;

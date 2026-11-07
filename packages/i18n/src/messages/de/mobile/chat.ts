@@ -4,7 +4,7 @@ import type { messages as source } from "../../en/mobile/chat";
 export const messages = {
   "mobile.chat.dictation.microphoneOffTitle": "Mikrofonzugriff ist deaktiviert",
   "mobile.chat.dictation.microphoneOffMessage":
-    "Um eine Nachricht zu diktieren, erlaube OpenBot in den Einstellungen, das Mikrofon und die Spracherkennung zu verwenden.",
+    "Um eine Nachricht zu diktieren, erlaube Slavebot in den Einstellungen, das Mikrofon und die Spracherkennung zu verwenden.",
   "mobile.chat.dictation.stopped": "Diktat gestoppt",
   "mobile.chat.dictation.tryAgain": "Versuche es erneut.",
   "mobile.chat.dictation.unavailable": "Diktat ist nicht verfügbar",
@@ -108,7 +108,7 @@ export const messages = {
   "mobile.chat.attachment.openFailed": "Anhang konnte nicht geöffnet werden",
   "mobile.chat.attachment.photosNeedUpdate": "Zum Speichern von Fotos wird die neueste Version der App benötigt.",
   "mobile.chat.attachment.photosPermission":
-    "Erlaube OpenBot in den Einstellungen, Fotos hinzuzufügen, um dieses Bild zu speichern.",
+    "Erlaube Slavebot in den Einstellungen, Fotos hinzuzufügen, um dieses Bild zu speichern.",
   "mobile.chat.attachment.imageUnavailable": "Das Bild ist nicht verfügbar. Versuche es erneut.",
   "mobile.chat.attachment.saveImageFailed": "Bild konnte nicht gespeichert werden",
   "mobile.chat.attachment.preview": "Vorschau von {name}",
@@ -136,9 +136,9 @@ export const messages = {
   "mobile.chat.attachment.unsupported":
     "{name}: Wähle Bilder, MP3-Audio, MOV- oder MP4-Video, ZIP-Archive, PDF, Office-Dokumente, EML, Text, Markdown, Daten- oder Quelltextdateien.",
   "mobile.chat.attachment.hostRejectsType":
-    "{name}: Der Host-Computer akzeptiert keine {type}-Dateien. Aktualisiere OpenBot dort, um sie anzuhängen.",
+    "{name}: Der Host-Computer akzeptiert keine {type}-Dateien. Aktualisiere Slavebot dort, um sie anzuhängen.",
   "mobile.chat.attachment.hostRejects":
-    "{name}: Der Host-Computer akzeptiert diese Dateien nicht. Aktualisiere OpenBot dort, um sie anzuhängen.",
+    "{name}: Der Host-Computer akzeptiert diese Dateien nicht. Aktualisiere Slavebot dort, um sie anzuhängen.",
   "mobile.chat.attachment.nameTooLong": "Wähle eine Datei mit einem kürzeren Namen.",
   "mobile.chat.attachment.damaged": "Der Anhang ist beschädigt. Wähle ihn erneut aus.",
   "mobile.chat.attachment.tooLarge": "{name} ist größer als 10 MB.",
@@ -236,7 +236,7 @@ export const messages = {
   "mobile.chat.video.share": "{name} teilen",
   "mobile.chat.video.save": "{name} in Fotos sichern",
   "mobile.chat.video.photosPermission":
-    "Erlaube OpenBot in den Einstellungen, Fotos hinzuzufügen, um dieses Video zu sichern.",
+    "Erlaube Slavebot in den Einstellungen, Fotos hinzuzufügen, um dieses Video zu sichern.",
   "mobile.chat.video.saveFailed": "Video konnte nicht gespeichert werden",
   "mobile.chat.audio.play": "{name} abspielen",
   "mobile.chat.audio.pause": "{name} pausieren",
@@ -251,7 +251,7 @@ export const messages = {
   "mobile.chat.browserSecret.oneTimeCode": "Einmalcode",
   "mobile.chat.browserSecret.takeoverTitle": "Browserübernahme",
   "mobile.chat.browserSecret.takeoverBody":
-    "Schließe diesen Schritt im Browser auf dem Computer ab, auf dem OpenBot läuft.",
+    "Schließe diesen Schritt im Browser auf dem Computer ab, auf dem Slavebot läuft.",
   "mobile.chat.browserSecret.takeoverReload": "Lade dann die Seite neu, bevor du „Fertig“ wählst.",
   "mobile.chat.browserSecret.takeoverFailed": "Die Anfrage konnte nicht abgeschlossen werden.",
   "mobile.chat.browserSecret.done": "Fertig",
@@ -334,7 +334,7 @@ export const messages = {
   "mobile.chat.approval.effect.permissions":
     "Mit „Erlauben“ erhält {name} diese Berechtigungen auf {server}. Mit „Ablehnen“ bleiben die aktuellen Berechtigungen.",
   "mobile.chat.approval.partial":
-    "Diese Anfrage ist zu lang für das Telefon. Öffne OpenBot auf {server}, um sie zu erlauben. Ablehnen kannst du sie hier.",
+    "Diese Anfrage ist zu lang für das Telefon. Öffne Slavebot auf {server}, um sie zu erlauben. Ablehnen kannst du sie hier.",
   "mobile.chat.approval.allow": "Erlauben",
   "mobile.chat.approval.deny": "Ablehnen",
   "mobile.chat.approval.reconnect": "Verbinde dich mit {server}, um diese Anfrage zu beantworten.",
@@ -413,7 +413,7 @@ export const messages = {
   "mobile.chat.queue.steerNeedsTurn": "Steuern braucht einen laufenden Durchlauf.",
   "mobile.chat.queue.stillHoldingTitle": "Nachricht wird noch angehalten",
   "mobile.chat.queue.stillHoldingMessage":
-    "OpenBot konnte diese Nachricht nicht freigeben, daher wartet der Agent weiter auf sie. Versuche es erneut, sobald das Telefon wieder verbunden ist.",
+    "Slavebot konnte diese Nachricht nicht freigeben, daher wartet der Agent weiter auf sie. Versuche es erneut, sobald das Telefon wieder verbunden ist.",
   "mobile.chat.queue.keepEditing": "Weiter bearbeiten",
   "mobile.chat.queue.leaveAnyway": "Trotzdem verlassen",
   "mobile.chat.queue.discardTitle": "Änderungen verwerfen?",
@@ -422,7 +422,7 @@ export const messages = {
   "mobile.chat.queue.alreadyReceived":
     "Der Agent hat diese Nachricht bereits erhalten, daher kann sie nicht mehr geändert werden.",
   "mobile.chat.queue.holding": "Die Nachricht wird für dich angehalten…",
-  "mobile.chat.queue.holdFailed": "OpenBot konnte diese Nachricht nicht zur Bearbeitung anhalten.",
+  "mobile.chat.queue.holdFailed": "Slavebot konnte diese Nachricht nicht zur Bearbeitung anhalten.",
   "mobile.chat.queue.messageLabel": "Nachricht",
   "mobile.chat.queue.messagePlaceholder": "Nachrichtentext",
   "mobile.chat.queue.save": "Nachricht in der Warteschlange speichern",
@@ -452,15 +452,15 @@ export const messages = {
   "mobile.chat.threads.renameSave": "Sichern",
   "mobile.chat.threads.name": "Thread-Name",
   "mobile.chat.threads.renameUnavailable":
-    "Du kannst diesen Thread jetzt nicht umbenennen. Verbinde dich mit dem Server oder aktualisiere OpenBot auf dem Host.",
+    "Du kannst diesen Thread jetzt nicht umbenennen. Verbinde dich mit dem Server oder aktualisiere Slavebot auf dem Host.",
   "mobile.chat.threads.delete.action": "Löschen",
   "mobile.chat.threads.delete.title": "Diesen Thread löschen?",
   "mobile.chat.threads.delete.body":
-    "OpenBot löscht den Thread, seine Nachrichten und seine Dateien endgültig. Der Haupt-Chat bleibt, wie er ist.",
+    "Slavebot löscht den Thread, seine Nachrichten und seine Dateien endgültig. Der Haupt-Chat bleibt, wie er ist.",
   "mobile.chat.threads.filesUnsupported":
-    "Dieser Host kann keine Dateien in einem Thread annehmen. Aktualisiere OpenBot auf dem Host.",
+    "Dieser Host kann keine Dateien in einem Thread annehmen. Aktualisiere Slavebot auf dem Host.",
   "mobile.chat.threads.unsupported":
-    "Dieser Host kann Threads nicht umbenennen oder löschen. Aktualisiere OpenBot auf dem Host.",
+    "Dieser Host kann Threads nicht umbenennen oder löschen. Aktualisiere Slavebot auf dem Host.",
   "mobile.chat.threads.error.rename": "Der Thread konnte nicht umbenannt werden.",
   "mobile.chat.threads.error.delete": "Der Thread konnte nicht gelöscht werden.",
   "mobile.chat.channelWork.working": "Arbeitet in {channel}",

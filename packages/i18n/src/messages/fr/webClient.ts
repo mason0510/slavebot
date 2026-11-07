@@ -2,7 +2,7 @@ import type { PartialTranslation } from "../../message";
 import type { messages as source } from "../en/webClient";
 
 export const messages = {
-  "webClient.loading": "Chargement d’OpenBot…",
+  "webClient.loading": "Chargement d’Slavebot…",
   "webClient.loadingLine.wake": "Réveil des agents…",
   "webClient.loadingLine.coffee": "Café servi aux agents…",
   "webClient.loadingLine.tokens": "On compte les jetons sur les doigts…",
@@ -24,18 +24,18 @@ export const messages = {
   "webClient.notice.hostsFailed": "Impossible de charger vos serveurs",
   "webClient.notice.connectComputer": "Connectez un serveur",
   "webClient.connect.description":
-    "Lancez OpenBot sur votre ordinateur pour discuter avec vos agents depuis ce navigateur. Vous pouvez aussi rejoindre un serveur avec une invitation.",
+    "Lancez Slavebot sur votre ordinateur pour discuter avec vos agents depuis ce navigateur. Vous pouvez aussi rejoindre un serveur avec une invitation.",
   "webClient.connect.descriptionHosted":
-    "Créez un serveur hébergé pour discuter avec vos agents depuis ce navigateur. Vous pouvez aussi lancer OpenBot sur votre ordinateur ou rejoindre un serveur avec une invitation.",
-  "webClient.connect.stepInstall": "Installez et ouvrez OpenBot sur votre ordinateur.",
+    "Créez un serveur hébergé pour discuter avec vos agents depuis ce navigateur. Vous pouvez aussi lancer Slavebot sur votre ordinateur ou rejoindre un serveur avec une invitation.",
+  "webClient.connect.stepInstall": "Installez et ouvrez Slavebot sur votre ordinateur.",
   "webClient.connect.stepSignIn": "Connectez-vous avec votre adresse e-mail.",
   "webClient.connect.stepRemote": "Activez l’accès à distance.",
-  "webClient.notice.download": "Télécharger OpenBot",
+  "webClient.notice.download": "Télécharger Slavebot",
   "webClient.notice.createServer": "Créer un serveur hébergé",
   "webClient.notice.join": "Rejoindre par invitation",
   "webClient.notice.refreshHosts": "Actualiser les serveurs",
   "webClient.otherTab.title": "{name} est ouvert dans un autre onglet",
-  "webClient.otherTab.description": "OpenBot ne peut utiliser un serveur que dans un onglet à la fois.",
+  "webClient.otherTab.description": "Slavebot ne peut utiliser un serveur que dans un onglet à la fois.",
   "webClient.otherTab.useHere": "Utiliser ici",
   "webClient.agent.modelsFailed": "Impossible de charger les modèles du serveur.",
   "webClient.agent.refreshFailed":
@@ -45,7 +45,7 @@ export const messages = {
   "webClient.error.usageOffline": "Connectez-vous à votre serveur pour voir l’utilisation.",
   "webClient.error.desktopOnly": "Cette action est disponible dans l’application de bureau.",
   "webClient.settings.preferences.title": "Préférences",
-  "webClient.settings.preferences.description": "Choisissez la langue et les sons d’OpenBot dans ce navigateur.",
+  "webClient.settings.preferences.description": "Choisissez la langue et les sons d’Slavebot dans ce navigateur.",
   "webClient.error.checkConversation": "Vérifiez la conversation avant d’envoyer à nouveau.",
   "webClient.error.hostReported": "Le serveur a signalé une erreur. Vérifiez la conversation et l’état du serveur.",
   "webClient.error.requestFailed": "La requête a échoué.",
@@ -74,7 +74,7 @@ export const messages = {
   "webClient.error.identityChanged": "L’identité du serveur a changé. Connexion refusée.",
   "webClient.error.connectionUnavailable": "La connexion au serveur n’est pas disponible.",
   "webClient.error.incompatible":
-    "Ce serveur n’est pas compatible avec OpenBot web. Mettez le serveur à jour et rechargez cette page.",
+    "Ce serveur n’est pas compatible avec Slavebot web. Mettez le serveur à jour et rechargez cette page.",
   "webClient.error.sendUnconfirmed":
     "La livraison du message n’est pas confirmée. Actualisez avant de l’envoyer à nouveau.",
   "webClient.error.fileType": "Mettez le serveur à jour pour joindre ce type de fichier.",
@@ -82,7 +82,7 @@ export const messages = {
   "webClient.error.duplication": "Ce serveur ne prend pas en charge la duplication d’agents.",
   "webClient.error.connectServerFirst": "Connectez-vous d’abord à ce serveur.",
   "webClient.error.agentInstallNotAllowed":
-    "Seul un propriétaire ou un administrateur peut ajouter un agent ici, et le serveur doit exécuter une version récente d’OpenBot.",
+    "Seul un propriétaire ou un administrateur peut ajouter un agent ici, et le serveur doit exécuter une version récente d’Slavebot.",
   "webClient.error.linkDesktopOnly": "Ce lien s’ouvre uniquement dans l’application de bureau.",
   "webClient.error.saveEndpointOffline": "Connectez-vous à votre serveur pour enregistrer un point de terminaison.",
   "webClient.error.removeEndpointOffline": "Connectez-vous à votre serveur pour supprimer un point de terminaison.",

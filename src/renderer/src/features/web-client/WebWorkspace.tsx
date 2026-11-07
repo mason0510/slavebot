@@ -248,7 +248,7 @@ const CONNECTING_STATUS: AgentStatus = {
  * What the web client reports as its build. The browser has no main process to ask, and the web frame
  * uses the macOS geometry.
  */
-const WEB_APP_INFO: AppInfo = { name: "OpenBot", version: "web", platform: "darwin", variant: "production" };
+const WEB_APP_INFO: AppInfo = { name: "Slavebot", version: "web", platform: "darwin", variant: "production" };
 /** Below this width the web shows one pane at a time; see `web-client.css`. */
 const PHONE_QUERY = "(max-width: 720px)";
 /** The account whose queue edit the browser may hold under `QUEUE_EDIT_STORAGE_KEY`. */
@@ -2019,7 +2019,7 @@ function WebWorkspaceFrame(props: WebWorkspaceProps) {
                     // The browser client does not know the unread counts of agent chats it has not opened.
                     hasUnread
                     view={layout.sidebarView()}
-                    serverName={workspace.state.host?.name ?? "OpenBot"}
+                    serverName={workspace.state.host?.name ?? "Slavebot"}
                     serverUpdate={(() => {
                       const id = server()?.id;
                       const badge = id ? serverUpdateBadge(id) : null;

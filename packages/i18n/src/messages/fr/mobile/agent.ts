@@ -68,7 +68,7 @@ export const messages = {
     "« {name} » est supprimé du disque. Les messages qui l’affichent restent dans la discussion, sans le fichier.",
   "mobile.agent.files.keep": "Conserver",
   "mobile.agent.files.deleteFailed": "Impossible de supprimer le fichier",
-  "mobile.agent.files.deleteFailedBody": "OpenBot n’a pas pu supprimer ce fichier.",
+  "mobile.agent.files.deleteFailedBody": "Slavebot n’a pas pu supprimer ce fichier.",
   "mobile.agent.files.downloading": "Téléchargement…",
   "mobile.agent.files.removeNamed": "Retirer {name}",
   "mobile.agent.files.deleteNamed": "Supprimer {name}",
@@ -122,13 +122,13 @@ export const messages = {
   "mobile.agent.info.noRoutines": "Aucune routine pour l’instant.",
   "mobile.agent.info.addRoutine": "Ajouter une routine",
   "mobile.agent.info.skillsUnsupported":
-    "Cet hôte ne prend pas en charge les compétences. Mettez à jour OpenBot sur l’hôte.",
+    "Cet hôte ne prend pas en charge les compétences. Mettez à jour Slavebot sur l’hôte.",
   "mobile.agent.info.noSkills": "Aucune compétence pour l’instant.",
   "mobile.agent.info.skillsManaged": "Les compétences de cet agent sont gérées sur l’hôte.",
   "mobile.agent.info.skillsAddOnComputer":
-    "Utilisez + pour créer une compétence avec cet agent. Ajoutez des compétences de la marketplace dans OpenBot sur un ordinateur ou dans l’application web.",
+    "Utilisez + pour créer une compétence avec cet agent. Ajoutez des compétences de la marketplace dans Slavebot sur un ordinateur ou dans l’application web.",
   "mobile.agent.info.filesUnsupported":
-    "Cet hôte ne prend pas en charge la gestion des fichiers. Mettez à jour OpenBot sur l’hôte.",
+    "Cet hôte ne prend pas en charge la gestion des fichiers. Mettez à jour Slavebot sur l’hôte.",
   "mobile.agent.info.memoryGone": "Ce souvenir n’est plus disponible.",
   "mobile.agent.info.routineGone": "Cette routine n’est plus disponible.",
   "mobile.agent.skill.workspaceFolder": "Dossier de l’espace de travail",
@@ -141,7 +141,7 @@ export const messages = {
   "mobile.agent.skill.uninstallNamed": "Désinstaller {name}",
   "mobile.agent.skill.uninstallTitle": "Désinstaller {name} ?",
   "mobile.agent.skill.uninstallBody":
-    "OpenBot va retirer cette compétence de l’agent. L’historique de discussion reste.",
+    "Slavebot va retirer cette compétence de l’agent. L’historique de discussion reste.",
   "mobile.agent.skill.uninstallModifiedBody":
     "Cette compétence a des modifications locales dans l’espace de travail de l’agent. La désinstallation supprime ces fichiers. L’historique de discussion reste.",
   "mobile.agent.skill.uninstalling": "Désinstallation…",
@@ -149,7 +149,7 @@ export const messages = {
   "mobile.agent.skill.enableFailed": "Impossible d’activer {name}.",
   "mobile.agent.skill.disableFailed": "Impossible de désactiver {name}.",
   "mobile.agent.skill.manageUnsupported":
-    "Cet hôte ne peut pas modifier les compétences. Mettez à jour OpenBot sur l’hôte.",
+    "Cet hôte ne peut pas modifier les compétences. Mettez à jour Slavebot sur l’hôte.",
   "mobile.agent.discard.title": "Abandonner les modifications ?",
   "mobile.agent.discard.body": "Vos modifications n’ont pas été enregistrées.",
   "mobile.agent.discard.keepEditing": "Continuer à modifier",
@@ -189,7 +189,7 @@ export const messages = {
   "mobile.agent.record.addEventFilter": "Ajouter un filtre",
   "mobile.agent.record.removeEventFilter": "Supprimer le filtre",
   "mobile.agent.record.eventsUnsupported":
-    "Cet hôte ne prend pas en charge les routines déclenchées par événement. Mettez à jour OpenBot sur l’hôte.",
+    "Cet hôte ne prend pas en charge les routines déclenchées par événement. Mettez à jour Slavebot sur l’hôte.",
   "mobile.agent.webhook.url": "Point de terminaison",
   "mobile.agent.webhook.urlNew":
     "Enregistrez la routine pour obtenir son point de terminaison et son secret de signature.",
@@ -268,7 +268,7 @@ export const messages = {
   "mobile.agent.record.resultDestination.createFailed":
     "La routine est enregistrée, mais pas son emplacement de messagerie. Ouvrez la routine pour choisir à nouveau l’emplacement.",
   "mobile.agent.record.resultDestinationUnsupported":
-    "Cet hôte ne peut pas envoyer les réponses des routines vers un emplacement de messagerie. Mettez à jour OpenBot sur l’hôte.",
+    "Cet hôte ne peut pas envoyer les réponses des routines vers un emplacement de messagerie. Mettez à jour Slavebot sur l’hôte.",
   "mobile.agent.record.enabled": "Activée",
   "mobile.agent.record.routine": "Routine",
   "mobile.agent.record.testStarting": "Démarrage…",
@@ -284,7 +284,7 @@ export const messages = {
   "mobile.agent.permissions.title": "Autorisations",
   "mobile.agent.advanced.title": "Avancé",
   "mobile.agent.runtime.unavailable": "Indisponible",
-  "mobile.agent.runtime.updateToUse": "Mettez à jour OpenBot pour utiliser {name}",
+  "mobile.agent.runtime.updateToUse": "Mettez à jour Slavebot pour utiliser {name}",
   "mobile.agent.runtime.hostDefault": "Par défaut de l’hôte",
   "mobile.agent.runtime.provider": "Fournisseur",
   "mobile.agent.runtime.account": "Compte",
@@ -311,7 +311,7 @@ export const messages = {
     "Le mode Turbo est activé sur cet hôte, donc chaque agent approuve automatiquement.",
   "mobile.agent.access.workspaceNote": "L’agent travaille dans son espace de travail et le dossier partagé de l’hôte.",
   "mobile.agent.access.askNote":
-    "L’agent vous demande avant d’utiliser un outil OpenBot ou de publier un site, et quand son fournisseur demande une approbation.",
+    "L’agent vous demande avant d’utiliser un outil Slavebot ou de publier un site, et quand son fournisseur demande une approbation.",
   "mobile.agent.access.fullNote": "L’agent agit sans demander, sauf pour les questions qu’il vous pose.",
   "mobile.agent.access.fullTitle": "Donner un accès complet à cet agent ?",
   "mobile.agent.access.askTitle": "Laisser cet agent travailler hors de son espace de travail ?",
@@ -375,7 +375,7 @@ export const messages = {
   "mobile.agent.browserProfile.manage": "Gérer les profils",
   "mobile.agent.browserProfile.footer":
     "Chaque profil garde ses propres connexions et cookies. Un changement ferme les onglets ouverts de l’agent.",
-  "mobile.agent.browserProfile.saveFailed": "OpenBot n’a pas pu modifier le profil de navigateur de l’agent.",
+  "mobile.agent.browserProfile.saveFailed": "Slavebot n’a pas pu modifier le profil de navigateur de l’agent.",
   "mobile.agent.planCard.label": "Montrer le plan avant les longues tâches",
   "mobile.agent.planCard.footer":
     "Avant une longue tâche, l’agent montre son plan. Il commence après 10 s ou quand vous appuyez sur Démarrer.",
@@ -389,7 +389,7 @@ export const messages = {
   "mobile.agent.notificationLevel.footer":
     "« Me notifier pour » ne concerne que vous et s’applique sur tous vos appareils.",
   "mobile.agent.notificationLevel.unsupported":
-    "Ce serveur ne peut pas garder votre propre niveau de notifications pour un agent. Mettez à jour OpenBot sur l’ordinateur qui l’exécute.",
+    "Ce serveur ne peut pas garder votre propre niveau de notifications pour un agent. Mettez à jour Slavebot sur l’ordinateur qui l’exécute.",
   "mobile.agent.newChat.title": "Nouvelle discussion",
   "mobile.agent.newChat.starting": "Démarrage de la nouvelle discussion…",
   "mobile.agent.newChat.footer": "L’agent oublie cette discussion. Sa configuration reste.",
@@ -413,7 +413,7 @@ export const messages = {
     "Aucune table pour le moment. Un agent en crée une lui-même quand une tâche a besoin d’enregistrements entre les tours, et chaque agent peut l’utiliser.",
   "mobile.agent.tables.note":
     "Tous les agents de cet hôte partagent ces tables. Une table supprimée disparaît pour tous les agents.",
-  "mobile.agent.tables.madeOutside": "Créée hors d’OpenBot · n’importe quel agent peut la supprimer",
+  "mobile.agent.tables.madeOutside": "Créée hors d’Slavebot · n’importe quel agent peut la supprimer",
   "mobile.agent.tables.keptBy": "Conservée par {name}",
   "mobile.agent.tables.keptByDeleted": "Conservée par un agent qui n’existe plus",
   "mobile.agent.tables.notCounted": "Non compté",
@@ -424,7 +424,7 @@ export const messages = {
     "La table est supprimée pour tous les agents. Les enregistrements ne pourront pas être récupérés.",
   "mobile.agent.tables.keep": "Conserver",
   "mobile.agent.tables.deleteFailed": "Impossible de supprimer la table",
-  "mobile.agent.tables.deleteFailedBody": "OpenBot n’a pas pu supprimer cette table.",
+  "mobile.agent.tables.deleteFailedBody": "Slavebot n’a pas pu supprimer cette table.",
   "mobile.agent.tables.unsupported": "Cet hôte ne peut pas afficher ses tables sur un appareil distant.",
   "mobile.agent.publish.title": "Publier",
   "mobile.agent.publish.loading": "Chargement…",
@@ -521,7 +521,7 @@ export const messages = {
   "mobile.agent.list.waiting.state.question": "Attend votre réponse",
   "mobile.agent.list.waiting.state.approval": "Attend votre approbation",
   "mobile.agent.list.waiting.state.takeover": "Vous attend dans le navigateur",
-  "mobile.agent.add.failed": "OpenBot n’a pas pu créer cet agent.",
+  "mobile.agent.add.failed": "Slavebot n’a pas pu créer cet agent.",
   "mobile.agent.add.create": "Créer l’agent",
   "mobile.agent.add.creating": "Création…",
   "mobile.agent.form.name": "Nom",
@@ -532,7 +532,7 @@ export const messages = {
   "mobile.agent.add.nameRequired": "Saisissez un nom pour cet agent.",
   "mobile.agent.edit.loading": "Chargement de l’agent…",
   "mobile.agent.edit.gone": "Cet agent n’est plus disponible sur cet hôte.",
-  "mobile.agent.edit.failed": "OpenBot n’a pas pu mettre à jour cet agent.",
+  "mobile.agent.edit.failed": "Slavebot n’a pas pu mettre à jour cet agent.",
   "mobile.agent.edit.appearance": "Modifier l’apparence",
   "mobile.agent.edit.title": "Titre",
   "mobile.agent.edit.titlePlaceholder": "Décrivez ce que fait votre agent",
@@ -617,7 +617,7 @@ export const messages = {
   "mobile.agent.folders.inShared": "{folder} est dans le dossier partagé, donc {agent} peut déjà le modifier",
   "mobile.agent.folders.inFolder": "{folder} est dans {parent}, qui est déjà ajouté",
   "mobile.agent.folders.protected":
-    "Vous ne pouvez pas ajouter {folder}, car il contient des données OpenBot ou les fichiers d’autres agents",
+    "Vous ne pouvez pas ajouter {folder}, car il contient des données Slavebot ou les fichiers d’autres agents",
   "mobile.agent.folders.missing": "{folder} n’est pas un dossier de l’ordinateur hôte",
   "mobile.agent.folders.limit": {
     one: "Vous pouvez ajouter {count} dossier au maximum",

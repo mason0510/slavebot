@@ -24,7 +24,7 @@ export const messages = {
   "error.agent.instructionsTooLarge":
     "Het instructiebestand is te groot om hier te openen. Kort het in met een teksteditor.",
   "error.agent.instructionsOutside":
-    "Het instructiebestand verwijst naar een plek buiten de werkruimte van de agent, dus OpenBot opent het niet.",
+    "Het instructiebestand verwijst naar een plek buiten de werkruimte van de agent, dus Slavebot opent het niet.",
   "error.agent.instructionsReadFailed": "Kan het instructiebestand niet lezen.",
   "error.agent.instructionsSaveFailed": "Kan het instructiebestand niet opslaan.",
   "error.agent.profileGenerationBusy": "Er wordt al een profiel gemaakt. Probeer het zo opnieuw.",
@@ -71,15 +71,15 @@ export const messages = {
   "error.agent.changedWhileDuplicating": "De agent is gewijzigd terwijl hij werd gedupliceerd. Probeer het opnieuw.",
   "error.agent.duplicatedAgentGone": "De gedupliceerde agent bestaat niet meer.",
   "error.agent.stateCorrupt":
-    "De status van de agent is beschadigd of komt van een nieuwere versie van OpenBot; OpenBot overschrijft deze niet.",
+    "De status van de agent is beschadigd of komt van een nieuwere versie va Slavebot; Slavebot overschrijft deze niet.",
   "error.agent.oldRoleField":
-    "Opgeslagen agentprofielen gebruiken het oude rolveld; werk de gegevens bij voordat je OpenBot start.",
-  "error.agent.duplicateIds": "De status van de agents bevat dubbele agent-id’s; OpenBot overschrijft deze niet.",
-  "error.agent.copyNameFailed": "OpenBot kon geen unieke naam voor de kopie van de agent maken.",
+    "Opgeslagen agentprofielen gebruiken het oude rolveld; werk de gegevens bij voordat je Slavebot start.",
+  "error.agent.duplicateIds": "De status van de agents bevat dubbele agent-id’s; Slavebot overschrijft deze niet.",
+  "error.agent.copyNameFailed": "Slavebot kon geen unieke naam voor de kopie van de agent maken.",
   "error.agent.endpointRemoved":
     "Het endpoint dat deze agent gebruikte, is verwijderd. Kies een ander model voor de agent.",
   "error.agent.turnStalled":
-    "{provider} reageerde niet meer, dus OpenBot heeft deze beurt beëindigd. Stuur het bericht opnieuw, of kies een ander model.",
+    "{provider} reageerde niet meer, dus Slavebot heeft deze beurt beëindigd. Stuur het bericht opnieuw, of kies een ander model.",
   "error.agent.selectedGone": "De gekozen agent bestaat niet meer.",
   "error.agent.profileEndpointsChanged":
     "De aangepaste endpoints zijn gewijzigd tijdens het maken. Probeer het opnieuw.",
@@ -101,9 +101,9 @@ export const messages = {
   "error.agent.saveOtherAgent": "Deze opslag hoort bij een andere agent.",
   "error.agent.savedGone": "De opgeslagen agent bestaat niet meer.",
   "error.agent.storedProfileUnreadable":
-    "Een opgeslagen agentprofiel heeft een onleesbare waarde voor “{field}”; werk de gegevens bij voordat je OpenBot start.",
+    "Een opgeslagen agentprofiel heeft een onleesbare waarde voor “{field}”; werk de gegevens bij voordat je Slavebot start.",
   "error.agent.storedProfileUnreadableId":
-    "Opgeslagen agentprofiel {id} heeft een onleesbare waarde voor “{field}”; werk de gegevens bij voordat je OpenBot start.",
+    "Opgeslagen agentprofiel {id} heeft een onleesbare waarde voor “{field}”; werk de gegevens bij voordat je Slavebot start.",
   "error.agent.queueEditRejected": "Wijziging van de wachtrij geweigerd: {reason}",
   "error.agent.computerUseLocalOnly": "Computerbesturing kun je alleen wijzigen op de computer waarop de agent draait.",
   "error.agent.automationLocalOnly": "Lokale scripts kun je alleen toestaan op de computer waarop de agent draait.",
@@ -130,7 +130,7 @@ export const messages = {
   "error.agent.lowMemoryServer":
     "Deze server heeft weinig geheugen. Je bericht wacht in de wachtrij en start zodra er geheugen vrij is.",
   "error.agent.workspaceOnlyToolMissing":
-    "Alleen werkruimte heeft {tool} nodig, maar OpenBot heeft dit niet gevonden. Installeer het, of kies Volledige toegang in de instellingen van de agent.",
+    "Alleen werkruimte heeft {tool} nodig, maar Slavebot heeft dit niet gevonden. Installeer het, of kies Volledige toegang in de instellingen van de agent.",
   "error.agent.claudeSandboxUnavailable":
     "Alleen werkruimte heeft de Claude-sandbox nodig, maar Claude kan die op deze computer niet starten: {reason}. Kies Volledige toegang of een andere aanbieder in de instellingen van de agent.",
   "error.agent.screenCaptureOff":
@@ -152,7 +152,7 @@ export const messages = {
   "error.agent.screenCaptureRegionOutside":
     "Het gebied valt niet binnen één beeldscherm. Gebruik bureaubladpunten binnen de grenzen van één beeldscherm uit list_capture_sources.",
   "error.agent.screenCapturePermissionMissing":
-    "OpenBot heeft geen toestemming voor schermopname. Vraag de gebruiker om Systeeminstellingen > Privacy en beveiliging > Scherm- en systeemaudio-opname te openen, OpenBot aan te zetten en OpenBot daarna te stoppen en opnieuw te openen.",
+    "Slavebot heeft geen toestemming voor schermopname. Vraag de gebruiker om Systeeminstellingen > Privacy en beveiliging > Scherm- en systeemaudio-opname te openen, Slavebot aan te zetten en Slavebot daarna te stoppen en opnieuw te openen.",
   "error.agent.screenCaptureEmptyWindows":
     "Windows gaf een leeg beeld. Vraag de gebruiker om de computer te ontgrendelen en beschermde inhoud te sluiten. Ook een beleid van de organisatie kan schermopname blokkeren.",
   "error.agent.screenCaptureFailed": "De schermopname is mislukt. Probeer het opnieuw.",

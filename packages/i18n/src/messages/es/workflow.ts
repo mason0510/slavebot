@@ -203,8 +203,8 @@ export const messages = {
   "workflow.github.filter.branch": "Rama base es",
   "workflow.github.filter.titleValue": "Título contiene «{text}»",
   "workflow.github.filter.branchValue": "Rama base es {branch}",
-  "workflow.github.alert.missing": "OpenBot no puede ver {repository} en GitHub.",
-  "workflow.github.alert.readOnly": "OpenBot no puede cambiar incidencias ni pull requests en {repository}.",
+  "workflow.github.alert.missing": "Slavebot no puede ver {repository} en GitHub.",
+  "workflow.github.alert.readOnly": "Slavebot no puede cambiar incidencias ni pull requests en {repository}.",
   "workflow.github.alert.eventsOff": "GitHub aún no envía eventos de {repository}.",
   "workflow.github.alert.noEvent":
     "El activador no es un evento de GitHub. Elige un repositorio y toma el número de la entrada.",
@@ -212,7 +212,7 @@ export const messages = {
     "{action} solo funciona en pull requests. El activador se inicia con incidencias.",
   "workflow.github.history.name": "Eventos",
   "workflow.github.history.none": "Ninguno",
-  "workflow.github.history.offline": "OpenBot estaba sin conexión",
+  "workflow.github.history.offline": "Slavebot estaba sin conexión",
   "workflow.github.history.waitingGroup": "En espera",
   "workflow.github.history.startedGroup": "Ejecuciones iniciadas",
   "workflow.github.history.skippedGroup": "Omitidos",
@@ -418,10 +418,10 @@ export const messages = {
   "workflow.canvas.version.run": "Antes de ejecutar",
   "workflow.canvas.deleteUndo.title": "{name} eliminado",
   "workflow.canvas.deleteUndo.action": "Deshacer",
-  "workflow.page.failed": "OpenBot no pudo hacerlo. Inténtalo de nuevo.",
+  "workflow.page.failed": "Slavebot no pudo hacerlo. Inténtalo de nuevo.",
   "workflow.page.conflict": "Cambiado en otro dispositivo. Deshaz para recuperar tus cambios.",
   "workflow.page.needsNewerApp":
-    "Este flujo de trabajo tiene pasos de una versión más reciente de OpenBot. Actualiza OpenBot para cambiarlo.",
+    "Este flujo de trabajo tiene pasos de una versión más reciente de Slavebot. Actualiza Slavebot para cambiarlo.",
   "workflow.page.manageOnly":
     "Para cambiar este flujo de trabajo, necesitas acceso de gestión a cada uno de sus agentes.",
 } as const satisfies PartialTranslation<typeof source>;

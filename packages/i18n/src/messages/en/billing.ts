@@ -93,7 +93,7 @@ export const messages = defineMessages("billing", {
   // The row under the current license row that sells a license. {count} is the smallest Team license.
   "billing.license.offer.title": "Commercial license",
   "billing.license.offer.description": "Starter for 1 user, or Team for {count} or more users.",
-  "billing.license.buy.description": "How many people use OpenBot at work? AI agents are not users.",
+  "billing.license.buy.description": "How many people use Slavebot at work? AI agents are not users.",
   "billing.license.buy.confirm": "Continue to payment",
   "billing.license.trial.until": "Free until {date}",
   "billing.license.trial.confirm": "Start free trial",
@@ -158,9 +158,9 @@ export const messages = defineMessages("billing", {
   // {percent} is a whole number, such as 20.
   "billing.order.yearlySaving": "−{percent}% yearly",
   "billing.order.server.title": "Hosted server",
-  "billing.order.server.summary": "We run OpenBot for your team.",
+  "billing.order.server.summary": "We run Slavebot for your team.",
   "billing.order.server.none": "No server",
-  "billing.order.server.noneDetail": "Run OpenBot on your own computer",
+  "billing.order.server.noneDetail": "Run Slavebot on your own computer",
   "billing.order.server.bestValue": "Best value",
   "billing.order.server.bestFor.starter": "Best for one person",
   "billing.order.server.bestFor.standard": "Best for a small team",
@@ -170,7 +170,7 @@ export const messages = defineMessages("billing", {
   // {speed} is how many times faster than the Starter server, such as 2.
   "billing.order.server.speed": "{speed}× speed",
   "billing.order.license.title": "License",
-  "billing.order.license.summary": "To use OpenBot at work.",
+  "billing.order.license.summary": "To use Slavebot at work.",
   "billing.order.license.none": "No license",
   "billing.order.license.noneDetail": "Personal and noncommercial use",
   "billing.order.license.starter": "Starter license",

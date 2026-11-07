@@ -336,7 +336,7 @@ class SlackAdapter implements MessagingAdapter {
   });
 
   readonly #author = Effect.fnUntraced(function* (this: SlackAdapter, message: DynamicRecord) {
-    if (message.user === this.#botUserId) return "OpenBot";
+    if (message.user === this.#botUserId) return "Slavebot";
     if (message.bot_id !== undefined || !isString(message.user)) {
       const profile = isDynamicRecord(message.bot_profile) ? message.bot_profile.name : undefined;
       const name = isString(message.username) ? message.username : isString(profile) ? profile : "a bot";

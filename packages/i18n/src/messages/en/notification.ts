@@ -19,8 +19,8 @@ export const messages = defineMessages("notification", {
   "notification.channelMessage": "Sent a message.",
   "notification.usageLimit.title": "{provider} account reached its limit",
   "notification.usageLimit.body": {
-    one: "{count} agent waits. OpenBot will try again later.",
-    other: "{count} agents wait. OpenBot will try again later.",
+    one: "{count} agent waits. Slavebot will try again later.",
+    other: "{count} agents wait. Slavebot will try again later.",
   },
   "notification.usageLimit.bodyResets": {
     one: "{count} agent waits. Resets {reset}.",
@@ -32,7 +32,7 @@ export const messages = defineMessages("notification", {
   "notification.machineAlert.cpu": "{server}: CPU {percent} busy",
   "notification.machineAlert.body": "It passed the alert level of {level}. See Server settings > Storage.",
   "notification.test": "Notifications are working.",
-  "notification.welcome": "OpenBot will tell you here when an agent needs you.",
+  "notification.welcome": "Slavebot will tell you here when an agent needs you.",
   // The toast region in each window.
   "notification.toast.region": "Notifications",
   "notification.toast.close": "Close notification",

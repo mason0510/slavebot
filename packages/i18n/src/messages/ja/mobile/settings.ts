@@ -16,7 +16,7 @@ export const messages = {
   "mobile.settings.about.privacy": "プライバシーポリシー",
   "mobile.settings.home.profile": "プロフィール",
   "mobile.settings.home.preferences": "環境設定",
-  "mobile.settings.home.about": "OpenBot について",
+  "mobile.settings.home.about": "Slavebot について",
   "mobile.settings.home.support": "サポート",
   "mobile.settings.home.supportHint": "ヘルプとサポートログの保存",
   "mobile.settings.support.help": "ヘルプ",
@@ -31,7 +31,7 @@ export const messages = {
   "mobile.settings.support.clearTitle": "サポートログを消去しますか？",
   "mobile.settings.support.clearBody": "このスマートフォンのログから、すべてのイベントを削除します。",
   "mobile.settings.support.logFooter":
-    "ログはこのスマートフォンに保存され、OpenBot が送信することはありません。接続の手順、リクエスト、エラーを記録します。メッセージやファイルは記録せず、パスワードとトークンは伏せて記録します。共有する前にファイルの内容を確認してください。",
+    "ログはこのスマートフォンに保存され、Slavebot が送信することはありません。接続の手順、リクエスト、エラーを記録します。メッセージやファイルは記録せず、パスワードとトークンは伏せて記録します。共有する前にファイルの内容を確認してください。",
   "mobile.settings.support.saveFailed": "ログファイルを保存できませんでした。もう一度お試しください。",
   "mobile.settings.support.sharingUnavailable": "このスマートフォンでは共有を利用できません。",
   "mobile.settings.support.recent": "最近のイベント",
@@ -91,27 +91,27 @@ export const messages = {
   "mobile.settings.feedback.retry": "触覚フィードバックの設定をもう一度保存",
   "mobile.settings.liveActivities.title": "ライブアクティビティ",
   "mobile.settings.liveActivities.footer":
-    "OpenBot の実行中、エージェントの作業、メッセージ、質問、承認をロック画面と Dynamic Island に表示します。",
+    "Slavebot の実行中、エージェントの作業、メッセージ、質問、承認をロック画面と Dynamic Island に表示します。",
   "mobile.settings.liveActivities.toggle": "エージェントのアクティビティを表示",
   "mobile.settings.liveActivities.retry": "ライブアクティビティの設定をもう一度保存",
   "mobile.settings.notifications.title": "通知",
   "mobile.settings.notifications.toggle": "通知を許可",
   "mobile.settings.notifications.footer":
-    "エージェントが作業を終えたとき、エラーで止まったとき、または入力、承認、ブラウザーでの操作が必要なときに通知します。このアプリまたはデスクトップアプリで OpenBot を使っている間は通知しません。ライブアクティビティの表示中は、代わりにライブアクティビティに表示します。",
+    "エージェントが作業を終えたとき、エラーで止まったとき、または入力、承認、ブラウザーでの操作が必要なときに通知します。このアプリまたはデスクトップアプリで Slavebot を使っている間は通知しません。ライブアクティビティの表示中は、代わりにライブアクティビティに表示します。",
   "mobile.settings.notifications.footerAndroid":
-    "エージェントが作業を終えたとき、エラーで止まったとき、または入力、承認、ブラウザーでの操作が必要なときに通知します。このアプリまたはデスクトップアプリで OpenBot を使っている間は通知しません。",
-  "mobile.settings.notifications.denied": "iOS の設定で OpenBot の通知がオフになっています。",
-  "mobile.settings.notifications.deniedAndroid": "Android の設定で OpenBot の通知がオフになっています。",
+    "エージェントが作業を終えたとき、エラーで止まったとき、または入力、承認、ブラウザーでの操作が必要なときに通知します。このアプリまたはデスクトップアプリで Slavebot を使っている間は通知しません。",
+  "mobile.settings.notifications.denied": "iOS の設定で Slavebot の通知がオフになっています。",
+  "mobile.settings.notifications.deniedAndroid": "Android の設定で Slavebot の通知がオフになっています。",
   "mobile.settings.notifications.openSettings": "iOS の設定を開く",
   "mobile.settings.notifications.openSettingsAndroid": "Android の設定を開く",
   "mobile.settings.notifications.preview": "返信のプレビューを表示",
   "mobile.settings.notifications.previewFooter":
-    "返信の冒頭、質問、または承認が必要な操作を表示します。Apple と OpenBot アカウントサービスはこの内容を読めません。",
+    "返信の冒頭、質問、または承認が必要な操作を表示します。Apple と Slavebot アカウントサービスはこの内容を読めません。",
   "mobile.settings.notifications.previewFooterAndroid":
-    "返信の冒頭、質問、または承認が必要な操作を表示します。Google と OpenBot アカウントサービスはこの内容を読めません。",
+    "返信の冒頭、質問、または承認が必要な操作を表示します。Google と Slavebot アカウントサービスはこの内容を読めません。",
   "mobile.settings.notifications.sound": "サウンド",
   "mobile.settings.notifications.playSound": "サウンドを再生",
-  "mobile.settings.notifications.sound.openbot": "OpenBot",
+  "mobile.settings.notifications.sound.openbot": "Slavebot",
   "mobile.settings.notifications.sound.warm": "あたたか",
   "mobile.settings.notifications.sound.mech": "メカニカル",
   "mobile.settings.notifications.sound.bubble": "バブル",
@@ -119,9 +119,9 @@ export const messages = {
   "mobile.settings.notifications.sound.default": "iOS のデフォルト",
   "mobile.settings.notifications.sound.defaultAndroid": "Android のデフォルト",
   "mobile.settings.notifications.soundFooter":
-    "通知とライブアクティビティはこのサウンドを再生します。ライブアクティビティは画面も点灯します。OpenBot のサウンドは、デスクトップアプリがタスク完了時に鳴らすサウンドです。その次の 4 つは、デスクトップアプリのサウンドテーマのサウンドです。",
+    "通知とライブアクティビティはこのサウンドを再生します。ライブアクティビティは画面も点灯します。Slavebot のサウンドは、デスクトップアプリがタスク完了時に鳴らすサウンドです。その次の 4 つは、デスクトップアプリのサウンドテーマのサウンドです。",
   "mobile.settings.notifications.soundFooterAndroid":
-    "通知はこのサウンドを再生します。OpenBot のサウンドは、デスクトップアプリがタスク完了時に鳴らすサウンドです。その次の 4 つは、デスクトップアプリのサウンドテーマのサウンドです。",
+    "通知はこのサウンドを再生します。Slavebot のサウンドは、デスクトップアプリがタスク完了時に鳴らすサウンドです。その次の 4 つは、デスクトップアプリのサウンドテーマのサウンドです。",
   "mobile.settings.notifications.level.all": "すべてのアクティビティ",
   "mobile.settings.notifications.level.needsMe": "自分が必要なときのみ",
   "mobile.settings.notifications.level.nothing": "なし",
@@ -137,7 +137,7 @@ export const messages = {
   "mobile.settings.notifications.serverFooter":
     "このサーバーのどのイベントをこのスマートフォンに通知するかを選びます。デスクトップアプリには別の設定があります。",
   "mobile.settings.notifications.serverUnsupported":
-    "このサーバーは通知を送信できません。サーバーを実行しているコンピューターで OpenBot をアップデートしてください。",
+    "このサーバーは通知を送信できません。サーバーを実行しているコンピューターで Slavebot をアップデートしてください。",
   "mobile.settings.notifications.thisPhone": "このスマートフォン",
   "mobile.settings.notifications.whatYouHear": "通知を受け取る内容",
   "mobile.settings.notifications.wholeServer": "サーバー全体",
@@ -153,7 +153,7 @@ export const messages = {
   "mobile.settings.notifications.levelsFooter":
     "エージェントのレベルをもう一度タップすると、サーバーの設定に従います。",
   "mobile.settings.notifications.agentsUnsupported":
-    "エージェントごとに選ぶには、このサーバーの OpenBot をアップデートしてください。",
+    "エージェントごとに選ぶには、このサーバーの Slavebot をアップデートしてください。",
   "mobile.settings.notifications.agentsOffline": "このサーバーがオンラインになると、エージェントが表示されます。",
   "mobile.settings.notifications.scopeFooter":
     "選んだ内容はあなたのすべてのデバイスに適用されます。ミュートはこのスマートフォンだけに適用されます。",
@@ -181,7 +181,7 @@ export const messages = {
   "mobile.settings.profile.security": "セキュリティ",
   "mobile.settings.profile.accountSessions": "アカウントのセッション",
   "mobile.settings.profile.signOutTitle": "サインアウトしますか？",
-  "mobile.settings.profile.signOutBody": "デスクトップの OpenBot で新しいコードをスキャンして再接続してください。",
+  "mobile.settings.profile.signOutBody": "デスクトップの Slavebot で新しいコードをスキャンして再接続してください。",
   "mobile.settings.profile.signOut": "サインアウト",
   "mobile.settings.voice.title": "音声",
   "mobile.settings.voice.sample": "こんにちは。このように返信を読み上げます。",
@@ -214,7 +214,7 @@ export const messages = {
   "mobile.settings.voice.supertonic.male": "男性の声 {number}",
   "mobile.settings.voice.elevenLabs.title": "ElevenLabs",
   "mobile.settings.voice.elevenLabs.footer":
-    "OpenBot はあなたのキーで各返信のテキストを ElevenLabs に送信し、料金はあなたのアカウントに請求されます。キーはこのスマートフォンのキーチェーンに保存されます。",
+    "Slavebot はあなたのキーで各返信のテキストを ElevenLabs に送信し、料金はあなたのアカウントに請求されます。キーはこのスマートフォンのキーチェーンに保存されます。",
   "mobile.settings.voice.elevenLabs.key": "API キー",
   "mobile.settings.voice.elevenLabs.keySaved": "このスマートフォンに保存済み",
   "mobile.settings.voice.elevenLabs.chooseVoice": "声を選択",
@@ -224,7 +224,7 @@ export const messages = {
   "mobile.settings.voice.elevenLabs.removeBody": "Supertonic 3 が再び返信を読み上げます。",
   "mobile.settings.voice.elevenLabs.saveKey": "キーを保存",
   "mobile.settings.voice.elevenLabs.testing": "キーを確認中",
-  "mobile.settings.voice.elevenLabs.keyHint": "OpenBot は保存前に最初の 2 つの権限を確認します。",
+  "mobile.settings.voice.elevenLabs.keyHint": "Slavebot は保存前に最初の 2 つの権限を確認します。",
   "mobile.settings.voice.elevenLabs.testFailed": "ElevenLabs から応答がありません。もう一度お試しください。",
   "mobile.settings.voice.elevenLabs.getKey": "API キーを取得",
   "mobile.settings.voice.engine.supertonicReady": "このスマートフォン上 · {voice}",
@@ -267,5 +267,5 @@ export const messages = {
   "mobile.settings.voice.tab.listening": "聞き取り",
   "mobile.settings.voice.tab.speaking": "読み上げ",
   "mobile.settings.voice.elevenLabs.recognitionFooter":
-    "OpenBot は 1 回限りのトークンで音声を ElevenLabs にストリーミングし、料金は ElevenLabs のアカウントに請求されます。キーはこの端末に保存されます。",
+    "Slavebot は 1 回限りのトークンで音声を ElevenLabs にストリーミングし、料金は ElevenLabs のアカウントに請求されます。キーはこの端末に保存されます。",
 } as const satisfies PartialTranslation<typeof source>;

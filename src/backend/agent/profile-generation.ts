@@ -126,7 +126,7 @@ export const startToolless = Effect.fnUntraced(function* (client: AgentClient) {
     .request(
       "initialize",
       {
-        clientInfo: { name: "openbot-profile", title: "OpenBot profile generation", version: "0.1.0" },
+        clientInfo: { name: "openbot-profile", title: "Slavebot profile generation", version: "0.1.0" },
         capabilities: { experimentalApi: true },
       },
       decodeRecordResponse,

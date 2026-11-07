@@ -88,7 +88,7 @@ export const ANTIGRAVITY_ACP_FLAVOR: AcpFlavor = {
   // `jetbrains.*` or `android studio*` (`supports_third_party_models`). Any other client gets the
   // Gemini models only, also when the plan includes the others. The server also sends the name and
   // version to Google in its User-Agent (`_surface`), so Google sees these requests as `zed/0.1.0`.
-  clientInfo: { name: "zed", title: "OpenBot", version: "0.1.0" },
+  clientInfo: { name: "zed", title: "Slavebot", version: "0.1.0" },
   // Antigravity 1.4.5 declares these built-ins in each request, about 2.4k tokens. OpenBot has its own
   // routines, and a workflow runs agents that OpenBot does not show. Antigravity keeps the filter with
   // the session; a load or resume sends it again, so a session from an earlier release gets it too.

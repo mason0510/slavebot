@@ -203,8 +203,8 @@ export const messages = {
   "workflow.github.filter.branch": "Basis-Branch ist",
   "workflow.github.filter.titleValue": "Titel enthält „{text}“",
   "workflow.github.filter.branchValue": "Basis-Branch ist {branch}",
-  "workflow.github.alert.missing": "OpenBot kann {repository} auf GitHub nicht sehen.",
-  "workflow.github.alert.readOnly": "OpenBot kann Issues und Pull Requests in {repository} nicht ändern.",
+  "workflow.github.alert.missing": "Slavebot kann {repository} auf GitHub nicht sehen.",
+  "workflow.github.alert.readOnly": "Slavebot kann Issues und Pull Requests in {repository} nicht ändern.",
   "workflow.github.alert.eventsOff": "GitHub sendet noch keine Ereignisse aus {repository}.",
   "workflow.github.alert.noEvent":
     "Der Auslöser ist kein GitHub-Ereignis. Wähle ein Repository und nimm die Nummer aus der Eingabe.",
@@ -212,7 +212,7 @@ export const messages = {
     "{action} funktioniert nur bei Pull Requests. Der Auslöser startet bei Issues.",
   "workflow.github.history.name": "Ereignisse",
   "workflow.github.history.none": "Keine",
-  "workflow.github.history.offline": "OpenBot war offline",
+  "workflow.github.history.offline": "Slavebot war offline",
   "workflow.github.history.waitingGroup": "Wartend",
   "workflow.github.history.startedGroup": "Gestartete Läufe",
   "workflow.github.history.skippedGroup": "Übersprungen",
@@ -418,9 +418,9 @@ export const messages = {
   "workflow.canvas.version.run": "Vor einem Lauf",
   "workflow.canvas.deleteUndo.title": "{name} gelöscht",
   "workflow.canvas.deleteUndo.action": "Rückgängig",
-  "workflow.page.failed": "OpenBot konnte das nicht ausführen. Versuche es erneut.",
+  "workflow.page.failed": "Slavebot konnte das nicht ausführen. Versuche es erneut.",
   "workflow.page.conflict": "Auf einem anderen Gerät geändert. Mit Rückgängig erhältst du deine Änderungen zurück.",
   "workflow.page.needsNewerApp":
-    "Dieser Workflow hat Schritte aus einer neueren OpenBot-Version. Aktualisiere OpenBot, um ihn zu ändern.",
+    "Dieser Workflow hat Schritte aus einer neueren Slavebot-Version. Aktualisiere Slavebot, um ihn zu ändern.",
   "workflow.page.manageOnly": "Um diesen Workflow zu ändern, brauchst du Verwalten-Zugriff auf jeden seiner Agenten.",
 } as const satisfies PartialTranslation<typeof source>;

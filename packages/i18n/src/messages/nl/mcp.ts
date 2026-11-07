@@ -8,10 +8,10 @@ export const messages = {
   "mcp.connect.close": "Verbinden met {name} sluiten",
   "mcp.connect.getKey": "Sleutel ophalen",
   "mcp.connect.keyDescription":
-    "Plak een inloggegeven van je {name}-account. OpenBot verbindt ermee en bewaart het op {host}.",
+    "Plak een inloggegeven van je {name}-account. Slavebot verbindt ermee en bewaart het op {host}.",
   "mcp.connect.thisComputer": "deze computer",
   "mcp.connect.noCredentialDescription":
-    "{name} vraagt geen inloggegevens. OpenBot verbindt één keer om te zien welke tools het biedt.",
+    "{name} vraagt geen inloggegevens. Slavebot verbindt één keer om te zien welke tools het biedt.",
   "mcp.connect.connect": "Verbinden",
   "mcp.connect.required": "Vereist.",
   "mcp.connect.keptOn": "Bewaard op {host}.",
@@ -22,7 +22,7 @@ export const messages = {
   "mcp.local.address": "Adres",
   "mcp.local.docs": "Installatiegids",
   "mcp.signIn.description":
-    "Log in bij je {name}-account. OpenBot krijgt de tools die dat account kan bereiken, en geen wachtwoord.",
+    "Log in bij je {name}-account. Slavebot krijgt de tools die dat account kan bereiken, en geen wachtwoord.",
   "mcp.signIn.waiting": "Wachten op de browser…",
   "mcp.signIn.continue": "Doorgaan naar {name}",
   "mcp.signIn.pageDescription": "Deze pagina is geopend in de browser op {host}. Log hier in.",
@@ -60,7 +60,7 @@ export const messages = {
   "mcp.panel.empty": "Nog geen MCP-servers.",
   "mcp.panel.enable": "{name} inschakelen",
   "mcp.panel.detailsTitle": "Details",
-  "mcp.panel.detailsDescription": "Geef deze server een naam en kies hoe OpenBot hem bereikt.",
+  "mcp.panel.detailsDescription": "Geef deze server een naam en kies hoe Slavebot hem bereikt.",
   "mcp.panel.transport": "Transport",
   "mcp.panel.name": "Naam",
   "mcp.panel.namePlaceholder": "Naam van MCP-server",
@@ -111,16 +111,16 @@ export const messages = {
   "mcp.panel.signInTo": "Inloggen bij {name}",
   "mcp.panel.cancelSignInTo": "Inloggen bij {name} annuleren",
   "mcp.panel.signInWaiting": {
-    one: "Rond het inloggen af in je browser. OpenBot stopt met wachten na {count} minuut.",
-    other: "Rond het inloggen af in je browser. OpenBot stopt met wachten na {count} minuten.",
+    one: "Rond het inloggen af in je browser. Slavebot stopt met wachten na {count} minuut.",
+    other: "Rond het inloggen af in je browser. Slavebot stopt met wachten na {count} minuten.",
   },
   "mcp.panel.signInWaitingOn": {
-    one: "De inlogpagina wordt geopend op {host}. OpenBot stopt met wachten na {count} minuut.",
-    other: "De inlogpagina wordt geopend op {host}. OpenBot stopt met wachten na {count} minuten.",
+    one: "De inlogpagina wordt geopend op {host}. Slavebot stopt met wachten na {count} minuut.",
+    other: "De inlogpagina wordt geopend op {host}. Slavebot stopt met wachten na {count} minuten.",
   },
   "mcp.panel.appTitle": "Inlog-app",
   "mcp.panel.appDescription":
-    "Gebruik een OAuth-app die je hebt geregistreerd bij de aanbieder van de server. OpenBot gebruikt die als de server OpenBot niet zelf kan registreren. Laat leeg om OpenBot zelf te laten registreren.",
+    "Gebruik een OAuth-app die je hebt geregistreerd bij de aanbieder van de server. Slavebot gebruikt die als de server Slavebot niet zelf kan registreren. Laat leeg om Slavebot zelf te laten registreren.",
   "mcp.panel.appSaveFirst": "Sla deze server eerst op. Daarna kun je een inlog-app toevoegen.",
   "mcp.panel.appUrlChanged": "Sla eerst de nieuwe server-URL op. De inlog-app hoort bij de opgeslagen URL.",
   "mcp.panel.appLoadFailed": "Kan de inlog-app niet lezen.",
@@ -143,18 +143,18 @@ export const messages = {
   "mcp.panel.appSaved": "App opgeslagen. Log in om hem te gebruiken.",
   "mcp.panel.appRemoved": "App verwijderd.",
   "mcp.signIn.relayDescription":
-    "Controleer of de inlogpagina op {page} staat en open hem daarna in je browser. Als je klaar bent, stuurt OpenBot de login naar {host}.",
+    "Controleer of de inlogpagina op {page} staat en open hem daarna in je browser. Als je klaar bent, stuurt Slavebot de login naar {host}.",
   "mcp.signIn.relayOpenDescription":
-    "Open de inlogpagina van {page} in je browser. Als je klaar bent, plak je hier het adres dat de browser toont. OpenBot stuurt de login daarna naar {host}.",
+    "Open de inlogpagina van {page} in je browser. Als je klaar bent, plak je hier het adres dat de browser toont. Slavebot stuurt de login daarna naar {host}.",
   "mcp.signIn.relayDeviceDescription":
     "Controleer of de inlogpagina op {page} staat, open hem daarna in je browser en rond het daar af. {host} ziet de login vanzelf.",
   "mcp.signIn.relayOpen": "Inlogpagina openen",
   "mcp.signIn.relayPasteHint":
-    "Als de browser niet terugkeert naar OpenBot, kopieer dan het adres dat hij toont en plak het hier.",
+    "Als de browser niet terugkeert naar Slavebot, kopieer dan het adres dat hij toont en plak het hier.",
   "mcp.signIn.relayPasteRequired":
-    "OpenBot kan de login niet zelf uit de browser halen. Als je klaar bent, kopieer je het adres dat de browser toont en plak je het hier.",
+    "Slavebot kan de login niet zelf uit de browser halen. Als je klaar bent, kopieer je het adres dat de browser toont en plak je het hier.",
   "mcp.signIn.relayAddress": "Browseradres",
   "mcp.signIn.relaySend": "Versturen",
   "mcp.panel.callbackUrlRelayed":
-    "De inlogpagina opent in je browser, en OpenBot op je computer stuurt de login naar {host}. Voeg precies deze URL toe aan de toegestane redirect-URL’s van de app.",
+    "De inlogpagina opent in je browser, en Slavebot op je computer stuurt de login naar {host}. Voeg precies deze URL toe aan de toegestane redirect-URL’s van de app.",
 } as const satisfies PartialTranslation<typeof source>;

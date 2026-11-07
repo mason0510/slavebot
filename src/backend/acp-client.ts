@@ -320,7 +320,7 @@ export const OPENBOT_ACP_CLIENT_CAPABILITIES = {
   session: { configOptions: { boolean: {} } },
 } as const;
 
-export const OPENBOT_ACP_CLIENT_INFO = { name: "openbot", title: "OpenBot", version: "0.1.0" } as const;
+export const OPENBOT_ACP_CLIENT_INFO = { name: "openbot", title: "Slavebot", version: "0.1.0" } as const;
 
 export interface AcpProviderOptions {
   provider: AgentProvider;

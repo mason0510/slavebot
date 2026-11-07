@@ -52,7 +52,7 @@ export const messages = {
   "agentSettings.folders.inWorkspace": "Folder {folder} jest w obszarze roboczym, więc {agent} już może go zmieniać",
   "agentSettings.folders.inShared": "Folder {folder} jest w folderze współdzielonym, więc {agent} już może go zmieniać",
   "agentSettings.folders.inFolder": "Folder {folder} jest w folderze {parent}, który jest już dodany",
-  "agentSettings.folders.protected": "Nie możesz dodać folderu {folder}: zawiera dane OpenBot lub pliki innych agentów",
+  "agentSettings.folders.protected": "Nie możesz dodać folderu {folder}: zawiera dane Slavebot lub pliki innych agentów",
   "agentSettings.folders.missing": "{folder} nie jest folderem na tym komputerze",
   "agentSettings.folders.limit": {
     one: "Możesz dodać maksymalnie {count} folder",
@@ -161,7 +161,7 @@ export const messages = {
   "agentSettings.runtime.fullAccessNote":
     "Agent działa z pełnym dostępem do komputera ze swojego obszaru roboczego i folderu współdzielonego.",
   "agentSettings.runtime.askNote":
-    "Pyta cię, zanim użyje narzędzia OpenBot lub opublikuje witrynę, oraz gdy jego dostawca prosi o zgodę.",
+    "Pyta cię, zanim użyje narzędzia Slavebot lub opublikuje witrynę, oraz gdy jego dostawca prosi o zgodę.",
   "agentSettings.runtime.fullNote": "Działa bez pytania, z wyjątkiem pytań, które ci zadaje.",
   "agentSettings.access.workspace": "Tylko obszar roboczy",
   "agentSettings.access.ask": "Najpierw pytaj",
@@ -233,7 +233,7 @@ export const messages = {
   "agentSettings.runtime.workspaceEnforcedClaude":
     "Edycja pliku poza tymi folderami najpierw zapyta cię o zgodę. Polecenie nie może zapisać poza nimi.",
   "agentSettings.runtime.workspaceUnlimited":
-    "Sterowanie komputerem i przeglądarka OpenBot nie są ograniczone; Sterowanie komputerem możesz wyłączyć poniżej.",
+    "Sterowanie komputerem i przeglądarka Slavebot nie są ograniczone; Sterowanie komputerem możesz wyłączyć poniżej.",
   "agentSettings.computerUse.title": "Sterowanie komputerem",
   "agentSettings.computerUse.description": "Pozwól temu agentowi sterować aplikacjami na tym komputerze",
   "agentSettings.automation.title": "Lokalne skrypty",

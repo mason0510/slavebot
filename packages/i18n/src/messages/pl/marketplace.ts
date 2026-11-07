@@ -24,7 +24,7 @@ export const messages = {
   "marketplace.description.apps": "Połącz narzędzia i usługi, z którymi pracują Twoi agenci.",
   "marketplace.description.agents": "Gotowi agenci z własnymi instrukcjami i umiejętnościami.",
   "marketplace.description.skills": "Instrukcje, które uczą agenta zadania lub narzędzia.",
-  "marketplace.plugins.missing": "Tej wtyczki nie ma w katalogu OpenBot.",
+  "marketplace.plugins.missing": "Tej wtyczki nie ma w katalogu Slavebot.",
   "marketplace.agents.loadingDetail": "Wczytywanie szczegółów agenta…",
   "marketplace.agents.skills": "Umiejętności",
   "marketplace.agents.routines": "Rutyny",
@@ -40,15 +40,15 @@ export const messages = {
   "marketplace.agents.all": "Wszyscy agenci",
   "marketplace.agents.missing": "Tego agenta nie ma w Marketplace.",
   "marketplace.agents.trust.reviewed":
-    "Utworzony przez innego użytkownika OpenBot. OpenBot sprawdził go przed publikacją.",
+    "Utworzony przez innego użytkownika Slavebot. Slavebot sprawdził go przed publikacją.",
   "marketplace.agents.trust.reviewedBeforeAdd":
-    "Utworzony przez innego użytkownika OpenBot. OpenBot sprawdził go przed publikacją. Po dodaniu może działać w Twoim imieniu.",
-  "marketplace.agents.trust.pending": "Udostępniony przez autora, zanim OpenBot go sprawdził.",
+    "Utworzony przez innego użytkownika Slavebot. Slavebot sprawdził go przed publikacją. Po dodaniu może działać w Twoim imieniu.",
+  "marketplace.agents.trust.pending": "Udostępniony przez autora, zanim Slavebot go sprawdził.",
   "marketplace.agents.trust.pendingBeforeAdd":
-    "Udostępniony przez autora, zanim OpenBot go sprawdził. Po dodaniu może działać w Twoim imieniu.",
+    "Udostępniony przez autora, zanim Slavebot go sprawdził. Po dodaniu może działać w Twoim imieniu.",
   "marketplace.agents.source.pending": "Jeszcze niesprawdzony",
   "marketplace.skill.loading": "Wczytywanie umiejętności",
-  "marketplace.try.readFailed": "OpenBot nie mógł odczytać umiejętności tego agenta. Spróbuj ponownie.",
+  "marketplace.try.readFailed": "Slavebot nie mógł odczytać umiejętności tego agenta. Spróbuj ponownie.",
   "marketplace.try.enable": "Włącz tę umiejętność w ustawieniach agenta, aby ją wypróbować.",
   "marketplace.try.repair": "Napraw tę umiejętność w ustawieniach agenta, aby ją wypróbować.",
   "marketplace.try.update": "Zaktualizuj tę umiejętność, aby wypróbować tę wersję.",
@@ -146,10 +146,10 @@ export const messages = {
   "marketplace.app.automation.description":
     "macOS pokazuje jedno pytanie dla każdej aplikacji. Zamknięta aplikacja otwiera się na chwilę, a potem się zamyka.",
   "marketplace.app.automation.request": "Poproś o dostęp",
-  "marketplace.app.automation.allowed": "OpenBot może teraz sterować wszystkimi aplikacjami Apple.",
+  "marketplace.app.automation.allowed": "Slavebot może teraz sterować wszystkimi aplikacjami Apple.",
   "marketplace.app.automation.refused":
-    "macOS nie dał dostępu do: {apps}. Zezwól OpenBot w Ustawienia systemowe › Prywatność i ochrona › Automatyzacja.",
-  "marketplace.app.automation.failed": "OpenBot nie mógł zapytać macOS o: {apps}. Spróbuj ponownie.",
+    "macOS nie dał dostępu do: {apps}. Zezwól Slavebot w Ustawienia systemowe › Prywatność i ochrona › Automatyzacja.",
+  "marketplace.app.automation.failed": "Slavebot nie mógł zapytać macOS o: {apps}. Spróbuj ponownie.",
   "marketplace.app.automation.app.calendar": "Kalendarz",
   "marketplace.app.automation.app.contacts": "Kontakty",
   "marketplace.app.automation.app.mail": "Mail",
@@ -217,7 +217,7 @@ export const messages = {
   "marketplace.plugin.figma.prompt.assets": "Wyeksportuj ikony marketingowe w 2x do pakietu aplikacji.",
   "marketplace.plugin.paper.tagline": "Płótno projektowe oparte na HTML i CSS",
   "marketplace.plugin.paper.description":
-    "Paper pozwala agentom czytać i zapisywać plik projektu otwarty w Paper Desktop: sprawdzać plansze, zaznaczenia, obliczone style, JSX i tokeny oraz tworzyć lub zmieniać ramki, tekst i style. Zainstaluj Paper Desktop, otwórz go raz i otwórz plik przed rozpoczęciem. OpenBot uruchamia Paper CLI instalowane przez Paper Desktop. Paper nie wymaga klucza. Narzędzia zapisu zmieniają otwarty plik, więc sprawdź każdy zapis, zanim go zatwierdzisz.",
+    "Paper pozwala agentom czytać i zapisywać plik projektu otwarty w Paper Desktop: sprawdzać plansze, zaznaczenia, obliczone style, JSX i tokeny oraz tworzyć lub zmieniać ramki, tekst i style. Zainstaluj Paper Desktop, otwórz go raz i otwórz plik przed rozpoczęciem. Slavebot uruchamia Paper CLI instalowane przez Paper Desktop. Paper nie wymaga klucza. Narzędzia zapisu zmieniają otwarty plik, więc sprawdź każdy zapis, zanim go zatwierdzisz.",
   "marketplace.plugin.paper.app":
     "Czyta i zapisuje otwarty plik Paper Desktop przez lokalny serwer MCP przekazywany przez Paper CLI. Wymaga Paper Desktop z otwartym plikiem.",
   "marketplace.plugin.paper.prompt.implement":
@@ -228,7 +228,7 @@ export const messages = {
     "Wypisz tokeny projektu z otwartego pliku Paper i porównaj je z naszym motywem.",
   "marketplace.plugin.appleApps.tagline": "Mail, Kalendarz i więcej na Twoim Macu",
   "marketplace.plugin.appleApps.description":
-    "Apple apps pozwala agentom korzystać z aplikacji Mail, Kalendarz, Kontakty, Przypomnienia, Notatki, Wiadomości i Safari na tym Macu. Działa tylko w macOS. OpenBot uruchamia mcp-icloud, serwer społeczności, którego nie tworzy Apple ani OpenBot. Serwer steruje aplikacjami przez AppleScript na tym komputerze i nie wymaga konta ani klucza. Podczas instalacji OpenBot może od razu poprosić macOS o dostęp do wszystkich tych aplikacji, z jednym pytaniem dla każdej. Jeśli tego nie zrobisz, macOS zapyta, gdy agent po raz pierwszy użyje aplikacji. Aby zmienić to później, otwórz Ustawienia systemowe › Prywatność i ochrona › Automatyzacja. Agenci mogą wysyłać e-maile i wiadomości iMessage oraz zmieniać lub usuwać wydarzenia, kontakty i przypomnienia, więc sprawdź każdy zapis, zanim go zatwierdzisz. To, co odczytują narzędzia, na przykład treść e-maili, trafia do dostawcy modelu agenta.",
+    "Apple apps pozwala agentom korzystać z aplikacji Mail, Kalendarz, Kontakty, Przypomnienia, Notatki, Wiadomości i Safari na tym Macu. Działa tylko w macOS. Slavebot uruchamia mcp-icloud, serwer społeczności, którego nie tworzy Apple ani Slavebot. Serwer steruje aplikacjami przez AppleScript na tym komputerze i nie wymaga konta ani klucza. Podczas instalacji Slavebot może od razu poprosić macOS o dostęp do wszystkich tych aplikacji, z jednym pytaniem dla każdej. Jeśli tego nie zrobisz, macOS zapyta, gdy agent po raz pierwszy użyje aplikacji. Aby zmienić to później, otwórz Ustawienia systemowe › Prywatność i ochrona › Automatyzacja. Agenci mogą wysyłać e-maile i wiadomości iMessage oraz zmieniać lub usuwać wydarzenia, kontakty i przypomnienia, więc sprawdź każdy zapis, zanim go zatwierdzisz. To, co odczytują narzędzia, na przykład treść e-maili, trafia do dostawcy modelu agenta.",
   "marketplace.plugin.appleApps.app":
     "Mail, Kalendarz, Kontakty, Przypomnienia, Notatki, Wiadomości i Safari przez lokalny serwer mcp-icloud. Wymaga macOS i dostępu w Automatyzacji.",
   "marketplace.plugin.appleApps.prompt.unread": "Podsumuj moje dzisiejsze nieprzeczytane e-maile w Apple Mail.",
@@ -435,8 +435,8 @@ export const messages = {
   "marketplace.skills.source.all": "Wszystkie",
   "marketplace.skills.source.verified": "Zweryfikowane",
   "marketplace.skills.source.public": "Publiczne",
-  "marketplace.skills.source.verifiedLong": "Zweryfikowana przez OpenBot",
-  "marketplace.skills.source.publicLong": "Sprawdzona przez OpenBot",
+  "marketplace.skills.source.verifiedLong": "Zweryfikowana przez Slavebot",
+  "marketplace.skills.source.publicLong": "Sprawdzona przez Slavebot",
   "marketplace.skills.sortLabel": "Sortuj",
   "marketplace.skills.sortName": "Sortuj: {name}",
   "marketplace.skills.sort.installs": "Najczęściej używane",

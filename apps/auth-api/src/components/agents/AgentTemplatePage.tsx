@@ -136,7 +136,7 @@ export function AgentTemplatePage(props: AgentTemplatePageProps) {
             <div class="agent-share-action">
               <PluginOpenButtons
                 href={openUrl()}
-                label="Add to OpenBot"
+                label="Add to Slavebot"
                 downloadCopy={`${props.template.name} is added from inside OpenBot. Get the app, then open this link again.`}
               />
             </div>

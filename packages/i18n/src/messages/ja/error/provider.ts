@@ -3,15 +3,15 @@ import type { messages as source } from "../../en/error/provider";
 
 export const messages = {
   "error.provider.mcpConfig":
-    "OpenBot は Codex の設定に MCP サーバーを登録できませんでした。Codex の config.toml が有効で書き込み可能であることを確認してから、OpenBot を再起動してください。",
+    "Slavebot は Codex の設定に MCP サーバーを登録できませんでした。Codex の config.toml が有効で書き込み可能であることを確認してから、Slavebot を再起動してください。",
   "error.provider.computerUseConfig":
-    "OpenBot は Codex の設定に Computer Use を登録できませんでした。Codex の config.toml が有効で書き込み可能であることを確認してから、OpenBot を再起動してください。Computer Use なしで続行するには、エージェントの設定で Computer Use をオフにできます。",
-  "error.provider.codexUnresponsive": "Codex が応答しなくなったため、OpenBot がそのプロセスを終了しました。",
-  "error.provider.acpUnresponsive": "{provider} が時間内に応答しなかったため、OpenBot がそのプロセスを終了しました。",
+    "Slavebot は Codex の設定に Computer Use を登録できませんでした。Codex の config.toml が有効で書き込み可能であることを確認してから、Slavebot を再起動してください。Computer Use なしで続行するには、エージェントの設定で Computer Use をオフにできます。",
+  "error.provider.codexUnresponsive": "Codex が応答しなくなったため、Slavebot がそのプロセスを終了しました。",
+  "error.provider.acpUnresponsive": "{provider} が時間内に応答しなかったため、Slavebot がそのプロセスを終了しました。",
   "error.provider.acpMcpNotLoaded":
-    "{provider} が OpenBot のツールを読み込まなかったため、このエージェントはツールを使えず、チームメイトにも連絡できません。{provider} のチームポリシーがローカル MCP サーバーをブロックしている可能性があります。チーム管理者に許可を依頼してから、もう一度お試しください。",
+    "{provider} が Slavebot のツールを読み込まなかったため、このエージェントはツールを使えず、チームメイトにも連絡できません。{provider} のチームポリシーがローカル MCP サーバーをブロックしている可能性があります。チーム管理者に許可を依頼してから、もう一度お試しください。",
   "error.provider.endpointsReadOnly":
-    "保存されたエンドポイントは新しいバージョンの OpenBot で書き込まれたか、ファイルを読み取れません。変更するには OpenBot を更新してください。",
+    "保存されたエンドポイントは新しいバージョンの Slavebot で書き込まれたか、ファイルを読み取れません。変更するには Slavebot を更新してください。",
   "error.provider.endpointNoSecureStorage":
     "このコンピューターには安全なストレージがないため、API キーやヘッダーを保存できません。それらを削除するか、認証情報が不要なエンドポイントを使用してください。",
   "error.provider.endpointDuplicate":
@@ -22,7 +22,7 @@ export const messages = {
   "error.provider.endpointSecretUnreadable":
     "このコンピューターは保存済みの API キーとヘッダーを読み取れません。失われないように、API キーとヘッダーをもう一度入力してください。",
   "error.provider.discoveryTimeout": "{host} から時間内に応答がありませんでした。",
-  "error.provider.discoveryUnreachable": "OpenBot は {host} に接続できませんでした。",
+  "error.provider.discoveryUnreachable": "Slavebot は {host} に接続できませんでした。",
   "error.provider.discoveryRedirect":
     "{host} がリダイレクトを返しました。サーバーの最終的なアドレスを入力してください。",
   "error.provider.discoveryRefused": "{host} がリクエストを拒否しました。API キーとヘッダーを確認してください。",
@@ -30,7 +30,7 @@ export const messages = {
   "error.provider.discoveryTooLarge": "{host} のモデル一覧が大きすぎます。",
   "error.provider.discoveryInvalid": "{host} は OpenAI 互換のモデル一覧を返しませんでした。",
   "error.provider.detectionSettingsReadOnly":
-    "検出の設定は新しいバージョンの OpenBot で書き込まれたか、ファイルを読み取れません。変更するには OpenBot を更新してください。",
+    "検出の設定は新しいバージョンの Slavebot で書き込まれたか、ファイルを読み取れません。変更するには Slavebot を更新してください。",
   "error.provider.detectionEntryInvalid":
     "アドレスはパスワードを含まない http:// または https:// の URL に、フォルダーは絶対パスにしてください。",
   "error.provider.detectionEntriesTooMany": "アドレスまたはフォルダーが多すぎます。",
@@ -58,15 +58,15 @@ export const messages = {
   "error.provider.bunLicenseChecksum": "Bun ライセンスのチェックサムが一致しません。",
   "error.provider.bunxDamaged": "Bun パッケージマネージャーの実行ツールが見つからないか、破損しています。",
   "error.provider.releaseSourcesUnreachable":
-    "OpenBot はプロバイダーのリリース元に接続できませんでした。接続を確認して、もう一度お試しください。",
+    "Slavebot はプロバイダーのリリース元に接続できませんでした。接続を確認して、もう一度お試しください。",
   "error.provider.runtimesUnsupported": "このプラットフォームではプロバイダーのランタイムを使用できません。",
-  "error.provider.closing": "OpenBot を終了しています。",
+  "error.provider.closing": "Slavebot を終了しています。",
   "error.provider.removeWhileOn": "ダウンロードを削除する前に、プロバイダーをオフにしてください。",
   "error.provider.removeWhileDownloading": "ダウンロードが終わってから削除してください。",
   "error.provider.removeIncomplete":
     "この CLI のファイルを別のプログラムが使用しています。閉じてから、もう一度お試しください。",
   "error.provider.removeDownloadsFailed": "{providers} の CLI のダウンロードを削除できませんでした。",
-  "error.provider.cliOverride": "OpenBot で更新する前に、明示的な CLI パスの指定を削除してください。",
+  "error.provider.cliOverride": "Slavebot で更新する前に、明示的な CLI パスの指定を削除してください。",
   "error.provider.runtimeUpdateIncomplete": "ランタイムの更新が完了しませんでした。",
   "error.provider.downloadHttp": "ランタイムのダウンロードが HTTP {status} で失敗しました。",
   "error.provider.downloadNoData": "ランタイムのダウンロードでデータが返されませんでした。",
@@ -81,7 +81,7 @@ export const messages = {
   "error.provider.unexpectedVersion": "プロバイダーのランタイムが予期しないバージョンを返しました。",
   "error.provider.metadataNoData": "ランタイムのメタデータのダウンロードでデータが返されませんでした。",
   "error.provider.metadataTooLarge": "ランタイムのメタデータが大きすぎます。",
-  "error.provider.requestFailed": "OpenBot は {url} をダウンロードできませんでした。{reason}",
+  "error.provider.requestFailed": "Slavebot は {url} をダウンロードできませんでした。{reason}",
   "error.provider.installRecordMismatch": "ランタイムのインストール記録が一致しません。",
   "error.provider.runtimeChecksum": "プロバイダーのランタイムのチェックサムが一致しません。",
   "error.provider.codexReleaseShape": "Codex のリリース情報の形式が予期しないものです。",
@@ -119,34 +119,34 @@ export const messages = {
   "error.provider.keyInvalidCharacters": "プロバイダーキーに、キーに使えない空白または文字が含まれています。",
   "error.provider.noModel": "選択したプロバイダーに使用できるモデルがありません。",
   "error.provider.noModelNamed": "{provider} に使用できるモデルがありません。",
-  "error.provider.acpNoModels": "ACP CLI が ACP モデルを通知しませんでした。OpenBot は代替モデルを推測しません。",
+  "error.provider.acpNoModels": "ACP CLI が ACP モデルを通知しませんでした。Slavebot は代替モデルを推測しません。",
   "error.provider.endpointRemoveBusy":
     "このエンドポイントを削除する前に、実行中のターンとキューが終わるまでお待ちください。",
-  "error.provider.codexOutdated": "Codex CLI {version} は古すぎます。OpenBot には 0.156.0 以降が必要です。",
+  "error.provider.codexOutdated": "Codex CLI {version} は古すぎます。Slavebot には 0.156.0 以降が必要です。",
   "error.provider.codexNotStarted": "Codex CLI は見つかりましたが、起動できませんでした。",
   "error.provider.codexNotStartedHint":
     "Codex CLI は見つかりましたが、起動できませんでした。新しいターミナルで `codex --version` を実行してください。",
   "error.provider.codexManagedNotStarted":
-    "ChatGPT はダウンロード済みですが、起動できませんでした。OpenBot でもう一度ダウンロードしてください。",
+    "ChatGPT はダウンロード済みですが、起動できませんでした。Slavebot でもう一度ダウンロードしてください。",
   "error.provider.codexMissing":
-    "ChatGPT はダウンロードされていません。続けるには OpenBot でダウンロードしてください。",
-  "error.provider.claudeOutdated": "Claude Code {version} は古すぎます。OpenBot には 2.1.232 以降が必要です。",
+    "ChatGPT はダウンロードされていません。続けるには Slavebot でダウンロードしてください。",
+  "error.provider.claudeOutdated": "Claude Code {version} は古すぎます。Slavebot には 2.1.232 以降が必要です。",
   "error.provider.claudeNotStarted": "Claude CLI は見つかりましたが、起動できませんでした。",
   "error.provider.claudeNotStartedHint":
     "Claude CLI は見つかりましたが、起動できませんでした。新しいターミナルで `claude --version` を実行してください。",
   "error.provider.claudeManagedNotStarted":
-    "Claude はダウンロード済みですが、起動できませんでした。OpenBot でもう一度ダウンロードしてください。",
+    "Claude はダウンロード済みですが、起動できませんでした。Slavebot でもう一度ダウンロードしてください。",
   "error.provider.claudeMissing":
-    "Claude はダウンロードされていません。続けるには OpenBot でダウンロードしてください。",
-  "error.provider.grokOutdated": "Grok CLI {version} は古すぎます。OpenBot には 1.0.5 以降が必要です。",
+    "Claude はダウンロードされていません。続けるには Slavebot でダウンロードしてください。",
+  "error.provider.grokOutdated": "Grok CLI {version} は古すぎます。Slavebot には 1.0.5 以降が必要です。",
   "error.provider.grokNotStarted": "Grok CLI は見つかりましたが、起動できませんでした。",
   "error.provider.grokNotStartedHint":
     "Grok CLI は見つかりましたが、起動できませんでした。新しいターミナルで `grok --version` を実行してください。",
-  "error.provider.grokMissing": "Grok はダウンロードされていません。続けるには OpenBot でダウンロードしてください。",
+  "error.provider.grokMissing": "Grok はダウンロードされていません。続けるには Slavebot でダウンロードしてください。",
   "error.provider.opencodeNotStarted":
     "OpenCode を起動できませんでした。ターミナルで `opencode --version` を実行してください。",
   "error.provider.opencodeMissing":
-    "OpenCode はダウンロードされていません。続けるには OpenBot でダウンロードしてください。",
+    "OpenCode はダウンロードされていません。続けるには Slavebot でダウンロードしてください。",
   "error.provider.codexVersionUnreadable": "Codex CLI のバージョンを読み取れません。",
   "error.provider.claudeVersionUnreadable": "Claude CLI のバージョンを読み取れません。",
   "error.provider.grokVersionUnreadable": "Grok CLI のバージョンを読み取れません。",
@@ -155,7 +155,7 @@ export const messages = {
   "error.provider.connectBeforeProfile": "プロフィールを生成する前に、選択したプロバイダーに接続してください。",
   "error.provider.cliNotReady": "{provider} CLI の準備ができていないか、サインインしていません。",
   "error.provider.cliTimedOut":
-    "{provider} が時間内に応答しませんでした。コンピューターの負荷が高い可能性があります。OpenBot が再試行します。",
+    "{provider} が時間内に応答しませんでした。コンピューターの負荷が高い可能性があります。Slavebot が再試行します。",
   "error.provider.cliTimedOutRefresh":
     "{provider} が時間内に応答しませんでした。コンピューターの負荷が高い可能性があります。プロバイダーを更新して再試行してください。",
   "error.provider.acpStartTimedOut":
@@ -163,7 +163,7 @@ export const messages = {
   "error.provider.acpModelsTimedOut":
     "{provider} が {seconds} 秒以内にモデルを一覧表示しませんでした。コンピューターの負荷が高い可能性があります。",
   "error.provider.startStopped":
-    "{provider} の起動に続けて何度も失敗したため、OpenBot は再試行を停止しました。プロバイダーを更新して再試行してください。",
+    "{provider} の起動に続けて何度も失敗したため、Slavebot は再試行を停止しました。プロバイダーを更新して再試行してください。",
   "error.provider.tempDiskSpace":
     "{provider} の起動には 1 GB 以上の空きディスク容量が必要です。空き容量を確保してから、プロバイダーを更新してください。",
   "error.provider.noCodeSignIn": "{provider} にはコードでサインインできません。",
@@ -178,11 +178,11 @@ export const messages = {
   "error.provider.cliSigningIn":
     "{provider} CLI はサインイン中です。サインインを完了するかキャンセルしてから更新してください。",
   "error.provider.cliBusyUpdate": "{provider} CLI はターンを処理中です。終わるまで待ってから更新してください。",
-  "error.provider.cliSelectFailed": "OpenBot はインストール済みの管理対象 CLI を選択できませんでした。",
+  "error.provider.cliSelectFailed": "Slavebot はインストール済みの管理対象 CLI を選択できませんでした。",
   "error.provider.noAuthenticatedAccount": "{provider} は認証済みのアカウントを返しませんでした。",
   "error.provider.signInExpired":
     "{provider} のサインインの有効期限が切れました。続けるには、もう一度サインインしてください。",
-  "error.provider.cliActivateFailed": "OpenBot は管理対象 CLI を有効にできませんでした。",
+  "error.provider.cliActivateFailed": "Slavebot は管理対象 CLI を有効にできませんでした。",
   "error.provider.cliBusyReconnect": "{provider} CLI はターンを処理中です。終わるまで待ってから再接続してください。",
   "error.provider.cliBusySignOut": "{provider} CLI はターンを処理中です。終わるまで待ってから切断してください。",
   "error.provider.opencodeCredentialsRejected":
@@ -212,19 +212,19 @@ export const messages = {
   "error.provider.opencodeProviderFailed":
     "モデルプロバイダー側で障害が発生しました。お使いの接続は原因ではありません。後でもう一度試すか、別のモデルを選んでください。\n{detail}",
   "error.provider.opencodeNetwork":
-    "OpenCode がモデルプロバイダーに接続できませんでした。OpenBot を実行しているコンピューターのネットワーク接続を確認してから、もう一度お試しください。\n{detail}",
+    "OpenCode がモデルプロバイダーに接続できませんでした。Slavebot を実行しているコンピューターのネットワーク接続を確認してから、もう一度お試しください。\n{detail}",
   "error.provider.opencodeDatabaseNewer":
     "新しいバージョンの OpenCode がデータベースを変更したため、OpenCode はデータベースを開けませんでした。OpenCode をバージョン 2 以降に更新してから、もう一度お試しください。",
   "error.provider.opencodeNoAnswer":
     "OpenCode のモデルが、回答がないままターンを終了しました。もう一度お試しいただくか、別のモデルを選択してください。",
   "error.provider.opencodeReasoningWithoutAnswer":
     "OpenCode のモデルが、推論のあと回答がないままターンを終了しました。もう一度お試しいただくか、別のモデルを選択してください。",
-  "error.provider.chatgptPageFailed": "OpenBot は ChatGPT の接続ページを開けませんでした。",
+  "error.provider.chatgptPageFailed": "Slavebot は ChatGPT の接続ページを開けませんでした。",
   "error.provider.noneReady": "準備ができているエージェントのプロバイダーがありません。",
   "error.provider.claudeTurnActive": "コンテキストを更新する前に、実行中の Claude のターンが終わるまでお待ちください。",
   "error.provider.codexLoginRequired":
     "Codex には ChatGPT サブスクリプションでのサインインが必要です。`codex login` を実行してください。",
-  "error.provider.cliUpdateFailed": "OpenBot は {provider} CLI を更新できませんでした。{reason}",
+  "error.provider.cliUpdateFailed": "Slavebot は {provider} CLI を更新できませんでした。{reason}",
   "error.provider.tryAgain": "もう一度お試しください。",
   "error.provider.noAgentProcess": "{provider} には、このエージェント用に実行中のプロセスがありません。",
   "error.provider.stoppedBeforeAgentProcess": "エージェントのプロセスが開始する前に {provider} が停止しました。",
@@ -233,7 +233,7 @@ export const messages = {
   "error.provider.antigravityChecksum": "Gemini ランタイムのチェックサムが一致しません。",
   "error.provider.antigravityReleaseShape": "Gemini のリリースの形式が予期しないものです。",
   "error.provider.antigravityMissing":
-    "Gemini はダウンロードされていません。続けるには OpenBot でダウンロードしてください。",
+    "Gemini はダウンロードされていません。続けるには Slavebot でダウンロードしてください。",
   "error.provider.antigravityNotStarted": "Gemini サーバーは見つかりましたが、バージョンを読み取れません。",
   "error.provider.antigravityVersionUnreadable": "Gemini サーバーのバージョンを読み取れません。",
   "error.provider.antigravitySignIn": "Gemini を使うには Google でサインインしてください。",
@@ -249,7 +249,7 @@ export const messages = {
   "error.provider.cursorChecksum": "Cursor ランタイムのチェックサムが一致しません。",
   "error.provider.cursorReleaseShape": "Cursor のリリースの形式が予期しないものです。",
   "error.provider.cursorMissing":
-    "Cursor はダウンロードされていません。続けるには OpenBot でダウンロードしてください。",
+    "Cursor はダウンロードされていません。続けるには Slavebot でダウンロードしてください。",
   "error.provider.cursorNotStarted": "Cursor エージェントは見つかりましたが、バージョンを読み取れません。",
   "error.provider.cursorVersionUnreadable": "Cursor エージェントのバージョンを読み取れません。",
   "error.provider.cursorSignIn": "Cursor を使うには Cursor でサインインするか、CURSOR_API_KEY を設定してください。",
@@ -257,18 +257,18 @@ export const messages = {
   "error.provider.clinePackageMismatch": "Cline のパッケージがランタイムカタログと一致しません。",
   "error.provider.clineChecksum": "Cline ランタイムのチェックサムが一致しません。",
   "error.provider.clineLicenseChecksum": "Cline のライセンスのチェックサムが一致しません。",
-  "error.provider.clineMissing": "Cline はダウンロードされていません。続けるには OpenBot でダウンロードしてください。",
-  "error.provider.clineOutdated": "Cline CLI {version} は古すぎます。OpenBot には 3.0.68 以降が必要です。",
+  "error.provider.clineMissing": "Cline はダウンロードされていません。続けるには Slavebot でダウンロードしてください。",
+  "error.provider.clineOutdated": "Cline CLI {version} は古すぎます。Slavebot には 3.0.68 以降が必要です。",
   "error.provider.clineNotStarted": "Cline を起動できませんでした。ターミナルで `cline --version` を実行してください。",
   "error.provider.clineVersionUnreadable": "Cline CLI のバージョンを読み取れません。",
   "error.provider.clineSignIn": "Cline を使うには Cline でサインインするか、CLINE_API_KEY を設定してください。",
   "error.provider.usageLimitReached": "アカウントが使用量の上限に達しました。",
   "error.provider.foreignReasoning":
-    "別のアカウントまたは API キーが受け取ったため、{provider} はこのチャットの以前の推論を受け付けませんでした。OpenBot はチャット履歴を引き継いだ新しい {provider} セッションを開始しました。もう一度お試しください。",
+    "別のアカウントまたは API キーが受け取ったため、{provider} はこのチャットの以前の推論を受け付けませんでした。Slavebot はチャット履歴を引き継いだ新しい {provider} セッションを開始しました。もう一度お試しください。",
   "error.provider.opencodeSessionRejected":
-    "OpenCode がリクエストを拒否しましたが、原因は示されていません。長いチャットやモデルの変更後に起こることがあります。OpenBot はチャット履歴を引き継いだ新しい OpenCode セッションを開始しました。もう一度お試しください。エラーが続く場合は、別のモデルを選ぶか推論レベルを下げてください。",
+    "OpenCode がリクエストを拒否しましたが、原因は示されていません。長いチャットやモデルの変更後に起こることがあります。Slavebot はチャット履歴を引き継いだ新しい OpenCode セッションを開始しました。もう一度お試しください。エラーが続く場合は、別のモデルを選ぶか推論レベルを下げてください。",
   "error.provider.museMcpStartupFault":
-    "Muse が MCP サーバーを起動できず、このセッションで MCP をブロックしました。OpenBot はチャット履歴を引き継いだ新しい Muse セッションを開始しました。もう一度お試しください。エラーが続く場合は、このエージェントの Computer Use または失敗した MCP サーバーをオフにしてください。",
+    "Muse が MCP サーバーを起動できず、このセッションで MCP をブロックしました。Slavebot はチャット履歴を引き継いだ新しい Muse セッションを開始しました。もう一度お試しください。エラーが続く場合は、このエージェントの Computer Use または失敗した MCP サーバーをオフにしてください。",
   "error.provider.grokSignIn": "Grok を使うには `grok login` を実行するか、XAI_API_KEY を設定してください。",
   "error.provider.acpSignInTimedOut": "サインインがタイムアウトしました。",
   "error.provider.acpSignInStopped": "サインインが完了する前に停止しました。",
@@ -288,7 +288,7 @@ export const messages = {
   "error.provider.keyProviderNoBalance":
     "保存された API キーの {provider} アカウントに残高がありません。アカウントにクレジットを追加してから、もう一度お試しください。",
   "error.provider.messageTooLarge":
-    "{limit} MB を超えるメッセージを送信したため、OpenBot は {provider} を停止しました。",
+    "{limit} MB を超えるメッセージを送信したため、Slavebot は {provider} を停止しました。",
   "error.provider.customAgentIdInvalid":
     "エージェント ID には英小文字、数字、`-` のみを使用してください。組み込みプロバイダーの ID は使用できません。",
   "error.provider.customAgentEnvInvalid":
@@ -300,11 +300,11 @@ export const messages = {
   "error.provider.customAgentWindowsScript":
     ".cmd または .bat のコマンドの引数には、英字、数字、および - _ . , : = @ + / \\ のみを使用できます。",
   "error.provider.customAgentNotFound":
-    "OpenBot は {command} を見つけられません。コマンドの完全なパスを入力してください。",
+    "Slavebot は {command} を見つけられません。コマンドの完全なパスを入力してください。",
   "error.provider.customAgentCheckTimedOut": "エージェントは 20 秒以内に応答しませんでした。",
   "error.provider.customAgentCheckStopped": "エージェントは応答する前に停止しました。",
   "error.provider.customAgentProtocolVersion":
-    "このエージェントは ACP バージョン {version} を使用しています。OpenBot はバージョン 1 を使用します。",
+    "このエージェントは ACP バージョン {version} を使用しています。Slavebot はバージョン 1 を使用します。",
   "error.provider.customAgentCheckFailed": "エージェントは ACP エージェントとして応答しませんでした。",
   "error.provider.customAgentRemoveBusy":
     "このカスタムエージェントを削除する前に、実行中のターンとキューが終わるまでお待ちください。",
@@ -312,24 +312,24 @@ export const messages = {
   "error.provider.customAgentMissing": "このカスタムエージェントは現在保存されていません。別のモデルを選んでください。",
   "error.provider.customAgentSignIn": "エージェント自身のコマンドでサインインしてから、もう一度お試しください。",
   "error.provider.customAgentsReadOnly":
-    "保存されたカスタムエージェントは新しいバージョンの OpenBot で書き込まれたか、ファイルを読み取れません。変更するには OpenBot を更新してください。",
+    "保存されたカスタムエージェントは新しいバージョンの Slavebot で書き込まれたか、ファイルを読み取れません。変更するには Slavebot を更新してください。",
   "error.provider.customAgentNoSecureStorage":
     "このコンピューターには安全なストレージがないため、環境変数の値を保存できません。値を削除して、もう一度お試しください。",
   "error.provider.customAgentNotSaved":
     "このカスタムエージェントは保存されていません。一覧を更新して、もう一度お試しください。",
   "error.provider.customAgentTooMany": "保存できるカスタムエージェントは最大 {count} 個です。",
   "error.provider.customAgentEnvValueMissing": "{name} の値を入力してください。",
-  "error.provider.off": "{provider} は OpenBot でオフになっています。まずプロバイダーの設定でオンにしてください。",
+  "error.provider.off": "{provider} は Slavebot でオフになっています。まずプロバイダーの設定でオンにしてください。",
   "error.provider.inUse":
     "エージェントが {provider} を使用しています。このプロバイダーをオフにする前に、そのエージェントのモデルを変更してください。",
   "error.provider.useBusy": "プロバイダーの確認またはサインインが終わるまで待ってから、もう一度お試しください。",
   "error.provider.useSettingsReadOnly":
-    "保存されたプロバイダーの設定を読み取れません。変更する前に OpenBot を更新してください。",
-  "error.provider.useChangeFailed": "OpenBot はプロバイダーの設定を変更できませんでした。",
+    "保存されたプロバイダーの設定を読み取れません。変更する前に Slavebot を更新してください。",
+  "error.provider.useChangeFailed": "Slavebot はプロバイダーの設定を変更できませんでした。",
   "error.provider.accountsUnsupported": "{provider} で使えるアカウントは 1 つだけです。",
   "error.provider.accountNeedsConnection": "別のアカウントを追加する前に {provider} に接続してください。",
   "error.provider.usageResetUnsupported": "{provider} は使用量の上限をリセットできません。",
-  "error.provider.signOutUnsupported": "OpenBot は {provider} のサインインを切断できません。",
+  "error.provider.signOutUnsupported": "Slavebot は {provider} のサインインを切断できません。",
   "error.provider.usageResetNotConnected":
     "使用量をリセットする前に、この {provider} アカウントにもう一度サインインしてください。",
   "error.provider.accountLimit": "{provider} で使えるアカウントは最大 {limit} 個です。",
@@ -342,7 +342,7 @@ export const messages = {
   "error.provider.accountInUse":
     "このアカウントを使うエージェントが作業中です。エージェントが停止してからもう一度お試しください。",
   "error.provider.accountsReadOnly":
-    "保存されたプロバイダーのアカウントを読み取れません。変更する前に OpenBot を更新してください。",
+    "保存されたプロバイダーのアカウントを読み取れません。変更する前に Slavebot を更新してください。",
   "error.provider.accountSignedOut":
     "この {provider} アカウントはサインアウトしています。もう一度サインインしてください。",
   "error.provider.sessionSettingUnavailable": "この設定は現在のプロバイダーセッションでは利用できません。",
@@ -377,7 +377,7 @@ export const messages = {
   "error.provider.museConnectionFailed":
     "Muse への接続に失敗しました。保存された履歴を復元するには、会話を再開してください。",
   "error.provider.museUnknownSession": "不明な Muse セッションです。",
-  "error.provider.museInvalidToolResult": "OpenBot ツールの結果が無効です。",
+  "error.provider.museInvalidToolResult": "Slavebot ツールの結果が無効です。",
   "error.provider.museMcpRequired": "Muse はセッションの MCP サーバーに対応している必要があります。",
   "error.provider.museSessionMismatch": "Muse が別のセッションを返しました。",
   "error.provider.museCompactRejected": "Muse が圧縮を受け付けませんでした。",

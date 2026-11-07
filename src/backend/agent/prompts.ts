@@ -388,7 +388,7 @@ export function browserUserControlResult(): DynamicToolResult {
 }
 
 export function browserTakeoverError(
-  message = "OpenBot could not create a browser takeover request.",
+  message = "Slavebot could not create a browser takeover request.",
 ): DynamicToolResult {
   return {
     success: false,

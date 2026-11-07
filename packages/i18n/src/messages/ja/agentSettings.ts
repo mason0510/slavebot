@@ -43,7 +43,7 @@ export const messages = {
   "agentSettings.folders.inShared": "{folder} は共有フォルダー内にあるため、{agent} はすでに変更できます",
   "agentSettings.folders.inFolder": "{folder} は追加済みの {parent} 内にあります",
   "agentSettings.folders.protected":
-    "{folder} は追加できません。OpenBot のデータか他のエージェントのファイルが含まれています",
+    "{folder} は追加できません。Slavebot のデータか他のエージェントのファイルが含まれています",
   "agentSettings.folders.missing": "{folder} はこのコンピューター上のフォルダーではありません",
   "agentSettings.folders.limit": { other: "追加できるフォルダーは最大 {count} 個です" },
   "agentSettings.folders.failed": "フォルダーを変更できませんでした",
@@ -143,7 +143,7 @@ export const messages = {
   "agentSettings.runtime.fullAccessNote":
     "エージェントは、ワークスペースと共有フォルダーからコンピューターへのフルアクセスで実行されます。",
   "agentSettings.runtime.askNote":
-    "OpenBot のツールを使う前、サイトを公開する前、およびプロバイダーが承認を求めたときに確認します。",
+    "Slavebot のツールを使う前、サイトを公開する前、およびプロバイダーが承認を求めたときに確認します。",
   "agentSettings.runtime.fullNote": "あなたへの質問を除き、確認せずに操作します。",
 
   "agentSettings.access.workspace": "ワークスペースのみ",
@@ -200,7 +200,7 @@ export const messages = {
   "agentSettings.runtime.workspaceEnforcedClaude":
     "外部のファイル編集は、先に確認します。コマンドは外部に書き込めません。",
   "agentSettings.runtime.workspaceUnlimited":
-    "Computer Use と OpenBot ブラウザーは制限されません。Computer Use は下でオフにできます。",
+    "Computer Use と Slavebot ブラウザーは制限されません。Computer Use は下でオフにできます。",
   "agentSettings.computerUse.title": "Computer Use",
   "agentSettings.computerUse.description": "このエージェントにこのコンピューターのアプリの操作を許可します",
   "agentSettings.automation.title": "ローカルスクリプト",

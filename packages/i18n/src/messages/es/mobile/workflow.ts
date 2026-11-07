@@ -2,7 +2,7 @@ import type { PartialTranslation } from "../../../message";
 import type { messages as source } from "../../en/mobile/workflow";
 
 export const messages = {
-  "mobile.workflow.unsupported": "Actualiza OpenBot en este servidor para usar flujos de trabajo en tu teléfono.",
+  "mobile.workflow.unsupported": "Actualiza Slavebot en este servidor para usar flujos de trabajo en tu teléfono.",
   "mobile.workflow.offline": "El servidor está sin conexión. Los flujos de trabajo aparecen cuando se conecta.",
   "mobile.workflow.list.loading": "Cargando…",
   "mobile.workflow.list.loadFailed": "No se pudieron cargar los flujos de trabajo.",
@@ -21,7 +21,7 @@ export const messages = {
   "mobile.workflow.action.edit": "Editar",
   "mobile.workflow.alert.runFailedTitle": "No se pudo iniciar el flujo de trabajo",
   "mobile.workflow.alert.runFailedBody": "El servidor no inició la ejecución. Inténtalo de nuevo.",
-  "mobile.workflow.alert.tryAgain": "OpenBot no pudo hacerlo. Inténtalo de nuevo.",
+  "mobile.workflow.alert.tryAgain": "Slavebot no pudo hacerlo. Inténtalo de nuevo.",
   "mobile.workflow.drawer.needYou": { one: "{count} te necesita", other: "{count} te necesitan" },
   "mobile.workflow.drawer.running": { one: "{count} en ejecución", other: "{count} en ejecución" },
   "mobile.workflow.drawer.review": "Te necesita · toca para revisar",
@@ -33,7 +33,7 @@ export const messages = {
   "mobile.workflow.detail.loadFailed": "No se pudo cargar el flujo de trabajo.",
   "mobile.workflow.detail.starting": "Iniciando…",
   "mobile.workflow.detail.newerApp":
-    "Este flujo de trabajo tiene pasos de una versión más reciente de OpenBot. Actualiza OpenBot en tu teléfono para cambiarlo.",
+    "Este flujo de trabajo tiene pasos de una versión más reciente de Slavebot. Actualiza Slavebot en tu teléfono para cambiarlo.",
   "mobile.workflow.detail.waits": "La ejecución {number} te espera. Revisar",
   "mobile.workflow.detail.canvasOrder": "Los pasos se muestran de izquierda a derecha, como en el lienzo.",
   "mobile.workflow.detail.trigger": "Activador",
@@ -69,7 +69,7 @@ export const messages = {
   "mobile.workflow.trigger.webhook": "Webhook",
   "mobile.workflow.trigger.webhookHint": "Se ejecuta cuando su dirección recibe una solicitud.",
   "mobile.workflow.trigger.message": "Mensaje",
-  "mobile.workflow.trigger.messageHint": "Cambia este activador en OpenBot en tu ordenador.",
+  "mobile.workflow.trigger.messageHint": "Cambia este activador en Slavebot en tu ordenador.",
   "mobile.workflow.trigger.github": "GitHub",
   "mobile.workflow.trigger.githubHint": "Se ejecuta cuando ocurre algo en un repositorio de GitHub.",
   "mobile.workflow.trigger.startsWhen": "Inicio",
@@ -107,7 +107,7 @@ export const messages = {
   "mobile.workflow.step.questionDefault": "Aprueba para continuar.",
   "mobile.workflow.step.textEmpty": "Sin texto",
   "mobile.workflow.step.textPlaceholder": "Texto para el paso siguiente",
-  "mobile.workflow.step.computerOnly": "Cambia este paso en OpenBot en tu ordenador.",
+  "mobile.workflow.step.computerOnly": "Cambia este paso en Slavebot en tu ordenador.",
   "mobile.workflow.step.gone": "Este paso ya no está en el flujo de trabajo.",
   "mobile.workflow.step.agent": "Agente",
   "mobile.workflow.step.agentHint": "El agente hace la tarea con la salida del paso anterior.",
@@ -126,7 +126,7 @@ export const messages = {
   "mobile.workflow.step.text": "Texto",
   "mobile.workflow.step.sendTo": "Enviar a",
   "mobile.workflow.step.channelHint":
-    "Un propietario o administrador elige el lugar de mensajería en OpenBot en el ordenador.",
+    "Un propietario o administrador elige el lugar de mensajería en Slavebot en el ordenador.",
   "mobile.workflow.problem.noTitle": "Escribe un nombre.",
   "mobile.workflow.problem.noAgent": "Elige un agente",
   "mobile.workflow.problem.agentGone": "El agente no está disponible. Elige un agente",
@@ -147,7 +147,7 @@ export const messages = {
   "mobile.workflow.add.prompt": "Texto fijo para el paso siguiente.",
   "mobile.workflow.add.output": "Te envía el resultado.",
   "mobile.workflow.add.oneCondition":
-    "En el teléfono, un flujo de trabajo tiene una condición. Para más rutas, usa OpenBot en tu ordenador.",
+    "En el teléfono, un flujo de trabajo tiene una condición. Para más rutas, usa Slavebot en tu ordenador.",
   "mobile.workflow.editor.title": "Editar flujo",
   "mobile.workflow.editor.newTitle": "Nuevo flujo",
   "mobile.workflow.editor.step": "Paso",
@@ -156,7 +156,7 @@ export const messages = {
   "mobile.workflow.editor.create": "Crear flujo",
   "mobile.workflow.editor.saveFailed": "No se pudo guardar el flujo de trabajo.",
   "mobile.workflow.editor.fieldsOnly":
-    "Este flujo de trabajo tiene una forma que el teléfono no puede mostrar como lista. Aquí puedes cambiar cada paso. Para añadir, mover o eliminar pasos, usa OpenBot en tu ordenador.",
+    "Este flujo de trabajo tiene una forma que el teléfono no puede mostrar como lista. Aquí puedes cambiar cada paso. Para añadir, mover o eliminar pasos, usa Slavebot en tu ordenador.",
   "mobile.workflow.editor.annotationsKept": "Las notas y los dibujos del lienzo se mantienen como están.",
   "mobile.workflow.editor.addStep": "Añadir paso",
   "mobile.workflow.editor.addAfter": "Añadir paso después",

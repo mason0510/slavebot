@@ -14,8 +14,8 @@ export const messages = {
   "notification.channelMessage": "Heeft een bericht gestuurd.",
   "notification.usageLimit.title": "Account van {provider} heeft de limiet bereikt",
   "notification.usageLimit.body": {
-    one: "{count} agent wacht. OpenBot probeert het later opnieuw.",
-    other: "{count} agents wachten. OpenBot probeert het later opnieuw.",
+    one: "{count} agent wacht. Slavebot probeert het later opnieuw.",
+    other: "{count} agents wachten. Slavebot probeert het later opnieuw.",
   },
   "notification.usageLimit.bodyResets": {
     one: "{count} agent wacht. Reset op {reset}.",
@@ -26,7 +26,7 @@ export const messages = {
   "notification.machineAlert.cpu": "{server}: CPU {percent} bezet",
   "notification.machineAlert.body": "Het alarmniveau van {level} is overschreden. Zie Serverinstellingen > Opslag.",
   "notification.test": "Meldingen werken.",
-  "notification.welcome": "OpenBot laat je hier weten wanneer een agent je nodig heeft.",
+  "notification.welcome": "Slavebot laat je hier weten wanneer een agent je nodig heeft.",
   "notification.toast.region": "Meldingen",
   "notification.toast.close": "Melding sluiten",
 } as const satisfies PartialTranslation<typeof source>;

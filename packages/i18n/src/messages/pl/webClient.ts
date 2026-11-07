@@ -2,7 +2,7 @@ import type { PartialTranslation } from "../../message";
 import type { messages as source } from "../en/webClient";
 
 export const messages = {
-  "webClient.loading": "Wczytywanie OpenBot…",
+  "webClient.loading": "Wczytywanie Slavebot…",
   "webClient.loadingLine.wake": "Budzimy agentów…",
   "webClient.loadingLine.coffee": "Nalewamy agentom kawę…",
   "webClient.loadingLine.tokens": "Liczymy tokeny na palcach…",
@@ -24,18 +24,18 @@ export const messages = {
   "webClient.notice.hostsFailed": "Nie udało się wczytać twoich serwerów",
   "webClient.notice.connectComputer": "Połącz serwer",
   "webClient.connect.description":
-    "Uruchom OpenBot na komputerze, aby rozmawiać z agentami w tej przeglądarce. Możesz też dołączyć do serwera przez zaproszenie.",
+    "Uruchom Slavebot na komputerze, aby rozmawiać z agentami w tej przeglądarce. Możesz też dołączyć do serwera przez zaproszenie.",
   "webClient.connect.descriptionHosted":
-    "Utwórz hostowany serwer, aby rozmawiać z agentami w tej przeglądarce. Możesz też uruchomić OpenBot na komputerze albo dołączyć do serwera przez zaproszenie.",
-  "webClient.connect.stepInstall": "Zainstaluj i otwórz OpenBot na komputerze.",
+    "Utwórz hostowany serwer, aby rozmawiać z agentami w tej przeglądarce. Możesz też uruchomić Slavebot na komputerze albo dołączyć do serwera przez zaproszenie.",
+  "webClient.connect.stepInstall": "Zainstaluj i otwórz Slavebot na komputerze.",
   "webClient.connect.stepSignIn": "Zaloguj się adresem e-mail.",
   "webClient.connect.stepRemote": "Włącz dostęp zdalny.",
-  "webClient.notice.download": "Pobierz OpenBot",
+  "webClient.notice.download": "Pobierz Slavebot",
   "webClient.notice.createServer": "Utwórz hostowany serwer",
   "webClient.notice.join": "Dołącz przez zaproszenie",
   "webClient.notice.refreshHosts": "Odśwież serwery",
   "webClient.otherTab.title": "{name} jest otwarty w innej karcie",
-  "webClient.otherTab.description": "OpenBot może używać serwera tylko w jednej karcie naraz.",
+  "webClient.otherTab.description": "Slavebot może używać serwera tylko w jednej karcie naraz.",
   "webClient.otherTab.useHere": "Użyj tutaj",
   "webClient.agent.modelsFailed": "Nie udało się wczytać modeli serwera.",
   "webClient.agent.refreshFailed":
@@ -45,7 +45,7 @@ export const messages = {
   "webClient.error.usageOffline": "Połącz się z serwerem, aby zobaczyć użycie.",
   "webClient.error.desktopOnly": "Ta akcja jest dostępna w aplikacji na komputer.",
   "webClient.settings.preferences.title": "Preferencje",
-  "webClient.settings.preferences.description": "Wybierz język i dźwięki OpenBot w tej przeglądarce.",
+  "webClient.settings.preferences.description": "Wybierz język i dźwięki Slavebot w tej przeglądarce.",
   "webClient.error.checkConversation": "Sprawdź rozmowę, zanim wyślesz ponownie.",
   "webClient.error.hostReported": "Serwer zgłosił błąd. Sprawdź rozmowę i stan serwera.",
   "webClient.error.requestFailed": "Żądanie nie powiodło się.",
@@ -75,7 +75,7 @@ export const messages = {
   "webClient.error.identityChanged": "Tożsamość serwera się zmieniła. Połączenie odrzucone.",
   "webClient.error.connectionUnavailable": "Połączenie z serwerem jest niedostępne.",
   "webClient.error.incompatible":
-    "Ten serwer nie jest zgodny z OpenBot w przeglądarce. Zaktualizuj serwer i przeładuj tę stronę.",
+    "Ten serwer nie jest zgodny z Slavebot w przeglądarce. Zaktualizuj serwer i przeładuj tę stronę.",
   "webClient.error.sendUnconfirmed":
     "Dostarczenie wiadomości nie jest potwierdzone. Odśwież, zanim wyślesz ją ponownie.",
   "webClient.error.fileType": "Zaktualizuj serwer, aby załączać pliki tego typu.",
@@ -83,7 +83,7 @@ export const messages = {
   "webClient.error.duplication": "Ten serwer nie obsługuje duplikowania agentów.",
   "webClient.error.connectServerFirst": "Najpierw połącz się z tym serwerem.",
   "webClient.error.agentInstallNotAllowed":
-    "Tylko właściciel lub administrator może tu dodać agenta, a serwer musi mieć aktualną wersję OpenBot.",
+    "Tylko właściciel lub administrator może tu dodać agenta, a serwer musi mieć aktualną wersję Slavebot.",
   "webClient.error.linkDesktopOnly": "Ten link otwiera się tylko w aplikacji na komputer.",
   "webClient.error.saveEndpointOffline": "Połącz się z serwerem, aby zapisać endpoint.",
   "webClient.error.removeEndpointOffline": "Połącz się z serwerem, aby usunąć endpoint.",

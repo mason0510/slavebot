@@ -2795,7 +2795,7 @@ export class ProviderRuntime implements ProviderPort {
       .request(
         "initialize",
         {
-          clientInfo: { name: "openbot", title: "OpenBot", version: "0.1.0" },
+          clientInfo: { name: "openbot", title: "Slavebot", version: "0.1.0" },
           capabilities: { experimentalApi: true, mcpServerOpenaiFormElicitation: true },
         },
         decodeRecordResponse,
@@ -3073,7 +3073,7 @@ export class ProviderRuntime implements ProviderPort {
     keepsReleased = false,
   ): void {
     const hasActiveClient = this.#clients.has(provider) || (keepsReleased && this.#released.has(provider));
-    const fallbackMessage = `OpenBot could not connect ${providerLabel(provider)}. Try again.`;
+    const fallbackMessage = `Slavebot could not connect ${providerLabel(provider)}. Try again.`;
     const rawMessage = error instanceof Error ? error.message : String(error);
     const timeout = isProviderTimeout(error);
     // A timeout says which stage did not answer, and the row's last error keeps it. Only a catalog
@@ -3082,7 +3082,7 @@ export class ProviderRuntime implements ProviderPort {
     const message =
       (timeout && matchingSourceKeys(rawMessage).length > 0) ||
       error instanceof ProviderSignInError ||
-      /^(ChatGPT connection|OpenBot)/u.test(rawMessage)
+      /^(ChatGPT connection|OpenBot|Slavebot)/u.test(rawMessage)
         ? rawMessage
         : fallbackMessage;
     const status = hasActiveClient
@@ -3697,7 +3697,7 @@ export class ProviderRuntime implements ProviderPort {
               capabilities: { ...this.#status.capabilities, chat: "unavailable" },
               message: startStopped
                 ? this.#startStoppedMessage(client.provider)
-                : `${providerLabel(client.provider)} stopped repeatedly. Restart OpenBot after checking the CLI.`,
+                : `${providerLabel(client.provider)} stopped repeatedly. Restart Slavebot after checking the CLI.`,
             },
       );
       return;

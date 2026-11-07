@@ -57,9 +57,9 @@ const LOOP_RESOLUTION_MS = 20;
 // The `serviceName` that `agent-database-host-process.ts` and the voice `*-host-process.ts` files
 // give `utilityProcess.fork`. Electron reports it as the metric's `name`.
 const UTILITY_GROUPS = new Map<string, ProcessGroup>([
-  ["OpenBot databases", "database_host"],
-  ["OpenBot voice transcription", "voice_host"],
-  ["OpenBot speech", "voice_host"],
+  ["Slavebot databases", "database_host"],
+  ["Slavebot voice transcription", "voice_host"],
+  ["Slavebot speech", "voice_host"],
 ]);
 
 export interface ResourceMonitorOptions {

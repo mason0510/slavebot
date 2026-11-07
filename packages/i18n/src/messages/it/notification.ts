@@ -16,8 +16,8 @@ export const messages = {
   "notification.channelMessage": "Ha inviato un messaggio.",
   "notification.usageLimit.title": "L'account {provider} ha raggiunto il limite",
   "notification.usageLimit.body": {
-    one: "{count} agente è in attesa. OpenBot riproverà più tardi.",
-    other: "{count} agenti sono in attesa. OpenBot riproverà più tardi.",
+    one: "{count} agente è in attesa. Slavebot riproverà più tardi.",
+    other: "{count} agenti sono in attesa. Slavebot riproverà più tardi.",
   },
   "notification.usageLimit.bodyResets": {
     one: "{count} agente è in attesa. Il limite si azzera {reset}.",
@@ -29,7 +29,7 @@ export const messages = {
   "notification.machineAlert.body":
     "Ha superato la soglia di avviso di {level}. Vedi Impostazioni server > Archiviazione.",
   "notification.test": "Le notifiche funzionano.",
-  "notification.welcome": "OpenBot ti avviserà qui quando un agente ha bisogno di te.",
+  "notification.welcome": "Slavebot ti avviserà qui quando un agente ha bisogno di te.",
   "notification.toast.region": "Notifiche",
   "notification.toast.close": "Chiudi notifica",
 } as const satisfies PartialTranslation<typeof source>;

@@ -497,7 +497,7 @@ export const messages = {
   "chat.suggestion.dismissNamed": "Скрыть {name}",
   "chat.suggestion.dismissed": "Предложение «{name}» скрыто.",
   "chat.suggestion.undo": "Отменить",
-  "chat.suggestion.localOnly": "Подключите {name} в OpenBot на своём компьютере.",
+  "chat.suggestion.localOnly": "Подключите {name} в Slavebot на своём компьютере.",
   "chat.suggestion.unavailable": "Этот сервер не может подключить {name}.",
   "chat.compaction.running": "Сжатие контекста",
   "chat.compaction.completed": "Контекст сжат",

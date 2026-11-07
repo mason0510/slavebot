@@ -45,7 +45,7 @@ const UNCERTAIN_EMAIL_DELIVERY_ISSUES = new Set([
   "email_delivery_unknown",
 ]);
 
-const PRODUCT_NAME = "OpenBot";
+const PRODUCT_NAME = "Slavebot";
 const EMAIL_PLACEHOLDER = "you@example.com";
 const EMAIL_MARKER = "\u0000";
 

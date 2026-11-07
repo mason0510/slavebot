@@ -2,7 +2,7 @@ import type { PartialTranslation } from "../../../message";
 import type { messages as source } from "../../en/mobile/workflow";
 
 export const messages = {
-  "mobile.workflow.unsupported": "Обновите OpenBot на этом сервере, чтобы работать с рабочими процессами на телефоне.",
+  "mobile.workflow.unsupported": "Обновите Slavebot на этом сервере, чтобы работать с рабочими процессами на телефоне.",
   "mobile.workflow.offline": "Сервер не в сети. Рабочие процессы появятся после подключения.",
   "mobile.workflow.list.loading": "Загрузка…",
   "mobile.workflow.list.loadFailed": "Не удалось загрузить рабочие процессы.",
@@ -21,7 +21,7 @@ export const messages = {
   "mobile.workflow.action.edit": "Изменить",
   "mobile.workflow.alert.runFailedTitle": "Не удалось запустить рабочий процесс",
   "mobile.workflow.alert.runFailedBody": "Сервер не начал запуск. Повторите попытку.",
-  "mobile.workflow.alert.tryAgain": "OpenBot не удалось это сделать. Повторите попытку.",
+  "mobile.workflow.alert.tryAgain": "Slavebot не удалось это сделать. Повторите попытку.",
   "mobile.workflow.drawer.needYou": {
     one: "{count} ждёт вас",
     few: "{count} ждут вас",
@@ -48,7 +48,7 @@ export const messages = {
   "mobile.workflow.detail.loadFailed": "Не удалось загрузить рабочий процесс.",
   "mobile.workflow.detail.starting": "Запуск…",
   "mobile.workflow.detail.newerApp":
-    "В этом рабочем процессе есть шаги из более новой версии OpenBot. Обновите OpenBot на телефоне, чтобы изменить его.",
+    "В этом рабочем процессе есть шаги из более новой версии Slavebot. Обновите Slavebot на телефоне, чтобы изменить его.",
   "mobile.workflow.detail.waits": "Запуск {number} ждёт вас. Проверить",
   "mobile.workflow.detail.canvasOrder": "Шаги показаны слева направо, как на холсте.",
   "mobile.workflow.detail.trigger": "Триггер",
@@ -83,7 +83,7 @@ export const messages = {
   "mobile.workflow.trigger.webhook": "Вебхук",
   "mobile.workflow.trigger.webhookHint": "Запускается, когда на его адрес приходит запрос.",
   "mobile.workflow.trigger.message": "Сообщение",
-  "mobile.workflow.trigger.messageHint": "Измените этот триггер в OpenBot на компьютере.",
+  "mobile.workflow.trigger.messageHint": "Измените этот триггер в Slavebot на компьютере.",
   "mobile.workflow.trigger.github": "GitHub",
   "mobile.workflow.trigger.githubHint": "Запускается, когда в репозитории GitHub что-то происходит.",
   "mobile.workflow.trigger.startsWhen": "Запуск",
@@ -120,7 +120,7 @@ export const messages = {
   "mobile.workflow.step.questionDefault": "Одобрите, чтобы продолжить.",
   "mobile.workflow.step.textEmpty": "Нет текста",
   "mobile.workflow.step.textPlaceholder": "Текст для следующего шага",
-  "mobile.workflow.step.computerOnly": "Измените этот шаг в OpenBot на компьютере.",
+  "mobile.workflow.step.computerOnly": "Измените этот шаг в Slavebot на компьютере.",
   "mobile.workflow.step.gone": "Этого шага больше нет в рабочем процессе.",
   "mobile.workflow.step.agent": "Агент",
   "mobile.workflow.step.agentHint": "Агент выполняет задачу с результатом предыдущего шага.",
@@ -139,7 +139,7 @@ export const messages = {
   "mobile.workflow.step.text": "Текст",
   "mobile.workflow.step.sendTo": "Куда отправить",
   "mobile.workflow.step.channelHint":
-    "Место в мессенджере выбирает владелец или администратор в OpenBot на компьютере.",
+    "Место в мессенджере выбирает владелец или администратор в Slavebot на компьютере.",
   "mobile.workflow.problem.noTitle": "Введите название.",
   "mobile.workflow.problem.noAgent": "Выберите агента",
   "mobile.workflow.problem.agentGone": "Агент недоступен. Выберите агента",
@@ -165,7 +165,7 @@ export const messages = {
   "mobile.workflow.add.prompt": "Готовый текст для следующего шага.",
   "mobile.workflow.add.output": "Отправляет результат вам.",
   "mobile.workflow.add.oneCondition":
-    "На телефоне в рабочем процессе может быть одно условие. Для большего числа веток используйте OpenBot на компьютере.",
+    "На телефоне в рабочем процессе может быть одно условие. Для большего числа веток используйте Slavebot на компьютере.",
   "mobile.workflow.editor.title": "Изменить процесс",
   "mobile.workflow.editor.newTitle": "Новый процесс",
   "mobile.workflow.editor.step": "Шаг",
@@ -174,7 +174,7 @@ export const messages = {
   "mobile.workflow.editor.create": "Создать процесс",
   "mobile.workflow.editor.saveFailed": "Не удалось сохранить рабочий процесс.",
   "mobile.workflow.editor.fieldsOnly":
-    "Телефон не может показать этот рабочий процесс списком. Здесь можно изменить каждый шаг. Чтобы добавить, переместить или удалить шаги, используйте OpenBot на компьютере.",
+    "Телефон не может показать этот рабочий процесс списком. Здесь можно изменить каждый шаг. Чтобы добавить, переместить или удалить шаги, используйте Slavebot на компьютере.",
   "mobile.workflow.editor.annotationsKept": "Заметки и рисунки на холсте останутся без изменений.",
   "mobile.workflow.editor.addStep": "Добавить шаг",
   "mobile.workflow.editor.addAfter": "Добавить шаг после",

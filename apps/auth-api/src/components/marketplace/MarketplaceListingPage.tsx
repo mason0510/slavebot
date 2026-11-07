@@ -178,7 +178,7 @@ function ListingActions(props: { link: MarketplaceListingLink; name: string }) {
       <PluginOpenButtons
         href={createOpenBotMarketplaceUrl(props.link)}
         browserHref={createWebAppMarketplacePath(props.link)}
-        label={t("sitePage.marketplace.addToOpenBot")}
+        label={t("sitePage.marketplace.addToSlavebot")}
         downloadCopy={t("sitePage.marketplace.addFromApp", { name: props.name })}
         text={buttonText()}
       />

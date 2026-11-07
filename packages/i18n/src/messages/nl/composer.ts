@@ -57,10 +57,10 @@ export const messages = {
   "composer.voice.transcribing": "Gesproken prompt uitschrijven",
   "composer.voice.start": "Prompt inspreken",
   "composer.voice.blocked":
-    "Toegang tot de microfoon is geblokkeerd. Geef OpenBot toegang tot de microfoon in de systeeminstellingen.",
+    "Toegang tot de microfoon is geblokkeerd. Geef Slavebot toegang tot de microfoon in de systeeminstellingen.",
   "composer.voice.noMicrophone": "Er is geen microfoon beschikbaar.",
-  "composer.voice.startFailed": "OpenBot kan de spraakopname niet starten.",
-  "composer.voice.transcribeFailed": "OpenBot kan deze opname niet uitschrijven.",
+  "composer.voice.startFailed": "Slavebot kan de spraakopname niet starten.",
+  "composer.voice.transcribeFailed": "Slavebot kan deze opname niet uitschrijven.",
   "composer.reply.toYou": "Antwoord op je bericht",
   "composer.reply.toAgent": "Antwoord aan agent",
   "composer.reply.attachment": "Bijlage",

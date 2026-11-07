@@ -21,7 +21,7 @@ export const messages = {
   "error.agent.gone": "Ten agent już nie istnieje.",
   "error.agent.instructionsTooLarge": "Plik instrukcji jest za duży, aby go tu otworzyć. Skróć go w edytorze tekstu.",
   "error.agent.instructionsOutside":
-    "Plik instrukcji wskazuje miejsce poza obszarem roboczym agenta, więc OpenBot go nie otwiera.",
+    "Plik instrukcji wskazuje miejsce poza obszarem roboczym agenta, więc Slavebot go nie otwiera.",
   "error.agent.instructionsReadFailed": "Nie udało się odczytać pliku instrukcji.",
   "error.agent.instructionsSaveFailed": "Nie udało się zapisać pliku instrukcji.",
   "error.agent.profileGenerationBusy": "Generowanie profilu już trwa. Spróbuj ponownie za chwilę.",
@@ -64,14 +64,14 @@ export const messages = {
   "error.agent.hostLimit": "Host może mieć maksymalnie {limit} agentów.",
   "error.agent.changedWhileDuplicating": "Agent zmienił się podczas duplikowania. Spróbuj ponownie.",
   "error.agent.duplicatedAgentGone": "Zduplikowany agent już nie istnieje.",
-  "error.agent.stateCorrupt": "Stan agenta jest uszkodzony lub pochodzi z nowszej wersji OpenBot; odmowa nadpisania.",
+  "error.agent.stateCorrupt": "Stan agenta jest uszkodzony lub pochodzi z nowszej wersji Slavebot; odmowa nadpisania.",
   "error.agent.oldRoleField":
-    "Zapisane profile agentów używają starego pola roli; zaktualizuj dane przed uruchomieniem OpenBot.",
+    "Zapisane profile agentów używają starego pola roli; zaktualizuj dane przed uruchomieniem Slavebot.",
   "error.agent.duplicateIds": "Stan agentów zawiera zduplikowane identyfikatory agentów; odmowa nadpisania.",
-  "error.agent.copyNameFailed": "OpenBot nie mógł utworzyć unikalnej nazwy kopii agenta.",
+  "error.agent.copyNameFailed": "Slavebot nie mógł utworzyć unikalnej nazwy kopii agenta.",
   "error.agent.endpointRemoved": "Endpoint używany przez tego agenta został usunięty. Wybierz dla niego inny model.",
   "error.agent.turnStalled":
-    "{provider} przestał odpowiadać, więc OpenBot zakończył tę turę. Wyślij wiadomość ponownie albo wybierz inny model.",
+    "{provider} przestał odpowiadać, więc Slavebot zakończył tę turę. Wyślij wiadomość ponownie albo wybierz inny model.",
   "error.agent.selectedGone": "Wybrany agent już nie istnieje.",
   "error.agent.profileEndpointsChanged": "Własne endpointy zmieniły się w trakcie generowania. Spróbuj ponownie.",
   "error.agent.profileInvalid": "Dostawca zwrócił nieprawidłowy profil. Spróbuj zmienić prompt.",
@@ -91,9 +91,9 @@ export const messages = {
   "error.agent.saveOtherAgent": "Ten zapis należy do innego agenta.",
   "error.agent.savedGone": "Zapisany agent już nie istnieje.",
   "error.agent.storedProfileUnreadable":
-    "Zapisany profil agenta ma nieczytelną wartość „{field}”; zaktualizuj dane przed uruchomieniem OpenBot.",
+    "Zapisany profil agenta ma nieczytelną wartość „{field}”; zaktualizuj dane przed uruchomieniem Slavebot.",
   "error.agent.storedProfileUnreadableId":
-    "Zapisany profil agenta {id} ma nieczytelną wartość „{field}”; zaktualizuj dane przed uruchomieniem OpenBot.",
+    "Zapisany profil agenta {id} ma nieczytelną wartość „{field}”; zaktualizuj dane przed uruchomieniem Slavebot.",
   "error.agent.queueEditRejected": "Odrzucono edycję kolejki: {reason}",
   "error.agent.computerUseLocalOnly":
     "Sterowanie komputerem można zmienić tylko na komputerze, na którym działa agent.",
@@ -120,7 +120,7 @@ export const messages = {
   "error.agent.lowMemoryServer":
     "Na tym serwerze brakuje pamięci. Twoja wiadomość czeka w kolejce i ruszy, gdy pamięć się zwolni.",
   "error.agent.workspaceOnlyToolMissing":
-    "Tryb „Tylko obszar roboczy” wymaga narzędzia {tool}, którego OpenBot nie znalazł. Zainstaluj je lub wybierz pełny dostęp w ustawieniach agenta.",
+    "Tryb „Tylko obszar roboczy” wymaga narzędzia {tool}, którego Slavebot nie znalazł. Zainstaluj je lub wybierz pełny dostęp w ustawieniach agenta.",
   "error.agent.claudeSandboxUnavailable":
     "Tryb „Tylko obszar roboczy” wymaga piaskownicy Claude, której Claude nie może uruchomić na tym komputerze: {reason}. Wybierz pełny dostęp lub innego dostawcę w ustawieniach agenta.",
   "error.agent.screenCaptureOff":
@@ -137,7 +137,7 @@ export const messages = {
   "error.agent.screenCaptureRegionOutside":
     "Obszar nie mieści się w jednym wyświetlaczu. Użyj punktów pulpitu w granicach jednego wyświetlacza z list_capture_sources.",
   "error.agent.screenCapturePermissionMissing":
-    "OpenBot nie ma uprawnienia do nagrywania ekranu. Poproś użytkownika, aby otworzył Ustawienia systemowe > Prywatność i ochrona > Nagrywanie ekranu i dźwięku systemowego, włączył OpenBot, a potem zamknął i ponownie otworzył OpenBot.",
+    "Slavebot nie ma uprawnienia do nagrywania ekranu. Poproś użytkownika, aby otworzył Ustawienia systemowe > Prywatność i ochrona > Nagrywanie ekranu i dźwięku systemowego, włączył Slavebot, a potem zamknął i ponownie otworzył Slavebot.",
   "error.agent.screenCaptureEmptyWindows":
     "Windows zwrócił pusty obraz. Poproś użytkownika, aby odblokował komputer i zamknął chronione treści. Przechwytywanie ekranu może też blokować zasada organizacji.",
   "error.agent.screenCaptureFailed": "Przechwycenie ekranu nie powiodło się. Spróbuj ponownie.",

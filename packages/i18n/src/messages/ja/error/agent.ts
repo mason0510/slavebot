@@ -24,7 +24,7 @@ export const messages = {
   "error.agent.instructionsTooLarge":
     "指示ファイルが大きすぎるため、ここでは開けません。テキストエディタで短くしてください。",
   "error.agent.instructionsOutside":
-    "指示ファイルがエージェントのワークスペース外を指しているため、OpenBot では開きません。",
+    "指示ファイルがエージェントのワークスペース外を指しているため、Slavebot では開きません。",
   "error.agent.instructionsReadFailed": "指示ファイルを読み込めませんでした。",
   "error.agent.instructionsSaveFailed": "指示ファイルを保存できませんでした。",
   "error.agent.profileGenerationBusy": "プロフィールの生成中です。しばらくしてからもう一度お試しください。",
@@ -70,15 +70,15 @@ export const messages = {
   "error.agent.changedWhileDuplicating": "複製中にエージェントが変更されました。もう一度お試しください。",
   "error.agent.duplicatedAgentGone": "複製したエージェントはもう存在しません。",
   "error.agent.stateCorrupt":
-    "エージェントの状態が破損しているか、新しいバージョンの OpenBot のものです。上書きしません。",
+    "エージェントの状態が破損しているか、新しいバージョンの Slavebot のものです。上書きしません。",
   "error.agent.oldRoleField":
-    "保存されたエージェントのプロフィールは古い role フィールドを使用しています。OpenBot を起動する前にデータを更新してください。",
+    "保存されたエージェントのプロフィールは古い role フィールドを使用しています。Slavebot を起動する前にデータを更新してください。",
   "error.agent.duplicateIds": "エージェントの状態に重複したエージェント ID があります。上書きしません。",
-  "error.agent.copyNameFailed": "OpenBot はエージェントのコピーに固有の名前を作成できませんでした。",
+  "error.agent.copyNameFailed": "Slavebot はエージェントのコピーに固有の名前を作成できませんでした。",
   "error.agent.endpointRemoved":
     "このエージェントが使用していたエンドポイントは削除されました。別のモデルを選択してください。",
   "error.agent.turnStalled":
-    "{provider} が応答しなくなったため、OpenBot はこのターンを終了しました。メッセージをもう一度送信するか、別のモデルを選択してください。",
+    "{provider} が応答しなくなったため、Slavebot はこのターンを終了しました。メッセージをもう一度送信するか、別のモデルを選択してください。",
   "error.agent.selectedGone": "選択したエージェントはもう存在しません。",
   "error.agent.profileEndpointsChanged": "生成中にカスタムエンドポイントが変更されました。もう一度お試しください。",
   "error.agent.profileInvalid": "プロバイダーが無効なプロフィールを返しました。指示を修正してみてください。",
@@ -99,9 +99,9 @@ export const messages = {
   "error.agent.saveOtherAgent": "この保存は別のエージェントのものです。",
   "error.agent.savedGone": "保存したエージェントはもう存在しません。",
   "error.agent.storedProfileUnreadable":
-    "保存されたエージェントのプロフィールに読み取れない「{field}」の値があります。OpenBot を起動する前にデータを更新してください。",
+    "保存されたエージェントのプロフィールに読み取れない「{field}」の値があります。Slavebot を起動する前にデータを更新してください。",
   "error.agent.storedProfileUnreadableId":
-    "保存されたエージェントのプロフィール {id} に読み取れない「{field}」の値があります。OpenBot を起動する前にデータを更新してください。",
+    "保存されたエージェントのプロフィール {id} に読み取れない「{field}」の値があります。Slavebot を起動する前にデータを更新してください。",
   "error.agent.queueEditRejected": "キューの編集が拒否されました: {reason}",
   "error.agent.computerUseLocalOnly": "Computer Use は、エージェントを実行しているコンピューターでのみ変更できます。",
   "error.agent.automationLocalOnly":
@@ -131,7 +131,7 @@ export const messages = {
   "error.agent.lowMemoryServer":
     "このサーバーはメモリーが不足しています。メッセージはキューで待機し、メモリーが空くと開始します。",
   "error.agent.workspaceOnlyToolMissing":
-    "「ワークスペースのみ」には {tool} が必要ですが、OpenBot は見つけられませんでした。インストールするか、エージェントの設定で「フルアクセス」を選んでください。",
+    "「ワークスペースのみ」には {tool} が必要ですが、Slavebot は見つけられませんでした。インストールするか、エージェントの設定で「フルアクセス」を選んでください。",
   "error.agent.claudeSandboxUnavailable":
     "「ワークスペースのみ」には Claude のサンドボックスが必要ですが、このコンピューターでは Claude がサンドボックスを開始できません: {reason}。エージェントの設定で「フルアクセス」か別のプロバイダーを選んでください。",
   "error.agent.screenCaptureOff":
@@ -148,7 +148,7 @@ export const messages = {
   "error.agent.screenCaptureRegionOutside":
     "この領域は 1 つのディスプレイの中に収まっていません。list_capture_sources が返す 1 つのディスプレイの範囲内で、デスクトップのポイント座標を使ってください。",
   "error.agent.screenCapturePermissionMissing":
-    "OpenBot に画面収録の権限がありません。ユーザーに「システム設定」→「プライバシーとセキュリティ」→「画面収録とシステムオーディオ録音」を開いて OpenBot をオンにし、OpenBot を終了してから再度開くよう依頼してください。",
+    "Slavebot に画面収録の権限がありません。ユーザーに「システム設定」→「プライバシーとセキュリティ」→「画面収録とシステムオーディオ録音」を開いて Slavebot をオンにし、Slavebot を終了してから再度開くよう依頼してください。",
   "error.agent.screenCaptureEmptyWindows":
     "Windows が空の画像を返しました。コンピューターのロックを解除し、保護されたコンテンツを閉じるようユーザーに依頼してください。組織のポリシーによって画面キャプチャが止められている場合もあります。",
   "error.agent.screenCaptureFailed": "画面キャプチャに失敗しました。もう一度お試しください。",

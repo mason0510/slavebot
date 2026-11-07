@@ -16,8 +16,8 @@ export const messages = {
   "notification.channelMessage": "Bir mesaj gönderdi.",
   "notification.usageLimit.title": "{provider} hesabı sınırına ulaştı",
   "notification.usageLimit.body": {
-    one: "{count} ajan bekliyor. OpenBot daha sonra tekrar deneyecek.",
-    other: "{count} ajan bekliyor. OpenBot daha sonra tekrar deneyecek.",
+    one: "{count} ajan bekliyor. Slavebot daha sonra tekrar deneyecek.",
+    other: "{count} ajan bekliyor. Slavebot daha sonra tekrar deneyecek.",
   },
   "notification.usageLimit.bodyResets": {
     one: "{count} ajan bekliyor. Sıfırlanma: {reset}.",
@@ -28,7 +28,7 @@ export const messages = {
   "notification.machineAlert.cpu": "{server}: CPU {percent} meşgul",
   "notification.machineAlert.body": "{level} uyarı seviyesi aşıldı. Sunucu ayarları > Depolama bölümüne bakın.",
   "notification.test": "Bildirimler çalışıyor.",
-  "notification.welcome": "Bir ajanın size ihtiyacı olduğunda OpenBot burada bildirecektir.",
+  "notification.welcome": "Bir ajanın size ihtiyacı olduğunda Slavebot burada bildirecektir.",
   "notification.toast.region": "Bildirimler",
   "notification.toast.close": "Bildirimi kapat",
 } as const satisfies PartialTranslation<typeof source>;

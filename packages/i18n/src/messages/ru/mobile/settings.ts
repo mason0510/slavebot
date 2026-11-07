@@ -16,7 +16,7 @@ export const messages = {
   "mobile.settings.about.privacy": "Политика конфиденциальности",
   "mobile.settings.home.profile": "Профиль",
   "mobile.settings.home.preferences": "Параметры",
-  "mobile.settings.home.about": "Об OpenBot",
+  "mobile.settings.home.about": "Об Slavebot",
   "mobile.settings.home.support": "Поддержка",
   "mobile.settings.home.supportHint": "Помощь и сохранение журнала поддержки",
   "mobile.settings.support.help": "Получить помощь",
@@ -36,7 +36,7 @@ export const messages = {
   "mobile.settings.support.clearTitle": "Очистить журнал поддержки?",
   "mobile.settings.support.clearBody": "Все события будут удалены из журнала на этом телефоне.",
   "mobile.settings.support.logFooter":
-    "Журнал хранится на этом телефоне, OpenBot его не отправляет. В нём записаны шаги подключения, запросы и ошибки, но не сообщения и файлы; пароли и токены скрыты. Прочитайте файл, прежде чем делиться им.",
+    "Журнал хранится на этом телефоне, Slavebot его не отправляет. В нём записаны шаги подключения, запросы и ошибки, но не сообщения и файлы; пароли и токены скрыты. Прочитайте файл, прежде чем делиться им.",
   "mobile.settings.support.saveFailed": "Не удалось сохранить файл журнала. Повторите попытку.",
   "mobile.settings.support.sharingUnavailable": "На этом телефоне нельзя поделиться файлом.",
   "mobile.settings.support.recent": "Последние события",
@@ -94,27 +94,27 @@ export const messages = {
   "mobile.settings.feedback.retry": "Повторить сохранение настройки вибрации",
   "mobile.settings.liveActivities.title": "Live Activities",
   "mobile.settings.liveActivities.footer":
-    "Показывает работу агентов, сообщения, вопросы и запросы одобрения на экране блокировки и в Dynamic Island, пока работает OpenBot.",
+    "Показывает работу агентов, сообщения, вопросы и запросы одобрения на экране блокировки и в Dynamic Island, пока работает Slavebot.",
   "mobile.settings.liveActivities.toggle": "Показывать активность агентов",
   "mobile.settings.liveActivities.retry": "Повторить сохранение настройки Live Activities",
   "mobile.settings.notifications.title": "Уведомления",
   "mobile.settings.notifications.toggle": "Разрешить уведомления",
   "mobile.settings.notifications.footer":
-    "Агенты сообщают, когда заканчивают работу, останавливаются с ошибкой или ждут вашего ответа, подтверждения или шага в браузере. Уведомлений нет, пока вы пользуетесь OpenBot здесь или в приложении для компьютера. Пока показана Live Activity, событие показывает она.",
+    "Агенты сообщают, когда заканчивают работу, останавливаются с ошибкой или ждут вашего ответа, подтверждения или шага в браузере. Уведомлений нет, пока вы пользуетесь Slavebot здесь или в приложении для компьютера. Пока показана Live Activity, событие показывает она.",
   "mobile.settings.notifications.footerAndroid":
-    "Агенты сообщают, когда заканчивают работу, останавливаются с ошибкой или ждут вашего ответа, подтверждения или шага в браузере. Уведомлений нет, пока вы пользуетесь OpenBot здесь или в приложении для компьютера.",
-  "mobile.settings.notifications.denied": "Уведомления OpenBot выключены в «Настройках» iOS.",
-  "mobile.settings.notifications.deniedAndroid": "Уведомления OpenBot выключены в настройках Android.",
+    "Агенты сообщают, когда заканчивают работу, останавливаются с ошибкой или ждут вашего ответа, подтверждения или шага в браузере. Уведомлений нет, пока вы пользуетесь Slavebot здесь или в приложении для компьютера.",
+  "mobile.settings.notifications.denied": "Уведомления Slavebot выключены в «Настройках» iOS.",
+  "mobile.settings.notifications.deniedAndroid": "Уведомления Slavebot выключены в настройках Android.",
   "mobile.settings.notifications.openSettings": "Открыть Настройки iOS",
   "mobile.settings.notifications.openSettingsAndroid": "Открыть настройки Android",
   "mobile.settings.notifications.preview": "Показывать начало ответа",
   "mobile.settings.notifications.previewFooter":
-    "Показывает начало ответа, вопрос или действие, которое нужно подтвердить. Apple и служба аккаунтов OpenBot не могут его прочитать.",
+    "Показывает начало ответа, вопрос или действие, которое нужно подтвердить. Apple и служба аккаунтов Slavebot не могут его прочитать.",
   "mobile.settings.notifications.previewFooterAndroid":
-    "Показывает начало ответа, вопрос или действие, которое нужно подтвердить. Google и служба аккаунтов OpenBot не могут его прочитать.",
+    "Показывает начало ответа, вопрос или действие, которое нужно подтвердить. Google и служба аккаунтов Slavebot не могут его прочитать.",
   "mobile.settings.notifications.sound": "Звук",
   "mobile.settings.notifications.playSound": "Воспроизводить звук",
-  "mobile.settings.notifications.sound.openbot": "OpenBot",
+  "mobile.settings.notifications.sound.openbot": "Slavebot",
   "mobile.settings.notifications.sound.warm": "Тёплая",
   "mobile.settings.notifications.sound.mech": "Механическая",
   "mobile.settings.notifications.sound.bubble": "Пузырьковая",
@@ -122,9 +122,9 @@ export const messages = {
   "mobile.settings.notifications.sound.default": "Стандартный iOS",
   "mobile.settings.notifications.sound.defaultAndroid": "Стандартный Android",
   "mobile.settings.notifications.soundFooter":
-    "Уведомления и Live Activity воспроизводят этот звук. Live Activity также включает экран. Звук OpenBot — тот же звук, который играет приложение для компьютера, когда задача завершена. Следующие четыре звука — звуки звуковых тем приложения для компьютера.",
+    "Уведомления и Live Activity воспроизводят этот звук. Live Activity также включает экран. Звук Slavebot — тот же звук, который играет приложение для компьютера, когда задача завершена. Следующие четыре звука — звуки звуковых тем приложения для компьютера.",
   "mobile.settings.notifications.soundFooterAndroid":
-    "Уведомления воспроизводят этот звук. Звук OpenBot — тот же звук, который играет приложение для компьютера, когда задача завершена. Следующие четыре звука — звуки звуковых тем приложения для компьютера.",
+    "Уведомления воспроизводят этот звук. Звук Slavebot — тот же звук, который играет приложение для компьютера, когда задача завершена. Следующие четыре звука — звуки звуковых тем приложения для компьютера.",
   "mobile.settings.notifications.level.all": "Вся активность",
   "mobile.settings.notifications.level.needsMe": "Только когда я нужен",
   "mobile.settings.notifications.level.nothing": "Ничего",
@@ -140,7 +140,7 @@ export const messages = {
   "mobile.settings.notifications.serverFooter":
     "События этого сервера, о которых уведомляет этот телефон. У приложения для компьютера свои настройки.",
   "mobile.settings.notifications.serverUnsupported":
-    "Этот сервер не может отправлять уведомления. Обновите OpenBot на компьютере, где он работает.",
+    "Этот сервер не может отправлять уведомления. Обновите Slavebot на компьютере, где он работает.",
   "mobile.settings.notifications.thisPhone": "Этот телефон",
   "mobile.settings.notifications.whatYouHear": "О чём вы узнаёте",
   "mobile.settings.notifications.wholeServer": "Весь сервер",
@@ -154,7 +154,7 @@ export const messages = {
   "mobile.settings.notifications.chooseAgent": "Выбрать для одного агента",
   "mobile.settings.notifications.chooseAnotherAgent": "Выбрать другого агента",
   "mobile.settings.notifications.levelsFooter": "Нажмите уровень агента ещё раз, чтобы он следовал настройке сервера.",
-  "mobile.settings.notifications.agentsUnsupported": "Обновите OpenBot на этом сервере, чтобы выбирать агентов.",
+  "mobile.settings.notifications.agentsUnsupported": "Обновите Slavebot на этом сервере, чтобы выбирать агентов.",
   "mobile.settings.notifications.agentsOffline": "Агенты появятся, когда этот сервер будет в сети.",
   "mobile.settings.notifications.scopeFooter":
     "Ваш выбор действует на всех ваших устройствах. Режим без звука действует только на этом телефоне.",
@@ -182,7 +182,7 @@ export const messages = {
   "mobile.settings.profile.security": "Безопасность",
   "mobile.settings.profile.accountSessions": "Сеансы аккаунта",
   "mobile.settings.profile.signOutTitle": "Выйти?",
-  "mobile.settings.profile.signOutBody": "Чтобы подключиться снова, отсканируйте новый код в OpenBot на компьютере.",
+  "mobile.settings.profile.signOutBody": "Чтобы подключиться снова, отсканируйте новый код в Slavebot на компьютере.",
   "mobile.settings.profile.signOut": "Выйти",
   "mobile.settings.voice.title": "Голос",
   "mobile.settings.voice.sample": "Привет. Так я буду читать вам свои ответы.",
@@ -213,7 +213,7 @@ export const messages = {
   "mobile.settings.voice.supertonic.male": "Мужской голос {number}",
   "mobile.settings.voice.elevenLabs.title": "ElevenLabs",
   "mobile.settings.voice.elevenLabs.footer":
-    "OpenBot отправляет текст каждого ответа в ElevenLabs с вашим ключом, и ElevenLabs списывает оплату с вашего аккаунта. Ключ хранится в связке ключей этого телефона.",
+    "Slavebot отправляет текст каждого ответа в ElevenLabs с вашим ключом, и ElevenLabs списывает оплату с вашего аккаунта. Ключ хранится в связке ключей этого телефона.",
   "mobile.settings.voice.elevenLabs.key": "Ключ API",
   "mobile.settings.voice.elevenLabs.keySaved": "Сохранён на этом телефоне",
   "mobile.settings.voice.elevenLabs.chooseVoice": "Выберите голос",
@@ -223,7 +223,7 @@ export const messages = {
   "mobile.settings.voice.elevenLabs.removeBody": "Supertonic 3 снова читает ответы.",
   "mobile.settings.voice.elevenLabs.saveKey": "Сохранить ключ",
   "mobile.settings.voice.elevenLabs.testing": "Проверка ключа",
-  "mobile.settings.voice.elevenLabs.keyHint": "OpenBot проверяет первые два разрешения перед сохранением ключа.",
+  "mobile.settings.voice.elevenLabs.keyHint": "Slavebot проверяет первые два разрешения перед сохранением ключа.",
   "mobile.settings.voice.elevenLabs.testFailed": "ElevenLabs не ответил. Повторите попытку.",
   "mobile.settings.voice.elevenLabs.getKey": "Получить ключ API",
   "mobile.settings.voice.engine.supertonicReady": "На этом телефоне · {voice}",
@@ -267,5 +267,5 @@ export const messages = {
   "mobile.settings.voice.tab.listening": "Слушание",
   "mobile.settings.voice.tab.speaking": "Озвучивание",
   "mobile.settings.voice.elevenLabs.recognitionFooter":
-    "OpenBot передаёт вашу речь в ElevenLabs с одноразовым токеном, и ElevenLabs списывает оплату с вашего аккаунта. Ключ остаётся на этом телефоне.",
+    "Slavebot передаёт вашу речь в ElevenLabs с одноразовым токеном, и ElevenLabs списывает оплату с вашего аккаунта. Ключ остаётся на этом телефоне.",
 } as const satisfies PartialTranslation<typeof source>;

@@ -582,13 +582,13 @@ export class CuaDriverRuntime {
     const spawnFailure = Deferred.makeUnsafe<never, CuaDriverFailure>();
     child.once("error", (error: Error) => {
       if (this.#child === child) this.#child = null;
-      this.#options.onDiagnostic?.(`OpenBot: the Computer Use driver could not start. ${error.message}\n`);
+      this.#options.onDiagnostic?.(`Slavebot: the Computer Use driver could not start. ${error.message}\n`);
       Deferred.doneUnsafe(spawnFailure, Exit.fail(new CuaDriverFailure({ cause: error })));
     });
     child.once("exit", (code) => {
       if (this.#child !== child) return;
       this.#child = null;
-      this.#options.onDiagnostic?.(`OpenBot: the Computer Use driver stopped with code ${code ?? "unknown"}.\n`);
+      this.#options.onDiagnostic?.(`Slavebot: the Computer Use driver stopped with code ${code ?? "unknown"}.\n`);
       this.#announceMcpServer();
       this.#publish({
         status: "error",
@@ -629,7 +629,7 @@ export class CuaDriverRuntime {
     const listening = yield* Effect.result(this.#tap.listen({ upstream: socketPath, tap: address }));
     if (Result.isFailure(listening))
       this.#options.onDiagnostic?.(
-        `OpenBot: the Computer Use tap could not listen. ${describe(listening.failure.cause)}\n`,
+        `Slavebot: the Computer Use tap could not listen. ${describe(listening.failure.cause)}\n`,
       );
   });
 
@@ -646,13 +646,13 @@ export class CuaDriverRuntime {
     socketPath: string,
   ): Effect.fn.Return<void, CuaDriverFailure> {
     if (!(yield* acceptsEffect(socketPath, `${JSON.stringify({ method: "shutdown" })}\n`))) return;
-    this.#options.onDiagnostic?.("OpenBot: stopping a Computer Use driver that a previous run left running.\n");
+    this.#options.onDiagnostic?.("Slavebot: stopping a Computer Use driver that a previous run left running.\n");
     const deadline = Date.now() + ORPHAN_STOP_TIMEOUT_MS;
     while (Date.now() < deadline) {
       yield* Effect.sleep(READY_POLL_MS / 4);
       if (!(yield* acceptsEffect(socketPath))) return;
     }
-    this.#options.onDiagnostic?.("OpenBot: the Computer Use driver left by a previous run did not stop.\n");
+    this.#options.onDiagnostic?.("Slavebot: the Computer Use driver left by a previous run did not stop.\n");
   });
 
   #removeSocket = Effect.fn("CuaDriver.removeSocket")(function* (
@@ -691,7 +691,7 @@ export class CuaDriverRuntime {
     );
     if (Result.isFailure(linked)) {
       this.#options.onDiagnostic?.(
-        `OpenBot: the Computer Use driver link could not be written. ${describe(linked.failure.cause)}\n`,
+        `Slavebot: the Computer Use driver link could not be written. ${describe(linked.failure.cause)}\n`,
       );
       return executable;
     }

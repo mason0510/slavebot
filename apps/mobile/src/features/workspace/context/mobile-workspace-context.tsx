@@ -246,7 +246,7 @@ const OTHER_SERVERS_RETURN_DELAY_MS = 3_000;
 const STARTUP_SERVER_WAIT_MS = 4_000;
 const EMPTY_SERVER: MobileServer = {
   id: "unavailable",
-  name: "OpenBot",
+  name: "Slavebot",
   logoKey: null,
   kind: "local",
   state: "connecting",
@@ -1048,7 +1048,7 @@ export function MobileWorkspaceProvider({ children }: PropsWithChildren) {
       supportLog.add(
         "info",
         "connection",
-        `${serverId} host OpenBot ${compatibility.appVersion}, protocol ${compatibility.protocol.minimum}-${compatibility.protocol.maximum}, capabilities: ${compatibility.capabilities.join(" ")}`,
+        `${serverId} host Slavebot ${compatibility.appVersion}, protocol ${compatibility.protocol.minimum}-${compatibility.protocol.maximum}, capabilities: ${compatibility.capabilities.join(" ")}`,
       );
       if (compatibility.protocol.minimum > TEAM_PROTOCOL_V3 || compatibility.protocol.maximum < TEAM_PROTOCOL_V3) {
         throw new Error(sourceText("error.remote.mobileUpdateRequired"));

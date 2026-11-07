@@ -10,12 +10,12 @@ export const messages = {
   "error.workflow.conditionBranch": "Jede Verbindung einer Bedingung muss Ja oder Nein sein.",
   "error.workflow.duplicateEdge": "Diese zwei Schritte haben diese Verbindung bereits.",
   "error.workflow.serverTooOld":
-    "Dieser Server unterstützt keine Workflows. Aktualisiere OpenBot auf dem Computer, auf dem er läuft.",
+    "Dieser Server unterstützt keine Workflows. Aktualisiere Slavebot auf dem Computer, auf dem er läuft.",
   "error.workflow.nodeUnsupported":
-    "Diese Version von OpenBot kann Bild-, Datei- und Nachrichtenschritte noch nicht ausführen.",
-  "error.workflow.interrupted": "OpenBot wurde beendet, während dieser Schritt lief. Führe ihn erneut aus.",
+    "Diese Version von Slavebot kann Bild-, Datei- und Nachrichtenschritte noch nicht ausführen.",
+  "error.workflow.interrupted": "Slavebot wurde beendet, während dieser Schritt lief. Führe ihn erneut aus.",
   "error.workflow.agentMissing": "Wähle einen Agenten für diesen Schritt.",
-  "error.workflow.handoffFailed": "OpenBot konnte diesen Schritt nicht an seinen Agenten senden.",
+  "error.workflow.handoffFailed": "Slavebot konnte diesen Schritt nicht an seinen Agenten senden.",
   "error.workflow.agentStepEnded": "Die Nachricht an den Agenten wurde entfernt, bevor er antwortete.",
   "error.workflow.conditionUnclear": "Das Modell hat nicht mit Ja oder Nein geantwortet.",
   "error.workflow.modelFailed": "Das Modell konnte nicht antworten. Führe den Schritt erneut aus.",
@@ -29,7 +29,7 @@ export const messages = {
   "error.workflow.outputConnectionOff":
     "Die Messaging-Verbindung dieser Ausgabe ist aus oder entfernt. Wähle erneut einen Ort.",
   "error.workflow.outputNotRunning": "Die Messaging-Verbindung läuft gerade nicht. Versuche es erneut, wenn sie läuft.",
-  "error.workflow.outputRefused": "Der Ort hat den Beitrag abgelehnt. Stelle sicher, dass OpenBot dort posten kann.",
+  "error.workflow.outputRefused": "Der Ort hat den Beitrag abgelehnt. Stelle sicher, dass Slavebot dort posten kann.",
   "error.workflow.outputUncertain":
     "Der Beitrag wurde unterwegs unterbrochen. Ein Teil kann schon am Ort sein. Sieh dort nach, bevor du es erneut versuchst.",
   "error.workflow.tooLarge":
@@ -51,12 +51,12 @@ export const messages = {
   "error.workflow.githubChoseNothing": "Das Modell hat kein Label und keine Person dieses Repositorys gewählt.",
   "error.workflow.githubNotConnected": "Verbinde GitHub auf dem Computer, auf dem dieser Workflow läuft.",
   "error.workflow.githubNoAccess":
-    "Die OpenBot-GitHub-App kann dieses Repository oder Element nicht sehen. Öffne GitHub und gib ihr Zugriff.",
+    "Die Slavebot-GitHub-App kann dieses Repository oder Element nicht sehen. Öffne GitHub und gib ihr Zugriff.",
   "error.workflow.githubNoWrite":
-    "Die OpenBot-GitHub-App kann dieses Repository nicht ändern. Öffne GitHub und gib ihr Zugriff.",
+    "Die Slavebot-GitHub-App kann dieses Repository nicht ändern. Öffne GitHub und gib ihr Zugriff.",
   "error.workflow.githubLocked": "Diese Unterhaltung ist auf GitHub gesperrt.",
   "error.workflow.githubRefused": "GitHub hat die Änderung abgelehnt: {detail}",
-  "error.workflow.githubUnreachable": "OpenBot konnte GitHub nicht erreichen. Führe den Schritt erneut aus.",
+  "error.workflow.githubUnreachable": "Slavebot konnte GitHub nicht erreichen. Führe den Schritt erneut aus.",
   "error.workflow.githubUncertain":
     "Die Änderung wurde unterwegs unterbrochen. Sie kann schon auf GitHub sein. Sieh dort nach, bevor du den Schritt erneut ausführst.",
   "error.workflow.githubNoEvent": "GitHub hat kein Issue und keinen Pull Request, bei dem dieser Auslöser startet.",

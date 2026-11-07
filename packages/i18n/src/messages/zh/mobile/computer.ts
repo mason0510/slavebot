@@ -16,10 +16,10 @@ export const messages = {
   "mobile.computer.status.connecting": "正在连接电脑…",
   "mobile.computer.status.connected": "已连接",
   "mobile.computer.status.offline": "服务器未连接。",
-  "mobile.computer.status.unsupported": "此服务器无法在手机上共享屏幕。请更新这台服务器上的 OpenBot。",
+  "mobile.computer.status.unsupported": "此服务器无法在手机上共享屏幕。请更新这台服务器上的 Slavebot。",
   "mobile.computer.status.notSharing": "{name} 没有共享屏幕",
   "mobile.computer.status.notSharingBody":
-    "请在那台电脑上打开“系统设置 → 隐私与安全性 → 屏幕与系统音频录制”，开启 OpenBot（或 Slavebot），然后回到这里重试。",
+    "请在那台电脑上打开“系统设置 → 隐私与安全性 → 屏幕与系统音频录制”，开启 Slavebot（或 Slavebot），然后回到这里重试。",
   "mobile.computer.status.failed": "无法打开桌面。",
   "mobile.computer.status.streamNotReady": "服务器没有启动串流，Sunshine 可能已在服务器上停止，请重试。",
   "mobile.computer.retry": "重试",

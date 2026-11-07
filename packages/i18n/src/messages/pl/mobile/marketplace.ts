@@ -55,12 +55,12 @@ export const messages = {
   "mobile.marketplace.facts.accessNone": "Bez logowania",
   "mobile.marketplace.permission.admin": "Tylko właściciele i administratorzy mogą instalować z Marketplace.",
   "mobile.marketplace.permission.unavailable":
-    "Ten serwer jest offline lub jego OpenBot jest na to za stary. Zaktualizuj OpenBot na komputerze, na którym działa.",
-  "mobile.marketplace.error.agentUnsupported": "Zaktualizuj OpenBot na serwerze, aby dodawać agentów z Marketplace.",
+    "Ten serwer jest offline lub jego Slavebot jest na to za stary. Zaktualizuj Slavebot na komputerze, na którym działa.",
+  "mobile.marketplace.error.agentUnsupported": "Zaktualizuj Slavebot na serwerze, aby dodawać agentów z Marketplace.",
   "mobile.marketplace.error.agentUpdateUnsupported":
-    "Zaktualizuj OpenBot na serwerze, aby aktualizować agentów z Marketplace.",
+    "Zaktualizuj Slavebot na serwerze, aby aktualizować agentów z Marketplace.",
   "mobile.marketplace.error.signInUnsupported":
-    "Zaktualizuj OpenBot na serwerze, aby logować się do aplikacji z telefonu.",
+    "Zaktualizuj Slavebot na serwerze, aby logować się do aplikacji z telefonu.",
   "mobile.marketplace.agent.add": "Dodaj agenta",
   "mobile.marketplace.agent.adding": "Dodawanie agenta",
   "mobile.marketplace.agent.update": "Zaktualizuj",
@@ -103,9 +103,9 @@ export const messages = {
   "mobile.marketplace.app.connectFailed": "Nie udało się połączyć aplikacji.",
   "mobile.marketplace.app.linkInvalid": "Użyj linku https w domenie {hostname}.",
   "mobile.marketplace.app.docs": "Uzyskaj klucz",
-  "mobile.marketplace.app.local": "Ta aplikacja działa na komputerze z OpenBot. Skonfiguruj ją na tym komputerze.",
+  "mobile.marketplace.app.local": "Ta aplikacja działa na komputerze z Slavebot. Skonfiguruj ją na tym komputerze.",
   "mobile.marketplace.app.relayUnsupported":
-    "Ta aplikacja wymaga logowania w przeglądarce. Zaktualizuj OpenBot na serwerze lub połącz aplikację na komputerze.",
+    "Ta aplikacja wymaga logowania w przeglądarce. Zaktualizuj Slavebot na serwerze lub połącz aplikację na komputerze.",
   "mobile.marketplace.app.waiting": "Oczekiwanie na stronę logowania…",
   "mobile.marketplace.app.openAgain": "Otwórz ponownie stronę logowania",
   "mobile.marketplace.app.pasteHint":

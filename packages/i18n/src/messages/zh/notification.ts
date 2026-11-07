@@ -20,8 +20,8 @@ export const messages = {
   "notification.channelMessage": "发来一条消息。",
   "notification.usageLimit.title": "{provider} 账号已达上限",
   "notification.usageLimit.body": {
-    one: "{count} 个助手在等待，OpenBot 稍后会重试。",
-    other: "{count} 个助手在等待，OpenBot 稍后会重试。",
+    one: "{count} 个助手在等待，Slavebot 稍后会重试。",
+    other: "{count} 个助手在等待，Slavebot 稍后会重试。",
   },
   "notification.usageLimit.bodyResets": {
     one: "{count} 个助手在等待，{reset} 重置。",
@@ -32,7 +32,7 @@ export const messages = {
   "notification.machineAlert.cpu": "{server}：CPU 占用 {percent}",
   "notification.machineAlert.body": "已超过 {level} 的警报阈值。请查看“服务器设置 > 存储”。",
   "notification.test": "通知功能正常。",
-  "notification.welcome": "当助手需要你时，OpenBot 会在这里通知你。",
+  "notification.welcome": "当助手需要你时，Slavebot 会在这里通知你。",
   // The toast region in each window.
   "notification.toast.region": "通知",
   "notification.toast.close": "关闭通知",

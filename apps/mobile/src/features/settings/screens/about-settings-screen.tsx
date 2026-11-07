@@ -12,7 +12,7 @@ import {
 } from "@/features/settings/components/settings-content";
 import { useText } from "@/shared/lib/text";
 
-const PRODUCT_NAME = "OpenBot";
+const PRODUCT_NAME = "Slavebot";
 
 export function AboutSettingsScreen() {
   const { t } = useText();

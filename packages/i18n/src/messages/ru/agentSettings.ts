@@ -53,7 +53,7 @@ export const messages = {
     "Папка {folder} находится в рабочем пространстве, поэтому {agent} уже может её изменять",
   "agentSettings.folders.inShared": "Папка {folder} находится в общей папке, поэтому {agent} уже может её изменять",
   "agentSettings.folders.inFolder": "Папка {folder} находится в уже добавленной папке {parent}",
-  "agentSettings.folders.protected": "Нельзя добавить папку {folder}: в ней данные OpenBot или файлы других агентов",
+  "agentSettings.folders.protected": "Нельзя добавить папку {folder}: в ней данные Slavebot или файлы других агентов",
   "agentSettings.folders.missing": "На этом компьютере нет папки {folder}",
   "agentSettings.folders.limit": {
     one: "Можно добавить не больше {count} папки",
@@ -165,7 +165,7 @@ export const messages = {
   "agentSettings.runtime.fullAccessNote":
     "Агент работает с полным доступом к компьютеру из своего рабочего пространства и общей папки.",
   "agentSettings.runtime.askNote":
-    "Агент спрашивает вас, прежде чем использовать инструмент OpenBot или опубликовать сайт, а также когда его провайдер запрашивает одобрение.",
+    "Агент спрашивает вас, прежде чем использовать инструмент Slavebot или опубликовать сайт, а также когда его провайдер запрашивает одобрение.",
   "agentSettings.runtime.fullNote": "Агент действует без подтверждения, кроме вопросов, которые он задаёт вам.",
 
   "agentSettings.access.workspace": "Рабочее пространство",
@@ -242,7 +242,7 @@ export const messages = {
   "agentSettings.runtime.workspaceEnforcedClaude":
     "Изменение файла за пределами рабочего пространства сначала требует вашего подтверждения. Команда не может записывать за его пределами.",
   "agentSettings.runtime.workspaceUnlimited":
-    "Управление компьютером и браузер OpenBot не ограничены; управление компьютером можно отключить ниже.",
+    "Управление компьютером и браузер Slavebot не ограничены; управление компьютером можно отключить ниже.",
   "agentSettings.computerUse.title": "Управление компьютером",
   "agentSettings.computerUse.description": "Разрешить этому агенту управлять приложениями на этом компьютере",
   "agentSettings.automation.title": "Локальные скрипты",

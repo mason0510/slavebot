@@ -9,10 +9,10 @@ export const messages = {
   "mobile.server.drawer.editOrder": "Modifica ordine",
   "mobile.server.drawer.leaveFailed": "Impossibile uscire da {name}",
   "mobile.server.drawer.removeFailed": "Impossibile rimuovere {name}",
-  "mobile.server.drawer.actionFailed": "OpenBot non ha potuto completare questa azione. Riprova.",
+  "mobile.server.drawer.actionFailed": "Slavebot non ha potuto completare questa azione. Riprova.",
   "mobile.server.drawer.moveUp": "Sposta su",
   "mobile.server.drawer.moveDown": "Sposta giù",
-  "mobile.server.drawer.orderHint": "OpenBot si apre sul primo server. L'ordine è salvato su questo dispositivo.",
+  "mobile.server.drawer.orderHint": "Slavebot si apre sul primo server. L'ordine è salvato su questo dispositivo.",
   "mobile.server.drawer.title": "Server",
   "mobile.server.drawer.serverSettings": "Impostazioni server",
   "mobile.server.drawer.serverListHint": "Mostra o nasconde i server",
@@ -25,8 +25,8 @@ export const messages = {
   "mobile.server.drawer.close": "Chiudi l'elenco dei server",
   "mobile.server.invite.noExpiry": "{role} · Senza scadenza",
   "mobile.server.invite.expires": "{role} · Scade il {date}",
-  "mobile.server.invite.loadFailed": "OpenBot non è riuscito a caricare questo invito.",
-  "mobile.server.invite.joinFailed": "OpenBot non è riuscito a unirsi a questo server.",
+  "mobile.server.invite.loadFailed": "Slavebot non è riuscito a caricare questo invito.",
+  "mobile.server.invite.joinFailed": "Slavebot non è riuscito a unirsi a questo server.",
   "mobile.server.invite.checking": "Controllo dell'invito…",
   "mobile.server.invite.unavailable": "Invito non disponibile",
   "mobile.server.invite.verifying": "Verifica dell'identità del server.",
@@ -67,14 +67,14 @@ export const messages = {
   "mobile.server.hosted.join": "Unisciti a un server",
   "mobile.server.hosted.intro.title": "I tuoi agenti, sempre attivi",
   "mobile.server.hosted.intro.description":
-    "Un server cloud esegue i tuoi agenti e le tue routine quando il computer è spento. OpenBot lo configura e lo mantiene in funzione.",
+    "Un server cloud esegue i tuoi agenti e le tue routine quando il computer è spento. Slavebot lo configura e lo mantiene in funzione.",
   "mobile.server.hosted.planFacts": "{members} · {storage} · {sites} · {speed}",
   "mobile.server.hosted.computer.title": "Sul tuo computer",
   "mobile.server.hosted.computer.add": "Aggiungi un server cloud",
   "mobile.server.hosted.computer.addHint":
-    "In OpenBot, apri Impostazioni → Server ospitati e seleziona «Aggiungi server».",
+    "In Slavebot, apri Impostazioni → Server ospitati e seleziona «Aggiungi server».",
   "mobile.server.hosted.computer.change": "Cambia un piano",
-  "mobile.server.hosted.computer.changeHint": "In OpenBot, apri Impostazioni → Fatturazione.",
+  "mobile.server.hosted.computer.changeHint": "In Slavebot, apri Impostazioni → Fatturazione.",
   "mobile.server.hosted.yourServers": "I tuoi server",
   "mobile.server.hosted.plans": "Piani",
   "mobile.server.hosted.currentPlan": "Il tuo piano",
@@ -91,7 +91,7 @@ export const messages = {
   "mobile.server.hosted.paymentTitle": "In attesa di pagamento",
   "mobile.server.hosted.paymentDescription": "La configurazione parte quando il pagamento è confermato.",
   "mobile.server.hosted.progressTitle": "Configurazione di {name}",
-  "mobile.server.hosted.progressDescription": "OpenBot sta preparando una macchina privata per te.",
+  "mobile.server.hosted.progressDescription": "Slavebot sta preparando una macchina privata per te.",
   "mobile.server.hosted.closeHint":
     "Puoi chiudere questa schermata. La configurazione continua e il server compare nell'elenco quando è pronto.",
   "mobile.server.hosted.readyTitle": "{name} è pronto",
@@ -99,21 +99,21 @@ export const messages = {
   "mobile.server.hosted.open": "Apri il server",
   "mobile.server.hosted.failedTitle": "Impossibile avviare il server",
   "mobile.server.hosted.failedDescription":
-    "Riprova. Se fallisce di nuovo, elimina il server dalle Impostazioni di OpenBot sul computer.",
+    "Riprova. Se fallisce di nuovo, elimina il server dalle Impostazioni di Slavebot sul computer.",
   "mobile.server.hosted.retrying": "Avvio…",
   "mobile.server.hosted.expiredTitle": "La pagina di pagamento è scaduta",
   "mobile.server.hosted.expiredDescription": "Il server non è stato pagato, quindi è stato rimosso.",
   "mobile.server.hosted.step.payment": "Conferma il pagamento",
   "mobile.server.hosted.step.create": "Crea la macchina",
-  "mobile.server.hosted.step.start": "Avvia OpenBot",
+  "mobile.server.hosted.step.start": "Avvia Slavebot",
   "mobile.server.hosted.step.connect": "Collega al tuo account",
   "mobile.server.hosted.detail.payment": "In attesa di Stripe",
   "mobile.server.hosted.detail.reserve": "Prenotazione di una macchina privata",
-  "mobile.server.hosted.detail.copy": "Copia di OpenBot sulla macchina",
+  "mobile.server.hosted.detail.copy": "Copia di Slavebot sulla macchina",
   "mobile.server.hosted.detail.key": "Aggiunta di una chiave di accesso monouso",
   "mobile.server.hosted.detail.boot": "Accensione della macchina",
-  "mobile.server.hosted.detail.app": "Avvio di OpenBot",
-  "mobile.server.hosted.detail.wait": "In attesa della risposta di OpenBot",
+  "mobile.server.hosted.detail.app": "Avvio di Slavebot",
+  "mobile.server.hosted.detail.wait": "In attesa della risposta di Slavebot",
   "mobile.server.hosted.detail.signIn": "Accesso con il tuo account",
   "mobile.server.hosted.detail.publish": "Aggiunta del server al tuo account",
   "mobile.server.hosted.detail.check": "Controllo della connessione",
@@ -121,7 +121,7 @@ export const messages = {
   "mobile.server.hosted.stepActive": "in corso",
   "mobile.server.hosted.stepPending": "non iniziato",
   "mobile.server.hosted.stepFailed": "non riuscito",
-  "mobile.server.scan.notInvitation": "Questo codice QR non è un invito di OpenBot.",
+  "mobile.server.scan.notInvitation": "Questo codice QR non è un invito di Slavebot.",
   "mobile.server.scan.title": "Scansiona invito",
   "mobile.server.role.owner": "proprietario",
   "mobile.server.role.admin": "amministratore",
@@ -161,7 +161,7 @@ export const messages = {
   "mobile.server.routines.status.paused": "In pausa",
   "mobile.server.routines.status.failed": "Non riuscita",
   "mobile.server.routines.status.completed": "Completata",
-  "mobile.server.threads.unsupported": "Questo host non supporta i thread. Aggiorna OpenBot sull’host.",
+  "mobile.server.threads.unsupported": "Questo host non supporta i thread. Aggiorna Slavebot sull’host.",
   "mobile.server.threads.ask": "Cosa vuoi che venga fatto?",
   "mobile.server.threads.chooseAgent": "Avvia il thread con",
   "mobile.server.threads.agentLabel": "Avvia il thread con {name}",
@@ -245,7 +245,7 @@ export const messages = {
   "mobile.server.settings.identityNotAllowed":
     "Solo un proprietario o un amministratore può cambiare il nome e il logo del server.",
   "mobile.server.settings.identityUnsupported":
-    "Aggiorna OpenBot su questo server per cambiarne qui il nome e il logo.",
+    "Aggiorna Slavebot su questo server per cambiarne qui il nome e il logo.",
   "mobile.server.settings.identityOffline": "Connettiti a questo server per cambiarne il nome e il logo.",
   "mobile.server.route.cropLogo": "Ritaglia logo",
   "mobile.server.members.remove": "Rimuovi membro",
@@ -299,7 +299,7 @@ export const messages = {
   "mobile.server.storage.category.caches": "File del server in cache",
   "mobile.server.storage.category.runtimes": "Runtime dei provider",
   "mobile.server.storage.category.logs": "Log",
-  "mobile.server.storage.total": "OpenBot su {name}",
+  "mobile.server.storage.total": "Slavebot su {name}",
   "mobile.server.storage.used": "Usato",
   "mobile.server.storage.byType": "Archiviazione per tipo",
   "mobile.server.storage.free": "{size} liberi su questo disco",
@@ -320,10 +320,10 @@ export const messages = {
   "mobile.server.storage.clearCategory": "Svuota {category}",
   "mobile.server.storage.clearTitle.caches": "Svuotare i file del server in cache?",
   "mobile.server.storage.clearTitle.logs": "Svuotare i log?",
-  "mobile.server.storage.clearBody.caches": "Copie dei file del server. OpenBot le scarica di nuovo quando le apri.",
+  "mobile.server.storage.clearBody.caches": "Copie dei file del server. Slavebot le scarica di nuovo quando le apri.",
   "mobile.server.storage.clearBody.logs": "Log diagnostici. I nuovi log partono subito.",
   "mobile.server.storage.clearFailed": "Impossibile svuotare i dati",
-  "mobile.server.storage.clearFailedBody": "OpenBot non è riuscito a svuotare questi dati sul server.",
+  "mobile.server.storage.clearFailedBody": "Slavebot non è riuscito a svuotare questi dati sul server.",
   "mobile.server.storage.noFiles": "Su questo server non ci sono file.",
   "mobile.server.route.providers": "Provider",
   "mobile.server.route.provider": "Provider",
@@ -370,7 +370,7 @@ export const messages = {
   "mobile.server.settings.timezoneSaveFailed": "Impossibile salvare il fuso orario. Riprova.",
   "mobile.server.settings.timezoneUnavailable":
     "Connettiti a questo server come proprietario o admin per cambiarne il fuso orario.",
-  "mobile.server.settings.timezoneUnsupported": "Aggiorna OpenBot su questo server per cambiarne qui il fuso orario.",
+  "mobile.server.settings.timezoneUnsupported": "Aggiorna Slavebot su questo server per cambiarne qui il fuso orario.",
   "mobile.server.settings.keySection": "Chiave del server",
   "mobile.server.settings.keyChanged": "Ultima modifica",
   "mobile.server.settings.keyChange": "Cambia chiave",
@@ -388,21 +388,21 @@ export const messages = {
     "Il server usa la nuova chiave. Questa app ci passa quando l’elenco dei server si ricarica.",
   "mobile.server.settings.keyChangeFailed": "Impossibile cambiare la chiave del server. Riprova.",
   "mobile.server.settings.keyOwnerOnly": "Solo il proprietario può cambiare la chiave del server.",
-  "mobile.server.settings.keyUnsupported": "Aggiorna OpenBot su questo server per cambiare qui la sua chiave.",
+  "mobile.server.settings.keyUnsupported": "Aggiorna Slavebot su questo server per cambiare qui la sua chiave.",
   "mobile.server.settings.memoryLimit": "Memorie per agente",
   "mobile.server.settings.memoryLimitDescription": "Quante memorie può conservare ogni agente su questo server.",
   "mobile.server.settings.memoryLimitLoadFailed": "Impossibile caricare il limite di memorie di questo server.",
   "mobile.server.settings.memoryLimitSaveFailed": "Impossibile salvare il limite di memorie. Riprova.",
   "mobile.server.settings.memoryLimitUnsupported":
-    "Aggiorna OpenBot su questo server per cambiarne qui il limite di memorie.",
+    "Aggiorna Slavebot su questo server per cambiarne qui il limite di memorie.",
   "mobile.server.route.browserProfiles": "Profili del browser",
   "mobile.server.browserProfiles.unavailable":
     "Solo il proprietario o un amministratore di un server online può gestire i suoi profili del browser.",
   "mobile.server.browserProfiles.unsupported":
-    "Aggiorna OpenBot su questo server per gestire qui i suoi profili del browser.",
+    "Aggiorna Slavebot su questo server per gestire qui i suoi profili del browser.",
   "mobile.server.browserProfiles.loading": "Caricamento dei profili del browser…",
-  "mobile.server.browserProfiles.loadFailed": "OpenBot non è riuscito a caricare i profili del browser.",
-  "mobile.server.browserProfiles.saveFailed": "OpenBot non è riuscito a modificare il profilo del browser.",
+  "mobile.server.browserProfiles.loadFailed": "Slavebot non è riuscito a caricare i profili del browser.",
+  "mobile.server.browserProfiles.saveFailed": "Slavebot non è riuscito a modificare il profilo del browser.",
   "mobile.server.browserProfiles.description":
     "Ogni profilo ha i propri accessi, cookie e dati dei siti sul computer che esegue il server. Gli agenti che usano lo stesso profilo ne condividono gli accessi.",
   "mobile.server.browserProfiles.shared": "Condiviso",
@@ -439,7 +439,7 @@ export const messages = {
   "mobile.server.settings.connectors": "Connettori",
   "mobile.server.connectors.unavailable":
     "Connettiti a questo server come proprietario o amministratore per gestirne i connettori.",
-  "mobile.server.connectors.unsupported": "Aggiorna OpenBot su questo server per gestirne qui i connettori.",
+  "mobile.server.connectors.unsupported": "Aggiorna Slavebot su questo server per gestirne qui i connettori.",
   "mobile.server.connectors.loading": "Caricamento connettori…",
   "mobile.server.connectors.onServer": "Su {name}",
   "mobile.server.connectors.notSetUp": "Non configurato",
@@ -469,7 +469,7 @@ export const messages = {
   "mobile.server.connectors.bitwarden.description":
     "Compila gli accessi del browser su {host} da Bitwarden o Vaultwarden.",
   "mobile.server.connectors.bitwarden.howItWorks":
-    "{host} accede con la propria CLI di Bitwarden. Nella tua cassaforte, crea una cartella chiamata Shared with OpenBot e mettici solo gli accessi che gli agenti possono usare. Nella cassaforte web, apri Impostazioni › Sicurezza › Chiavi e mostra la tua chiave API.",
+    "{host} accede con la propria CLI di Bitwarden. Nella tua cassaforte, crea una cartella chiamata Shared with Slavebot e mettici solo gli accessi che gli agenti possono usare. Nella cassaforte web, apri Impostazioni › Sicurezza › Chiavi e mostra la tua chiave API.",
   "mobile.server.connectors.bitwarden.serverUrl": "Indirizzo del server",
   "mobile.server.connectors.bitwarden.serverUrlHint":
     "Bitwarden, o l’indirizzo del tuo server Vaultwarden. {host} deve raggiungerlo tramite HTTPS.",
@@ -483,7 +483,7 @@ export const messages = {
   "mobile.server.connectors.bitwarden.connectingBody":
     "{host} sta accedendo a Bitwarden. Il primo accesso può richiedere alcuni minuti.",
   "mobile.server.connectors.bitwarden.folderTitle": "Cartella condivisa",
-  "mobile.server.connectors.bitwarden.folderName": "Shared with OpenBot",
+  "mobile.server.connectors.bitwarden.folderName": "Shared with Slavebot",
   "mobile.server.connectors.bitwarden.folderKind": "Cartella in Bitwarden",
   "mobile.server.connectors.bitwarden.folderFooter":
     "Sposta un accesso in questa cartella in Bitwarden per permettere agli agenti di usarlo. Rimuovilo per smettere.",
@@ -495,7 +495,7 @@ export const messages = {
   "mobile.server.connectors.github.summary": "Repository, issue e pull request per ogni agente",
   "mobile.server.connectors.github.description":
     "Ogni agente su {host} può usare i tuoi repository, issue e pull request GitHub, oltre a gh e git.",
-  "mobile.server.connectors.github.unavailable": "OpenBot su questo server non può connettere GitHub.",
+  "mobile.server.connectors.github.unavailable": "Slavebot su questo server non può connettere GitHub.",
   "mobile.server.connectors.github.connect": "Connetti GitHub",
   "mobile.server.connectors.github.codeTitle": "Digita questo codice su GitHub",
   "mobile.server.connectors.github.codeFooter":
@@ -505,12 +505,12 @@ export const messages = {
   "mobile.server.connectors.github.connectedAs": "Connesso come @{login}",
   "mobile.server.connectors.github.chooseRepositories": "Scegli i repository",
   "mobile.server.connectors.github.repositoriesFooter":
-    "Gli agenti possono usare solo i repository in cui è installata la GitHub App di OpenBot.",
+    "Gli agenti possono usare solo i repository in cui è installata la GitHub App di Slavebot.",
   "mobile.server.connectors.github.repositoriesTitle": "Repository",
   "mobile.server.connectors.github.repositoriesLoading": "Lettura dei repository da GitHub",
-  "mobile.server.connectors.github.repositoriesFailed": "OpenBot non è riuscito a leggere i repository da GitHub.",
+  "mobile.server.connectors.github.repositoriesFailed": "Slavebot non è riuscito a leggere i repository da GitHub.",
   "mobile.server.connectors.github.noRepositories":
-    "La GitHub App di OpenBot non è ancora installata su nessun repository.",
+    "La GitHub App di Slavebot non è ancora installata su nessun repository.",
   "mobile.server.connectors.github.moreRepositories": {
     one: "E {count} altro repository",
     other: "E altri {count} repository",
@@ -523,13 +523,13 @@ export const messages = {
   "mobile.server.connectors.github.disconnect": "Disconnetti GitHub",
   "mobile.server.connectors.github.disconnectTitle": "Disconnettere GitHub?",
   "mobile.server.connectors.github.disconnectBody":
-    "Questo rimuove l'accesso di @{login} da {host} e ogni agente perde i tool GitHub, gh e git. Poi si apre GitHub, dove puoi revocare OpenBot.",
+    "Questo rimuove l'accesso di @{login} da {host} e ogni agente perde i tool GitHub, gh e git. Poi si apre GitHub, dove puoi revocare Slavebot.",
   "mobile.server.connectors.onePassword.title": "1Password",
-  "mobile.server.connectors.onePassword.summary": "Un vault condiviso per gli accessi nel browser di OpenBot",
+  "mobile.server.connectors.onePassword.summary": "Un vault condiviso per gli accessi nel browser di Slavebot",
   "mobile.server.connectors.onePassword.description":
-    "Condividi con OpenBot su {host} un vault 1Password dedicato tramite un account di servizio, così gli agenti su {host} possono accedere ai siti nel suo browser.",
+    "Condividi con Slavebot su {host} un vault 1Password dedicato tramite un account di servizio, così gli agenti su {host} possono accedere ai siti nel suo browser.",
   "mobile.server.connectors.onePassword.howItWorks":
-    "Su 1Password.com, crea un account di servizio che può leggere solo il vault che condividi con OpenBot, poi incolla qui il suo token. {host} verifica il token e lo conserva; questo telefono no. Gli agenti non vedono mai una password.",
+    "Su 1Password.com, crea un account di servizio che può leggere solo il vault che condividi con Slavebot, poi incolla qui il suo token. {host} verifica il token e lo conserva; questo telefono no. Gli agenti non vedono mai una password.",
   "mobile.server.connectors.onePassword.token": "Token dell'account di servizio",
   "mobile.server.connectors.onePassword.tokenPlaceholder": "ops_…",
   "mobile.server.connectors.onePassword.connect": "Connetti 1Password",
@@ -545,9 +545,9 @@ export const messages = {
   "mobile.server.connectors.onePassword.disconnectBody":
     "{host} dimentica il token. Il vault e l'account di servizio restano in 1Password: rimuovili lì se non ti servono più.",
   "mobile.server.connectors.slack.title": "Slack",
-  "mobile.server.connectors.slack.summary": "Le persone menzionano @OpenBot in Slack",
+  "mobile.server.connectors.slack.summary": "Le persone menzionano @Slavebot in Slack",
   "mobile.server.connectors.slack.description":
-    "Le persone menzionano @OpenBot in Slack o gli mandano un messaggio diretto. Lo Slack Orchestrator interpella l'agente giusto e risponde.",
+    "Le persone menzionano @Slavebot in Slack o gli mandano un messaggio diretto. Lo Slack Orchestrator interpella l'agente giusto e risponde.",
   "mobile.server.connectors.slack.connected": "{workspace} · Lo Slack Orchestrator risponde",
   "mobile.server.connectors.slack.noAgent": "{workspace} · Nessun agente risponde ancora",
   "mobile.server.connectors.slack.many": {
@@ -560,7 +560,7 @@ export const messages = {
   },
   "mobile.server.connectors.slack.connect": "Connetti Slack",
   "mobile.server.connectors.slack.connectFooter":
-    "Slack si apre in un browser. Seleziona il workspace in alto a destra, poi Consenti. OpenBot installa una sola app, chiamata OpenBot, che entra in ogni canale pubblico.",
+    "Slack si apre in un browser. Seleziona il workspace in alto a destra, poi Consenti. Slavebot installa una sola app, chiamata Slavebot, che entra in ogni canale pubblico.",
   "mobile.server.connectors.slack.add": "Aggiungi workspace",
   "mobile.server.connectors.slack.limit": {
     one: "Puoi connettere al massimo {count} workspace.",
@@ -568,16 +568,16 @@ export const messages = {
   },
   "mobile.server.connectors.slack.workspaceTitle": "Workspace",
   "mobile.server.connectors.slack.workspaceDescription":
-    "Le persone menzionano @OpenBot o gli mandano un messaggio diretto.",
+    "Le persone menzionano @Slavebot o gli mandano un messaggio diretto.",
   "mobile.server.connectors.slack.missingScopes":
-    "OpenBot non ha questi permessi in Slack: {scopes}. Disconnetti il workspace, poi connettilo di nuovo.",
-  "mobile.server.connectors.slack.retryAt": "Slack ha chiesto a OpenBot di aspettare. Nuovo tentativo alle {time}.",
+    "Slavebot non ha questi permessi in Slack: {scopes}. Disconnetti il workspace, poi connettilo di nuovo.",
+  "mobile.server.connectors.slack.retryAt": "Slack ha chiesto a Slavebot di aspettare. Nuovo tentativo alle {time}.",
   "mobile.server.connectors.slack.helpInvalidToken":
-    "Slack non accetta più OpenBot in questo workspace. Potrebbe essere stato disinstallato. Connetti di nuovo il workspace.",
+    "Slack non accetta più Slavebot in questo workspace. Potrebbe essere stato disinstallato. Connetti di nuovo il workspace.",
   "mobile.server.connectors.slack.helpSecretStorage":
-    "OpenBot non riesce a leggere i token salvati su {host}. Disconnetti il workspace, poi connettilo di nuovo.",
+    "Slavebot non riesce a leggere i token salvati su {host}. Disconnetti il workspace, poi connettilo di nuovo.",
   "mobile.server.connectors.slack.helpRelay":
-    "OpenBot su {host} non riesce a ricevere gli eventi di Slack. Su {host}, accedi, dai un nome al server nelle impostazioni del server e tieni OpenBot aperto.",
+    "Slavebot su {host} non riesce a ricevere gli eventi di Slack. Su {host}, accedi, dai un nome al server nelle impostazioni del server e tieni Slavebot aperto.",
   "mobile.server.connectors.slack.orchestratorTitle": "Slack Orchestrator",
   "mobile.server.connectors.slack.orchestratorDescription":
     "Questo agente riceve ogni richiesta da Slack. Risponde da solo a quelle brevi, passa il resto all'agente giusto e pubblica la risposta nel thread.",
@@ -585,21 +585,21 @@ export const messages = {
     "Aggiungi lo Slack Orchestrator, altrimenti Slack non riceve risposta.",
   "mobile.server.connectors.slack.addAgent": "Aggiungi lo Slack Orchestrator",
   "mobile.server.connectors.slack.note":
-    "OpenBot entra da solo in ogni canale pubblico, compresi i nuovi. In un canale privato invitalo: /invite @OpenBot.",
+    "Slavebot entra da solo in ogni canale pubblico, compresi i nuovi. In un canale privato invitalo: /invite @Slavebot.",
   "mobile.server.connectors.slack.disconnectTitle": "Disconnettere {workspace}?",
   "mobile.server.connectors.slack.disconnectBody":
-    "OpenBot smette di rispondere in {workspace} e rimuove da {host} il suo token Slack.",
-  "mobile.server.connectors.slack.disconnectKept": "Le conversazioni e lo Slack Orchestrator restano in OpenBot.",
+    "Slavebot smette di rispondere in {workspace} e rimuove da {host} il suo token Slack.",
+  "mobile.server.connectors.slack.disconnectKept": "Le conversazioni e lo Slack Orchestrator restano in Slavebot.",
   "mobile.server.connectors.slack.disconnectDeleted":
-    "Lo Slack Orchestrator e le sue conversazioni vengono eliminati da OpenBot.",
+    "Lo Slack Orchestrator e le sue conversazioni vengono eliminati da Slavebot.",
   "mobile.server.connectors.slack.agentPromptTitle": "Aggiungere lo Slack Orchestrator?",
   "mobile.server.connectors.slack.agentPromptBody":
-    "Questo nuovo agente risponde a tutto ciò che le persone mandano a @OpenBot in {workspace}.",
+    "Questo nuovo agente risponde a tutto ciò che le persone mandano a @Slavebot in {workspace}.",
   "mobile.server.connectors.slack.installFailed": "Slack non ha completato l'installazione. Riprova.",
   "mobile.server.connectors.discord.title": "Discord",
-  "mobile.server.connectors.discord.summary": "Le persone menzionano @OpenBot in un server Discord",
+  "mobile.server.connectors.discord.summary": "Le persone menzionano @Slavebot in un server Discord",
   "mobile.server.connectors.discord.description":
-    "Le persone menzionano @OpenBot in un canale di un server Discord. Il Discord Orchestrator interpella l'agente giusto e risponde.",
+    "Le persone menzionano @Slavebot in un canale di un server Discord. Il Discord Orchestrator interpella l'agente giusto e risponde.",
   "mobile.server.connectors.discord.connected": "{workspace} · Il Discord Orchestrator risponde",
   "mobile.server.connectors.discord.noAgent": "{workspace} · Nessun agente risponde ancora",
   "mobile.server.connectors.discord.many": {
@@ -612,7 +612,7 @@ export const messages = {
   },
   "mobile.server.connectors.discord.connect": "Connetti Discord",
   "mobile.server.connectors.discord.connectFooter":
-    "Discord si apre in un browser. Seleziona il server Discord, poi Autorizza. OpenBot aggiunge un solo bot, chiamato OpenBot.",
+    "Discord si apre in un browser. Seleziona il server Discord, poi Autorizza. Slavebot aggiunge un solo bot, chiamato Slavebot.",
   "mobile.server.connectors.discord.add": "Aggiungi server Discord",
   "mobile.server.connectors.discord.limit": {
     one: "Puoi connettere al massimo {count} server Discord.",
@@ -620,37 +620,37 @@ export const messages = {
   },
   "mobile.server.connectors.discord.workspaceTitle": "Server Discord",
   "mobile.server.connectors.discord.workspaceDescription":
-    "Menziona @OpenBot in un canale. Rispondi a OpenBot per continuare.",
+    "Menziona @Slavebot in un canale. Rispondi a Slavebot per continuare.",
   "mobile.server.connectors.discord.missingScopes":
-    "OpenBot non ha questi permessi in Discord: {scopes}. Disconnetti il server Discord, poi connettilo di nuovo.",
-  "mobile.server.connectors.discord.retryAt": "Discord ha chiesto a OpenBot di aspettare. Nuovo tentativo alle {time}.",
+    "Slavebot non ha questi permessi in Discord: {scopes}. Disconnetti il server Discord, poi connettilo di nuovo.",
+  "mobile.server.connectors.discord.retryAt": "Discord ha chiesto a Slavebot di aspettare. Nuovo tentativo alle {time}.",
   "mobile.server.connectors.discord.helpInvalidToken":
-    "Discord non accetta più OpenBot in questo server Discord. Potrebbe essere stato rimosso. Connetti di nuovo il server Discord.",
+    "Discord non accetta più Slavebot in questo server Discord. Potrebbe essere stato rimosso. Connetti di nuovo il server Discord.",
   "mobile.server.connectors.discord.helpSecretStorage":
-    "OpenBot non riesce a leggere i token salvati su {host}. Disconnetti il server Discord, poi connettilo di nuovo.",
+    "Slavebot non riesce a leggere i token salvati su {host}. Disconnetti il server Discord, poi connettilo di nuovo.",
   "mobile.server.connectors.discord.helpRelay":
-    "OpenBot su {host} non riesce a ricevere gli eventi di Discord. Su {host}, accedi, dai un nome al server nelle impostazioni del server e tieni OpenBot aperto.",
+    "Slavebot su {host} non riesce a ricevere gli eventi di Discord. Su {host}, accedi, dai un nome al server nelle impostazioni del server e tieni Slavebot aperto.",
   "mobile.server.connectors.discord.orchestratorTitle": "Discord Orchestrator",
   "mobile.server.connectors.discord.orchestratorDescription":
     "Questo agente riceve ogni richiesta da Discord. Risponde da solo a quelle brevi, passa il resto all'agente giusto e invia la risposta nel canale.",
   "mobile.server.connectors.discord.orchestratorNone":
     "Aggiungi il Discord Orchestrator, altrimenti Discord non riceve risposta.",
   "mobile.server.connectors.discord.addAgent": "Aggiungi il Discord Orchestrator",
-  "mobile.server.connectors.discord.note": "OpenBot vede i canali che il suo ruolo può visualizzare.",
+  "mobile.server.connectors.discord.note": "Slavebot vede i canali che il suo ruolo può visualizzare.",
   "mobile.server.connectors.discord.disconnectTitle": "Disconnettere {workspace}?",
   "mobile.server.connectors.discord.disconnectBody":
-    "OpenBot smette di rispondere in {workspace} e rimuove da {host} la connessione a Discord.",
-  "mobile.server.connectors.discord.disconnectKept": "Le conversazioni e il Discord Orchestrator restano in OpenBot.",
+    "Slavebot smette di rispondere in {workspace} e rimuove da {host} la connessione a Discord.",
+  "mobile.server.connectors.discord.disconnectKept": "Le conversazioni e il Discord Orchestrator restano in Slavebot.",
   "mobile.server.connectors.discord.disconnectDeleted":
-    "Il Discord Orchestrator e le sue conversazioni vengono eliminati da OpenBot.",
+    "Il Discord Orchestrator e le sue conversazioni vengono eliminati da Slavebot.",
   "mobile.server.connectors.discord.agentPromptTitle": "Aggiungere il Discord Orchestrator?",
   "mobile.server.connectors.discord.agentPromptBody":
-    "Questo nuovo agente risponde a tutto ciò che le persone mandano a @OpenBot in {workspace}.",
+    "Questo nuovo agente risponde a tutto ciò che le persone mandano a @Slavebot in {workspace}.",
   "mobile.server.connectors.discord.installFailed": "Discord non ha completato l'autorizzazione. Riprova.",
   "mobile.server.connectors.telegram.title": "Telegram",
-  "mobile.server.connectors.telegram.summary": "Aggiungi il bot OpenBot a una chat Telegram",
+  "mobile.server.connectors.telegram.summary": "Aggiungi il bot Slavebot a una chat Telegram",
   "mobile.server.connectors.telegram.description":
-    "Aggiungi il bot OpenBot a un gruppo Telegram o apri una chat diretta con lui. Il Telegram Orchestrator interpella l'agente giusto e risponde.",
+    "Aggiungi il bot Slavebot a un gruppo Telegram o apri una chat diretta con lui. Il Telegram Orchestrator interpella l'agente giusto e risponde.",
   "mobile.server.connectors.telegram.connected": {
     one: "{count} chat · Il Telegram Orchestrator risponde",
     other: "{count} chat · Il Telegram Orchestrator risponde",
@@ -668,13 +668,13 @@ export const messages = {
   "mobile.server.connectors.telegram.groupDescription": "Le persone menzionano il bot o rispondono ai suoi messaggi.",
   "mobile.server.connectors.telegram.directDescription": "Ogni messaggio di questa chat va al Telegram Orchestrator.",
   "mobile.server.connectors.telegram.helpRemoved":
-    "Il bot OpenBot non è più in questa chat. Disconnetti la chat, poi aggiungi di nuovo il bot.",
+    "Il bot Slavebot non è più in questa chat. Disconnetti la chat, poi aggiungi di nuovo il bot.",
   "mobile.server.connectors.telegram.helpRelay":
-    "OpenBot su {host} non può ricevere i messaggi di Telegram. Su {host}, accedi, dai un nome al server nelle impostazioni del server e tieni OpenBot aperto.",
+    "Slavebot su {host} non può ricevere i messaggi di Telegram. Su {host}, accedi, dai un nome al server nelle impostazioni del server e tieni Slavebot aperto.",
   "mobile.server.connectors.telegram.helpError":
-    "OpenBot non riesce a raggiungere questa chat. Riconnettiti, oppure disconnetti la chat.",
+    "Slavebot non riesce a raggiungere questa chat. Riconnettiti, oppure disconnetti la chat.",
   "mobile.server.connectors.telegram.retryAt":
-    "Telegram ha chiesto a OpenBot di aspettare. Nuovo tentativo alle {time}.",
+    "Telegram ha chiesto a Slavebot di aspettare. Nuovo tentativo alle {time}.",
   "mobile.server.connectors.telegram.linkTitle": "Collega una chat",
   "mobile.server.connectors.telegram.linkAnother": "Collega un'altra chat",
   "mobile.server.connectors.telegram.linkFooter":
@@ -687,16 +687,16 @@ export const messages = {
   "mobile.server.connectors.telegram.openDirectChat": "Apri una chat diretta",
   "mobile.server.connectors.telegram.orchestratorTitle": "Telegram Orchestrator",
   "mobile.server.connectors.telegram.orchestratorDescription":
-    "Questo agente riceve i messaggi per OpenBot da tutte le tue chat Telegram. Risponde da solo a quelli brevi, passa il resto all'agente giusto e pubblica la risposta nella chat.",
+    "Questo agente riceve i messaggi per Slavebot da tutte le tue chat Telegram. Risponde da solo a quelli brevi, passa il resto all'agente giusto e pubblica la risposta nella chat.",
   "mobile.server.connectors.telegram.orchestratorNone":
     "Aggiungi il Telegram Orchestrator, altrimenti Telegram non riceve risposta.",
   "mobile.server.connectors.telegram.addAgent": "Aggiungi il Telegram Orchestrator",
   "mobile.server.connectors.telegram.disconnectTitle": "Disconnettere {chat}?",
   "mobile.server.connectors.telegram.disconnectBody":
-    "Il bot OpenBot esce da {chat} e OpenBot smette di rispondere lì.",
-  "mobile.server.connectors.telegram.disconnectKept": "Le conversazioni e il Telegram Orchestrator restano in OpenBot.",
+    "Il bot Slavebot esce da {chat} e Slavebot smette di rispondere lì.",
+  "mobile.server.connectors.telegram.disconnectKept": "Le conversazioni e il Telegram Orchestrator restano in Slavebot.",
   "mobile.server.connectors.telegram.disconnectDeleted":
-    "È l’ultima chat, quindi il Telegram Orchestrator e le sue conversazioni vengono eliminati da OpenBot.",
+    "È l’ultima chat, quindi il Telegram Orchestrator e le sue conversazioni vengono eliminati da Slavebot.",
   "mobile.server.settings.providers": "Provider",
   "mobile.server.settings.providersConnected": { one: "{count} connesso", other: "{count} connessi" },
   "mobile.server.providers.description": "I provider di IA del computer su cui gira questo server.",
@@ -710,9 +710,9 @@ export const messages = {
   "mobile.server.providers.runtimesFailed": "Impossibile caricare i download di questo server.",
   "mobile.server.providers.unavailable":
     "Connettiti a questo server come proprietario o amministratore per gestirne i provider.",
-  "mobile.server.providers.unsupported": "Aggiorna OpenBot su questo server per gestirne qui i provider.",
+  "mobile.server.providers.unsupported": "Aggiorna Slavebot su questo server per gestirne qui i provider.",
   "mobile.server.providers.signInUnsupported": "Questo server non può accedere a questo provider dal telefono.",
-  "mobile.server.providers.actionFailed": "OpenBot non ha potuto completare questa azione. Riprova.",
+  "mobile.server.providers.actionFailed": "Slavebot non ha potuto completare questa azione. Riprova.",
   "mobile.server.providers.openFailed": "Impossibile aprire la pagina di accesso.",
   "mobile.server.providers.copyFailed": "Impossibile copiare il codice.",
   "mobile.server.providers.onHost": "Questo provider gira sul computer di questo server.",
@@ -724,16 +724,16 @@ export const messages = {
   "mobile.server.providers.connectHint": "Il server riceve un accesso dal provider. Lo completi su questo telefono.",
   "mobile.server.providers.relayHint":
     "Accedi alla pagina del provider su questo telefono. Il server riceve l’accesso.",
-  "mobile.server.providers.connectOnComputer": "Connetti questo provider in OpenBot su un computer.",
+  "mobile.server.providers.connectOnComputer": "Connetti questo provider in Slavebot su un computer.",
   "mobile.server.providers.signIn": "Accedi",
   "mobile.server.providers.starting": "Avvio dell’accesso sul server…",
   "mobile.server.providers.openPage": "Apri pagina di accesso",
   "mobile.server.providers.copy": "Copia",
   "mobile.server.providers.copyCode": "Copia codice",
   "mobile.server.providers.codeHint":
-    "Copia il codice, apri la pagina e inserisci il codice. OpenBot continua da solo.",
+    "Copia il codice, apri la pagina e inserisci il codice. Slavebot continua da solo.",
   "mobile.server.providers.pasteHint": "Accedi alla pagina, poi incolla il codice che mostra.",
-  "mobile.server.providers.linkHint": "Accedi alla pagina. OpenBot continua da solo.",
+  "mobile.server.providers.linkHint": "Accedi alla pagina. Slavebot continua da solo.",
   "mobile.server.providers.relayWaiting": "In attesa della pagina di accesso dal server…",
   "mobile.server.providers.relayPasteHint":
     "Accedi alla pagina. Poi non si caricherà. Tocca la barra degli indirizzi, copia l’indirizzo e incollalo qui.",
@@ -786,7 +786,7 @@ export const messages = {
   "mobile.server.providers.status.checking": "Controllo",
   "mobile.server.settings.mcp": "Server MCP",
   "mobile.server.settings.mcpCount": { one: "{count} server", other: "{count} server" },
-  "mobile.server.mcp.unsupported": "Aggiorna OpenBot su questo server per gestire qui i suoi server MCP.",
+  "mobile.server.mcp.unsupported": "Aggiorna Slavebot su questo server per gestire qui i suoi server MCP.",
   "mobile.server.mcp.unavailable":
     "Connettiti a questo server come proprietario o amministratore per gestire i suoi server MCP.",
   "mobile.server.mcp.description":
@@ -805,7 +805,7 @@ export const messages = {
   "mobile.server.mcp.addConfirm": "Aggiungi",
   "mobile.server.mcp.name": "Nome",
   "mobile.server.mcp.namePlaceholder": "Nome del server MCP",
-  "mobile.server.mcp.nameReserved": "OpenBot usa già il nome {name}.",
+  "mobile.server.mcp.nameReserved": "Slavebot usa già il nome {name}.",
   "mobile.server.mcp.transport": "Trasporto",
   "mobile.server.mcp.stdio": "Comando (STDIO)",
   "mobile.server.mcp.http": "URL (HTTP)",
@@ -816,12 +816,12 @@ export const messages = {
   "mobile.server.mcp.command": "Comando",
   "mobile.server.mcp.commandHint": "Solo il programma. Metti ogni parola successiva in Argomenti.",
   "mobile.server.mcp.arguments": "Argomenti",
-  "mobile.server.mcp.argumentsHint": "OpenBot dà ogni argomento al programma come una sola parola.",
+  "mobile.server.mcp.argumentsHint": "Slavebot dà ogni argomento al programma come una sola parola.",
   "mobile.server.mcp.addArgument": "Aggiungi argomento",
   "mobile.server.mcp.argument": "Argomento {position}",
   "mobile.server.mcp.removeArgument": "Rimuovi argomento {position}",
   "mobile.server.mcp.environment": "Variabili d’ambiente",
-  "mobile.server.mcp.environmentHint": "OpenBot dà queste variabili al server MCP quando si avvia.",
+  "mobile.server.mcp.environmentHint": "Slavebot dà queste variabili al server MCP quando si avvia.",
   "mobile.server.mcp.addVariable": "Aggiungi variabile",
   "mobile.server.mcp.variableKey": "Nome della variabile {position}",
   "mobile.server.mcp.variableValue": "Valore della variabile {position}",
@@ -836,7 +836,7 @@ export const messages = {
   "mobile.server.mcp.url": "URL del server",
   "mobile.server.mcp.urlInvalid": "Inserisci un indirizzo http o https.",
   "mobile.server.mcp.headers": "Intestazioni",
-  "mobile.server.mcp.headersHint": "OpenBot invia queste intestazioni con ogni richiesta.",
+  "mobile.server.mcp.headersHint": "Slavebot invia queste intestazioni con ogni richiesta.",
   "mobile.server.mcp.addHeader": "Aggiungi intestazione",
   "mobile.server.mcp.headerName": "Nome dell’intestazione {position}",
   "mobile.server.mcp.headerValue": "Valore dell’intestazione {position}",
@@ -853,7 +853,7 @@ export const messages = {
   "mobile.server.mcp.testFailed": "Il server MCP non ha risposto.",
   "mobile.server.mcp.connected": { one: "Connesso · {count} strumento", other: "Connesso · {count} strumenti" },
   "mobile.server.mcp.signInOnComputer":
-    "Questo server MCP chiede l’accesso. Accedi da OpenBot su un computer, poi prova di nuovo.",
+    "Questo server MCP chiede l’accesso. Accedi da Slavebot su un computer, poi prova di nuovo.",
   "mobile.server.mcp.signedInDescription": "{server} ha eseguito l’accesso a questo server MCP.",
   "mobile.server.mcp.signOut": "Esci",
   "mobile.server.mcp.saveFailed": "Impossibile salvare la modifica. Riprova.",
@@ -884,8 +884,8 @@ export const messages = {
   "mobile.server.settings.updates": "Aggiornamenti",
   "mobile.server.settings.updateAvailable": "Aggiornamento disponibile",
   "mobile.server.route.updates": "Aggiornamenti",
-  "mobile.server.update.hostTitle": "OpenBot su {name}",
-  "mobile.server.update.version": "OpenBot {version}",
+  "mobile.server.update.hostTitle": "Slavebot su {name}",
+  "mobile.server.update.version": "Slavebot {version}",
   "mobile.server.update.status.idle": "Cerca aggiornamenti per trovare l'ultima versione.",
   "mobile.server.update.status.checking": "Ricerca di aggiornamenti…",
   "mobile.server.update.status.available": "{version} è disponibile.",
@@ -893,28 +893,28 @@ export const messages = {
   "mobile.server.update.status.downloadingUnknown": "Download di {version}…",
   "mobile.server.update.status.ready": "{version} è stato scaricato.",
   "mobile.server.update.status.installing": "{name} si sta riavviando per installare l'aggiornamento.",
-  "mobile.server.update.status.upToDate": "OpenBot è aggiornato su {name}.",
+  "mobile.server.update.status.upToDate": "Slavebot è aggiornato su {name}.",
   "mobile.server.update.status.checkFailed": "{name} non ha potuto cercare aggiornamenti. Riprova.",
   "mobile.server.update.status.downloadFailed": "{name} non ha potuto scaricare l'aggiornamento. Riprova.",
   "mobile.server.update.status.installFailed":
-    "{name} non ha potuto installare l'aggiornamento. Assicurati che nessun altro utente di quel computer stia eseguendo OpenBot, poi riprova.",
+    "{name} non ha potuto installare l'aggiornamento. Assicurati che nessun altro utente di quel computer stia eseguendo Slavebot, poi riprova.",
   "mobile.server.update.releaseCheckFailed":
     "{name} non ha potuto leggere il feed delle versioni. Controlla la connessione di rete dell'host, poi riprova.",
   "mobile.server.update.releaseUnavailable":
     "La ricerca delle versioni non è disponibile per questa build. Chiedi all'amministratore dell'host di cercare una versione compatibile.",
   "mobile.server.update.externalTitle": "L'host controlla l'installazione",
   "mobile.server.update.path.hostManager":
-    "OpenBot Host Manager installa gli aggiornamenti quando tutti gli utenti sono inattivi. Se un aggiornamento non parte, chiedi all'amministratore dell'host di controllare lo stato di Host Manager.",
+    "Slavebot Host Manager installa gli aggiornamenti quando tutti gli utenti sono inattivi. Se un aggiornamento non parte, chiedi all'amministratore dell'host di controllare lo stato di Host Manager.",
   "mobile.server.update.path.hosted":
     "Il servizio ospitato scarica gli aggiornamenti in background. Un aggiornamento scaricato parte al prossimo avvio del server. Attendi la fine del lavoro in corso prima di fermare e riprendere il server. Se resta su una versione vecchia, contatta l'amministratore dell'host.",
   "mobile.server.update.path.system":
-    "Sull'host, esegui sudo openbot update per installare l'ultima versione. Questo comando ferma OpenBot. Attendi prima la fine del lavoro in corso. Gli aggiornamenti scaricati automaticamente si installano al prossimo avvio.",
+    "Sull'host, esegui sudo openbot update per installare l'ultima versione. Questo comando ferma Slavebot. Attendi prima la fine del lavoro in corso. Gli aggiornamenti scaricati automaticamente si installano al prossimo avvio.",
   "mobile.server.update.path.container":
-    "Sull'host Docker, scarica la nuova immagine di OpenBot e crea di nuovo il container con gli stessi volumi di dati. Attendi prima la fine del lavoro in corso. Mantieni i volumi esistenti per conservare i tuoi dati.",
+    "Sull'host Docker, scarica la nuova immagine di Slavebot e crea di nuovo il container con gli stessi volumi di dati. Attendi prima la fine del lavoro in corso. Mantieni i volumi esistenti per conservare i tuoi dati.",
   "mobile.server.update.path.manual":
-    "Questa installazione non può aggiornarsi da sola. Chiedi all'amministratore dell'host di installare la versione compatibile da github.com/nightly-labs/openbot/releases. Mantieni i dati di OpenBot esistenti.",
+    "Questa installazione non può aggiornarsi da sola. Chiedi all'amministratore dell'host di installare la versione compatibile da github.com/nightly-labs/openbot/releases. Mantieni i dati di Slavebot esistenti.",
   "mobile.server.update.path.unavailable":
-    "Questa è una build di sviluppo. Usa una versione di OpenBot installata per cercare aggiornamenti.",
+    "Questa è una build di sviluppo. Usa una versione di Slavebot installata per cercare aggiornamenti.",
   "mobile.server.update.check": "Cerca aggiornamenti",
   "mobile.server.update.start": "Aggiorna se inattivo",
   "mobile.server.update.restartNow": "Riavvia ora",
@@ -924,27 +924,27 @@ export const messages = {
   "mobile.server.update.requestedBy": "{member} ha richiesto questo aggiornamento.",
   "mobile.server.update.automatic": "{name} installa gli aggiornamenti automaticamente.",
   "mobile.server.update.autoDownloadTitle": "Scarica gli aggiornamenti automaticamente",
-  "mobile.server.update.autoDownloadDescription": "{name} scarica ogni nuova versione di OpenBot appena esce.",
+  "mobile.server.update.autoDownloadDescription": "{name} scarica ogni nuova versione di Slavebot appena esce.",
   "mobile.server.update.autoInstallTitle": "Installa gli aggiornamenti automaticamente",
   "mobile.server.update.autoInstallDescription":
     "{name} si riavvia con l'aggiornamento scaricato quando i suoi agenti sono inattivi. I membri vengono disconnessi per poco tempo e si riconnettono automaticamente.",
   "mobile.server.update.waitingFor": "In attesa di {reasons}.",
   "mobile.server.update.disabledTitle": "Gli aggiornamenti remoti sono disattivati",
   "mobile.server.update.disabledDescription":
-    "L'utente di {name} ha disattivato gli aggiornamenti dai membri del server. Chiedigli di aggiornare OpenBot o di riattivare l'impostazione.",
+    "L'utente di {name} ha disattivato gli aggiornamenti dai membri del server. Chiedigli di aggiornare Slavebot o di riattivare l'impostazione.",
   "mobile.server.update.managedTitle": "Gli aggiornamenti sono controllati da un Host Manager",
   "mobile.server.update.managedDescription":
-    "OpenBot Host Manager aggiorna {name}. Contatta l'amministratore dell'host.",
+    "Slavebot Host Manager aggiorna {name}. Contatta l'amministratore dell'host.",
   "mobile.server.update.unsupportedTitle": "{name} non può aggiornarsi da solo",
   "mobile.server.update.unsupportedDescription":
-    "Questa build di OpenBot non ha un sistema di aggiornamento. Installa una nuova versione su {name}.",
+    "Questa build di Slavebot non ha un sistema di aggiornamento. Installa una nuova versione su {name}.",
   "mobile.server.update.restarting": "Riavvio…",
   "mobile.server.update.loadFailed": "Lo stato dell'aggiornamento di {name} non è stato caricato.",
-  "mobile.server.update.dialog.offerTitle": "Aggiorna {name} a OpenBot {version}",
+  "mobile.server.update.dialog.offerTitle": "Aggiorna {name} a Slavebot {version}",
   "mobile.server.update.dialog.offerDescription":
-    "{name} usa OpenBot {current}. Prima scarica l'aggiornamento, poi si riavvia.",
+    "{name} usa Slavebot {current}. Prima scarica l'aggiornamento, poi si riavvia.",
   "mobile.server.update.dialog.offerReadyDescription":
-    "{name} usa OpenBot {current}. L'aggiornamento è scaricato. {name} si riavvia per installarlo.",
+    "{name} usa Slavebot {current}. L'aggiornamento è scaricato. {name} si riavvia per installarlo.",
   "mobile.server.update.dialog.waitIdleDescription":
     "Il riavvio attende la fine dei turni degli agenti e delle esecuzioni delle routine.",
   "mobile.server.update.dialog.updateNow": "Aggiorna ora",
@@ -960,10 +960,10 @@ export const messages = {
   "mobile.server.update.reason.fileTransfer": "un trasferimento di file",
   "mobile.server.update.reason.browserControl": "il controllo del browser da parte di un agente",
   "mobile.server.update.reason.updateOperation": "un altro passaggio dell'aggiornamento",
-  "mobile.server.update.reason.initialization": "l'avvio di OpenBot",
+  "mobile.server.update.reason.initialization": "l'avvio di Slavebot",
   "mobile.server.update.reason.other": "altro lavoro",
   "mobile.server.update.actionFailed": "L'azione del server non è riuscita.",
-  "mobile.server.update.unavailable": "Connettiti a questo server per vedere i suoi aggiornamenti di OpenBot.",
+  "mobile.server.update.unavailable": "Connettiti a questo server per vedere i suoi aggiornamenti di Slavebot.",
   "mobile.server.update.loading": "Caricamento degli aggiornamenti…",
   "mobile.server.route.sites": "Siti",
   "mobile.server.settings.sites": "Siti",
@@ -982,13 +982,13 @@ export const messages = {
   "mobile.server.sites.deleteDescription": "Questo indirizzo restituirà subito 410 Gone.",
   "mobile.server.sites.deleteFailed": "Impossibile eliminare il sito.",
   "mobile.server.sites.openFailed": "Impossibile aprire il sito.",
-  "mobile.server.sites.unsupported": "Aggiorna OpenBot su questo server per vedere qui i suoi siti.",
+  "mobile.server.sites.unsupported": "Aggiorna Slavebot su questo server per vedere qui i suoi siti.",
   "mobile.server.sites.offline": "Connettiti a questo server per vederne i siti.",
   "mobile.server.route.roles": "Ruoli",
   "mobile.server.route.role": "Ruolo",
   "mobile.server.roles.description":
     "Scegli gli agenti che i membri possono usare. Proprietari e admin possono usare tutti gli agenti.",
-  "mobile.server.roles.unsupported": "Aggiorna OpenBot su questo server per gestire i ruoli.",
+  "mobile.server.roles.unsupported": "Aggiorna Slavebot su questo server per gestire i ruoli.",
   "mobile.server.roles.unavailable": "Solo un proprietario o un admin di un server online può gestire i ruoli.",
   "mobile.server.roles.loading": "Caricamento ruoli…",
   "mobile.server.roles.loadFailed": "Impossibile caricare i ruoli di questo server.",
@@ -1024,7 +1024,7 @@ export const messages = {
   // Server settings › Import agents: Grok Bot and Hermes exports (`agent-import-v1`).
   "mobile.server.settings.importAgents": "Importa agenti",
   "mobile.server.route.import": "Importa agenti",
-  "mobile.server.import.unsupported": "Aggiorna OpenBot su questo server per importare qui gli agenti.",
+  "mobile.server.import.unsupported": "Aggiorna Slavebot su questo server per importare qui gli agenti.",
   "mobile.server.import.unavailable": "Connettiti a questo server per importare gli agenti.",
   "mobile.server.import.count.agent": { one: "{count} agente", other: "{count} agenti" },
   "mobile.server.import.count.channel": { one: "{count} canale", other: "{count} canali" },
@@ -1033,10 +1033,10 @@ export const messages = {
   "mobile.server.import.count.memory": { one: "{count} memoria", other: "{count} memorie" },
   "mobile.server.import.count.file": { one: "{count} file", other: "{count} file" },
   "mobile.server.import.sourceTitle": "Dove sono ora i tuoi agenti?",
-  "mobile.server.import.sourceLede": "OpenBot li copia su questo server. Vedi ogni elemento prima che cambi qualcosa.",
+  "mobile.server.import.sourceLede": "Slavebot li copia su questo server. Vedi ogni elemento prima che cambi qualcosa.",
   "mobile.server.import.hermesNote": "Esporta un file .zip da Hermes.",
   "mobile.server.import.grokNote": "Nel cloud. Lì un agente di esportazione crea un file .zip.",
-  "mobile.server.import.transfer": "Un altro server OpenBot",
+  "mobile.server.import.transfer": "Un altro server Slavebot",
   "mobile.server.import.transferNote": "Usa Trasferimento per spostare insieme agenti e impostazioni.",
   "mobile.server.import.grokLede":
     "Un agente di esportazione in Grok Bot raccoglie in un unico file .zip nomi, istruzioni, avatar, skill, routine, memorie e i file che includi.",
@@ -1099,7 +1099,7 @@ export const messages = {
   "mobile.server.route.transfer": "Trasferimento",
   "mobile.server.route.transferExport": "Esporta",
   "mobile.server.route.transferImport": "Importa",
-  "mobile.server.transfer.unsupported": "Aggiorna OpenBot su questo server per trasferirlo da qui.",
+  "mobile.server.transfer.unsupported": "Aggiorna Slavebot su questo server per trasferirlo da qui.",
   "mobile.server.transfer.unavailable":
     "Connettiti a questo server come proprietario o amministratore per trasferirlo.",
   "mobile.server.transfer.title": "Sposta questo server su un altro computer",
@@ -1143,8 +1143,8 @@ export const messages = {
   "mobile.server.transfer.reading": "Lettura del file…",
   "mobile.server.transfer.sending": "Invio del file… {percent}%",
   "mobile.server.transfer.openFailed": "Impossibile aprire il file.",
-  "mobile.server.transfer.source": "OpenBot {version} · esportato il {date}",
-  "mobile.server.transfer.sourceNoDate": "OpenBot {version}",
+  "mobile.server.transfer.source": "Slavebot {version} · esportato il {date}",
+  "mobile.server.transfer.sourceNoDate": "Slavebot {version}",
   "mobile.server.transfer.importWarnings": "Prima dell'importazione",
   "mobile.server.transfer.importAgents": "Agenti nel file",
   "mobile.server.transfer.nameExists": "Nome già in uso",

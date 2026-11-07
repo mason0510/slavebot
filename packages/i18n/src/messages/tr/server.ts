@@ -9,7 +9,7 @@ export const messages = {
   "server.connection.waking": "{name} başlatılıyor",
   "server.connection.startProgress": "{step} · {time}",
   "server.connection.providerLimit":
-    "Bulut sağlayıcısı şu anda yeni başlatmaları sınırlıyor. OpenBot kısa süre içinde yeniden deneyecek.",
+    "Bulut sağlayıcısı şu anda yeni başlatmaları sınırlıyor. Slavebot kısa süre içinde yeniden deneyecek.",
   "server.connection.updating": "{name} güncelleniyor",
   "server.connection.loading": "{name} yükleniyor",
   "server.connection.connecting": "{name} sunucusuna bağlanılıyor",
@@ -29,13 +29,13 @@ export const messages = {
   "server.connection.details": "Ayrıntılar",
 
   "server.status.steps": "Bağlantı adımları",
-  "server.status.updateCause": "{name}, OpenBot {version} sürümünü yüklemek için yeniden başlıyor.",
-  "server.status.updateCauseNoVersion": "{name}, bir OpenBot güncellemesini yüklemek için yeniden başlıyor.",
-  "server.status.wakeCause": "{name} durdurulmuştu. OpenBot onu yeniden başlatıyor.",
+  "server.status.updateCause": "{name}, Slavebot {version} sürümünü yüklemek için yeniden başlıyor.",
+  "server.status.updateCauseNoVersion": "{name}, bir Slavebot güncellemesini yüklemek için yeniden başlıyor.",
+  "server.status.wakeCause": "{name} durdurulmuştu. Slavebot onu yeniden başlatıyor.",
   "server.status.connectCause": "Bu uygulama {name} sunucusuna bağlanıyor.",
   "server.status.connectionCause": "Bu uygulamanın {name} ile bağlantısı kesildi. Otomatik olarak yeniden bağlanır.",
   "server.status.stepUpdate": "Güncellemeyi yükle",
-  "server.status.stepUpdateDetail": "OpenBot durur, güncellemeyi yükler ve yeniden başlar.",
+  "server.status.stepUpdateDetail": "Slavebot durur, güncellemeyi yükler ve yeniden başlar.",
   "server.status.stepWake": "Sunucuyu başlat",
   "server.status.stepWakeDetail": "Bu birkaç dakika sürebilir.",
   "server.status.stepConnect": "Bağlan",
@@ -43,8 +43,8 @@ export const messages = {
   "server.status.stepLoad": "Çalışma alanını yükle",
   "server.status.stepLoadDetail": "Ajanlar ve sohbetler sunucudan yüklenir.",
   "server.status.elapsed": "Geçen süre: {time}",
-  "server.compatibility.updateClientTitle": "Bu OpenBot uygulamasını güncelleyin",
-  "server.compatibility.updateHostTitle": "{name} üzerindeki OpenBot'u güncelleyin",
+  "server.compatibility.updateClientTitle": "Bu Slavebot uygulamasını güncelleyin",
+  "server.compatibility.updateHostTitle": "{name} üzerindeki Slavebot'u güncelleyin",
   "server.compatibility.unsafeDataTitle": "Ana makine güvenli olmayan veri döndürdü",
   "server.compatibility.cannotConnectTitle": "{name} ile bağlantı kurulamıyor",
   "server.compatibility.updateClientDescription":
@@ -52,7 +52,7 @@ export const messages = {
   "server.compatibility.updateHostDescription":
     "Ana makine yalnızca bu uygulamadan daha eski protokolleri destekliyor. Ana makineyi güncelleyin, ardından tekrar deneyin.",
   "server.compatibility.unsafeDataDescription":
-    "Bilinen bir veri yükü geçersiz olduğu için OpenBot bu bağlantıyı durdurdu. Geçerli çalışma alanı verileriniz değiştirilmedi.",
+    "Bilinen bir veri yükü geçersiz olduğu için Slavebot bu bağlantıyı durdurdu. Geçerli çalışma alanı verileriniz değiştirilmedi.",
   "server.compatibility.clientVersion": "İstemci sürümü",
   "server.compatibility.hostVersion": "Ana makine sürümü",
   "server.compatibility.negotiatedProtocol": "Anlaşılan protokol",
@@ -80,9 +80,9 @@ export const messages = {
   "server.join.emailBound": "Bu davet yalnızca e-posta alıcısı için geçerlidir.",
   "server.join.unknownDate": "Bilinmiyor",
   // Sunucu çubuğundaki artı düğmesinin açtığı iletişim kutusu. {price} "€20" gibi biçimlendirilmiş bir tutardır.
-  "server.add.title": "OpenBot'u harici bir sunucuda 7/24 çalıştırın",
+  "server.add.title": "Slavebot'u harici bir sunucuda 7/24 çalıştırın",
   "server.add.description":
-    "OpenBot Sunucuları, bilgisayarınız kapalıyken bile ajanlarınızı ve rutinlerinizi çalışır durumda tutar. Altyapı ve bakımla biz ilgileniriz; sunucunuz teknik bir kurulum gerektirmeden kullanıma hazır olur.",
+    "Slavebot Sunucuları, bilgisayarınız kapalıyken bile ajanlarınızı ve rutinlerinizi çalışır durumda tutar. Altyapı ve bakımla biz ilgileniriz; sunucunuz teknik bir kurulum gerektirmeden kullanıma hazır olur.",
   "server.add.billing.label": "Faturalandırma dönemi",
   "server.add.currency.label": "Para birimi",
   "server.add.billing.monthly": "Aylık",
@@ -124,7 +124,7 @@ export const messages = {
     "Bu bilgisayarda en fazla {limit} sunucunuz olabilir. Yeni bir sunucu oluşturmak için birini silin.",
   "server.local.deleteConfirmTitle": "{name} silinsin mi?",
   "server.local.deleteConfirmDescription":
-    "OpenBot sunucuyu durdurur ve ajanlarını, sohbetlerini ve dosyalarını çöp kutusuna taşır.",
+    "Slavebot sunucuyu durdurur ve ajanlarını, sohbetlerini ve dosyalarını çöp kutusuna taşır.",
   "server.local.deleting": "Sunucu siliniyor…",
   "server.local.deletedTitle": "{name} silindi",
   // Hesap maksimum sayıda barındırılan sunucuya sahip olduğunda gösterilir. Planlar devre dışıdır.
@@ -146,14 +146,14 @@ export const messages = {
   "server.hosted.defaultName": "Bulut sunucusu",
   "server.hosted.defaultNameNumbered": "Bulut sunucusu {number}",
   "server.hosted.step.create": "Makineyi oluştur",
-  "server.hosted.step.start": "OpenBot'u başlat",
+  "server.hosted.step.start": "Slavebot'u başlat",
   "server.hosted.step.connect": "Hesaba bağlan",
   "server.hosted.detail.create.reserve": "Özel bir makine ayrılıyor",
-  "server.hosted.detail.create.copy": "OpenBot makineye kopyalanıyor",
+  "server.hosted.detail.create.copy": "Slavebot makineye kopyalanıyor",
   "server.hosted.detail.create.key": "Tek seferlik oturum açma anahtarı ekleniyor",
   "server.hosted.detail.start.boot": "Makine açılıyor",
-  "server.hosted.detail.start.app": "OpenBot başlatılıyor",
-  "server.hosted.detail.start.wait": "OpenBot'un yanıt vermesi bekleniyor",
+  "server.hosted.detail.start.app": "Slavebot başlatılıyor",
+  "server.hosted.detail.start.wait": "Slavebot'un yanıt vermesi bekleniyor",
   "server.hosted.detail.connect.signIn": "Sizin adınıza oturum açılıyor",
   "server.hosted.detail.connect.publish": "Sunucu hesabınıza ekleniyor",
   "server.hosted.detail.connect.check": "Bağlantı kontrol ediliyor",
@@ -218,13 +218,13 @@ export const messages = {
   "server.settings.identityLocalOnly":
     "Bu sunucunun adı ve logosu yalnızca onu çalıştıran bilgisayarda değiştirilebilir.",
   "server.settings.publicationLocalOnly": "Yayımlama durumunu yalnızca yerel sunucu değiştirebilir.",
-  "server.compatibility.versionMismatchTitle": "{name} üzerinde farklı OpenBot sürümleri",
+  "server.compatibility.versionMismatchTitle": "{name} üzerinde farklı Slavebot sürümleri",
   "server.compatibility.versionMismatchDescription":
     "Bağlantı {protocol} protokolünü kullanıyor. Bazı yeni özellikler kullanılamayabilir. İstemci {clientVersion}; ana makine {hostVersion}.",
   "server.compatibility.versionMismatchUpdateHostDescription":
-    "Tüm özellikleri kullanmak için {name} üzerindeki OpenBot'u güncelleyin. Bağlantı {protocol} protokolünü kullanıyor. İstemci {clientVersion}; ana makine {hostVersion}.",
+    "Tüm özellikleri kullanmak için {name} üzerindeki Slavebot'u güncelleyin. Bağlantı {protocol} protokolünü kullanıyor. İstemci {clientVersion}; ana makine {hostVersion}.",
   "server.compatibility.versionMismatchUpdateClientDescription":
-    "Tüm özellikleri kullanmak için bu OpenBot uygulamasını güncelleyin. Bağlantı {protocol} protokolünü kullanıyor. İstemci {clientVersion}; ana makine {hostVersion}.",
+    "Tüm özellikleri kullanmak için bu Slavebot uygulamasını güncelleyin. Bağlantı {protocol} protokolünü kullanıyor. İstemci {clientVersion}; ana makine {hostVersion}.",
   "server.connection.failedTitle": "Bağlantı başarısız oldu",
   "server.connection.failedDescription":
     "Bu sunucuya bağlanılamadı. Ana makinenin çevrim içi olduğunu kontrol edip tekrar deneyin.",
@@ -245,7 +245,7 @@ export const messages = {
   "server.settings.mcpDescription":
     "MCP sunucularını bağlayın ve bu sunucunun ajanlarının hangilerini kullanabileceğini seçin.",
   "server.settings.storageTitle": "Depolama",
-  "server.settings.storageDescription": "OpenBot'un bu sunucunun diskinde ne sakladığını ve boş alanı görün.",
+  "server.settings.storageDescription": "Slavebot'un bu sunucunun diskinde ne sakladığını ve boş alanı görün.",
   "server.settings.hostedSitesTitle": "Siteler",
   "server.settings.hostedSitesDescription": "Bu sunucudaki ajanların openbot.site üzerinde yayımladığı statik siteler.",
   "server.settings.importTitle": "İçe aktar",
@@ -281,9 +281,9 @@ export const messages = {
   "server.settings.nameTooLong": "En fazla {limit} karakter kullanın.",
   "server.settings.actionFailedTitle": "Sunucu eylemi başarısız oldu",
   "server.settings.actionFailed": "Sunucu eylemi başarısız oldu.",
-  "server.settings.imageReadFailed": "OpenBot bu görseli okuyamadı.",
+  "server.settings.imageReadFailed": "Slavebot bu görseli okuyamadı.",
   "server.settings.copyFailedTitle": "Kopyalama başarısız oldu",
-  "server.settings.copyFailed": "OpenBot bu değeri kopyalayamadı.",
+  "server.settings.copyFailed": "Slavebot bu değeri kopyalayamadı.",
   "server.settings.unavailableTitle": "Sunucu ayarları kullanılamıyor",
   "server.settings.unsavedMcpChanges": "Kaydedilmemiş MCP değişiklikleri",
   "server.settings.reset": "Sıfırla",
@@ -362,7 +362,7 @@ export const messages = {
   "server.settings.restartTitle": "Yeniden başlat",
   "server.settings.restarting": "Yeniden başlatılıyor…",
   "server.settings.restartedTitle": "{name} yeniden başlatılıyor",
-  "server.settings.restartHiddenDescription": "Sunucu geri geldiğinde OpenBot otomatik olarak yeniden bağlanır.",
+  "server.settings.restartHiddenDescription": "Sunucu geri geldiğinde Slavebot otomatik olarak yeniden bağlanır.",
   "server.settings.restartHide": "Gizle",
   "server.settings.restartProgressTitle": "{name} yeniden başlatılıyor",
   "server.settings.restartProgressDescription":
@@ -427,7 +427,7 @@ export const messages = {
     other: "Bu sunucu {count} üye sınırına ulaştı. Yeni bir kişiyi davet etmek için bir üyeyi kaldırın.",
   },
   "server.invite.qrLabel": "Davet QR kodu",
-  "server.invite.qrDescription": "Bu sunucuya katılmak için bu kodu OpenBot Mobile uygulamasında tarayın.",
+  "server.invite.qrDescription": "Bu sunucuya katılmak için bu kodu Slavebot Mobile uygulamasında tarayın.",
   "server.invite.accepted": "Davet kabul edildi",
   "server.invite.expired": "Davetin süresi doldu",
   "server.invite.sent": "Davet gönderildi",
@@ -435,7 +435,7 @@ export const messages = {
   "server.invite.acceptedDescription":
     "Üye bu sunucuya katıldı. Başka birini davet etmek için yeni bir bağlantı oluşturun.",
   "server.invite.expiredDescription": "Birini davet etmek için yeni bir bağlantı oluşturun.",
-  "server.invite.linkReadyDescription": "Bağlantıyı paylaşın veya QR kodunu OpenBot Mobile uygulamasında tarayın.",
+  "server.invite.linkReadyDescription": "Bağlantıyı paylaşın veya QR kodunu Slavebot Mobile uygulamasında tarayın.",
   "server.invite.pendingTitle": "Bekleyen davetler",
   "server.invite.pendingCount": "{total} bekliyor",
   "server.invite.noPending": "Bekleyen davet yok.",
@@ -462,7 +462,7 @@ export const messages = {
   "server.desktop.connectionUnavailable": "Bağlantı kullanılamıyor",
   "server.desktop.hostOffline": "Ana makine çevrim dışı",
   "server.desktop.hostOfflineDescription": "Masaüstünü açmadan önce ana makineye yeniden bağlanın.",
-  "server.desktop.hostUpdateDescription": "Uzaktan kontrolü kullanmak için ana makinedeki OpenBot'u güncelleyin.",
+  "server.desktop.hostUpdateDescription": "Uzaktan kontrolü kullanmak için ana makinedeki Slavebot'u güncelleyin.",
   "server.desktop.serviceAvailable": "Hizmet kullanılabilir",
   "server.desktop.serviceAvailableDescription": "WebRTC kontrolü tüm etkin üyeler için kullanılabilir.",
   "server.desktop.serviceNotReady": "Hizmet hazır değil",
@@ -474,11 +474,11 @@ export const messages = {
   "server.settings.providersDescription": "Bu sunucuyu çalıştıran bilgisayarın yapay zeka sağlayıcılarını yönetin.",
   "server.settings.providersSwitchNote": "Yapay zeka sağlayıcılarını yönetmek için {name} sunucusuna geçin.",
   "server.settings.providersSwitch": "Bu sunucuya geç",
-  // Sunucu Ayarları > Güncellemeler: Katılınan bir sunucunun ana makinesinin OpenBot güncellemesi. {name} sunucudur.
+  // Sunucu Ayarları > Güncellemeler: Katılınan bir sunucunun ana makinesinin Slavebot güncellemesi. {name} sunucudur.
   "server.settings.updatesTitle": "Güncellemeler",
-  "server.settings.updatesDescription": "Bu sunucuyu çalıştıran bilgisayardaki OpenBot'u güncelleyin.",
-  "server.update.hostTitle": "{name} üzerinde OpenBot",
-  "server.update.version": "OpenBot {version}",
+  "server.settings.updatesDescription": "Bu sunucuyu çalıştıran bilgisayardaki Slavebot'u güncelleyin.",
+  "server.update.hostTitle": "{name} üzerinde Slavebot",
+  "server.update.version": "Slavebot {version}",
   "server.update.status.idle": "En son sürümü bulmak için güncellemeleri denetleyin.",
   "server.update.status.checking": "Güncellemeler denetleniyor…",
   "server.update.status.available": "{version} sürümü mevcut.",
@@ -487,28 +487,28 @@ export const messages = {
   "server.update.status.downloadingUnknown": "{version} indiriliyor…",
   "server.update.status.ready": "{version} indirildi.",
   "server.update.status.installing": "{name}, güncellemeyi yüklemek için yeniden başlatılıyor.",
-  "server.update.status.upToDate": "{name} üzerinde OpenBot güncel.",
+  "server.update.status.upToDate": "{name} üzerinde Slavebot güncel.",
   "server.update.status.checkFailed": "{name} güncellemeleri denetleyemedi. Tekrar deneyin.",
   "server.update.status.downloadFailed": "{name} güncellemeyi indiremedi. Tekrar deneyin.",
   "server.update.status.installFailed":
-    "{name} güncellemeyi yükleyemedi. O bilgisayarın başka hiçbir kullanıcısının OpenBot çalıştırmadığından emin olun, ardından tekrar deneyin.",
+    "{name} güncellemeyi yükleyemedi. O bilgisayarın başka hiçbir kullanıcısının Slavebot çalıştırmadığından emin olun, ardından tekrar deneyin.",
   "server.update.releaseCheckFailed":
     "{name} sürüm akışını okuyamadı. Ana makinenin ağ bağlantısını kontrol edin, ardından tekrar deneyin.",
   "server.update.releaseUnavailable":
     "Bu derleme için sürüm denetimleri kullanılamıyor. Ana makine yöneticisinden uyumlu bir sürümü kontrol etmesini isteyin.",
   "server.update.externalTitle": "Kurulumu ana makine yönetir",
   "server.update.path.hostManager":
-    "OpenBot Host Manager, tüm kullanıcılar boştayken güncellemeleri yükler. Bir güncelleme başlamazsa ana makine yöneticisinden Host Manager durumunu kontrol etmesini isteyin.",
+    "Slavebot Host Manager, tüm kullanıcılar boştayken güncellemeleri yükler. Bir güncelleme başlamazsa ana makine yöneticisinden Host Manager durumunu kontrol etmesini isteyin.",
   "server.update.path.hosted":
     "Barındırılan hizmet güncellemeleri arka planda indirir. İndirilen bir güncelleme, sunucu bir sonraki başlatılışında başlar. Sunucuyu durdurup sürdürmeden önce etkin çalışmanın bitmesini bekleyin. Sunucu eski bir sürümde kalırsa ana makine yöneticisiyle iletişime geçin.",
   "server.update.path.system":
-    "En son sürümü yüklemek için ana makinede sudo openbot update komutunu çalıştırın. Bu komut OpenBot'u durdurur. Önce etkin çalışmanın bitmesini bekleyin. Otomatik indirmeler bir sonraki önyüklemede yüklenir.",
+    "En son sürümü yüklemek için ana makinede sudo openbot update komutunu çalıştırın. Bu komut Slavebot'u durdurur. Önce etkin çalışmanın bitmesini bekleyin. Otomatik indirmeler bir sonraki önyüklemede yüklenir.",
   "server.update.path.container":
-    "Docker ana makinesinde yeni OpenBot görüntüsünü çekin ve kapsayıcıyı aynı veri birimleriyle yeniden oluşturun. Önce etkin çalışmanın bitmesini bekleyin. Verilerinizi korumak için mevcut birimleri saklayın.",
+    "Docker ana makinesinde yeni Slavebot görüntüsünü çekin ve kapsayıcıyı aynı veri birimleriyle yeniden oluşturun. Önce etkin çalışmanın bitmesini bekleyin. Verilerinizi korumak için mevcut birimleri saklayın.",
   "server.update.path.manual":
-    "Bu kurulum kendini değiştiremez. Ana makine yöneticisinden uyumlu sürümü github.com/nightly-labs/openbot/releases adresinden yüklemesini isteyin. Mevcut OpenBot verilerini saklayın.",
+    "Bu kurulum kendini değiştiremez. Ana makine yöneticisinden uyumlu sürümü github.com/nightly-labs/openbot/releases adresinden yüklemesini isteyin. Mevcut Slavebot verilerini saklayın.",
   "server.update.path.unavailable":
-    "Bu bir geliştirme derlemesidir. Güncellemeleri denetlemek için yüklü bir OpenBot sürümü kullanın.",
+    "Bu bir geliştirme derlemesidir. Güncellemeleri denetlemek için yüklü bir Slavebot sürümü kullanın.",
   "server.update.check": "Güncellemeleri denetle",
   "server.update.start": "Boşta olduğunda güncelle",
   "server.update.restartNow": "Şimdi yeniden başlat",
@@ -518,39 +518,39 @@ export const messages = {
   "server.update.requestedBy": "{member} bu güncellemeyi istedi.",
   "server.update.automatic": "{name} güncellemeleri otomatik olarak yükler.",
   "server.update.autoDownloadTitle": "Güncellemeleri otomatik olarak indir",
-  "server.update.autoDownloadDescription": "{name}, OpenBot'un her yeni sürümü çıktığında indirir.",
+  "server.update.autoDownloadDescription": "{name}, Slavebot'un her yeni sürümü çıktığında indirir.",
   "server.update.autoInstallTitle": "Güncellemeleri otomatik olarak yükle",
   "server.update.autoInstallDescription":
     "{name}, ajanları boşta olduğunda indirilen güncellemeyle yeniden başlar. Üyelerin bağlantısı kısa bir süre için kesilir ve otomatik olarak tekrar bağlanır.",
   "server.update.waitingFor": "{reasons} bekleniyor.",
   "server.update.disabledTitle": "Uzaktan güncellemeler kapalı",
   "server.update.disabledDescription":
-    "{name} kullanıcısı sunucu üyelerinin güncelleme yapmasını kapattı. OpenBot uygulamasını güncellemesini veya ayarı açmasını isteyin.",
-  "server.update.managedTitle": "Güncellemeleri OpenBot Host Manager yönetiyor",
+    "{name} kullanıcısı sunucu üyelerinin güncelleme yapmasını kapattı. Slavebot uygulamasını güncellemesini veya ayarı açmasını isteyin.",
+  "server.update.managedTitle": "Güncellemeleri Slavebot Host Manager yönetiyor",
   "server.update.managedDescription":
-    "OpenBot Host Manager, {name} sunucusunu günceller. Ana makine yöneticisiyle iletişime geçin.",
+    "Slavebot Host Manager, {name} sunucusunu günceller. Ana makine yöneticisiyle iletişime geçin.",
   "server.update.unsupportedTitle": "{name} kendini güncelleyemiyor",
   "server.update.unsupportedDescription":
-    "Bu OpenBot derlemesinde güncelleyici yok. {name} üzerine yeni bir sürüm yükleyin.",
+    "Bu Slavebot derlemesinde güncelleyici yok. {name} üzerine yeni bir sürüm yükleyin.",
   "server.update.restarting": "Yeniden başlatılıyor…",
   "server.update.loadFailed": "{name} güncelleme durumu yüklenemedi.",
   "server.update.hostAction": "Ana makineyi güncelle",
   // Güncelleme iletişim kutusu: indirme, yeniden başlatma ve sunucunun tekrar çevrim içi olması.
-  "server.update.dialog.offerTitle": "{name} sunucusunu OpenBot {version} sürümüne güncelle",
+  "server.update.dialog.offerTitle": "{name} sunucusunu Slavebot {version} sürümüne güncelle",
   "server.update.dialog.offerDescription":
-    "{name}, OpenBot {current} kullanıyor. Önce güncellemeyi indirir, ardından yeniden başlar.",
+    "{name}, Slavebot {current} kullanıyor. Önce güncellemeyi indirir, ardından yeniden başlar.",
   "server.update.dialog.offerReadyDescription":
-    "{name}, OpenBot {current} kullanıyor. Güncelleme indirildi. {name}, güncellemeyi yüklemek için yeniden başlar.",
+    "{name}, Slavebot {current} kullanıyor. Güncelleme indirildi. {name}, güncellemeyi yüklemek için yeniden başlar.",
   "server.update.dialog.progressTitle": "{name} güncelleniyor",
   "server.update.dialog.progressDescription": "{time} · Bu pencereyi gizleyebilirsiniz.",
-  "server.update.dialog.doneTitle": "{name}, OpenBot {version} sürümünde",
+  "server.update.dialog.doneTitle": "{name}, Slavebot {version} sürümünde",
   "server.update.dialog.doneDescription": "Güncelleme {time} sürdü.",
   "server.update.dialog.failedTitle": "{name} güncellenmedi",
   "server.update.dialog.restartFailed":
     "{name} tekrar çevrim içi olmadı. Ana makineyi kontrol edin, ardından tekrar deneyin.",
-  "server.update.dialog.notInstalled": "{name}, OpenBot {current} ile yeniden başladı. Güncellemeyi tekrar deneyin.",
+  "server.update.dialog.notInstalled": "{name}, Slavebot {current} ile yeniden başladı. Güncellemeyi tekrar deneyin.",
   "server.update.dialog.steps": "Güncelleme adımları",
-  "server.update.dialog.downloadStep": "OpenBot {version} sürümünü indir",
+  "server.update.dialog.downloadStep": "Slavebot {version} sürümünü indir",
   "server.update.dialog.downloadPending": "İndirme sırasında ajanlar çalışmaya devam eder.",
   "server.update.dialog.downloadPreparing": "İndirme hazırlanıyor…",
   "server.update.dialog.downloadRunning": "{progress} · Ajanlar çalışmaya devam ediyor.",
@@ -559,10 +559,10 @@ export const messages = {
   "server.update.dialog.restartPending": "Üyelerin bağlantısı yaklaşık bir dakika kesilir.",
   "server.update.dialog.restartWaiting": "Bitmesi beklenen işler: {reasons}.",
   "server.update.dialog.restartSoon": "Yeniden başlatma birazdan başlıyor.",
-  "server.update.dialog.restartRunning": "OpenBot {version} başlatılıyor…",
+  "server.update.dialog.restartRunning": "Slavebot {version} başlatılıyor…",
   "server.update.dialog.onlineStep": "Tekrar çevrim içi",
   "server.update.dialog.onlinePending": "Üyeler otomatik olarak tekrar bağlanır.",
-  "server.update.dialog.onlineDone": "{time} sonra OpenBot {version} sürümünde.",
+  "server.update.dialog.onlineDone": "{time} sonra Slavebot {version} sürümünde.",
   "server.update.dialog.waitIdle": "Ajanlar boşta olana kadar bekle",
   "server.update.dialog.waitIdleDescription":
     "Yeniden başlatma, ajan turlarının ve rutin çalıştırmalarının bitmesini bekler.",
@@ -590,14 +590,14 @@ export const messages = {
   "server.update.reason.fileTransfer": "bir dosya aktarımı",
   "server.update.reason.browserControl": "bir ajan tarafından tarayıcı kontrolü",
   "server.update.reason.updateOperation": "başka bir güncelleme adımı",
-  "server.update.reason.initialization": "OpenBot'un başlatılması",
+  "server.update.reason.initialization": "Slavebot'un başlatılması",
   "server.update.reason.other": "diğer çalışmalar",
   // Katılınan bir sunucu bir güncellemeye yeniden başladığında her üyeye bir bildirim. {name} sunucudur.
   "server.restartNotice.waitingTitle": "{name}, bir güncellemeyi yüklemek için yeniden başlatılacak",
-  "server.restartNotice.waitingVersionTitle": "{name}, OpenBot {version} sürümünü yüklemek için yeniden başlatılacak",
+  "server.restartNotice.waitingVersionTitle": "{name}, Slavebot {version} sürümünü yüklemek için yeniden başlatılacak",
   "server.restartNotice.waitingDescription":
-    "Yeniden başlatma, ajanları boşta kalana kadar bekler. Kısa bir süre için bağlantınız kesilir, ardından OpenBot otomatik olarak tekrar bağlanır.",
+    "Yeniden başlatma, ajanları boşta kalana kadar bekler. Kısa bir süre için bağlantınız kesilir, ardında Slavebot otomatik olarak tekrar bağlanır.",
   "server.restartNotice.restartingTitle": "{name}, güncellemeyi yüklemek için yeniden başlatılıyor",
-  "server.restartNotice.restartingDescription": "{name} geri geldiğinde OpenBot otomatik olarak tekrar bağlanır.",
+  "server.restartNotice.restartingDescription": "{name} geri geldiğinde Slavebot otomatik olarak tekrar bağlanır.",
   "server.restartNotice.backTitle": "{name} tekrar çevrim içi",
 } as const satisfies PartialTranslation<typeof source>;

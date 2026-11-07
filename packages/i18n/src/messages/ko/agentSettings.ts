@@ -43,7 +43,7 @@ export const messages = {
   "agentSettings.folders.inShared": "{folder}은(는) 공유 폴더 안에 있어서 {agent}이(가) 이미 변경할 수 있어요",
   "agentSettings.folders.inFolder": "{folder}은(는) 이미 추가된 {parent} 안에 있어요",
   "agentSettings.folders.protected":
-    "{folder}은(는) 추가할 수 없어요. OpenBot 데이터나 다른 에이전트의 파일이 들어 있어요",
+    "{folder}은(는) 추가할 수 없어요. Slavebot 데이터나 다른 에이전트의 파일이 들어 있어요",
   "agentSettings.folders.missing": "{folder}은(는) 이 컴퓨터의 폴더가 아니에요",
   "agentSettings.folders.limit": { other: "폴더는 최대 {count}개까지 추가할 수 있어요" },
   "agentSettings.folders.failed": "폴더를 변경하지 못했어요",
@@ -139,7 +139,7 @@ export const messages = {
   "agentSettings.runtime.notAvailable": "아직 사용할 수 없음",
   "agentSettings.runtime.fullAccessNote": "에이전트가 워크스페이스와 공유 폴더에서 컴퓨터 전체 접근 권한으로 실행돼요.",
   "agentSettings.runtime.askNote":
-    "OpenBot 도구를 사용하거나 사이트를 게시하기 전, 그리고 제공자가 승인을 요청할 때 먼저 물어봐요.",
+    "Slavebot 도구를 사용하거나 사이트를 게시하기 전, 그리고 제공자가 승인을 요청할 때 먼저 물어봐요.",
   "agentSettings.runtime.fullNote": "에이전트가 직접 묻는 질문을 제외하고는 묻지 않고 실행해요.",
   "agentSettings.access.workspace": "워크스페이스만",
   "agentSettings.access.ask": "먼저 묻기",
@@ -191,7 +191,7 @@ export const messages = {
   "agentSettings.runtime.workspaceEnforcedClaude":
     "밖에 있는 파일을 편집할 때는 먼저 물어봐요. 명령은 밖에 쓸 수 없어요.",
   "agentSettings.runtime.workspaceUnlimited":
-    "컴퓨터 제어와 OpenBot 브라우저는 제한되지 않아요. 아래에서 컴퓨터 제어를 끌 수 있어요.",
+    "컴퓨터 제어와 Slavebot 브라우저는 제한되지 않아요. 아래에서 컴퓨터 제어를 끌 수 있어요.",
   "agentSettings.computerUse.title": "컴퓨터 제어",
   "agentSettings.computerUse.description": "이 에이전트가 이 컴퓨터의 앱을 제어하도록 허용",
   "agentSettings.automation.title": "로컬 스크립트",

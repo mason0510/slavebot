@@ -43,7 +43,7 @@ export const messages = {
   "agentSettings.folders.inShared": "{folder} klasörü paylaşılan klasörde olduğu için {agent} onu zaten değiştirebilir",
   "agentSettings.folders.inFolder": "{folder} klasörü, zaten eklenmiş olan {parent} klasörünün içinde",
   "agentSettings.folders.protected":
-    "{folder} klasörü eklenemez: OpenBot verilerini veya diğer ajanların dosyalarını içeriyor",
+    "{folder} klasörü eklenemez: Slavebot verilerini veya diğer ajanların dosyalarını içeriyor",
   "agentSettings.folders.missing": "{folder} bu bilgisayarda bir klasör değil",
   "agentSettings.folders.limit": {
     one: "En fazla {count} klasör ekleyebilirsiniz",
@@ -143,7 +143,7 @@ export const messages = {
   "agentSettings.runtime.fullAccessNote":
     "Ajan, çalışma alanından ve paylaşılan klasörden tam bilgisayar erişimiyle çalışır.",
   "agentSettings.runtime.askNote":
-    "Bir OpenBot aracı kullanmadan veya bir site yayımlamadan önce ve sağlayıcısı onay istediğinde size sorar.",
+    "Bir Slavebot aracı kullanmadan veya bir site yayımlamadan önce ve sağlayıcısı onay istediğinde size sorar.",
   "agentSettings.runtime.fullNote": "Size sorduğu sorular hariç, sormadan hareket eder.",
   "agentSettings.access.workspace": "Yalnızca çalışma alanı",
   "agentSettings.access.ask": "Önce sor",
@@ -195,7 +195,7 @@ export const messages = {
   "agentSettings.runtime.workspaceEnforcedClaude":
     "Dışarıdaki bir dosya düzenlemesi önce size sorar. Bir komut dışarıya yazamaz.",
   "agentSettings.runtime.workspaceUnlimited":
-    "Bilgisayar Kullanımı ve OpenBot tarayıcısı sınırlandırılmamıştır; Bilgisayar Kullanımını aşağıdan kapatabilirsiniz.",
+    "Bilgisayar Kullanımı ve Slavebot tarayıcısı sınırlandırılmamıştır; Bilgisayar Kullanımını aşağıdan kapatabilirsiniz.",
   "agentSettings.computerUse.title": "Bilgisayar Kullanımı",
   "agentSettings.computerUse.description": "Bu ajanın bu bilgisayardaki uygulamaları kontrol etmesine izin verin",
   "agentSettings.automation.title": "Yerel betikler",

@@ -586,7 +586,7 @@ export class SunshineMoonlightRuntime {
           },
           this.#moonlight,
         ).pipe(Effect.mapError(this.#failStart("moonlight")));
-        this.#options.onDiagnostic?.("moonlight", "OpenBot: Moonlight Web is ready.\n");
+        this.#options.onDiagnostic?.("moonlight", "Slavebot: Moonlight Web is ready.\n");
         const paired = yield* this.#bootstrapMoonlightEffect(moonlightPort).pipe(
           Effect.mapError(this.#failStart("pairing")),
         );
@@ -642,7 +642,7 @@ export class SunshineMoonlightRuntime {
     const basePort = this.#sunshineBasePort;
     if (basePort === null) return yield* desktopFailure(new Error("Sunshine ports have not been allocated yet."));
     const values = [
-      "sunshine_name = OpenBot Remote Desktop",
+      "sunshine_name = Slavebot Remote Desktop",
       // The base port: every other Sunshine port (GameStream HTTP/HTTPS, Web UI HTTPS, video,
       // audio, control, RTSP setup) is offset from this one, so a per-instance base keeps the
       // whole family disjoint from other OpenBot instances on this machine.
@@ -865,7 +865,7 @@ export class SunshineMoonlightRuntime {
       )).hosts;
       this.#options.onDiagnostic?.(
         "moonlight",
-        `OpenBot: found ${hosts.length} local Moonlight hosts for streamer slot ${slot}.\n`,
+        `Slavebot: found ${hosts.length} local Moonlight hosts for streamer slot ${slot}.\n`,
       );
       // Stored hosts keep their original port. Recreate the managed endpoint before pairing,
       // including when another user claimed this runtime's previous port after restart.
@@ -900,7 +900,7 @@ export class SunshineMoonlightRuntime {
       if (host.paired !== "Paired") {
         this.#options.onDiagnostic?.(
           "moonlight",
-          `OpenBot: pairing local host ${host.host_id} for streamer slot ${slot}.\n`,
+          `Slavebot: pairing local host ${host.host_id} for streamer slot ${slot}.\n`,
         );
         yield* this.#pairMoonlightEffect(baseUrl, host.host_id, user);
       }
@@ -1023,16 +1023,16 @@ export class SunshineMoonlightRuntime {
                 Effect.mapError(desktopFailure),
               );
               if (typeof message === "object" && "Pin" in message) {
-                this.#options.onDiagnostic?.("moonlight", "OpenBot: received local pairing PIN.\n");
+                this.#options.onDiagnostic?.("moonlight", "Slavebot: received local pairing PIN.\n");
                 const pairingId = yield* this.#waitForPairingRequestEffect();
                 yield* sunshineRequestEffect(
                   yield* desktopSync(() => this.#requireSunshineHttpsPort()),
                   "/api/pin",
                   this.#options.credentials,
                   join(this.#options.stateDirectory, "sunshine-cert.pem"),
-                  JSON.stringify({ pairing_id: pairingId, pin: message.Pin, name: "OpenBot Remote Desktop" }),
+                  JSON.stringify({ pairing_id: pairingId, pin: message.Pin, name: "Slavebot Remote Desktop" }),
                 );
-                this.#options.onDiagnostic?.("moonlight", "OpenBot: submitted local pairing PIN.\n");
+                this.#options.onDiagnostic?.("moonlight", "Slavebot: submitted local pairing PIN.\n");
                 pinSubmitted = true;
                 continue;
               }
@@ -1123,7 +1123,7 @@ export class SunshineMoonlightRuntime {
       // A stop clears the field before it waits. A start in progress fails its own readiness wait.
       if ((source === "sunshine" ? this.#sunshine : this.#moonlight) !== child || !this.#state) return;
       this.#state = null;
-      this.#options.onDiagnostic?.(source, `OpenBot: ${source} exited unexpectedly (${signal ?? `code ${code}`}).\n`);
+      this.#options.onDiagnostic?.(source, `Slavebot: ${source} exited unexpectedly (${signal ?? `code ${code}`}).\n`);
       this.#options.onExit?.(source);
     });
   }

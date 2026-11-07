@@ -41,7 +41,7 @@ export const messages = {
   "agentSettings.folders.inWorkspace": "{folder} 位于工作区中，{agent} 已可更改它",
   "agentSettings.folders.inShared": "{folder} 位于共享文件夹中，{agent} 已可更改它",
   "agentSettings.folders.inFolder": "{folder} 位于已添加的 {parent} 中",
-  "agentSettings.folders.protected": "无法添加 {folder}：其中包含 OpenBot 数据或其他助手的文件",
+  "agentSettings.folders.protected": "无法添加 {folder}：其中包含 Slavebot 数据或其他助手的文件",
   "agentSettings.folders.missing": "{folder} 不是此电脑上的文件夹",
   "agentSettings.folders.limit": { one: "最多可添加 {count} 个文件夹", other: "最多可添加 {count} 个文件夹" },
   "agentSettings.folders.failed": "无法更改文件夹",
@@ -137,7 +137,7 @@ export const messages = {
   "agentSettings.runtime.workingDirectory": "工作目录",
   "agentSettings.runtime.notAvailable": "暂不可用",
   "agentSettings.runtime.fullAccessNote": "助手可从其工作区和共享文件夹获得完整的电脑访问权限。",
-  "agentSettings.runtime.askNote": "在调用 OpenBot 工具、发布站点，以及服务商要求批准时，它会先询问你。",
+  "agentSettings.runtime.askNote": "在调用 Slavebot 工具、发布站点，以及服务商要求批准时，它会先询问你。",
   "agentSettings.runtime.fullNote": "除非它主动提问，否则执行操作时不再询问。",
 
   "agentSettings.access.workspace": "仅工作区",
@@ -190,7 +190,7 @@ export const messages = {
   "agentSettings.runtime.workspaceEnforcedCommand": "需要在外部写入的命令会先询问你。",
   "agentSettings.runtime.workspaceEnforcedClaude": "在工作区外编辑文件会先询问你；命令无法在外部写入。",
   "agentSettings.runtime.workspaceUnlimited":
-    "Computer Use 和 OpenBot 浏览器不受该限制；你可以在下方关闭 Computer Use。",
+    "Computer Use 和 Slavebot 浏览器不受该限制；你可以在下方关闭 Computer Use。",
   "agentSettings.computerUse.title": "Computer Use",
   "agentSettings.computerUse.description": "允许该助手控制这台电脑上的应用",
   "agentSettings.automation.title": "本地脚本",

@@ -4,7 +4,7 @@ import type { messages as source } from "../../en/mobile/chat";
 export const messages = {
   "mobile.chat.dictation.microphoneOffTitle": "Microfoontoegang staat uit",
   "mobile.chat.dictation.microphoneOffMessage":
-    "Sta OpenBot in Instellingen toe de microfoon en spraakherkenning te gebruiken om een bericht te dicteren.",
+    "Sta Slavebot in Instellingen toe de microfoon en spraakherkenning te gebruiken om een bericht te dicteren.",
   "mobile.chat.dictation.stopped": "Dicteren gestopt",
   "mobile.chat.dictation.tryAgain": "Probeer opnieuw.",
   "mobile.chat.dictation.unavailable": "Dicteren is niet beschikbaar",
@@ -99,7 +99,7 @@ export const messages = {
   "mobile.chat.attachment.openFailed": "Kan bijlage niet openen",
   "mobile.chat.attachment.photosNeedUpdate": "Voor het bewaren van foto’s is de nieuwste versie van de app nodig.",
   "mobile.chat.attachment.photosPermission":
-    "Sta OpenBot in Instellingen toe foto’s toe te voegen om deze afbeelding te bewaren.",
+    "Sta Slavebot in Instellingen toe foto’s toe te voegen om deze afbeelding te bewaren.",
   "mobile.chat.attachment.imageUnavailable": "De afbeelding is niet beschikbaar. Probeer opnieuw.",
   "mobile.chat.attachment.saveImageFailed": "Kan afbeelding niet bewaren",
   "mobile.chat.attachment.preview": "Bekijk {name}",
@@ -127,9 +127,9 @@ export const messages = {
   "mobile.chat.attachment.unsupported":
     "{name}: kies afbeeldingen, MP3-audio, MOV- of MP4-video, ZIP-archieven, PDF, Office-documenten, EML, tekst, Markdown, data of bronbestanden.",
   "mobile.chat.attachment.hostRejectsType":
-    "{name}: de hostcomputer accepteert geen {type}-bestanden. Werk OpenBot daar bij om ze bij te voegen.",
+    "{name}: de hostcomputer accepteert geen {type}-bestanden. Werk Slavebot daar bij om ze bij te voegen.",
   "mobile.chat.attachment.hostRejects":
-    "{name}: de hostcomputer accepteert deze bestanden niet. Werk OpenBot daar bij om ze bij te voegen.",
+    "{name}: de hostcomputer accepteert deze bestanden niet. Werk Slavebot daar bij om ze bij te voegen.",
   "mobile.chat.attachment.nameTooLong": "Kies een bestand met een kortere naam.",
   "mobile.chat.attachment.damaged": "De bijlage is beschadigd. Selecteer de bijlage opnieuw.",
   "mobile.chat.attachment.tooLarge": "{name} is groter dan 10 MB.",
@@ -205,7 +205,7 @@ export const messages = {
   "mobile.chat.video.share": "Deel {name}",
   "mobile.chat.video.save": "Bewaar {name} in Foto’s",
   "mobile.chat.video.photosPermission":
-    "Sta OpenBot in Instellingen toe foto’s toe te voegen om deze video te bewaren.",
+    "Sta Slavebot in Instellingen toe foto’s toe te voegen om deze video te bewaren.",
   "mobile.chat.video.saveFailed": "Kan video niet bewaren",
   "mobile.chat.audio.play": "Speel {name} af",
   "mobile.chat.audio.pause": "Pauzeer {name}",
@@ -219,7 +219,7 @@ export const messages = {
   "mobile.chat.browserSecret.authenticatorCode": "Authenticatiecode",
   "mobile.chat.browserSecret.oneTimeCode": "Eenmalige code",
   "mobile.chat.browserSecret.takeoverTitle": "Browser overnemen",
-  "mobile.chat.browserSecret.takeoverBody": "Voltooi deze stap in de browser op de computer waarop OpenBot draait.",
+  "mobile.chat.browserSecret.takeoverBody": "Voltooi deze stap in de browser op de computer waarop Slavebot draait.",
   "mobile.chat.browserSecret.takeoverReload": "Laad daarna de pagina opnieuw voordat je Ik ben klaar kiest.",
   "mobile.chat.browserSecret.takeoverFailed": "Het verzoek kan niet worden voltooid.",
   "mobile.chat.browserSecret.done": "Ik ben klaar",
@@ -303,7 +303,7 @@ export const messages = {
   "mobile.chat.approval.effect.permissions":
     "Toestaan geeft {name} deze machtigingen op {server}. Weigeren behoudt de huidige machtigingen.",
   "mobile.chat.approval.partial":
-    "Dit verzoek is te lang om op de telefoon te tonen. Open OpenBot op {server} om het toe te staan. Je kunt het hier weigeren.",
+    "Dit verzoek is te lang om op de telefoon te tonen. Open Slavebot op {server} om het toe te staan. Je kunt het hier weigeren.",
   "mobile.chat.approval.allow": "Toestaan",
   "mobile.chat.approval.deny": "Weigeren",
   "mobile.chat.approval.reconnect": "Maak verbinding met {server} om dit verzoek te beantwoorden.",
@@ -380,7 +380,7 @@ export const messages = {
   "mobile.chat.queue.steerNeedsTurn": "Bijsturen kan alleen tijdens een lopende beurt.",
   "mobile.chat.queue.stillHoldingTitle": "Bericht wordt nog vastgehouden",
   "mobile.chat.queue.stillHoldingMessage":
-    "OpenBot kan dit bericht niet vrijgeven, dus de agent blijft erop wachten. Probeer opnieuw als de telefoon weer verbonden is.",
+    "Slavebot kan dit bericht niet vrijgeven, dus de agent blijft erop wachten. Probeer opnieuw als de telefoon weer verbonden is.",
   "mobile.chat.queue.keepEditing": "Blijf bewerken",
   "mobile.chat.queue.leaveAnyway": "Toch verlaten",
   "mobile.chat.queue.discardTitle": "Wijzigingen weggooien?",
@@ -388,7 +388,7 @@ export const messages = {
   "mobile.chat.queue.discard": "Weggooien",
   "mobile.chat.queue.alreadyReceived": "De agent heeft dit bericht al ontvangen, dus je kunt het niet meer wijzigen.",
   "mobile.chat.queue.holding": "Bericht wordt voor je vastgehouden…",
-  "mobile.chat.queue.holdFailed": "OpenBot kan dit bericht niet vasthouden om het te bewerken.",
+  "mobile.chat.queue.holdFailed": "Slavebot kan dit bericht niet vasthouden om het te bewerken.",
   "mobile.chat.queue.messageLabel": "Bericht",
   "mobile.chat.queue.messagePlaceholder": "Berichttekst",
   "mobile.chat.queue.save": "Bewaar bericht in wachtrij",
@@ -417,15 +417,15 @@ export const messages = {
   "mobile.chat.threads.renameSave": "Bewaren",
   "mobile.chat.threads.name": "Naam van thread",
   "mobile.chat.threads.renameUnavailable":
-    "Je kunt deze thread nu niet hernoemen. Maak verbinding met de server of werk OpenBot op de host bij.",
+    "Je kunt deze thread nu niet hernoemen. Maak verbinding met de server of werk Slavebot op de host bij.",
   "mobile.chat.threads.delete.action": "Verwijderen",
   "mobile.chat.threads.delete.title": "Deze thread verwijderen?",
   "mobile.chat.threads.delete.body":
-    "OpenBot verwijdert de thread, de berichten en de bestanden ervan voorgoed. De hoofdchat verandert niet.",
+    "Slavebot verwijdert de thread, de berichten en de bestanden ervan voorgoed. De hoofdchat verandert niet.",
   "mobile.chat.threads.filesUnsupported":
-    "Deze host kan geen bestanden in een thread ontvangen. Werk OpenBot op de host bij.",
+    "Deze host kan geen bestanden in een thread ontvangen. Werk Slavebot op de host bij.",
   "mobile.chat.threads.unsupported":
-    "Deze host kan threads niet hernoemen of verwijderen. Werk OpenBot op de host bij.",
+    "Deze host kan threads niet hernoemen of verwijderen. Werk Slavebot op de host bij.",
   "mobile.chat.threads.error.rename": "Kon de thread niet hernoemen.",
   "mobile.chat.threads.error.delete": "Kon de thread niet verwijderen.",
   "mobile.chat.channelWork.working": "Bezig in {channel}",

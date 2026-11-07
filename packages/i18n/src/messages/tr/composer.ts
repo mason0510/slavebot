@@ -56,10 +56,10 @@ export const messages = {
   "composer.voice.transcribing": "Sesli istem metne dönüştürülüyor",
   "composer.voice.start": "Sesle istem oluştur",
   "composer.voice.blocked":
-    "Mikrofon erişimi engellendi. Sistem ayarlarından OpenBot'un mikrofonu kullanmasına izin verin.",
+    "Mikrofon erişimi engellendi. Sistem ayarlarında Slavebot'un mikrofonu kullanmasına izin verin.",
   "composer.voice.noMicrophone": "Kullanılabilir mikrofon yok.",
-  "composer.voice.startFailed": "OpenBot ses kaydını başlatamadı.",
-  "composer.voice.transcribeFailed": "OpenBot bu kaydı metne dönüştüremedi.",
+  "composer.voice.startFailed": "Slavebot ses kaydını başlatamadı.",
+  "composer.voice.transcribeFailed": "Slavebot bu kaydı metne dönüştüremedi.",
   "composer.reply.toYou": "Mesajınıza yanıt veriliyor",
   "composer.reply.toAgent": "Ajana yanıt veriliyor",
   "composer.reply.attachment": "Ek",

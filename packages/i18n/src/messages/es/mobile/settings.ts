@@ -16,7 +16,7 @@ export const messages = {
   "mobile.settings.about.privacy": "Política de privacidad",
   "mobile.settings.home.profile": "Perfil",
   "mobile.settings.home.preferences": "Preferencias",
-  "mobile.settings.home.about": "Acerca de OpenBot",
+  "mobile.settings.home.about": "Acerca de Slavebot",
   "mobile.settings.home.support": "Ayuda",
   "mobile.settings.home.supportHint": "Obtener ayuda y guardar un registro de soporte",
   "mobile.settings.support.help": "Obtener ayuda",
@@ -34,7 +34,7 @@ export const messages = {
   "mobile.settings.support.clearTitle": "¿Borrar el registro de soporte?",
   "mobile.settings.support.clearBody": "Esto elimina todos los eventos del registro de este teléfono.",
   "mobile.settings.support.logFooter":
-    "El registro permanece en este teléfono y OpenBot no lo envía. Registra los pasos de conexión, las solicitudes y los errores. No registra mensajes ni archivos, y oculta contraseñas y tokens. Lee el archivo antes de compartirlo.",
+    "El registro permanece en este teléfono y Slavebot no lo envía. Registra los pasos de conexión, las solicitudes y los errores. No registra mensajes ni archivos, y oculta contraseñas y tokens. Lee el archivo antes de compartirlo.",
   "mobile.settings.support.saveFailed": "No se pudo guardar el archivo de registro. Vuelve a intentarlo.",
   "mobile.settings.support.sharingUnavailable": "La función de compartir no está disponible en este teléfono.",
   "mobile.settings.support.recent": "Eventos recientes",
@@ -93,28 +93,28 @@ export const messages = {
   "mobile.settings.feedback.retry": "Reintentar guardar el ajuste háptico",
   "mobile.settings.liveActivities.title": "Actividades en directo",
   "mobile.settings.liveActivities.footer":
-    "Muestra el trabajo de los agentes, mensajes, preguntas y aprobaciones en la pantalla de bloqueo y en la Dynamic Island mientras OpenBot está en ejecución.",
+    "Muestra el trabajo de los agentes, mensajes, preguntas y aprobaciones en la pantalla de bloqueo y en la Dynamic Island mientras Slavebot está en ejecución.",
   "mobile.settings.liveActivities.toggle": "Mostrar actividad de los agentes",
   "mobile.settings.liveActivities.retry": "Reintentar guardar el ajuste de actividades en directo",
   "mobile.settings.notifications.title": "Notificaciones",
   "mobile.settings.notifications.toggle": "Permitir notificaciones",
   "mobile.settings.notifications.footer":
-    "Los agentes te avisan cuando terminan, se detienen con un error o necesitan tu respuesta, una aprobación o un paso en el navegador. No llega nada mientras usas OpenBot aquí o en la app de escritorio. Mientras se muestra la actividad en directo, el evento aparece allí en su lugar.",
+    "Los agentes te avisan cuando terminan, se detienen con un error o necesitan tu respuesta, una aprobación o un paso en el navegador. No llega nada mientras usas Slavebot aquí o en la app de escritorio. Mientras se muestra la actividad en directo, el evento aparece allí en su lugar.",
   "mobile.settings.notifications.footerAndroid":
-    "Los agentes te avisan cuando terminan, se detienen con un error o necesitan tu respuesta, una aprobación o un paso en el navegador. No llega nada mientras usas OpenBot aquí o en la app de escritorio.",
-  "mobile.settings.notifications.denied": "Las notificaciones de OpenBot están desactivadas en los Ajustes de iOS.",
+    "Los agentes te avisan cuando terminan, se detienen con un error o necesitan tu respuesta, una aprobación o un paso en el navegador. No llega nada mientras usas Slavebot aquí o en la app de escritorio.",
+  "mobile.settings.notifications.denied": "Las notificaciones de Slavebot están desactivadas en los Ajustes de iOS.",
   "mobile.settings.notifications.deniedAndroid":
-    "Las notificaciones de OpenBot están desactivadas en los ajustes de Android.",
+    "Las notificaciones de Slavebot están desactivadas en los ajustes de Android.",
   "mobile.settings.notifications.openSettings": "Abrir Ajustes de iOS",
   "mobile.settings.notifications.openSettingsAndroid": "Abrir ajustes de Android",
   "mobile.settings.notifications.preview": "Mostrar vista previa de la respuesta",
   "mobile.settings.notifications.previewFooter":
-    "Muestra el inicio de una respuesta, una pregunta o la acción que hay que aprobar. Apple y el servicio de cuentas de OpenBot no pueden leerlo.",
+    "Muestra el inicio de una respuesta, una pregunta o la acción que hay que aprobar. Apple y el servicio de cuentas de Slavebot no pueden leerlo.",
   "mobile.settings.notifications.previewFooterAndroid":
-    "Muestra el inicio de una respuesta, una pregunta o la acción que hay que aprobar. Google y el servicio de cuentas de OpenBot no pueden leerlo.",
+    "Muestra el inicio de una respuesta, una pregunta o la acción que hay que aprobar. Google y el servicio de cuentas de Slavebot no pueden leerlo.",
   "mobile.settings.notifications.sound": "Sonido",
   "mobile.settings.notifications.playSound": "Reproducir sonido",
-  "mobile.settings.notifications.sound.openbot": "OpenBot",
+  "mobile.settings.notifications.sound.openbot": "Slavebot",
   "mobile.settings.notifications.sound.warm": "Cálido",
   "mobile.settings.notifications.sound.mech": "Mecánico",
   "mobile.settings.notifications.sound.bubble": "Burbujas",
@@ -122,9 +122,9 @@ export const messages = {
   "mobile.settings.notifications.sound.default": "Predeterminado de iOS",
   "mobile.settings.notifications.sound.defaultAndroid": "Predeterminado de Android",
   "mobile.settings.notifications.soundFooter":
-    "Las notificaciones y la actividad en directo reproducen este sonido. La actividad en directo también enciende la pantalla. El sonido de OpenBot es el que reproduce la app de escritorio cuando termina una tarea. Los cuatro sonidos siguientes son los de los temas de sonido de la app de escritorio.",
+    "Las notificaciones y la actividad en directo reproducen este sonido. La actividad en directo también enciende la pantalla. El sonido de Slavebot es el que reproduce la app de escritorio cuando termina una tarea. Los cuatro sonidos siguientes son los de los temas de sonido de la app de escritorio.",
   "mobile.settings.notifications.soundFooterAndroid":
-    "Las notificaciones reproducen este sonido. El sonido de OpenBot es el que reproduce la app de escritorio cuando termina una tarea. Los cuatro sonidos siguientes son los de los temas de sonido de la app de escritorio.",
+    "Las notificaciones reproducen este sonido. El sonido de Slavebot es el que reproduce la app de escritorio cuando termina una tarea. Los cuatro sonidos siguientes son los de los temas de sonido de la app de escritorio.",
   "mobile.settings.notifications.level.all": "Toda la actividad",
   "mobile.settings.notifications.level.needsMe": "Solo cuando me necesite",
   "mobile.settings.notifications.level.nothing": "Nada",
@@ -140,7 +140,7 @@ export const messages = {
   "mobile.settings.notifications.serverFooter":
     "Los eventos de este servidor que notifican a este teléfono. La app de escritorio tiene sus propios ajustes.",
   "mobile.settings.notifications.serverUnsupported":
-    "Este servidor no puede enviar notificaciones. Actualiza OpenBot en el equipo que lo ejecuta.",
+    "Este servidor no puede enviar notificaciones. Actualiza Slavebot en el equipo que lo ejecuta.",
   "mobile.settings.notifications.thisPhone": "Este teléfono",
   "mobile.settings.notifications.whatYouHear": "Qué te llega",
   "mobile.settings.notifications.wholeServer": "Todo el servidor",
@@ -154,7 +154,7 @@ export const messages = {
   "mobile.settings.notifications.chooseAgent": "Elegir para un agente",
   "mobile.settings.notifications.chooseAnotherAgent": "Elegir otro agente",
   "mobile.settings.notifications.levelsFooter": "Toca otra vez el nivel de un agente para que siga al servidor.",
-  "mobile.settings.notifications.agentsUnsupported": "Actualiza OpenBot en este servidor para elegir agentes.",
+  "mobile.settings.notifications.agentsUnsupported": "Actualiza Slavebot en este servidor para elegir agentes.",
   "mobile.settings.notifications.agentsOffline": "Los agentes aparecen cuando este servidor está en línea.",
   "mobile.settings.notifications.scopeFooter":
     "Tus elecciones se aplican en todos tus dispositivos. Silenciar solo se aplica a este teléfono.",
@@ -182,7 +182,7 @@ export const messages = {
   "mobile.settings.profile.security": "Seguridad",
   "mobile.settings.profile.accountSessions": "Sesiones de la cuenta",
   "mobile.settings.profile.signOutTitle": "¿Cerrar sesión?",
-  "mobile.settings.profile.signOutBody": "Vuelve a conectarte escaneando un nuevo código desde OpenBot en tu equipo.",
+  "mobile.settings.profile.signOutBody": "Vuelve a conectarte escaneando un nuevo código desde Slavebot en tu equipo.",
   "mobile.settings.profile.signOut": "Cerrar sesión",
   "mobile.settings.voice.title": "Voz",
   "mobile.settings.voice.sample": "Hola. Así te leeré mis respuestas.",
@@ -213,7 +213,7 @@ export const messages = {
   "mobile.settings.voice.supertonic.male": "Voz masculina {number}",
   "mobile.settings.voice.elevenLabs.title": "ElevenLabs",
   "mobile.settings.voice.elevenLabs.footer":
-    "OpenBot envía el texto de cada respuesta a ElevenLabs con tu clave, y ElevenLabs cobra a tu cuenta. La clave queda en el llavero de este teléfono.",
+    "Slavebot envía el texto de cada respuesta a ElevenLabs con tu clave, y ElevenLabs cobra a tu cuenta. La clave queda en el llavero de este teléfono.",
   "mobile.settings.voice.elevenLabs.key": "Clave de API",
   "mobile.settings.voice.elevenLabs.keySaved": "Guardada en este teléfono",
   "mobile.settings.voice.elevenLabs.chooseVoice": "Elige una voz",
@@ -223,7 +223,7 @@ export const messages = {
   "mobile.settings.voice.elevenLabs.removeBody": "Supertonic 3 vuelve a leer las respuestas.",
   "mobile.settings.voice.elevenLabs.saveKey": "Guardar clave",
   "mobile.settings.voice.elevenLabs.testing": "Probando la clave",
-  "mobile.settings.voice.elevenLabs.keyHint": "OpenBot prueba los dos primeros permisos antes de guardar la clave.",
+  "mobile.settings.voice.elevenLabs.keyHint": "Slavebot prueba los dos primeros permisos antes de guardar la clave.",
   "mobile.settings.voice.elevenLabs.testFailed": "ElevenLabs no respondió. Inténtalo de nuevo.",
   "mobile.settings.voice.elevenLabs.getKey": "Obtener una clave de API",
   "mobile.settings.voice.engine.supertonicReady": "En este teléfono · {voice}",
@@ -267,5 +267,5 @@ export const messages = {
   "mobile.settings.voice.tab.listening": "Escuchar",
   "mobile.settings.voice.tab.speaking": "Hablar",
   "mobile.settings.voice.elevenLabs.recognitionFooter":
-    "OpenBot transmite tu voz a ElevenLabs con un token de un solo uso, y ElevenLabs lo cobra en tu cuenta. La clave se queda en este teléfono.",
+    "Slavebot transmite tu voz a ElevenLabs con un token de un solo uso, y ElevenLabs lo cobra en tu cuenta. La clave se queda en este teléfono.",
 } as const satisfies PartialTranslation<typeof source>;

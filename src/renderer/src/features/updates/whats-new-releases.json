@@ -8,8 +8,8 @@
         "type": "added",
         "items": [
           "Start a workflow from GitHub: a GitHub trigger runs on new issues, comments, pull requests, reviews, failed checks or a mention of @openbotgit.",
-          "Change GitHub from a workflow: comment, label, assign, review, close or create an issue as the OpenBot GitHub App.",
-          "Marketplace has 17 new OpenBot agents, such as QA Tester, PR Shepherd and Chief of Staff, and 15 new skills for them.",
+          "Change GitHub from a workflow: comment, label, assign, review, close or create an issue as the Slavebot GitHub App.",
+          "Marketplace has 17 new Slavebot agents, such as QA Tester, PR Shepherd and Chief of Staff, and 15 new skills for them.",
           "Usage shows the OpenCode Go monthly limit as a third bar."
         ]
       },
@@ -84,7 +84,7 @@
       {
         "type": "changed",
         "items": [
-          "A provider uses the CLI that you installed when it is the same version as OpenBot's copy or newer.",
+          "A provider uses the CLI that you installed when it is the same version as Slavebot's copy or newer.",
           "Your analytics answer follows your account to your other devices. If you turned analytics off before this version, it stays off on this computer until you change it here.",
           "Drag the grip of the Instructions field to make it taller."
         ]
@@ -93,7 +93,7 @@
         "type": "fixed",
         "items": [
           "Cloudflare checks pass in the built-in browser.",
-          "Each provider CLI uses about half the disk space: OpenBot keeps one version.",
+          "Each provider CLI uses about half the disk space: Slavebot keeps one version.",
           "A message that you send to an agent at a usage limit tries the provider again at once.",
           "In the sidebar, a chat that you drag lands in the section below the pointer."
         ]
@@ -104,7 +104,7 @@
     "version": "0.55.0",
     "date": "2026-10-30",
     "notices": [
-      "In a Telegram group that you connected before this version, remove OpenBot from the group and connect the group again, or make OpenBot a group admin."
+      "In a Telegram group that you connected before this version, remove Slavebot from the group and connect the group again, or make Slavebot a group admin."
     ],
     "groups": [
       {
@@ -164,8 +164,8 @@
         "type": "fixed",
         "items": [
           "Remote desktop pairing on macOS 27 works again.",
-          "OpenBot keeps working when a page in the browser requests an address that it cannot read.",
-          "Gemini continues when one MCP server does not start. OpenBot tells you which server it left out.",
+          "Slavebot keeps working when a page in the browser requests an address that it cannot read.",
+          "Gemini continues when one MCP server does not start. Slavebot tells you which server it left out.",
           "A new Gemini account stays added when its first usage reading fails.",
           "The chat stays steady when you switch between agents that have queued messages.",
           "A side thread shows the agent's steps, as in the agent's own chat.",
@@ -178,7 +178,7 @@
     "version": "0.53.2",
     "date": "2026-10-28",
     "notices": [
-      "On Windows, if OpenBot was installed in the folder that holds your agents, it now runs from a new folder. If the taskbar pin no longer opens OpenBot, pin it again from the Start menu."
+      "On Windows, if Slavebot was installed in the folder that holds your agents, it now runs from a new folder. If the taskbar pin no longer opens Slavebot, pin it again from the Start menu."
     ],
     "groups": [
       {
@@ -196,7 +196,7 @@
       {
         "type": "fixed",
         "items": [
-          "On Windows, updates work again when OpenBot was installed in the folder that holds your agents. Your agents, Shared and Downloads stay where they are.",
+          "On Windows, updates work again when Slavebot was installed in the folder that holds your agents. Your agents, Shared and Downloads stay where they are.",
           "The Windows installer no longer lets you choose the folder that holds your agents or your user data."
         ]
       }
@@ -225,7 +225,7 @@
           "The model picker shows the Gemini models also when Gemini starts slowly.",
           "Agent chats in the sidebar show their unread replies when the app starts before your account signs in.",
           "A group chat no longer shows a paused lead as working.",
-          "On macOS, the Computer Use rim no longer shows on top of the OpenBot window.",
+          "On macOS, the Computer Use rim no longer shows on top of the Slavebot window.",
           "A message with a Markdown table is as wide as an agent table."
         ]
       }
@@ -249,14 +249,14 @@
         "type": "changed",
         "items": [
           "Settings → Mobile Connect shows your phones as cards. \"Add phone\" shows only the one QR code that you need.",
-          "When an agent names an output file by its path, OpenBot attaches the file to the answer.",
+          "When an agent names an output file by its path, Slavebot attaches the file to the answer.",
           "The Timezone list and the \"Add backup model\" list have a search field."
         ]
       },
       {
         "type": "fixed",
         "items": [
-          "OpenBot starts after an upgrade when its database has broken links between rows from an earlier version.",
+          "Slavebot starts after an upgrade when its database has broken links between rows from an earlier version.",
           "When an agent asks a question in a side thread, the thread shows the question card and waits for your answer.",
           "On Windows, Remote Desktop starts again.",
           "On macOS, the Apple apps and Messages tools can ask for Automation access.",
@@ -286,10 +286,10 @@
           "The secure password card can save the password to the Vault of this computer or of a joined server.",
           "When an agent asks for a password, a code or browser control in a thread, the thread now shows the card.",
           "Text that you type in a side thread and do not send now stays in that thread.",
-          "OpenBot now quits when a file operation never finishes, so it opens again without a forced quit.",
+          "Slavebot now quits when a file operation never finishes, so it opens again without a forced quit.",
           "A long context compaction with Codex or Pi now runs to its end.",
           "Connect Railway works again.",
-          "OpenBot publishes this computer’s server again when the first try at start fails."
+          "Slavebot publishes this computer’s server again when the first try at start fails."
         ]
       }
     ]
@@ -323,10 +323,10 @@
       {
         "type": "fixed",
         "items": [
-          "OpenBot starts again when an update for a provider CLI is available.",
-          "A chat with queued messages no longer slows down OpenBot.",
+          "Slavebot starts again when an update for a provider CLI is available.",
+          "A chat with queued messages no longer slows down Slavebot.",
           "Pi, DeepSeek, Inception, OpenRouter and Cursor agents with Workspace only access on macOS work again.",
-          "A Pi agent keeps its OpenBot tools after OpenBot restarts.",
+          "A Pi agent keeps its Slavebot tools after Slavebot restarts.",
           "Muse agents on Windows can start a turn again.",
           "An agent with Full access no longer asks before each Computer Use action.",
           "Slack, Discord and Telegram connect on this computer without a manual server publish first."
@@ -343,7 +343,7 @@
         "type": "fixed",
         "items": [
           "DeepSeek, Inception and OpenRouter now download the Pi CLI when you save their API key.",
-          "On Linux, closing the OpenBot AppImage no longer shows a crash report.",
+          "On Linux, closing the Slavebot AppImage no longer shows a crash report.",
           "On a Docker server with LXCFS, Gemini starts again.",
           "On a server, programs that Claude agents start now use the server's CPU limit.",
           "Agents on a shared server no longer tell you to open the chat on another device."
@@ -376,13 +376,13 @@
         "type": "changed",
         "items": [
           "Claude agents use Claude Code's own prompt cache time again. To keep the cache for 1 hour, choose \"1 hour\" on the Claude page in Server settings → Providers.",
-          "When OpenBot updates, it also updates the provider CLIs that it installed. A notice shows only when an update fails."
+          "When Slavebot updates, it also updates the provider CLIs that it installed. A notice shows only when an update fails."
         ]
       },
       {
         "type": "fixed",
         "items": [
-          "OpenBot starts the Codex app server again when it stops answering. Before, every agent turn and routine run failed.",
+          "Slavebot starts the Codex app server again when it stops answering. Before, every agent turn and routine run failed.",
           "On Windows, Claude starts when the Claude Code CLI comes from npm.",
           "The Linux AppImage starts on Arch Linux, Omarchy and other systems with no libfuse2.",
           "On macOS 26 with the Dark icon style, the app icon shows its eyes again.",
@@ -435,7 +435,7 @@
           "An agent set to switch to a backup model now switches when its provider is overloaded or down.",
           "Gemini usage follows the limit of the model that an agent uses, and counts all tokens.",
           "A long channel keeps working when its history summary is too long.",
-          "An OpenCode agent with more than one chat keeps its OpenBot tools.",
+          "An OpenCode agent with more than one chat keeps its Slavebot tools.",
           "When two or more notifications are open, you can reach each of them."
         ]
       }
@@ -476,7 +476,7 @@
           "A long chat keeps the older messages that you scrolled back to when a new message arrives.",
           "An hourly routine can run between two times that cross midnight.",
           "A failed Codex tool call no longer shows a ChatGPT error notice in each chat.",
-          "After an update installs, OpenBot deletes the downloaded update file.",
+          "After an update installs, Slavebot deletes the downloaded update file.",
           "A long preview in a confirm card has a \"Show all\" button.",
           "In a channel, Open on a browser step card opens the page in the chat of the agent that asked."
         ]
@@ -509,7 +509,7 @@
       {
         "type": "fixed",
         "items": [
-          "OpenBot no longer quits on macOS when an agent opens a page that redirects while it loads.",
+          "Slavebot no longer quits on macOS when an agent opens a page that redirects while it loads.",
           "An OpenCode turn that stops sending anything ends after 5 minutes with an error.",
           "MCP servers with a space in their name work with Gemini and other ACP agents."
         ]
@@ -558,7 +558,7 @@
         "items": [
           "An agent question that lets you pick more than one option shows check boxes and a Submit answer button.",
           "Agent chats stay at the latest message while a turn runs.",
-          "Claude usage counts each turn once after OpenBot resumes a session."
+          "Claude usage counts each turn once after Slavebot resumes a session."
         ]
       }
     ]
@@ -585,7 +585,7 @@
       {
         "type": "fixed",
         "items": [
-          "Agents keep their provider sessions when OpenBot stops through a signal, for example from systemd or Docker.",
+          "Agents keep their provider sessions when Slavebot stops through a signal, for example from systemd or Docker.",
           "In Discord, the agent gets the images and files of earlier messages.",
           "The Tasks page keeps the agent that you chose last."
         ]
@@ -610,14 +610,14 @@
         "type": "changed",
         "items": [
           "You can change the model of an agent while it works. The new model starts with the next turn.",
-          "OpenBot now installs OpenCode 2 as its own OpenCode CLI. Your threads keep their sessions.",
+          "Slavebot now installs OpenCode 2 as its own OpenCode CLI. Your threads keep their sessions.",
           "Publish this server is now in Server settings → Members."
         ]
       },
       {
         "type": "fixed",
         "items": [
-          "On Linux desktops such as Hyprland, Sway, i3 and LXQt, OpenBot keeps your sign-in and API keys when a Secret Service runs.",
+          "On Linux desktops such as Hyprland, Sway, i3 and LXQt, Slavebot keeps your sign-in and API keys when a Secret Service runs.",
           "A reply quote shows the Markdown of the original message.",
           "A remote session stays connected when Signal restarts."
         ]
@@ -632,11 +632,11 @@
       {
         "type": "added",
         "items": [
-          "OpenBot can read replies aloud. Turn on Read replies aloud in Settings → Voice → Spoken replies, and choose one of ten voices.",
+          "Slavebot can read replies aloud. Turn on Read replies aloud in Settings → Voice → Spoken replies, and choose one of ten voices.",
           "Each agent message has a Read aloud button.",
           "Talk to an agent in the Voice pane of the side panel. Speak, and the agent reads its reply aloud. It also works with an agent on a remote server.",
           "A message that you speak in the Voice pane has a voice player. The recording stays on this computer.",
-          "Join the OpenBot community from a card at the bottom of the sidebar."
+          "Join the Slavebot community from a card at the bottom of the sidebar."
         ]
       },
       {
@@ -646,9 +646,9 @@
       {
         "type": "fixed",
         "items": [
-          "On Windows and Linux, \"Keep OpenBot running in the background\" works, with an icon in the system tray.",
-          "\"Launch OpenBot at login\" opens OpenBot when you sign in to your computer.",
-          "OpenBot keeps your account sign-in when it cannot read it at one start.",
+          "On Windows and Linux, \"Keep Slavebot running in the background\" works, with an icon in the system tray.",
+          "\"Launch Slavebot at login\" opens Slavebot when you sign in to your computer.",
+          "Slavebot keeps your account sign-in when it cannot read it at one start.",
           "A question from a ChatGPT agent stays open until you answer it.",
           "An OpenCode agent continues in a new session when OpenCode cannot read its old session."
         ]
@@ -668,17 +668,17 @@
           "An agent can show its plan before a long task. Turn on \"Show the plan before long tasks\" in the agent's settings.",
           "The context meter in the composer has a New chat button.",
           "Ask side questions in the web client and on joined servers.",
-          "One OpenBot server can connect more than one Slack workspace or Discord server, and you can choose which Discord roles can use OpenBot."
+          "One Slavebot server can connect more than one Slack workspace or Discord server, and you can choose which Discord roles can use Slavebot."
         ]
       },
       {
         "type": "fixed",
         "items": [
           "A chat with unread messages opens at the \"NEW\" divider.",
-          "A Claude agent makes a routine in OpenBot when you ask for one, not a claude.ai cloud routine.",
+          "A Claude agent makes a routine in Slavebot when you ask for one, not a claude.ai cloud routine.",
           "The Cline model picker shows Cline's free models, and a Cline agent runs on the model that you select.",
-          "An OpenCode agent uses the key that you paste into OpenBot, and an expired key shows an Update key button.",
-          "On Windows, OpenBot finds an OpenCode that you installed yourself, and a failed provider download shows why.",
+          "An OpenCode agent uses the key that you paste into Slavebot, and an expired key shows an Update key button.",
+          "On Windows, Slavebot finds an OpenCode that you installed yourself, and a failed provider download shows why.",
           "Renew in Settings → Billing works again for a cancelled server plan."
         ]
       }
@@ -701,7 +701,7 @@
         "items": [
           "The rail of a long chat stays smooth while you scroll.",
           "Side question in the composer + menu opens the side question pane.",
-          "An agent template that contains OpenBot's own skills installs again."
+          "An agent template that contains Slavebot's own skills installs again."
         ]
       }
     ]
@@ -742,8 +742,8 @@
           "A provider account that is signing in has Cancel sign-in in its menu.",
           "A role change of a member no longer disconnects the server and every connected member.",
           "A message that runs again after a refused turn now runs to its end, and Claude agents accept new messages.",
-          "Claude agents can run tools from your shell PATH, such as Homebrew, when you open OpenBot from Finder or the Dock.",
-          "OpenBot starts when a power loss left a settings file empty, and a local file link over 100 MB opens the file panel."
+          "Claude agents can run tools from your shell PATH, such as Homebrew, when you open Slavebot from Finder or the Dock.",
+          "Slavebot starts when a power loss left a settings file empty, and a local file link over 100 MB opens the file panel."
         ]
       }
     ]
@@ -767,7 +767,7 @@
         "type": "changed",
         "items": [
           "The full browser view shows every tab in its top row. The composer floats over the page, so you can talk to the agent of the tab.",
-          "Agents no longer get the OAuth token of an MCP server. OpenBot adds the token to each call.",
+          "Agents no longer get the OAuth token of an MCP server. Slavebot adds the token to each call.",
           "Save on a new HTTP MCP server tests it first, and signs in when the server asks for it.",
           "Agents with a long message history start queued work faster."
         ]
@@ -803,8 +803,8 @@
         "type": "changed",
         "items": [
           "Set what an agent may do with one Permissions setting in its agent settings: Workspace only, Ask first or Full access. It replaces Turbo mode and Auto approve. An agent keeps what it could do before.",
-          "OpenBot opens faster, and long chats stream, scroll and search with less work.",
-          "OpenBot keeps only the provider CLI version in use and one older version. Clean up on the Storage page removes old versions at once."
+          "Slavebot opens faster, and long chats stream, scroll and search with less work.",
+          "Slavebot keeps only the provider CLI version in use and one older version. Clean up on the Storage page removes old versions at once."
         ]
       },
       {
@@ -865,9 +865,9 @@
       {
         "type": "fixed",
         "items": [
-          "OpenBot starts faster after a clean stop when the database is large.",
-          "The database no longer grows each time you read a conversation. The first start after this update can take longer while OpenBot makes the file smaller.",
-          "Large chats open faster and no longer stall OpenBot.",
+          "Slavebot starts faster after a clean stop when the database is large.",
+          "The database no longer grows each time you read a conversation. The first start after this update can take longer while Slavebot makes the file smaller.",
+          "Large chats open faster and no longer stall Slavebot.",
           "Agents with very long messages open from a remote device without reconnects.",
           "A hosted server stays on while you read it in a focused window, and the app waits while the server starts.",
           "Muse shows \"Connected\" after you sign in.",
@@ -906,7 +906,7 @@
         "items": [
           "Agents in Slack, Discord and Telegram no longer stop answering after a provider error or a restart.",
           "A paused, deleted or changed routine no longer starts its old run.",
-          "Custom agents that need Node start when you open OpenBot from Finder or the Dock.",
+          "Custom agents that need Node start when you open Slavebot from Finder or the Dock.",
           "Gemini no longer fills the disk on Windows.",
           "A failed provider CLI update keeps your sign-in and shows a short reason.",
           "Large chats no longer stop the app for a second when old history is removed."
@@ -997,7 +997,7 @@
         "type": "fixed",
         "items": [
           "Gemini sign-in, quota and error messages are clearer, and a Gemini chat with a lost session starts a new one.",
-          "Open OpenBot on an invitation page now opens OpenBot on Windows.",
+          "Open Slavebot on an invitation page now opens Slavebot on Windows.",
           "Agents show in their sidebar sections when a server starts or reconnects.",
           "Opening or writing to a chat no longer shows \"Read state failed\" for a queued message."
         ]
@@ -1008,7 +1008,7 @@
     "version": "0.38.1",
     "date": "2026-10-13",
     "notices": [
-      "Put agents that work together in one sidebar section. Channels are no longer supported, and OpenBot archives and hides them. Your channel history stays on your computer for now. The next release removes channels and their data."
+      "Put agents that work together in one sidebar section. Channels are no longer supported, and Slavebot archives and hides them. Your channel history stays on your computer for now. The next release removes channels and their data."
     ],
     "groups": [
       {
@@ -1033,7 +1033,7 @@
         "type": "fixed",
         "items": [
           "Claude background subagents keep running after the agent's turn ends, and the agent's answer after them shows in the chat.",
-          "OpenBot uses Electron 44.7.0, which can stop rare crashes while the app is idle on macOS.",
+          "Slavebot uses Electron 44.7.0, which can stop rare crashes while the app is idle on macOS.",
           "Account sessions show a hosted server with its name, not as \"Desktop\"."
         ]
       }
@@ -1076,7 +1076,7 @@
         "type": "added",
         "items": [
           "Settings > Voice shows the dictation models. You can download Whisper large-v3 turbo and set a fixed dictation language, for example Hungarian.",
-          "A scheduled routine can skip a time that OpenBot missed while it was closed, or run once when OpenBot opens.",
+          "A scheduled routine can skip a time that Slavebot missed while it was closed, or run once when Slavebot opens.",
           "When a browser sign-in does not finish, you can log in with a code. Grok, Cursor, Cline and Muse also accept a code.",
           "Run openbot mobile-connect on a self-hosted or Docker server to connect the phone app to it."
         ]
@@ -1106,8 +1106,8 @@
       {
         "type": "added",
         "items": [
-          "OpenBot is now available in Polish. Choose Polski in Settings > General > Language.",
-          "With analytics on, OpenBot sends one daily summary of its memory and CPU use. It does not send process names, command lines or paths."
+          "Slavebot is now available in Polish. Choose Polski in Settings > General > Language.",
+          "With analytics on, Slavebot sends one daily summary of its memory and CPU use. It does not send process names, command lines or paths."
         ]
       },
       {
@@ -1196,7 +1196,7 @@
       {
         "type": "changed",
         "items": [
-          "The sidebar now shows \"OpenBot for mobile\". Open \"How to install\" for the iPhone and Android setup steps."
+          "The sidebar now shows \"Slavebot for mobile\". Open \"How to install\" for the iPhone and Android setup steps."
         ]
       },
       {
@@ -1216,7 +1216,7 @@
           "See your routines on a canvas. Open an agent in Routines to see its next runs, past runs and results.",
           "Connect agents in a routine. Each agent can pass its answer to the next agent in the flow.",
           "Ask an agent to edit the routine canvas. Use the chat panel to add or change routines and their connections.",
-          "Use OpenBot in Russian, Spanish or German. Select the interface language in Settings."
+          "Use Slavebot in Russian, Spanish or German. Select the interface language in Settings."
         ]
       },
       {

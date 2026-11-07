@@ -16,10 +16,10 @@ export const messages = defineMessages("mobile.computer", {
   "mobile.computer.status.connected": "Connected",
   "mobile.computer.status.offline": "The server is not connected.",
   "mobile.computer.status.unsupported":
-    "This server cannot share its screen on a phone. Update OpenBot on this server.",
+    "This server cannot share its screen on a phone. Update Slavebot on this server.",
   "mobile.computer.status.notSharing": "{name} is not sharing its screen",
   "mobile.computer.status.notSharingBody":
-    "On that computer, open System Settings → Privacy & Security → Screen & System Audio Recording, turn on OpenBot (or Slavebot), then try again here.",
+    "On that computer, open System Settings → Privacy & Security → Screen & System Audio Recording, turn on Slavebot (or Slavebot), then try again here.",
   "mobile.computer.status.failed": "Could not open the desktop.",
   "mobile.computer.status.streamNotReady":
     "The server did not start the stream. Sunshine may have stopped on the server. Try again.",

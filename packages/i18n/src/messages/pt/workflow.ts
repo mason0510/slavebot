@@ -203,15 +203,15 @@ export const messages = {
   "workflow.github.filter.branch": "Branch base é",
   "workflow.github.filter.titleValue": "Título contém “{text}”",
   "workflow.github.filter.branchValue": "Branch base é {branch}",
-  "workflow.github.alert.missing": "O OpenBot não consegue ver {repository} no GitHub.",
-  "workflow.github.alert.readOnly": "O OpenBot não pode alterar issues e pull requests em {repository}.",
+  "workflow.github.alert.missing": "O Slavebot não consegue ver {repository} no GitHub.",
+  "workflow.github.alert.readOnly": "O Slavebot não pode alterar issues e pull requests em {repository}.",
   "workflow.github.alert.eventsOff": "O GitHub ainda não envia eventos de {repository}.",
   "workflow.github.alert.noEvent":
     "O gatilho não é um evento do GitHub. Escolha um repositório e use o número da entrada.",
   "workflow.github.alert.pullRequestOnly": "{action} funciona apenas em pull requests. O gatilho começa em issues.",
   "workflow.github.history.name": "Eventos",
   "workflow.github.history.none": "Nenhum",
-  "workflow.github.history.offline": "O OpenBot estava offline",
+  "workflow.github.history.offline": "O Slavebot estava offline",
   "workflow.github.history.waitingGroup": "Aguardando",
   "workflow.github.history.startedGroup": "Execuções iniciadas",
   "workflow.github.history.skippedGroup": "Ignorados",
@@ -417,10 +417,10 @@ export const messages = {
   "workflow.canvas.version.run": "Antes de uma execução",
   "workflow.canvas.deleteUndo.title": "{name} excluído",
   "workflow.canvas.deleteUndo.action": "Desfazer",
-  "workflow.page.failed": "O OpenBot não conseguiu fazer isso. Tente de novo.",
+  "workflow.page.failed": "O Slavebot não conseguiu fazer isso. Tente de novo.",
   "workflow.page.conflict": "Alterado em outro dispositivo. Desfaça para recuperar suas edições.",
   "workflow.page.needsNewerApp":
-    "Este fluxo de trabalho tem etapas de uma versão mais recente do OpenBot. Atualize o OpenBot para alterá-lo.",
+    "Este fluxo de trabalho tem etapas de uma versão mais recente do Slavebot. Atualize o Slavebot para alterá-lo.",
   "workflow.page.manageOnly":
     "Para alterar este fluxo de trabalho, você precisa de acesso de gerenciamento a cada um dos agentes dele.",
 } as const satisfies PartialTranslation<typeof source>;

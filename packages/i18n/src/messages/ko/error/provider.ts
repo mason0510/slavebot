@@ -3,15 +3,15 @@ import type { messages as source } from "../../en/error/provider";
 
 export const messages = {
   "error.provider.mcpConfig":
-    "OpenBot이 Codex 구성에 MCP 서버를 등록할 수 없었어요. Codex config.toml이 올바르고 쓰기 가능한지 확인한 후 OpenBot을 다시 시작하세요.",
+    "Slavebot이 Codex 구성에 MCP 서버를 등록할 수 없었어요. Codex config.toml이 올바르고 쓰기 가능한지 확인한 후 Slavebot을 다시 시작하세요.",
   "error.provider.computerUseConfig":
-    "OpenBot이 Codex 구성에 컴퓨터 제어를 등록할 수 없었어요. Codex config.toml이 올바르고 쓰기 가능한지 확인한 후 OpenBot을 다시 시작하세요. 에이전트 설정에서 컴퓨터 제어를 끄면 그 기능 없이 계속할 수 있어요.",
-  "error.provider.codexUnresponsive": "Codex가 응답하지 않아 OpenBot이 프로세스를 종료했습니다.",
-  "error.provider.acpUnresponsive": "{provider}가 제시간에 응답하지 않아 OpenBot이 프로세스를 종료했습니다.",
+    "Slavebot이 Codex 구성에 컴퓨터 제어를 등록할 수 없었어요. Codex config.toml이 올바르고 쓰기 가능한지 확인한 후 Slavebot을 다시 시작하세요. 에이전트 설정에서 컴퓨터 제어를 끄면 그 기능 없이 계속할 수 있어요.",
+  "error.provider.codexUnresponsive": "Codex가 응답하지 않아 Slavebot이 프로세스를 종료했습니다.",
+  "error.provider.acpUnresponsive": "{provider}가 제시간에 응답하지 않아 Slavebot이 프로세스를 종료했습니다.",
   "error.provider.acpMcpNotLoaded":
-    "{provider}가 OpenBot 도구를 불러오지 않아 이 에이전트는 도구를 사용하거나 팀원에게 연락할 수 없습니다. {provider} 팀 정책이 로컬 MCP 서버를 차단할 수 있습니다. 팀 관리자에게 허용을 요청한 다음 다시 시도하세요.",
+    "{provider}가 Slavebot 도구를 불러오지 않아 이 에이전트는 도구를 사용하거나 팀원에게 연락할 수 없습니다. {provider} 팀 정책이 로컬 MCP 서버를 차단할 수 있습니다. 팀 관리자에게 허용을 요청한 다음 다시 시도하세요.",
   "error.provider.endpointsReadOnly":
-    "저장된 엔드포인트가 더 새로운 버전의 OpenBot에서 작성되었거나 파일을 읽을 수 없어요. 변경하려면 OpenBot을 업데이트하세요.",
+    "저장된 엔드포인트가 더 새로운 버전의 Slavebot에서 작성되었거나 파일을 읽을 수 없어요. 변경하려면 Slavebot을 업데이트하세요.",
   "error.provider.endpointNoSecureStorage":
     "이 컴퓨터에는 보안 저장소가 없어서 API 키나 헤더를 저장할 수 없어요. 제거하거나 자격 증명이 필요 없는 엔드포인트를 사용하세요.",
   "error.provider.endpointDuplicate":
@@ -22,14 +22,14 @@ export const messages = {
   "error.provider.endpointSecretUnreadable":
     "이 컴퓨터에서 저장된 API 키와 헤더를 읽을 수 없어요. 아무것도 잃지 않도록 API 키와 헤더를 다시 입력하세요.",
   "error.provider.discoveryTimeout": "{host}이(가) 제시간에 응답하지 않았어요.",
-  "error.provider.discoveryUnreachable": "OpenBot이 {host}에 연결할 수 없었어요.",
+  "error.provider.discoveryUnreachable": "Slavebot이 {host}에 연결할 수 없었어요.",
   "error.provider.discoveryRedirect": "{host}이(가) 리디렉션을 보냈어요. 서버의 최종 주소를 입력하세요.",
   "error.provider.discoveryRefused": "{host}이(가) 요청을 거부했어요. API 키와 헤더를 확인하세요.",
   "error.provider.discoveryHttp": "{host}이(가) HTTP {status}(으)로 응답했어요.",
   "error.provider.discoveryTooLarge": "{host}의 모델 목록이 너무 커요.",
   "error.provider.discoveryInvalid": "{host}이(가) OpenAI 호환 모델 목록을 보내지 않았어요.",
   "error.provider.detectionSettingsReadOnly":
-    "감지 설정이 더 새로운 버전의 OpenBot에서 작성되었거나 파일을 읽을 수 없어요. 변경하려면 OpenBot을 업데이트하세요.",
+    "감지 설정이 더 새로운 버전의 Slavebot에서 작성되었거나 파일을 읽을 수 없어요. 변경하려면 Slavebot을 업데이트하세요.",
   "error.provider.detectionEntryInvalid":
     "주소는 비밀번호가 없는 http:// 또는 https:// URL이어야 하고, 폴더는 절대 경로여야 해요.",
   "error.provider.detectionEntriesTooMany": "주소나 폴더가 너무 많아요.",
@@ -57,14 +57,14 @@ export const messages = {
   "error.provider.bunLicenseChecksum": "Bun 라이선스 체크섬이 일치하지 않아요.",
   "error.provider.bunxDamaged": "Bun 패키지 관리자 실행기가 없거나 손상되었어요.",
   "error.provider.releaseSourcesUnreachable":
-    "OpenBot이 제공자 릴리스 소스에 연결할 수 없었어요. 연결을 확인한 후 다시 시도해 주세요.",
+    "Slavebot이 제공자 릴리스 소스에 연결할 수 없었어요. 연결을 확인한 후 다시 시도해 주세요.",
   "error.provider.runtimesUnsupported": "이 플랫폼에서는 제공자 런타임을 사용할 수 없어요.",
-  "error.provider.closing": "OpenBot이 종료되는 중이에요.",
+  "error.provider.closing": "Slavebot이 종료되는 중이에요.",
   "error.provider.removeWhileOn": "다운로드를 삭제하기 전에 제공자를 끄세요.",
   "error.provider.removeWhileDownloading": "다운로드가 끝난 뒤 삭제하세요.",
   "error.provider.removeIncomplete": "다른 프로그램이 이 CLI의 파일을 사용하고 있어요. 닫은 뒤 다시 시도하세요.",
   "error.provider.removeDownloadsFailed": "{providers}의 CLI 다운로드를 제거할 수 없었어요.",
-  "error.provider.cliOverride": "OpenBot에서 업데이트하기 전에 명시적인 CLI 경로 재정의를 제거하세요.",
+  "error.provider.cliOverride": "Slavebot에서 업데이트하기 전에 명시적인 CLI 경로 재정의를 제거하세요.",
   "error.provider.runtimeUpdateIncomplete": "런타임 업데이트가 완료되지 않았어요.",
   "error.provider.downloadHttp": "런타임 다운로드가 HTTP {status}(으)로 실패했어요.",
   "error.provider.downloadNoData": "런타임 다운로드에서 데이터가 반환되지 않았어요.",
@@ -79,7 +79,7 @@ export const messages = {
   "error.provider.unexpectedVersion": "제공자 런타임이 예상하지 못한 버전을 반환했어요.",
   "error.provider.metadataNoData": "런타임 메타데이터 다운로드에서 데이터가 반환되지 않았어요.",
   "error.provider.metadataTooLarge": "런타임 메타데이터가 너무 커요.",
-  "error.provider.requestFailed": "OpenBot이 {url}을(를) 다운로드할 수 없었어요. {reason}",
+  "error.provider.requestFailed": "Slavebot이 {url}을(를) 다운로드할 수 없었어요. {reason}",
   "error.provider.installRecordMismatch": "런타임 설치 기록이 일치하지 않아요.",
   "error.provider.runtimeChecksum": "제공자 런타임 체크섬이 일치하지 않아요.",
   "error.provider.codexReleaseShape": "Codex 릴리스의 형식이 예상과 달라요.",
@@ -115,32 +115,32 @@ export const messages = {
   "error.provider.keyInvalidCharacters": "제공자 키에 공백이나 키에 쓸 수 없는 문자가 있어요.",
   "error.provider.noModel": "선택한 제공자에 사용할 수 있는 모델이 없어요.",
   "error.provider.noModelNamed": "{provider}에 사용할 수 있는 모델이 없어요.",
-  "error.provider.acpNoModels": "ACP CLI가 ACP 모델을 알리지 않았어요. OpenBot은 대체 모델을 추측하지 않아요.",
+  "error.provider.acpNoModels": "ACP CLI가 ACP 모델을 알리지 않았어요. Slavebot은 대체 모델을 추측하지 않아요.",
   "error.provider.endpointRemoveBusy":
     "이 엔드포인트를 제거하기 전에 진행 중인 턴과 대기열이 끝날 때까지 기다려 주세요.",
-  "error.provider.codexOutdated": "Codex CLI {version}이(가) 너무 오래되었어요. OpenBot에는 0.156.0 이상이 필요해요.",
+  "error.provider.codexOutdated": "Codex CLI {version}이(가) 너무 오래되었어요. Slavebot에는 0.156.0 이상이 필요해요.",
   "error.provider.codexNotStarted": "Codex CLI를 찾았지만 시작할 수 없었어요.",
   "error.provider.codexNotStartedHint":
     "Codex CLI를 찾았지만 시작할 수 없었어요. 새 터미널에서 `codex --version`을 실행해 보세요.",
   "error.provider.codexManagedNotStarted":
-    "ChatGPT를 다운로드했지만 시작할 수 없었어요. OpenBot에서 다시 다운로드하세요.",
-  "error.provider.codexMissing": "ChatGPT가 다운로드되지 않았어요. 계속하려면 OpenBot에서 다운로드하세요.",
+    "ChatGPT를 다운로드했지만 시작할 수 없었어요. Slavebot에서 다시 다운로드하세요.",
+  "error.provider.codexMissing": "ChatGPT가 다운로드되지 않았어요. 계속하려면 Slavebot에서 다운로드하세요.",
   "error.provider.claudeOutdated":
-    "Claude Code {version}이(가) 너무 오래되었어요. OpenBot에는 2.1.232 이상이 필요해요.",
+    "Claude Code {version}이(가) 너무 오래되었어요. Slavebot에는 2.1.232 이상이 필요해요.",
   "error.provider.claudeNotStarted": "Claude CLI를 찾았지만 시작할 수 없었어요.",
   "error.provider.claudeNotStartedHint":
     "Claude CLI를 찾았지만 시작할 수 없었어요. 새 터미널에서 `claude --version`을 실행해 보세요.",
   "error.provider.claudeManagedNotStarted":
-    "Claude를 다운로드했지만 시작할 수 없었어요. OpenBot에서 다시 다운로드하세요.",
-  "error.provider.claudeMissing": "Claude가 다운로드되지 않았어요. 계속하려면 OpenBot에서 다운로드하세요.",
-  "error.provider.grokOutdated": "Grok CLI {version}이(가) 너무 오래되었어요. OpenBot에는 1.0.5 이상이 필요해요.",
+    "Claude를 다운로드했지만 시작할 수 없었어요. Slavebot에서 다시 다운로드하세요.",
+  "error.provider.claudeMissing": "Claude가 다운로드되지 않았어요. 계속하려면 Slavebot에서 다운로드하세요.",
+  "error.provider.grokOutdated": "Grok CLI {version}이(가) 너무 오래되었어요. Slavebot에는 1.0.5 이상이 필요해요.",
   "error.provider.grokNotStarted": "Grok CLI를 찾았지만 시작할 수 없었어요.",
   "error.provider.grokNotStartedHint":
     "Grok CLI를 찾았지만 시작할 수 없었어요. 새 터미널에서 `grok --version`을 실행해 보세요.",
-  "error.provider.grokMissing": "Grok이 다운로드되지 않았어요. 계속하려면 OpenBot에서 다운로드하세요.",
+  "error.provider.grokMissing": "Grok이 다운로드되지 않았어요. 계속하려면 Slavebot에서 다운로드하세요.",
   "error.provider.opencodeNotStarted":
     "OpenCode를 시작할 수 없었어요. 터미널에서 `opencode --version`을 실행해 보세요.",
-  "error.provider.opencodeMissing": "OpenCode가 다운로드되지 않았어요. 계속하려면 OpenBot에서 다운로드하세요.",
+  "error.provider.opencodeMissing": "OpenCode가 다운로드되지 않았어요. 계속하려면 Slavebot에서 다운로드하세요.",
   "error.provider.codexVersionUnreadable": "Codex CLI 버전을 읽을 수 없어요.",
   "error.provider.claudeVersionUnreadable": "Claude CLI 버전을 읽을 수 없어요.",
   "error.provider.grokVersionUnreadable": "Grok CLI 버전을 읽을 수 없어요.",
@@ -149,7 +149,7 @@ export const messages = {
   "error.provider.connectBeforeProfile": "프로필을 생성하기 전에 선택한 제공자를 연결하세요.",
   "error.provider.cliNotReady": "{provider} CLI가 준비되지 않았거나 로그인되어 있지 않아요.",
   "error.provider.cliTimedOut":
-    "{provider}이(가) 제시간에 응답하지 않았어요. 컴퓨터가 바쁜 것 같아요. OpenBot이 다시 시도할게요.",
+    "{provider}이(가) 제시간에 응답하지 않았어요. 컴퓨터가 바쁜 것 같아요. Slavebot이 다시 시도할게요.",
   "error.provider.cliTimedOutRefresh":
     "{provider}이(가) 제시간에 응답하지 않았어요. 컴퓨터가 바쁜 것 같아요. 제공자를 새로 고쳐 다시 시도해 주세요.",
   "error.provider.acpStartTimedOut":
@@ -157,7 +157,7 @@ export const messages = {
   "error.provider.acpModelsTimedOut":
     "{provider}이(가) {seconds}초 안에 모델 목록을 가져오지 못했어요. 컴퓨터가 바쁜 것 같아요.",
   "error.provider.startStopped":
-    "{provider}이(가) 연속으로 여러 번 시작되지 않아 OpenBot이 시도를 멈췄어요. 제공자를 새로 고쳐 다시 시도해 주세요.",
+    "{provider}이(가) 연속으로 여러 번 시작되지 않아 Slavebot이 시도를 멈췄어요. 제공자를 새로 고쳐 다시 시도해 주세요.",
   "error.provider.tempDiskSpace":
     "{provider}을(를) 시작하려면 디스크 여유 공간이 1GB 이상 필요해요. 공간을 확보한 후 제공자를 새로 고치세요.",
   "error.provider.noCodeSignIn": "{provider}은(는) 코드로 로그인할 수 없어요.",
@@ -171,10 +171,10 @@ export const messages = {
   "error.provider.cliBusyRetry": "{provider} CLI가 턴을 처리하는 중이에요. 끝날 때까지 기다린 후 다시 시도해 주세요.",
   "error.provider.cliSigningIn": "{provider} CLI가 로그인하는 중이에요. 로그인을 마치거나 취소한 후 업데이트하세요.",
   "error.provider.cliBusyUpdate": "{provider} CLI가 턴을 처리하는 중이에요. 끝날 때까지 기다린 후 업데이트하세요.",
-  "error.provider.cliSelectFailed": "OpenBot이 설치된 관리형 CLI를 선택할 수 없었어요.",
+  "error.provider.cliSelectFailed": "Slavebot이 설치된 관리형 CLI를 선택할 수 없었어요.",
   "error.provider.noAuthenticatedAccount": "{provider}이(가) 인증된 계정을 반환하지 않았어요.",
   "error.provider.signInExpired": "{provider} 로그인이 만료되었어요. 계속하려면 다시 로그인하세요.",
-  "error.provider.cliActivateFailed": "OpenBot이 관리형 CLI를 활성화할 수 없었어요.",
+  "error.provider.cliActivateFailed": "Slavebot이 관리형 CLI를 활성화할 수 없었어요.",
   "error.provider.cliBusyReconnect": "{provider} CLI가 턴을 처리하는 중이에요. 끝날 때까지 기다린 후 다시 연결하세요.",
   "error.provider.cliBusySignOut":
     "{provider} CLI가 턴을 처리하고 있습니다. 끝날 때까지 기다린 다음 연결을 해제하세요.",
@@ -205,17 +205,17 @@ export const messages = {
   "error.provider.opencodeProviderFailed":
     "모델 제공자 쪽에서 오류가 났어요. 회원님의 연결 문제가 아니에요. 나중에 다시 시도하거나 다른 모델을 선택하세요.\n{detail}",
   "error.provider.opencodeNetwork":
-    "OpenCode가 모델 제공자에 연결할 수 없었어요. OpenBot을 실행하는 컴퓨터의 네트워크 연결을 확인한 후 다시 시도해 주세요.\n{detail}",
+    "OpenCode가 모델 제공자에 연결할 수 없었어요. Slavebot을 실행하는 컴퓨터의 네트워크 연결을 확인한 후 다시 시도해 주세요.\n{detail}",
   "error.provider.opencodeDatabaseNewer":
     "더 새로운 OpenCode 버전이 데이터베이스를 변경해서 OpenCode가 데이터베이스를 열 수 없었어요. OpenCode를 버전 2 이상으로 업데이트한 후 다시 시도해 주세요.",
   "error.provider.opencodeNoAnswer": "OpenCode 모델이 답변 없이 턴을 끝냈어요. 다시 시도하거나 다른 모델을 선택하세요.",
   "error.provider.opencodeReasoningWithoutAnswer":
     "OpenCode 모델이 추론만 하고 답변 없이 턴을 끝냈어요. 다시 시도하거나 다른 모델을 선택하세요.",
-  "error.provider.chatgptPageFailed": "OpenBot이 ChatGPT 연결 페이지를 열 수 없었어요.",
+  "error.provider.chatgptPageFailed": "Slavebot이 ChatGPT 연결 페이지를 열 수 없었어요.",
   "error.provider.noneReady": "준비된 에이전트 제공자가 없어요.",
   "error.provider.claudeTurnActive": "컨텍스트를 새로 고치기 전에 진행 중인 Claude 턴이 끝날 때까지 기다려 주세요.",
   "error.provider.codexLoginRequired": "Codex에는 ChatGPT 구독 로그인이 필요해요. `codex login`을 실행하세요.",
-  "error.provider.cliUpdateFailed": "OpenBot이 {provider} CLI를 업데이트할 수 없었어요. {reason}",
+  "error.provider.cliUpdateFailed": "Slavebot이 {provider} CLI를 업데이트할 수 없었어요. {reason}",
   "error.provider.tryAgain": "다시 시도해 주세요.",
   "error.provider.noAgentProcess": "{provider}에서 이 에이전트를 위해 실행 중인 프로세스가 없어요.",
   "error.provider.stoppedBeforeAgentProcess": "에이전트의 프로세스가 시작되기 전에 {provider}이(가) 중지되었어요.",
@@ -223,7 +223,7 @@ export const messages = {
   "error.provider.antigravityArchivePath": "Gemini 아카이브에 예상하지 못한 파일이 있어요.",
   "error.provider.antigravityChecksum": "Gemini 런타임 체크섬이 일치하지 않아요.",
   "error.provider.antigravityReleaseShape": "Gemini 릴리스의 형식이 예상과 달라요.",
-  "error.provider.antigravityMissing": "Gemini가 다운로드되지 않았어요. 계속하려면 OpenBot에서 다운로드하세요.",
+  "error.provider.antigravityMissing": "Gemini가 다운로드되지 않았어요. 계속하려면 Slavebot에서 다운로드하세요.",
   "error.provider.antigravityNotStarted": "Gemini 서버를 찾았지만 버전을 읽을 수 없어요.",
   "error.provider.antigravityVersionUnreadable": "Gemini 서버 버전을 읽을 수 없어요.",
   "error.provider.antigravitySignIn": "Gemini를 사용하려면 Google로 로그인하세요.",
@@ -238,7 +238,7 @@ export const messages = {
   "error.provider.cursorArchivePath": "Cursor 아카이브에 예상하지 못한 파일이 있어요.",
   "error.provider.cursorChecksum": "Cursor 런타임 체크섬이 일치하지 않아요.",
   "error.provider.cursorReleaseShape": "Cursor 릴리스의 형식이 예상과 달라요.",
-  "error.provider.cursorMissing": "Cursor가 다운로드되지 않았어요. 계속하려면 OpenBot에서 다운로드하세요.",
+  "error.provider.cursorMissing": "Cursor가 다운로드되지 않았어요. 계속하려면 Slavebot에서 다운로드하세요.",
   "error.provider.cursorNotStarted": "Cursor 에이전트를 찾았지만 버전을 읽을 수 없어요.",
   "error.provider.cursorVersionUnreadable": "Cursor 에이전트 버전을 읽을 수 없어요.",
   "error.provider.cursorSignIn": "Cursor를 사용하려면 Cursor로 로그인하거나 CURSOR_API_KEY를 설정하세요.",
@@ -246,18 +246,18 @@ export const messages = {
   "error.provider.clinePackageMismatch": "Cline 패키지가 런타임 카탈로그와 일치하지 않아요.",
   "error.provider.clineChecksum": "Cline 런타임 체크섬이 일치하지 않아요.",
   "error.provider.clineLicenseChecksum": "Cline 라이선스 체크섬이 일치하지 않아요.",
-  "error.provider.clineMissing": "Cline이 다운로드되지 않았어요. 계속하려면 OpenBot에서 다운로드하세요.",
-  "error.provider.clineOutdated": "Cline CLI {version}이(가) 너무 오래되었어요. OpenBot에는 3.0.68 이상이 필요해요.",
+  "error.provider.clineMissing": "Cline이 다운로드되지 않았어요. 계속하려면 Slavebot에서 다운로드하세요.",
+  "error.provider.clineOutdated": "Cline CLI {version}이(가) 너무 오래되었어요. Slavebot에는 3.0.68 이상이 필요해요.",
   "error.provider.clineNotStarted": "Cline을 시작할 수 없었어요. 터미널에서 `cline --version`을 실행해 보세요.",
   "error.provider.clineVersionUnreadable": "Cline CLI 버전을 읽을 수 없어요.",
   "error.provider.clineSignIn": "Cline을 사용하려면 Cline으로 로그인하거나 CLINE_API_KEY를 설정하세요.",
   "error.provider.usageLimitReached": "계정이 사용 한도에 도달했어요.",
   "error.provider.foreignReasoning":
-    "다른 계정이나 API 키가 받은 추론이라서 {provider}이(가) 이 채팅의 이전 추론을 수락하지 않았어요. OpenBot이 채팅 기록으로 새 {provider} 세션을 시작했어요. 다시 시도해 주세요.",
+    "다른 계정이나 API 키가 받은 추론이라서 {provider}이(가) 이 채팅의 이전 추론을 수락하지 않았어요. Slavebot이 채팅 기록으로 새 {provider} 세션을 시작했어요. 다시 시도해 주세요.",
   "error.provider.opencodeSessionRejected":
-    "OpenCode가 원인을 알리지 않고 요청을 거부했어요. 긴 채팅이나 모델 변경 후에 발생할 수 있어요. OpenBot이 채팅 기록으로 새 OpenCode 세션을 시작했어요. 다시 시도해 주세요. 오류가 계속되면 다른 모델이나 낮은 강도를 선택하세요.",
+    "OpenCode가 원인을 알리지 않고 요청을 거부했어요. 긴 채팅이나 모델 변경 후에 발생할 수 있어요. Slavebot이 채팅 기록으로 새 OpenCode 세션을 시작했어요. 다시 시도해 주세요. 오류가 계속되면 다른 모델이나 낮은 강도를 선택하세요.",
   "error.provider.museMcpStartupFault":
-    "Muse가 MCP 서버를 시작하지 못해서 이 세션에서 MCP를 차단했어요. OpenBot이 채팅 기록으로 새 Muse 세션을 시작했어요. 다시 시도해 주세요. 오류가 계속되면 이 에이전트의 컴퓨터 제어 또는 실패한 MCP 서버를 끄세요.",
+    "Muse가 MCP 서버를 시작하지 못해서 이 세션에서 MCP를 차단했어요. Slavebot이 채팅 기록으로 새 Muse 세션을 시작했어요. 다시 시도해 주세요. 오류가 계속되면 이 에이전트의 컴퓨터 제어 또는 실패한 MCP 서버를 끄세요.",
   "error.provider.grokSignIn": "Grok을 사용하려면 `grok login`을 실행하거나 XAI_API_KEY를 설정하세요.",
   "error.provider.acpSignInTimedOut": "로그인 시간이 초과되었어요.",
   "error.provider.acpSignInStopped": "로그인이 완료되기 전에 중단되었어요.",
@@ -277,7 +277,7 @@ export const messages = {
   "error.provider.keyProviderNoBalance":
     "저장된 API 키의 {provider} 계정에 잔액이 없어요. 계정에 크레딧을 추가한 후 다시 시도하세요.",
   "error.provider.messageTooLarge":
-    "{provider}이(가) {limit}MB보다 큰 메시지를 보내서 OpenBot이 {provider}을(를) 중지했어요.",
+    "{provider}이(가) {limit}MB보다 큰 메시지를 보내서 Slavebot이 {provider}을(를) 중지했어요.",
   "error.provider.customAgentIdInvalid":
     "에이전트 ID는 소문자, 숫자, `-`만 사용할 수 있고 기본 제공 제공자의 ID와 같을 수 없어요.",
   "error.provider.customAgentEnvInvalid":
@@ -287,11 +287,11 @@ export const messages = {
   "error.provider.customAgentArgsInvalid": "인수에는 줄바꿈을 넣을 수 없어요. 인수는 최대 32개까지 사용하세요.",
   "error.provider.customAgentWindowsScript":
     ".cmd 또는 .bat 명령의 인수에는 문자, 숫자, - _ . , : = @ + / \\ 만 사용할 수 있어요.",
-  "error.provider.customAgentNotFound": "OpenBot이 {command}을(를) 찾을 수 없어요. 명령의 전체 경로를 입력하세요.",
+  "error.provider.customAgentNotFound": "Slavebot이 {command}을(를) 찾을 수 없어요. 명령의 전체 경로를 입력하세요.",
   "error.provider.customAgentCheckTimedOut": "에이전트가 20초 안에 응답하지 않았어요.",
   "error.provider.customAgentCheckStopped": "에이전트가 응답하기 전에 중지되었어요.",
   "error.provider.customAgentProtocolVersion":
-    "에이전트가 ACP 버전 {version}을(를) 사용해요. OpenBot은 버전 1을 사용해요.",
+    "에이전트가 ACP 버전 {version}을(를) 사용해요. Slavebot은 버전 1을 사용해요.",
   "error.provider.customAgentCheckFailed": "에이전트가 ACP 에이전트로 응답하지 않았어요.",
   "error.provider.customAgentRemoveBusy":
     "이 사용자 지정 에이전트를 제거하기 전에 진행 중인 턴과 대기열이 끝날 때까지 기다려 주세요.",
@@ -299,23 +299,23 @@ export const messages = {
   "error.provider.customAgentMissing": "이 사용자 지정 에이전트는 지금 저장되어 있지 않아요. 다른 모델을 선택하세요.",
   "error.provider.customAgentSignIn": "에이전트 자체 명령으로 로그인한 후 다시 시도해 주세요.",
   "error.provider.customAgentsReadOnly":
-    "저장된 사용자 지정 에이전트가 더 새로운 버전의 OpenBot에서 작성되었거나 파일을 읽을 수 없어요. 변경하려면 OpenBot을 업데이트하세요.",
+    "저장된 사용자 지정 에이전트가 더 새로운 버전의 Slavebot에서 작성되었거나 파일을 읽을 수 없어요. 변경하려면 Slavebot을 업데이트하세요.",
   "error.provider.customAgentNoSecureStorage":
     "이 컴퓨터에는 보안 저장소가 없어서 환경 값을 저장할 수 없어요. 제거한 후 다시 시도해 주세요.",
   "error.provider.customAgentNotSaved":
     "이 사용자 지정 에이전트는 저장되지 않았어요. 목록을 새로 고친 후 다시 시도해 주세요.",
   "error.provider.customAgentTooMany": "사용자 지정 에이전트는 최대 {count}개까지 저장할 수 있어요.",
   "error.provider.customAgentEnvValueMissing": "{name}의 값을 입력하세요.",
-  "error.provider.off": "OpenBot에서 {provider}이(가) 꺼져 있어요. 먼저 제공자 설정에서 켜세요.",
+  "error.provider.off": "Slavebot에서 {provider}이(가) 꺼져 있어요. 먼저 제공자 설정에서 켜세요.",
   "error.provider.inUse":
     "에이전트가 {provider}을(를) 사용 중이에요. 이 제공자를 끄기 전에 에이전트의 모델을 변경하세요.",
   "error.provider.useBusy": "제공자 확인이나 로그인이 끝날 때까지 기다린 후 다시 시도해 주세요.",
-  "error.provider.useSettingsReadOnly": "저장된 제공자 설정을 읽을 수 없어요. 변경하기 전에 OpenBot을 업데이트하세요.",
-  "error.provider.useChangeFailed": "OpenBot이 제공자 설정을 변경할 수 없었어요.",
+  "error.provider.useSettingsReadOnly": "저장된 제공자 설정을 읽을 수 없어요. 변경하기 전에 Slavebot을 업데이트하세요.",
+  "error.provider.useChangeFailed": "Slavebot이 제공자 설정을 변경할 수 없었어요.",
   "error.provider.accountsUnsupported": "{provider}은(는) 계정을 하나만 둘 수 있어요.",
   "error.provider.accountNeedsConnection": "다른 계정을 추가하기 전에 {provider}을(를) 연결하세요.",
   "error.provider.usageResetUnsupported": "{provider}은(는) 사용 한도를 초기화할 수 없어요.",
-  "error.provider.signOutUnsupported": "OpenBot은 {provider} 로그인의 연결을 해제할 수 없습니다.",
+  "error.provider.signOutUnsupported": "Slavebot은 {provider} 로그인의 연결을 해제할 수 없습니다.",
   "error.provider.usageResetNotConnected": "사용량을 초기화하기 전에 이 {provider} 계정에 다시 로그인하세요.",
   "error.provider.accountLimit": "{provider}은(는) 계정을 최대 {limit}개까지 둘 수 있어요.",
   "error.provider.accountNotFound": "이 {provider} 계정이 이 컴퓨터에 없어요. 새로 고친 후 다시 시도해 주세요.",
@@ -324,7 +324,7 @@ export const messages = {
   "error.provider.accountUsesKey":
     "이 {provider} 계정은 저장된 API 키를 사용하므로 로그인이 없어요. 키는 서버 설정 → 제공자에서 변경하세요.",
   "error.provider.accountInUse": "이 계정을 사용하는 에이전트가 작업 중이에요. 에이전트가 멈춘 후 다시 시도해 주세요.",
-  "error.provider.accountsReadOnly": "저장된 제공자 계정을 읽을 수 없어요. 변경하기 전에 OpenBot을 업데이트하세요.",
+  "error.provider.accountsReadOnly": "저장된 제공자 계정을 읽을 수 없어요. 변경하기 전에 Slavebot을 업데이트하세요.",
   "error.provider.accountSignedOut": "이 {provider} 계정은 로그아웃되었어요. 다시 로그인하세요.",
   "error.provider.sessionSettingUnavailable": "현재 제공자 세션에서는 이 설정을 사용할 수 없어요.",
   "error.provider.sessionSettingInvalid": "이 설정에 사용할 수 없는 값이에요.",
@@ -356,7 +356,7 @@ export const messages = {
   "error.provider.museRequestUnsupported": "지원하지 않는 Muse 서버 요청이에요.",
   "error.provider.museConnectionFailed": "Muse 연결에 실패했어요. 대화를 재개해서 저장된 기록을 복구하세요.",
   "error.provider.museUnknownSession": "알 수 없는 Muse 세션이에요.",
-  "error.provider.museInvalidToolResult": "올바르지 않은 OpenBot 도구 결과예요.",
+  "error.provider.museInvalidToolResult": "올바르지 않은 Slavebot 도구 결과예요.",
   "error.provider.museMcpRequired": "Muse는 세션 MCP 서버를 지원해야 해요.",
   "error.provider.museSessionMismatch": "Muse가 다른 세션을 반환했어요.",
   "error.provider.museCompactRejected": "Muse가 압축을 수락하지 않았어요.",

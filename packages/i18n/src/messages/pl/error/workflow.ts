@@ -10,11 +10,11 @@ export const messages = {
   "error.workflow.conditionBranch": "Każde połączenie z warunku musi być tak albo nie.",
   "error.workflow.duplicateEdge": "Te dwa kroki mają już to połączenie.",
   "error.workflow.serverTooOld":
-    "Ten serwer nie obsługuje przepływów pracy. Zaktualizuj OpenBot na komputerze, na którym działa.",
-  "error.workflow.nodeUnsupported": "Ta wersja OpenBot nie może jeszcze uruchamiać kroków obrazu, pliku i wiadomości.",
-  "error.workflow.interrupted": "OpenBot zatrzymał się podczas tego kroku. Uruchom go ponownie.",
+    "Ten serwer nie obsługuje przepływów pracy. Zaktualizuj Slavebot na komputerze, na którym działa.",
+  "error.workflow.nodeUnsupported": "Ta wersja Slavebot nie może jeszcze uruchamiać kroków obrazu, pliku i wiadomości.",
+  "error.workflow.interrupted": "Slavebot zatrzymał się podczas tego kroku. Uruchom go ponownie.",
   "error.workflow.agentMissing": "Wybierz agenta dla tego kroku.",
-  "error.workflow.handoffFailed": "OpenBot nie mógł wysłać tego kroku do jego agenta.",
+  "error.workflow.handoffFailed": "Slavebot nie mógł wysłać tego kroku do jego agenta.",
   "error.workflow.agentStepEnded": "Wiadomość do agenta została usunięta, zanim odpowiedział.",
   "error.workflow.conditionUnclear": "Model nie odpowiedział tak ani nie.",
   "error.workflow.modelFailed": "Model nie mógł odpowiedzieć. Uruchom krok ponownie.",
@@ -28,7 +28,7 @@ export const messages = {
   "error.workflow.outputConnectionOff":
     "Połączenie komunikatora tego wyjścia jest wyłączone lub usunięte. Wybierz miejsce ponownie.",
   "error.workflow.outputNotRunning": "Połączenie komunikatora teraz nie działa. Spróbuj ponownie, gdy zacznie działać.",
-  "error.workflow.outputRefused": "Miejsce odrzuciło wpis. Upewnij się, że OpenBot może tam publikować.",
+  "error.workflow.outputRefused": "Miejsce odrzuciło wpis. Upewnij się, że Slavebot może tam publikować.",
   "error.workflow.outputUncertain":
     "Wpis zatrzymał się w drodze. Jego część może już być w tym miejscu. Sprawdź to, zanim spróbujesz ponownie.",
   "error.workflow.tooLarge":
@@ -48,12 +48,12 @@ export const messages = {
   "error.workflow.githubChoseNothing": "Model nie wybrał żadnej etykiety ani osoby z tego repozytorium.",
   "error.workflow.githubNotConnected": "Połącz GitHub na komputerze, na którym działa ten przepływ pracy.",
   "error.workflow.githubNoAccess":
-    "OpenBot GitHub App nie widzi tego repozytorium ani elementu. Otwórz GitHub i daj jej dostęp.",
+    "Slavebot GitHub App nie widzi tego repozytorium ani elementu. Otwórz GitHub i daj jej dostęp.",
   "error.workflow.githubNoWrite":
-    "OpenBot GitHub App nie może zmieniać tego repozytorium. Otwórz GitHub i daj jej dostęp.",
+    "Slavebot GitHub App nie może zmieniać tego repozytorium. Otwórz GitHub i daj jej dostęp.",
   "error.workflow.githubLocked": "Ta rozmowa jest zablokowana w GitHub.",
   "error.workflow.githubRefused": "GitHub odrzucił zmianę: {detail}",
-  "error.workflow.githubUnreachable": "OpenBot nie mógł połączyć się z GitHub. Uruchom krok ponownie.",
+  "error.workflow.githubUnreachable": "Slavebot nie mógł połączyć się z GitHub. Uruchom krok ponownie.",
   "error.workflow.githubUncertain":
     "Zmiana zatrzymała się w drodze. Może już być w GitHub. Sprawdź tam, zanim ponownie uruchomisz krok.",
   "error.workflow.githubNoEvent": "W GitHub nie ma zgłoszenia ani pull requestu, dla którego startuje ten wyzwalacz.",
