@@ -58,7 +58,7 @@ Keep the private JWK secret. With it, a person can open each host that uses your
    cd apps/auth-api
    bunx wrangler login
    bunx wrangler d1 create openbot-auth
-   bunx wrangler r2 bucket create openbot-avatars
+   bunx wrangler r2 bucket create slavebot-avatars
    bunx wrangler r2 bucket create openbot-skills
    bunx wrangler r2 bucket create openbot-sites
    ```
