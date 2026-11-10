@@ -32,6 +32,7 @@
   POST /v1/auth/email/verify          → sessionToken
   POST /v2/remote/hosts/register      → machineToken
   POST /v2/remote/hosts/{hostId}/ticket
+  POST /v2/remote/hosts/{hostId}/telegram-link
   WebSocket hello peer=host
 
 手机登录（同一邮箱）
@@ -267,6 +268,20 @@
 失败：`400 invalid_remote_request`，`401 stale_machine_token`，`404 remote_host_missing`，`500 store_failed`。
 
 下一步 `hello` 的 `peer` 必须是 `host`。主机不会收到 `peer-ready`。
+
+### `POST /v2/remote/hosts/{hostId}/telegram-link`
+
+桌面用机器凭证换一次性 Telegram 入群码。不读 Bearer。桌面把它拼成 `https://t.me/<botUsername>?start=<code>`。
+
+输入：`machineToken`。
+
+机器人名来自环境变量 `TELEGRAM_BOT_USERNAME`，5 到 32 位字母、数字或下划线。未设置时 `503 telegram_not_configured`。
+
+输出 `200`：`botUsername`、`code`（43 位 base64url）、`expiresAt`（Unix 毫秒，15 分钟后）。落盘只写 `code` 的 SHA-256，行类型 `TLINK`。同一主机未过期的码最多 10 个。
+
+失败：`400 invalid_remote_request`，`401 stale_machine_token`，`404 remote_host_missing`，`429 telegram_link_limit`，`500 store_failed`，`503 telegram_not_configured`。
+
+这条只发码。Telegram 里的 `/start` 还要另外的认领接口，本服务还没有。
 
 ## 手机远程会话
 

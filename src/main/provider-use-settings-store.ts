@@ -10,11 +10,19 @@ const ProviderUseFile = Schema.Struct({
 });
 const decodeProviderUseFile = Schema.decodeUnknownResult(ProviderUseFile);
 
-/** Owns the local provider switches. Unknown files stay unchanged. */
+/**
+ * Providers hidden until the user turns one on. Grok stays on. `acp` is not a switch.
+ * Does not turn a provider off when a saved file already names the set.
+ */
+function defaultOffProviders(): AgentProviderId[] {
+  return AGENT_PROVIDERS.filter((provider) => provider !== "grok" && provider !== "acp");
+}
+
+/** Owns the local provider switches. Unknown files stay unchanged. A missing file hides every provider except Grok. */
 export class ProviderUseSettingsStore {
   readonly #path: string;
   readonly #writes = Semaphore.makeUnsafe(1);
-  #off: AgentProviderId[] = [];
+  #off: AgentProviderId[] = defaultOffProviders();
   #readOnly = false;
 
   constructor(path: string) {
@@ -29,7 +37,13 @@ export class ProviderUseSettingsStore {
       }),
     );
     if (Result.isFailure(result)) {
-      if (isMissingFileError(result.failure.cause)) return;
+      if (isMissingFileError(result.failure.cause)) {
+        this.#off = defaultOffProviders();
+        yield* writePreferenceFile(this.#path, { version: 1, off: this.#off }, { createDirectory: true }).pipe(
+          Effect.catch(() => Effect.void),
+        );
+        return;
+      }
       if (!(result.failure.cause instanceof SyntaxError)) return yield* result.failure;
     } else if (result.success) {
       this.#off = result.success;

@@ -43,6 +43,14 @@ pub struct RemoteSessionRecord {
     pub created: u64,
 }
 
+/** One unused Telegram link code. The map key is the SHA-256 hex of the code. The plaintext is not stored. */
+#[derive(Clone)]
+pub struct TelegramLinkRecord {
+    pub host_id: String,
+    pub email: String,
+    pub expires_at: u64,
+}
+
 /** One desktop host owned by an email. The map key is `host_id`. */
 #[derive(Clone)]
 pub struct HostRecord {
@@ -64,6 +72,7 @@ pub struct Store {
     pub tickets: HashMap<String, TicketRecord>,
     pub hosts: HashMap<String, HostRecord>,
     pub remote_sessions: HashMap<String, RemoteSessionRecord>,
+    pub telegram_links: HashMap<String, TelegramLinkRecord>,
 }
 
 /** Opens the lock file and holds it until the process exits. A second process cannot start. */
@@ -84,6 +93,7 @@ pub fn open_store(data_dir: &Path) -> Result<Store, String> {
         tickets: HashMap::new(),
         hosts: HashMap::new(),
         remote_sessions: HashMap::new(),
+        telegram_links: HashMap::new(),
     };
     store.load()?;
     Ok(store)
@@ -93,6 +103,7 @@ pub fn open_store(data_dir: &Path) -> Result<Store, String> {
  * A CODE row is `CODE`, challenge id, email, salt, hash, created, attempts, last send.
  * A TICKET row is `TICKET`, email, host id, fingerprint, hash, created seconds.
  * A HOST row is `HOST`, email, host id, name, membership id, auth epoch, machine token, device key, created.
+ * A TLINK row is `TLINK`, code hash, host id, email, expiry seconds. The plaintext code is not a column.
  * Older rows without a challenge id are dropped. Session columns stay four fields.
  */
 fn load_rows(store: &mut Store) -> Result<(), String> {
@@ -151,6 +162,18 @@ fn load_rows(store: &mut Store) -> Result<(), String> {
                     created: parts[8].parse().unwrap_or(0),
                 },
             );
+        } else if parts.first() == Some(&"TLINK") && parts.len() == 5 {
+            if parts[1].len() != 64 || parts[2].is_empty() || parts[3].is_empty() {
+                continue;
+            }
+            store.telegram_links.insert(
+                parts[1].to_string(),
+                TelegramLinkRecord {
+                    host_id: parts[2].to_string(),
+                    email: parts[3].to_string(),
+                    expires_at: parts[4].parse().unwrap_or(0),
+                },
+            );
         } else if parts.first() == Some(&"SESS") && parts.len() == 4 {
             store.sessions.insert(
                 parts[2].to_string(),
@@ -205,6 +228,12 @@ impl Store {
                 row.machine_token,
                 row.device_public_key,
                 row.created
+            ));
+        }
+        for (hash_hex, row) in &self.telegram_links {
+            body.push_str(&format!(
+                "TLINK\t{}\t{}\t{}\t{}\n",
+                hash_hex, row.host_id, row.email, row.expires_at
             ));
         }
         let tmp = self.path.with_extension("tsv.tmp");

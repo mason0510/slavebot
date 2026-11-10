@@ -165,6 +165,7 @@ fn route(
         _ => match host_suffix(method, path) {
             Some(("members", host_id)) => list_members(host_id, authorization, store, now),
             Some(("ticket", host_id)) => issue_signal_ticket(host_id, body, signal_url, store, registry, now),
+            Some(("telegram-link", host_id)) => issue_telegram_link(host_id, body, store, now),
             _ => (404, r#"{"error":"not_found"}"#.to_string()),
         },
     }
@@ -178,10 +179,26 @@ fn host_suffix<'a>(method: &str, path: &'a str) -> Option<(&'static str, &'a str
         return Some(("members", host_id));
     }
     if method == "POST" {
+        if let Some(host_id) = rest.strip_suffix("/telegram-link") {
+            return Some(("telegram-link", host_id));
+        }
         let host_id = rest.strip_suffix("/ticket")?;
         return Some(("ticket", host_id));
     }
     None
+}
+
+/** Issues one Telegram start code. The bot name comes from `TELEGRAM_BOT_USERNAME`. */
+fn issue_telegram_link(host_id: &str, body: &str, store: &Arc<Mutex<Store>>, now: u64) -> (u16, String) {
+    let machine_token = json_string(body, "machineToken").unwrap_or_default();
+    let bot_username = std::env::var("TELEGRAM_BOT_USERNAME").unwrap_or_default();
+    let mut guard = match store.lock() {
+        Ok(guard) => guard,
+        Err(_) => return (500, error_body("store_failed", "The account store is unavailable.")),
+    };
+    match auth::issue_telegram_link(&mut guard, host_id, &machine_token, bot_username.trim(), now) {
+        auth::AuthReply::Json(status, payload) => (status, payload),
+    }
 }
 
 /** Routes a phone session action. `/ticket` mints Signal. `/end` drops the session. */
@@ -537,6 +554,20 @@ fn percent_decode(value: &str) -> String {
         index += 1;
     }
     String::from_utf8(out).unwrap_or_else(|_| value.to_string())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::host_suffix;
+
+    #[test]
+    fn telegram_link_is_not_the_signal_ticket() {
+        assert_eq!(
+            host_suffix("POST", "/v2/remote/hosts/host-1/telegram-link"),
+            Some(("telegram-link", "host-1"))
+        );
+        assert_eq!(host_suffix("POST", "/v2/remote/hosts/host-1/ticket"), Some(("ticket", "host-1")));
+    }
 }
 
 /** One hex digit, or none. */

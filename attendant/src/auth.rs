@@ -1,8 +1,10 @@
 use crate::crypto::{base64url, code_hash, hex_encode, random_bytes, same_bytes, sha256, user_id};
 use crate::mail::send_code;
-use crate::store::{CodeRecord, RemoteSessionRecord, SessionRecord, Store, CODE_TTL_SECS};
+use crate::store::{CodeRecord, RemoteSessionRecord, SessionRecord, Store, TelegramLinkRecord, CODE_TTL_SECS};
 
 const SESSION_TTL_SECS: u64 = 30 * 24 * 3600;
+const TELEGRAM_LINK_TTL_SECS: u64 = 15 * 60;
+const MAX_TELEGRAM_LINK_CODES: usize = 10;
 const RESEND_GAP_SECS: u64 = 60;
 const MAX_ATTEMPTS: u8 = 5;
 const TICKET_TTL_SECS: u64 = 120;
@@ -499,6 +501,76 @@ pub fn issue_host_signal_ticket(
 }
 
 /**
+ * issue_telegram_link: Mints one Telegram start code for this host.
+ * Guarantee: `code` is 43 base64url characters. Only its SHA-256 is stored. `expiresAt` is unix milliseconds, 15 minutes out.
+ * Refusal: 503 when the bot username is missing or not 5 to 32 letters, digits, or underscore.
+ * 400 when the host id or machine token is empty. 401 when the token does not match. 404 when the host is unknown.
+ * 429 when this host already has 10 unexpired codes.
+ * Boundary: Does not open Telegram. A later `/start` still needs the link route. The plaintext code is only in this response.
+ */
+pub fn issue_telegram_link(
+    store: &mut Store,
+    host_id: &str,
+    machine_token: &str,
+    bot_username: &str,
+    now: u64,
+) -> AuthReply {
+    if !valid_bot_username(bot_username) {
+        return api_error(503, "telegram_not_configured", "Telegram is not configured.");
+    }
+    if !valid_host_id(host_id) || machine_token.is_empty() {
+        return api_error(400, "invalid_remote_request", "The host credential is invalid.");
+    }
+    let Some(row) = store.hosts.get(host_id) else {
+        return api_error(404, "remote_host_missing", "This host is not registered.");
+    };
+    if machine_token != row.machine_token {
+        return api_error(401, "stale_machine_token", "The remote host credential does not match.");
+    }
+    let email = row.email.clone();
+    store.telegram_links.retain(|_, link| link.expires_at > now);
+    let live = store.telegram_links.values().filter(|link| link.host_id == host_id).count();
+    if live >= MAX_TELEGRAM_LINK_CODES {
+        return api_error(
+            429,
+            "telegram_link_limit",
+            "Use an open Telegram link or let it expire before you ask for another one.",
+        );
+    }
+    let code = match random_bytes(32) {
+        Ok(bytes) => base64url(&bytes),
+        Err(_) => return api_error(500, "store_failed", "The Telegram link could not be created."),
+    };
+    if !valid_ticket(&code) {
+        return api_error(500, "store_failed", "The Telegram link could not be created.");
+    }
+    let hash_hex = hex_encode(&sha256(code.as_bytes()));
+    let expires_at = now.saturating_add(TELEGRAM_LINK_TTL_SECS);
+    store.telegram_links.insert(
+        hash_hex.clone(),
+        TelegramLinkRecord {
+            host_id: host_id.to_string(),
+            email,
+            expires_at,
+        },
+    );
+    if store.save().is_err() {
+        store.telegram_links.remove(&hash_hex);
+        return api_error(500, "store_failed", "The Telegram link could not be stored.");
+    }
+    let expires_ms = expires_at.saturating_mul(1000);
+    AuthReply::Json(
+        200,
+        format!(r#"{{"botUsername":"{bot_username}","code":"{code}","expiresAt":{expires_ms}}}"#),
+    )
+}
+
+/** Telegram bot username the desktop will put in `t.me`. */
+fn valid_bot_username(value: &str) -> bool {
+    (5..=32).contains(&value.len()) && value.bytes().all(|byte| byte.is_ascii_alphanumeric() || byte == b'_')
+}
+
+/**
  * create_mobile_link: Returns a new persistent Mobile Connect token for this host.
  * Guarantee: link matches [A-Za-z0-9_-] and is 43 characters. createdAt is unix milliseconds.
  * Refusal: 401 without a session, 400 if hostId or fingerprint is invalid, 409 if another email owns the host.
@@ -878,5 +950,82 @@ fn valid_device_name(raw: &str) -> bool {
     let name = raw.trim();
     let count = name.chars().count();
     (1..=80).contains(&count) && !name.chars().any(|ch| ch.is_control())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::{issue_telegram_link, AuthReply};
+    use crate::crypto::{hex_encode, sha256};
+    use crate::store::{open_store, HostRecord, Store};
+    use std::time::{SystemTime, UNIX_EPOCH};
+
+    /** A throwaway account file. The directory is unique for this call. */
+    fn scratch() -> (Store, std::path::PathBuf) {
+        let nanos = SystemTime::now().duration_since(UNIX_EPOCH).unwrap_or_default().as_nanos();
+        let path = std::env::temp_dir().join(format!("attendant-tlink-{nanos}"));
+        let _ = std::fs::remove_dir_all(&path);
+        let mut store = open_store(&path).expect("store");
+        store.hosts.insert(
+            "host-1".to_string(),
+            HostRecord {
+                email: "a@b.co".to_string(),
+                host_id: "host-1".to_string(),
+                name: "desk".to_string(),
+                membership_id: "m1".to_string(),
+                auth_epoch: 1,
+                machine_token: "token-1".to_string(),
+                device_public_key: String::new(),
+                created: 1,
+            },
+        );
+        (store, path)
+    }
+
+    fn code_of(body: &str) -> String {
+        let marker = "\"code\":\"";
+        let start = body.find(marker).expect("code") + marker.len();
+        body[start..].split('"').next().expect("end").to_string()
+    }
+
+    #[test]
+    fn link_stores_the_hash_only() {
+        let (mut store, dir) = scratch();
+        let reply = issue_telegram_link(&mut store, "host-1", "token-1", "slavebot_bot", 1_000);
+        let AuthReply::Json(status, body) = reply;
+        assert_eq!(status, 200);
+        let code = code_of(&body);
+        assert!(body.contains("\"botUsername\":\"slavebot_bot\""));
+        assert!(body.contains(&format!("\"code\":\"{code}\"")));
+        let hash = hex_encode(&sha256(code.as_bytes()));
+        assert!(store.telegram_links.contains_key(&hash));
+        assert!(!store.telegram_links.contains_key(&code));
+        let disk = std::fs::read_to_string(dir.join("accounts.tsv")).expect("tsv");
+        assert!(disk.contains(&hash));
+        assert!(!disk.contains(&code));
+    }
+
+    #[test]
+    fn wrong_token_and_missing_bot_do_not_write() {
+        let (mut store, _) = scratch();
+        let AuthReply::Json(status, _) = issue_telegram_link(&mut store, "host-1", "nope", "slavebot_bot", 1_000);
+        assert_eq!(status, 401);
+        let AuthReply::Json(status, _) = issue_telegram_link(&mut store, "host-1", "token-1", "bot", 1_000);
+        assert_eq!(status, 503);
+        assert!(store.telegram_links.is_empty());
+    }
+
+    #[test]
+    fn eleventh_live_code_is_limited_until_expiry() {
+        let (mut store, _) = scratch();
+        for _ in 0..10 {
+            let AuthReply::Json(status, _) = issue_telegram_link(&mut store, "host-1", "token-1", "slavebot_bot", 1_000);
+            assert_eq!(status, 200);
+        }
+        let AuthReply::Json(status, _) = issue_telegram_link(&mut store, "host-1", "token-1", "slavebot_bot", 1_000);
+        assert_eq!(status, 429);
+        let AuthReply::Json(status, _) =
+            issue_telegram_link(&mut store, "host-1", "token-1", "slavebot_bot", 1_000 + 15 * 60);
+        assert_eq!(status, 200);
+    }
 }
 
