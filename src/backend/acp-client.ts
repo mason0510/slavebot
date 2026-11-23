@@ -28,7 +28,7 @@ import { type DynamicRecord, isBoolean, isString } from "@openbot/contracts/runt
 import { sourceText } from "@openbot/i18n/source";
 import { createOpenBotLogger, redactText } from "@openbot/logging";
 import { classifyUserError } from "@openbot/user-errors";
-import { Deferred, Effect, Exit, Fiber, Scope, Semaphore } from "effect";
+import { Deferred, Effect, Exit, Fiber, Result, Scope, Semaphore } from "effect";
 import {
   AcpConfiguration,
   type AcpModel,
@@ -73,8 +73,11 @@ import {
   type ThreadItem,
 } from "./protocol";
 import {
+  GrokKeyInjectionError,
   type ProviderClientOperationError,
   ProviderSignInError,
+  grokKeyFailureText,
+  grokMustNotAskSignIn,
   providerCall,
   providerFailure,
   providerResult,
@@ -1205,6 +1208,34 @@ export class AcpAgentClient extends EventEmitter<ClientEvents> {
     return [...named, ...additional.filter((model) => !ids.has(model.id))];
   });
 
+  /**
+   * Reads the model list after authentication threw.
+   * Guarantees: Grok keeps a non-empty list and is marked signed in, so startup can publish those models.
+   * Does not guarantee: the token was accepted, or that a later turn can send.
+   * Any other provider, an empty list, or a failed read stays signed out.
+   */
+  readonly #keepModelsWhenAuthFails = Effect.fn("AcpAgentClient.keepModelsWhenAuthFails")(function* (
+    this: AcpAgentClient,
+    timeoutMs: number,
+  ) {
+    if (this.provider !== "grok") return false;
+    const discovered = yield* Effect.result(this.#discoverModels(timeoutMs));
+    if (Result.isFailure(discovered) || discovered.success.length === 0) return false;
+    this.#models = discovered.success;
+    this.#signedIn = true;
+    return true;
+  });
+
+  /**
+   * Fails this start because Grok already had an API key and still has no account, or the key read failed.
+   * Guarantees: the failure is a key-injection error, so startup retries instead of finishing as sign-in-required. A failed read names the read.
+   * Does not guarantee: the key value, or that the next start applies it. This method does not show a toast.
+   * A provider other than Grok does not use this.
+   */
+  #grokKeyInjectionFailure(): ProviderClientOperationError {
+    return providerFailure(new GrokKeyInjectionError({ message: grokKeyFailureText() }));
+  }
+
   readonly #initialize = Effect.fn("AcpAgentClient.initialize")(function* (
     this: AcpAgentClient,
     timeoutMs: number,
@@ -1228,11 +1259,14 @@ export class AcpAgentClient extends EventEmitter<ClientEvents> {
         Deferred.await(signInPrompt).pipe(Effect.as(null)),
       );
       if (!discovery) {
+        // A sign-in prompt won while a key was already injected. That is a failed injection, not a finished login.
+        if (this.provider === "grok" && grokMustNotAskSignIn()) return yield* this.#grokKeyInjectionFailure();
         this.#signedIn = false;
         return;
       }
       this.#models = providerResult(discovery);
       if (this.#models.length === 0 && !this.options.allowNoModels) {
+        if (this.provider === "grok" && grokMustNotAskSignIn()) return yield* this.#grokKeyInjectionFailure();
         throw new Error(sourceText("error.provider.acpNoModels"));
       }
       this.#signedIn = true;
@@ -1245,6 +1279,9 @@ export class AcpAgentClient extends EventEmitter<ClientEvents> {
           provider: this.provider,
           message: this.#redact(failureText(error)),
         });
+        if (yield* this.#keepModelsWhenAuthFails(timeoutMs)) return;
+        // Models were not listed. With a key present, "signed out" would publish 需要登录 for an injection that failed.
+        if (this.provider === "grok" && grokMustNotAskSignIn()) return yield* this.#grokKeyInjectionFailure();
         this.#signedIn = false;
         return;
       }

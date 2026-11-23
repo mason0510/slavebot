@@ -9,8 +9,9 @@ import type { GrokCliInfo } from "./cli";
 import type { McpDropReporter, McpEndpointSource, McpServerSource, McpToolRuntimeSource } from "./mcp-provider-shapes";
 import { confineSpawnTarget, grokStatePaths, type ProcessConfinement } from "./process-confinement";
 import { type AccountRateLimitsReadResult, getRecord, getString } from "./protocol";
+import { grokChildKeyEnv } from "./grok-key-injection";
 import { userProxyChildEnv } from "./user-proxy-env";
-import { providerCall } from "./provider-client-effects";
+import { grokMustNotAskSignIn, providerCall } from "./provider-client-effects";
 
 export class GrokAgentClient extends AcpAgentClient {
   constructor(
@@ -51,9 +52,11 @@ export class GrokAgentClient extends AcpAgentClient {
       // workflows Grok declares `update_goal`, about 1k characters. Grok `agent stdio` ignores
       // `--disallowed-tools`, so only these switches remove the tools.
       env: { GROK_OAUTH2_REFERRER: "openbot", GROK_FEEDBACK_ENABLED: "0", GROK_WORKFLOWS: "0" },
+      // The child reads `env_key` at spawn. The login check reads the same injection, so both must see it here.
       // The saved proxy is last so a copied shell proxy cannot hide the loopback hop.
       extraEnv: () => ({
         ...agentEnvironment?.(),
+        ...grokChildKeyEnv(),
         ...userProxyChildEnv(),
       }),
       history,
@@ -68,10 +71,18 @@ export class GrokAgentClient extends AcpAgentClient {
   }
 }
 
+/**
+ * Authenticates the Grok session before the model list.
+ * Guarantees: a process variable whose name contains GROK_API_KEY, the same Keychain injection the child receives, or a Keychain read that failed, does not call `cached_token`.
+ * An xAI key still uses `xai.api_key`. A confirmed absence still uses `cached_token`.
+ * Does not guarantee: the method is advertised, or that the key is accepted.
+ */
 const authenticate = Effect.fn("Grok.authenticate")(function* (
   connection: ClientSideConnection,
   initialization: InitializeResponse,
 ) {
+  // `cached_token` asks for `grok login`. A key already injected, or a read that did not confirm absence, is not a login.
+  if (!process.env.XAI_API_KEY?.trim() && grokMustNotAskSignIn()) return;
   const authMethod = process.env.XAI_API_KEY?.trim() ? "xai.api_key" : "cached_token";
   const advertised = initialization.authMethods ?? [];
   const selected =

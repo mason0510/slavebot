@@ -1437,6 +1437,26 @@ if (!hasSingleInstanceLock) {
         );
       // The island pages load beside the main window, not before it.
       reconcileDynamicIsland();
+      // The first status the window reads is what the provider rows paint. A
+      // row still on "checking" is the startup check, so that check finishes
+      // before the window can show. The sweeps after the roster keep running.
+      await runCauseEffect(
+        Effect.gen(function* () {
+          yield* Effect.forkDetach(
+            built.agentInitialization.start().pipe(
+              Effect.catch((error) =>
+                Effect.sync(() =>
+                  logger.error("Unable to initialize the local agent backend:", toLogValue(error)),
+                ),
+              ),
+            ),
+            { startImmediately: true },
+          );
+          yield* built.agentInitialization.awaitRoster();
+        }),
+      ).catch((error) =>
+        logger.error("The provider check did not finish before the window opened:", toLogValue(error)),
+      );
       await windows.loadRenderer(mainWindow);
       performance.mark("openbot:renderer-loaded");
       // `sendToRenderer` dropped the server changes made while the window loaded: the host list and
@@ -1492,10 +1512,6 @@ if (!hasSingleInstanceLock) {
           logger.error("Unable to republish this OpenBot:", toLogValue(error)),
         );
       }
-      void runCauseEffect(built.agentInitialization.start()).catch((error) => {
-        logger.error("Unable to initialize the local agent backend:", toLogValue(error));
-      });
-
       const directoryRefresh = createRemoteDirectoryRefresh(() => {
         const generation = centralAuthGeneration;
         return remoteAccountGate

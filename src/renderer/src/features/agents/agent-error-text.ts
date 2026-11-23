@@ -29,6 +29,17 @@ export function providerErrorTitle(code: string): string {
     : t("agent.error.provider");
 }
 
+/**
+ * Extra toast options for a Grok key-read failure.
+ * Guarantees: that code uses one id and stays 12 seconds, so a retry refreshes the same toast instead of stacking another.
+ * Does not guarantee: the toaster is mounted, or that a different error is deduped. `code` is the agent event code.
+ */
+export function providerErrorToastOptions(code: string): { id?: string; duration?: number } {
+  // The status row is easy to miss. This failure has to stay on screen while the automatic retries run.
+  if (!code.endsWith("_key_read_failed")) return {};
+  return { id: "grok-key-read", duration: 12_000 };
+}
+
 /** True when this error text has had no toast in the last 30 seconds. The caller then shows one. */
 export function claimErrorToast(text: string): boolean {
   const now = Date.now();

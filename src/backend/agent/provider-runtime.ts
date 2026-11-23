@@ -62,7 +62,15 @@ import {
   decodeRecordResponse,
   getString,
 } from "./../protocol";
-import { ProviderSignInError } from "../provider-client-effects";
+import {
+  GrokKeyInjectionError,
+  ProviderSignInError,
+  grokKeyFailureText,
+  grokKeyInjectionNotice,
+  grokMustNotAskSignIn,
+  grokStatusWithoutSignIn,
+} from "../provider-client-effects";
+import { grokKeyLoadFailed, retryGrokKeyLoad } from "../grok-key-injection";
 import { userProxyChildEnv } from "../user-proxy-env";
 import {
   antigravityTemp,
@@ -110,6 +118,7 @@ import { UsageReadGate } from "./usage-read-gate";
 import { checkAgentFolders, workspaceExcludedFolders, workspaceWritableRoots } from "./workspace-sandbox";
 
 const logger = createOpenBotLogger("provider-runtime");
+
 /**
  * Stderr records that the classifiers sort out as noise. They can quote a tool call's output or a
  * command line, so they go to the console only and not to the provider log file.
@@ -2875,10 +2884,17 @@ export class ProviderRuntime implements ProviderPort {
               .request("account/read", { refreshToken: true }, decodeAccountReadResult)
               .pipe(toProviderOperationFailed);
             const account = response.account;
-            if (!account)
+            if (!account) {
+              // A key was already in the process. No account means it was not applied, not that Grok needs a login.
+              if (provider === "grok" && grokMustNotAskSignIn()) {
+                return yield* new ProviderOperationFailed({
+                  cause: new GrokKeyInjectionError({ message: grokKeyFailureText() }),
+                });
+              }
               return yield* new ProviderOperationFailed({
                 cause: new ProviderSignInError({ message: this.#noAccountMessage(provider) }),
               });
+            }
             yield* providerStep(() => driver.validateAccount(account));
             transferred = true;
             return { client, account };
@@ -3083,24 +3099,35 @@ export class ProviderRuntime implements ProviderPort {
     const message =
       (timeout && matchingSourceKeys(rawMessage).length > 0) ||
       error instanceof ProviderSignInError ||
+      error instanceof GrokKeyInjectionError ||
       /^(ChatGPT connection|OpenBot|Slavebot)/u.test(rawMessage)
         ? rawMessage
         : fallbackMessage;
-    const status = hasActiveClient
-      ? {
-          state: "available" as const,
-          version: this.#cli.get(provider)?.version ?? version ?? null,
-          message,
-          email: this.#accounts.get(provider)?.email ?? null,
-        }
-      : error instanceof CodexCliError || cliFailed
-        ? providerFailureStatus(provider, error, version)
-        : {
-            state: "sign-in-required" as const,
-            version: version ?? null,
+    const status = grokStatusWithoutSignIn(
+      provider,
+      hasActiveClient
+        ? {
+            state: "available" as const,
+            version: this.#cli.get(provider)?.version ?? version ?? null,
             message,
-            email: null,
-          };
+            email: this.#accounts.get(provider)?.email ?? null,
+          }
+        : error instanceof GrokKeyInjectionError
+          ? {
+              state: "error" as const,
+              version: version ?? null,
+              message,
+              email: null,
+            }
+          : error instanceof CodexCliError || cliFailed
+            ? providerFailureStatus(provider, error, version)
+            : {
+                state: "sign-in-required" as const,
+                version: version ?? null,
+                message,
+                email: null,
+              },
+    );
     const hasProvider = this.#clients.size > 0 || this.#released.size > 0;
     this.#setStatus({
       phase: hasProvider ? "ready" : "blocked",
@@ -3108,6 +3135,8 @@ export class ProviderRuntime implements ProviderPort {
       capabilities: { ...this.#status.capabilities, chat: hasProvider ? "ready" : "unavailable" },
       message: hasProvider ? null : message,
     });
+    // Login and reprobe do not pass the start catch. The same sentence still has to toast.
+    this.#toastGrokKeyFailure(provider, grokKeyInjectionNotice(provider, error, status.message ?? null));
   }
 
   /**
@@ -3309,6 +3338,7 @@ export class ProviderRuntime implements ProviderPort {
      * files as they were then, so it says nothing about the files as they are now.
      */
     const activated: AgentProvider[] = [];
+    let grokKeyRetryQueued = false;
     const results = yield* Effect.forEach(
       requestedProviders,
       (provider) => {
@@ -3353,6 +3383,12 @@ export class ProviderRuntime implements ProviderPort {
             .request("account/read", { refreshToken: false }, decodeAccountReadResult, 5_000)
             .pipe(toProviderOperationFailed);
           if (!account.account) {
+            // Returning here used to finish startup as 需要登录. With a key, that result is a failed injection.
+            if (provider === "grok" && grokMustNotAskSignIn()) {
+              return yield* new ProviderOperationFailed({
+                cause: new GrokKeyInjectionError({ message: grokKeyFailureText() }),
+              });
+            }
             const message = this.#signInRequiredMessage(provider);
             yield* candidate.stop().pipe(Effect.catch(() => Effect.void));
             this.#setStatus({
@@ -3397,7 +3433,16 @@ export class ProviderRuntime implements ProviderPort {
               // Another start of this provider, such as a turn's during a refresh, finished first. Its
               // client runs and its row is current, so this failure describes nothing the app uses.
               if (this.#clients.has(provider)) return null;
-              const error = this.#withExitDetail(thrown);
+              const detailed = this.#withExitDetail(thrown);
+              // An auth failure after a key was injected is the same missed injection as an empty account.
+              const error =
+                provider === "grok" &&
+                grokMustNotAskSignIn() &&
+                !(detailed instanceof GrokKeyInjectionError) &&
+                (detailed instanceof ProviderSignInError ||
+                  (stage === "account" && classifyUserError(detailed) === "auth"))
+                  ? new GrokKeyInjectionError({ message: grokKeyFailureText() })
+                  : detailed;
               logger.warn("A provider did not start.", {
                 provider,
                 stage,
@@ -3405,6 +3450,21 @@ export class ProviderRuntime implements ProviderPort {
                 timeout: isProviderTimeout(error),
                 message: shortenDiagnostic(this.#redactMcp(error instanceof Error ? error.message : String(error))),
               });
+              if (error instanceof GrokKeyInjectionError) {
+                const retry = this.#retryGrokKeyInjection(provider, !disposed());
+                if (retry.retrying) grokKeyRetryQueued = true;
+                this.#setStatus({
+                  providers: updateProviderStatus(this.#status.providers, provider, {
+                    state: retry.retrying ? "checking" : "error",
+                    version: cli?.version ?? previousVersions.get(provider) ?? null,
+                    message: retry.message,
+                    email: null,
+                  }),
+                });
+                // A status row is not a reminder. This event has no agent, so the window toasts it.
+                this.#toastGrokKeyFailure(provider, grokKeyInjectionNotice(provider, error, retry.message));
+                return retry.message;
+              }
               if (isProviderTimeout(error)) {
                 this.#recordProviderError(provider, error);
                 // The process may still be unpacking. The next start waits long enough to finish.
@@ -3432,14 +3492,18 @@ export class ProviderRuntime implements ProviderPort {
               // The CLI's own words reach the status message and the joined start failure below, so
               // the MCP values go first. `providerFailureStatus` applies only the generic redaction.
               const message = this.#redactMcp(failed instanceof Error ? failed.message : String(failed));
-              const failure = providerFailureStatus(provider, failed, cli?.version);
+              const failure = grokStatusWithoutSignIn(provider, providerFailureStatus(provider, failed, cli?.version));
+              const published = failure.message === null ? null : this.#redactMcp(failure.message);
               this.#setStatus({
                 providers: updateProviderStatus(this.#status.providers, provider, {
                   ...failure,
-                  message: failure.message === null ? null : this.#redactMcp(failure.message),
+                  message: published,
                 }),
               });
-              if (!(failed instanceof CodexCliError || failed instanceof ProviderSignInError)) {
+              const keyNotice = grokKeyInjectionNotice(provider, failed, published);
+              // A rewritten sign-in is a key-read failure. Its sentence is the toast; a second start-failed toast would hide it.
+              if (keyNotice) this.#toastGrokKeyFailure(provider, keyNotice);
+              else if (!(failed instanceof CodexCliError || failed instanceof ProviderSignInError)) {
                 this.#emitProviderError(provider, "start_failed", failed);
                 // No process started, and the row keeps the reason the user can act on.
                 if (!(failed instanceof ProviderTempDiskSpaceError) && this.#countStartFailure(provider))
@@ -3470,6 +3534,18 @@ export class ProviderRuntime implements ProviderPort {
     if (this.#clients.size === 0 && this.#released.size > 0) {
       // Every other provider is released, not gone: chat stays ready and starts one on the next turn.
       this.#setStatus({ providers: finalProviderStatuses });
+      return;
+    }
+    if (this.#clients.size === 0 && grokKeyRetryQueued) {
+      // The injection retry is still queued. Blocked would publish the failed start as finished.
+      this.#setStatus({
+        phase: "restarting",
+        cliVersion: null,
+        auth: { kind: "unknown" },
+        providers: finalProviderStatuses,
+        capabilities: { ...this.#status.capabilities, chat: "unavailable" },
+        message: failures.join(" "),
+      });
       return;
     }
     if (this.#clients.size === 0) {
@@ -3819,6 +3895,32 @@ export class ProviderRuntime implements ProviderPort {
   }, Effect.uninterruptible);
 
   /**
+   * Starts Grok again after an API key was present and the account was still empty, or the key read failed.
+   * Guarantees: at most three retries, on the same backoff as a timed-out start, and the row does not say sign-in is required.
+   * A failed Keychain read is named in the sentence, then dropped before the next start. A ready key stays cached.
+   * Does not guarantee: the next start applies the key, or that this method itself shows a toast. After the third retry the user must refresh.
+   * `schedule` false, or a disposed runtime, does not queue another start.
+   */
+  #retryGrokKeyInjection(
+    provider: AgentProvider,
+    schedule: boolean,
+  ): { readonly message: string; readonly retrying: boolean } {
+    // Read the cache before clearing it. After the clear, a failed read would look like a missed injection.
+    const failedRead = grokKeyLoadFailed();
+    const attempts = this.#restartAttempts.get(provider) ?? 0;
+    const retrying = schedule && attempts < 3;
+    if (retrying) {
+      retryGrokKeyLoad();
+      this.#restartAttempts.set(provider, attempts + 1);
+      this.#scheduleRestart(provider, 5_000 * 2 ** attempts, true);
+    }
+    return {
+      retrying,
+      message: grokKeyFailureText(!retrying, failedRead),
+    };
+  }
+
+  /**
    * Starts a provider whose CLI did not answer in time, or whose start OpenCode failed, again later,
    * with the backoff and the attempt count of `#handleExit`. Answers the status message for a
    * timeout: whether OpenBot tries again, or the user has to.
@@ -3852,6 +3954,17 @@ export class ProviderRuntime implements ProviderPort {
     if (cleared) this.#setStatus({});
     return fresh;
   });
+
+  /**
+   * Sends one window toast for a Grok key read or a missed injection.
+   * Guarantees: a non-null notice becomes one error event with no agent id. The renderer shows that event as a toast. The notice has no key value.
+   * Does not guarantee: the app already on screen shows it, or that a later event with the same id stacks a second toast.
+   * A null notice, including a confirmed absence, does not emit.
+   */
+  #toastGrokKeyFailure(provider: AgentProvider, notice: string | null): void {
+    if (!notice) return;
+    this.#emitProviderError(provider, "key_read_failed", new GrokKeyInjectionError({ message: notice }));
+  }
 
   /** Shows a provider failure to the user and keeps it on the provider row. */
   #emitProviderError(provider: AgentProvider, kind: string, error: unknown, agentId?: string): void {

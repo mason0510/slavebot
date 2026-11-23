@@ -26,7 +26,7 @@ import { appendTurnStepLine } from "../conversation/turn-step-lines";
 import { useServers } from "../servers/servers-context";
 import { useSidebar } from "../sidebar/sidebar-context";
 import { readDictatedReplies } from "../speech/speech-replies";
-import { claimErrorToast, providerErrorTitle, readableAgentError } from "./agent-error-text";
+import { claimErrorToast, providerErrorTitle, providerErrorToastOptions, readableAgentError } from "./agent-error-text";
 import { createAgentEventSounds } from "./agent-event-sounds";
 import {
   attentionAgentId,
@@ -115,6 +115,12 @@ export function AgentEventBridge() {
   let readRefresh = 0;
   let modelRefresh = 0;
 
+  /**
+   * Applies one agent event to the open window.
+   * Guarantees: an error with no agent id becomes a toast. A Grok key-read failure uses that sentence as the toast and keeps it for 12 seconds.
+   * Does not guarantee: a chat-attached error becomes a toast, or that an app built before this change shows it.
+   * `event` is one main-process agent event. Its message is already redacted.
+   */
   function handleAgentEvent(event: AgentEvent) {
     switch (event.type) {
       case "status":
@@ -362,14 +368,17 @@ export function AgentEventBridge() {
         // No agent to attach it to - a provider that fails to start is the common case - so this
         // one stays global. The message is already redacted in the main process.
         const toastKey = readableAgentError(event.message);
-        if (claimErrorToast(toastKey)) {
+        // A key-read failure has no chat to attach to. The sentence itself is the toast, not a generic provider title.
+        const keyReadFailed = event.code.endsWith("_key_read_failed");
+        if (keyReadFailed || claimErrorToast(toastKey)) {
           // An MCP server left out at hand-off is not the provider failing, and calling it a
           // provider error sends the user to the wrong settings page.
           const { t } = currentText();
           const title =
             event.code === "mcp_server_not_started" ? t("agent.error.mcpNotStarted") : providerErrorTitle(event.code);
-          toast.error(title, {
-            ...{ description: toastKey },
+          toast.error(keyReadFailed ? toastKey : title, {
+            ...(keyReadFailed ? {} : { description: toastKey }),
+            ...providerErrorToastOptions(event.code),
             report: { operation: "provider", source: "provider", cause_code: classifyFailure(event.message) },
           });
         }

@@ -382,7 +382,7 @@ See [web client delivery](docs/web-client.md) for the release gate and focused c
 | `bun run cua-driver:doctor` | Print, as JSON, which `cua-driver` binary OpenBot would use for Computer Use, and the driver's own `doctor` report. Read-only, and it starts no daemon. `OPENBOT_CUA_DRIVER_PATH` selects a different binary in a checkout; an installed application runs only the driver it was released with. |
 | `bun run prepare:cua-driver` | Write the pinned Computer Use driver to `build/cua-driver/<platform>/<arch>`, verifying every SHA-256 in `native-runtime.lock.json`. Name another target with `bun scripts/install-cua-driver.ts <platform> <arch>`. Every packaging command runs this first. |
 | `bun run pin:cua-driver <version>` | Print a new `cuaDriver` block for `native-runtime.lock.json` from a published `cua-driver` release. Downloads the release assets of all five targets and hashes each shipped file. |
-| `bun run package` | Build an unpacked local application for the architecture of this Mac. |
+| `bun run package` | Build an unpacked local application for the architecture of this Mac. Intel darwin-x64 inputs are listed in [Mac package cache](#mac-package-cache). |
 | `bun run package:verify` | Build and verify the real app bundle for this Mac, icon, metadata, ASAR, and fuses. |
 | `bun run package:win` | Build an unpacked local Windows x64 application on Windows. |
 | `bun run package:win:verify` | Build and verify the Windows x64 application on Windows. |
@@ -407,6 +407,26 @@ See [web client delivery](docs/web-client.md) for the release gate and focused c
 | `bun run test:workspace-only` | **Online/manual:** run real Workspace only Codex, Claude, Grok and OpenCode turns that try to write outside; writes a JSON report per provider to `.openbot-build/workspace-only-smoke/`. Add `--provider <id>` for one, and `--model <id>` to choose its model. |
 | `bun run test:provider-detection` | Run local detection, Load models and endpoint Edit against fake OpenAI-compatible servers on this computer: no key in a scan, no redirect, the stored key only to its own origin. Offline; writes `.openbot-build/provider-detection-e2e/report.json`. |
 | `bun run test:storage-live` | **Online/manual:** verify isolated Codex and Claude turns in a temporary SQLite database. |
+
+## Mac package cache
+
+Intel Mac（darwin-x64）打包用的两份大文件在 Cloudflare。公网只走 `https://cdn.tap365.org`。不要写 `*.r2.dev`，也不要再从 GitHub 或美国机拉。
+
+| 文件 | 地址 | 字节 | SHA-256 |
+| --- | --- | --- | --- |
+| Electron 44.9.3 壳 | https://cdn.tap365.org/slavebot/electron/v44.9.3/electron-v44.9.3-darwin-x64.zip | 134522186 | `451363b59bb7d2c1c9e0c4baa99106004eaabe724aa21a0c6b4c87469293531a` |
+| 手机看本机的运行时 | https://cdn.tap365.org/slavebot/runtime/remote-desktop-runtime-darwin-x64.tar.gz | 61119718 | `d68b12a10f230ffcade41a235a9e04650f906d3a06b4fc905dd77f1ac261ca32` |
+
+`bun run package` 不带参数时，最后的 electron-builder 仍会去 GitHub 下壳。要避开，先确认运行时树已通过校验，再把本地 zip 交给打包命令：
+
+```bash
+bun run verify:remote-desktop-runtime
+bun run package -- --config.electronDist=<electron zip 的绝对路径>
+```
+
+`bun run` 会把 `--` 后面的参数接到脚本最后一条 `electron-builder` 上。运行时解压进 `build/remote-desktop-runtime`。校验仍以 `native-runtime.lock.json` 为准。本地树通过后，`prepare:remote-desktop-runtime` 不会再下载。裸跑 `bun run package` 仍会去 GitHub。
+
+只覆盖这次钉住的 darwin-x64 / Electron 44.9.3。arm64、Windows、Linux 没有放。版本变了，这张表作废。
 
 Publishing never creates a second OpenBot instance. The host keeps its Team API on loopback. A hidden,
 sandboxed Electron page connects it to invited clients through WebRTC. Signal carries only connection

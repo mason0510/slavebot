@@ -236,6 +236,14 @@ export const messages = {
   "error.provider.museMcpStartupFault":
     "Muse 无法启动某个 MCP 服务器，并在本次会话中停用了 MCP。Slavebot 已带着聊天记录开启新的 Muse 会话，请重试。如果仍然报错，请关闭 Computer Use，或对该助手关闭启动失败的 MCP 服务器。",
   "error.provider.grokSignIn": "请运行 `grok login`，或设置 XAI_API_KEY 以使用 Grok。",
+  "error.provider.grokKeyInjectionFailed":
+    "{provider} 已有 API 密钥，不需要登录。密钥没有注入成功。Slavebot 会再试。",
+  "error.provider.grokKeyInjectionRefresh":
+    "{provider} 已有 API 密钥，不需要登录。密钥没有注入成功。请刷新服务商后再试。",
+  "error.provider.grokKeyReadFailed":
+    "{provider} 读取钥匙串失败，没有拿到 API 密钥，不需要登录。请完全退出 Slavebot，打开终端运行 `{command}`。不要从程序坞打开。",
+  "error.provider.grokKeyReadRefresh":
+    "{provider} 读取钥匙串失败，没有拿到 API 密钥，不需要登录。自动重试已停止。请完全退出后，在终端运行 `{command}`，不要从程序坞打开。",
   "error.provider.acpSignInTimedOut": "登录超时。",
   "error.provider.acpSignInStopped": "登录在完成之前就停止了。",
   "error.provider.geminiBrowserUnavailable":

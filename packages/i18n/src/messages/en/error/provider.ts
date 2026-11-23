@@ -255,6 +255,14 @@ export const messages = defineMessages("error.provider", {
   "error.provider.museMcpStartupFault":
     "Muse could not start an MCP server and blocked MCP in this session. Slavebot started a new Muse session with the chat history. Try again. If the error continues, turn off Computer Use or the failed MCP server for this agent.",
   "error.provider.grokSignIn": "Run `grok login` or set XAI_API_KEY to use Grok.",
+  "error.provider.grokKeyInjectionFailed":
+    "{provider} already has an API key, so it does not need a sign-in. The key was not applied. Slavebot will try again.",
+  "error.provider.grokKeyInjectionRefresh":
+    "{provider} already has an API key, so it does not need a sign-in. The key was not applied. Refresh the providers to try again.",
+  "error.provider.grokKeyReadFailed":
+    "{provider} could not read its API key from the keychain, so it does not need a sign-in. Quit Slavebot, open Terminal, and run `{command}`. Do not open it from the Dock.",
+  "error.provider.grokKeyReadRefresh":
+    "{provider} could not read its API key from the keychain, so it does not need a sign-in. Slavebot stopped retrying. Quit it, open Terminal, and run `{command}` instead of the Dock.",
   "error.provider.acpSignInTimedOut": "The sign-in timed out.",
   "error.provider.acpSignInStopped": "The sign-in stopped before it was complete.",
   "error.provider.geminiBrowserUnavailable":
