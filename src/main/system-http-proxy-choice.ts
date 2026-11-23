@@ -1,3 +1,5 @@
+import type { UserProxySessionDecision } from "../backend/user-proxy-choice";
+
 /**
  * Decide whether the running session keeps, clears, or replaces its machine proxy.
  *
@@ -14,4 +16,19 @@ export function proxyRefreshAction(
   if (next === appliedKey) return "keep";
   if (next === null) return "direct";
   return "apply";
+}
+
+export type UserProxyOverride = UserProxySessionDecision;
+export type SessionProxyHop = { kind: "http" | "socks"; host: string; port: number };
+
+/**
+ * The hop the session should use.
+ * Guarantees: a direct override ignores the OS hop, including a Japan node.
+ * Null defers to the OS hop. A user hop is returned as-is and the OS hop is ignored.
+ * Does not probe TCP.
+ */
+export function sessionHop(override: UserProxyOverride, osHop: SessionProxyHop | null): SessionProxyHop | null {
+  if (override?.kind === "direct") return null;
+  if (override) return override;
+  return osHop;
 }

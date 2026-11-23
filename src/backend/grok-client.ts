@@ -9,6 +9,7 @@ import type { GrokCliInfo } from "./cli";
 import type { McpDropReporter, McpEndpointSource, McpServerSource, McpToolRuntimeSource } from "./mcp-provider-shapes";
 import { confineSpawnTarget, grokStatePaths, type ProcessConfinement } from "./process-confinement";
 import { type AccountRateLimitsReadResult, getRecord, getString } from "./protocol";
+import { userProxyChildEnv } from "./user-proxy-env";
 import { providerCall } from "./provider-client-effects";
 
 export class GrokAgentClient extends AcpAgentClient {
@@ -50,7 +51,11 @@ export class GrokAgentClient extends AcpAgentClient {
       // workflows Grok declares `update_goal`, about 1k characters. Grok `agent stdio` ignores
       // `--disallowed-tools`, so only these switches remove the tools.
       env: { GROK_OAUTH2_REFERRER: "openbot", GROK_FEEDBACK_ENABLED: "0", GROK_WORKFLOWS: "0" },
-      ...(agentEnvironment ? { extraEnv: () => ({ ...agentEnvironment() }) } : {}),
+      // The saved proxy is last so a copied shell proxy cannot hide the loopback hop.
+      extraEnv: () => ({
+        ...agentEnvironment?.(),
+        ...userProxyChildEnv(),
+      }),
       history,
       signInMessage: sourceText("error.provider.grokSignIn"),
       authenticate,

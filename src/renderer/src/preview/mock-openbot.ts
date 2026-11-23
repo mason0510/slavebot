@@ -144,6 +144,8 @@ import {
   type SteerQueuedMessageInput,
   sameCustomProviderOrigin,
   type TeamPresenceSnapshot,
+  type UserProxyChange,
+  type UserProxyPreference,
   type UpdateAgentInput,
   type UpdatePreference,
   type UpdateQueuedMessageInput,
@@ -460,6 +462,7 @@ export function createMockOpenBot(options: MockOpenBotOptions = {}): MockOpenBot
     keepAwake: false,
     keepAwakeOnBattery: false,
   };
+  let userProxy: UserProxyPreference = emptyPreviewProxy();
   let languagePreference = clone<AppLanguagePreference>(options.languagePreference ?? { language: "system" });
   const languageListeners = new Set<(preference: AppLanguagePreference) => void>();
   let logoColorPreference: AppLogoColorPreference = { color: DEFAULT_APP_LOGO_COLOR };
@@ -1106,6 +1109,11 @@ export function createMockOpenBot(options: MockOpenBotOptions = {}): MockOpenBot
     setAppBehaviorPreference: async (change) => {
       appBehavior = { ...appBehavior, ...change };
       return clone(appBehavior);
+    },
+    getUserProxyPreference: async () => clone(userProxy),
+    setUserProxyPreference: async (change) => {
+      userProxy = previewProxyChange(userProxy, change);
+      return clone(userProxy);
     },
     getRemoteSessionReusePreference: async () => clone(remoteSessionReuse),
     setRemoteSessionReusePreference: async ({ keepBetweenRuns }) => {
@@ -3322,4 +3330,101 @@ export function createMockOpenBot(options: MockOpenBotOptions = {}): MockOpenBot
       void appInfo;
     },
   };
+}
+
+/**
+ * The preview starts with no hop. Guarantees `scheme` is `none` and the port is not probed.
+ * Does not read the OS or `127.0.0.1:7890`.
+ */
+function emptyPreviewProxy(): UserProxyPreference {
+  return {
+    enabled: false,
+    source: "none",
+    scheme: "none",
+    host: "",
+    port: 0,
+    accepting: false,
+    pingMs: null,
+    error: null,
+  };
+}
+
+/**
+ * One preview change. Guarantees a remote host, including a Japan node, is not saved.
+ * Detect always reports none-found and leaves the saved hop alone. `accepting` stays false
+ * because this preview does not open a socket. Does not call the real preference file.
+ */
+function previewProxyChange(current: UserProxyPreference, change: UserProxyChange): UserProxyPreference {
+  if (change.action === "enabled") {
+    return { ...current, enabled: change.enabled, error: null, accepting: false, pingMs: null };
+  }
+  if (change.action === "clear") return emptyPreviewProxy();
+  if (change.action === "detect") return { ...current, error: "none-found", accepting: false, pingMs: null };
+  const parsed = previewManualProxy(change.text, change.scheme);
+  if (!parsed.ok) return { ...current, error: parsed.error, accepting: false, pingMs: null };
+  return {
+    enabled: true,
+    source: "manual",
+    scheme: parsed.scheme,
+    host: parsed.host,
+    port: parsed.port,
+    accepting: false,
+    pingMs: null,
+    error: null,
+  };
+}
+
+/**
+ * Preview address check. Guarantees `@` and text longer than 300 are invalid, and a URL
+ * scheme wins over the button. A non-loopback host:port is remote. Does not keep credentials.
+ */
+function previewManualProxy(
+  text: string,
+  uiScheme: "http" | "socks5",
+): { ok: true; scheme: "http" | "socks5"; host: string; port: number } | { ok: false; error: "remote" | "invalid" } {
+  const trimmed = text.trim();
+  if (trimmed.length === 0 || trimmed.length > 300 || trimmed.includes("@")) return { ok: false, error: "invalid" };
+  if (!trimmed.includes("://")) return previewHostPort(trimmed, uiScheme);
+  try {
+    const url = new URL(trimmed);
+    if (url.username || url.password) return { ok: false, error: "invalid" };
+    const raw = url.protocol.replace(":", "");
+    const scheme = raw === "socks5" || raw === "socks" ? "socks5" : raw === "http" || raw === "https" ? "http" : null;
+    const port = Number(url.port);
+    if (!scheme || !url.hostname || !Number.isInteger(port) || port < 1 || port > 65535) {
+      return { ok: false, error: "invalid" };
+    }
+    if (!previewLoopback(url.hostname)) return { ok: false, error: "remote" };
+    return { ok: true, scheme, host: url.hostname, port };
+  } catch {
+    return { ok: false, error: "invalid" };
+  }
+}
+
+/**
+ * `host:port` without a scheme. Guarantees a missing port is invalid. Does not resolve DNS.
+ */
+function previewHostPort(
+  text: string,
+  scheme: "http" | "socks5",
+): { ok: true; scheme: "http" | "socks5"; host: string; port: number } | { ok: false; error: "remote" | "invalid" } {
+  const match = /^(?:\[([^\]]+)\]|([^:\s]+)):(\d+)$/.exec(text);
+  const host = match?.[1] ?? match?.[2];
+  const port = Number(match?.[3]);
+  if (!host || !Number.isInteger(port) || port < 1 || port > 65535) return { ok: false, error: "invalid" };
+  if (!previewLoopback(host)) return { ok: false, error: "remote" };
+  return { ok: true, scheme, host, port };
+}
+
+/**
+ * Whether the preview may keep this host. Guarantees true only for localhost, ::1, and a
+ * four-octet 127 address. A Japan address and `127.1` are false. Does not resolve DNS.
+ */
+function previewLoopback(host: string): boolean {
+  const normalized = host.replace(/^\[|\]$/g, "").toLowerCase();
+  if (normalized === "localhost" || normalized === "::1") return true;
+  if (!normalized.startsWith("127.")) return false;
+  const parts = normalized.split(".");
+  if (parts.length !== 4) return false;
+  return parts.every((part) => /^\d{1,3}$/.test(part) && Number(part) <= 255);
 }

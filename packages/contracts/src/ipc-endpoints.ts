@@ -166,6 +166,7 @@ import type {
   VerifyEmailCodeInput,
 } from "./ipc-app-auth";
 import type { AppBehaviorPreference, AppBehaviorPreferenceChange } from "./ipc-app-behavior";
+import type { UserProxyChange, UserProxyPreference } from "./ipc-user-proxy";
 import type {
   ApprovalAutomationPreference,
   RespondToApprovalInput,
@@ -678,6 +679,8 @@ export const IPC_ENDPOINTS = {
     setAppBehaviorPreference: request<AppBehaviorPreferenceChange, AppBehaviorPreference>()(
       "app:set-behavior-preference",
     ),
+    getUserProxyPreference: request<undefined, UserProxyPreference>()("app:get-user-proxy-preference"),
+    setUserProxyPreference: request<UserProxyChange, UserProxyPreference>()("app:set-user-proxy-preference"),
     getAppLanguagePreference: request<undefined, AppLanguagePreference>()("app:get-language-preference"),
     setAppLanguagePreference: request<SetAppLanguagePreferenceInput, AppLanguagePreference>()(
       "app:set-language-preference",

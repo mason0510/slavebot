@@ -10,6 +10,7 @@ import {
   PanelTop,
   Server,
   Settings,
+  Globe2,
   Smartphone,
   UserRound,
 } from "@openbot/ui";
@@ -24,6 +25,7 @@ export type SettingsTab =
   | "profile"
   | "billing"
   | "mobile-connect"
+  | "proxy"
   | "updates"
   | "hosted-servers";
 
@@ -167,6 +169,17 @@ export const navItems: ReadonlyArray<SettingsNavItem> = [
         titleKey: "settings.mobileConnect.route.title",
         descriptionKey: "settings.mobileConnect.route.description",
       },
+    ],
+  },
+  {
+    value: "proxy",
+    titleKey: "settings.tab.proxy.title",
+    descriptionKey: "settings.tab.proxy.description",
+    icon: Globe2,
+    rows: [
+      { titleKey: "settings.proxy.enabled.title", descriptionKey: "settings.proxy.enabled.description" },
+      { titleKey: "settings.proxy.add.title", descriptionKey: "settings.proxy.add.description" },
+      { titleKey: "settings.proxy.detect.title", descriptionKey: "settings.proxy.detect.description" },
     ],
   },
   {

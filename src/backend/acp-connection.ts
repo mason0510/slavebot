@@ -17,6 +17,7 @@ import {
 import { registerProviderProcess } from "./provider-processes";
 import { type ProviderTempOptions, spawnWithProviderTemp } from "./provider-temp";
 import { createDiagnosticStream } from "./stderr-diagnostics";
+import { userProxyChildEnv } from "./user-proxy-env";
 import { endProcessTree } from "./windows-process-tree";
 
 const EXIT_REPORT_WAIT_MS = 2_000;
@@ -85,6 +86,8 @@ export class AcpConnection {
           ...this.options.env,
           ...this.options.extraEnv?.(),
           ...tempEnv,
+          // Last, so a stale process.env copy cannot hide the saved loopback hop.
+          ...userProxyChildEnv(),
         },
         windowsVerbatimArguments: target.windowsVerbatimArguments,
         windowsHide: true,

@@ -63,6 +63,7 @@ import {
   getString,
 } from "./../protocol";
 import { ProviderSignInError } from "../provider-client-effects";
+import { userProxyChildEnv } from "../user-proxy-env";
 import {
   antigravityTemp,
   BUILT_IN_PROVIDER_DRIVERS,
@@ -1473,7 +1474,7 @@ export class ProviderRuntime implements ProviderPort {
                   try: () =>
                     spawn(target.command, target.args, {
                       cwd: process.cwd(),
-                      env: { ...process.env, ...signIn.command.env(cli), ...browser },
+                      env: { ...process.env, ...signIn.command.env(cli), ...browser, ...userProxyChildEnv() },
                       stdio: "ignore",
                       shell: false,
                       windowsHide: process.platform === "win32",
@@ -1803,7 +1804,7 @@ export class ProviderRuntime implements ProviderPort {
             flow,
             executable: cli.executable,
             argv: command.argv,
-            env: { ...cliPathEnvironment(cli), ...command.env(cli) },
+            env: { ...cliPathEnvironment(cli), ...command.env(cli), ...userProxyChildEnv() },
             timeoutMs: command.timeoutMs,
           }),
         command.timeoutMs,

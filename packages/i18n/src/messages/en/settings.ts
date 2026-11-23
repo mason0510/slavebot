@@ -192,6 +192,32 @@ export const messages = defineMessages("settings", {
   "settings.tab.billing.description": "License, server plans, payment method and invoices.",
   "settings.tab.hostedServers.title": "Hosted servers",
   "settings.tab.hostedServers.description": "Create Slavebot servers that run when this computer is off.",
+  "settings.tab.proxy.title": "Proxy",
+  "settings.tab.proxy.description":
+    "Loopback only. A remote address, including a Japan node, is not saved. The delay is the time to connect to the local port. A new assistant process uses it. One that is already running waits until the next start.",
+  "settings.proxy.enabled.title": "Proxy",
+  "settings.proxy.enabled.description":
+    "When this is on, a new assistant process uses the local address below. Turning it off keeps the address and does not use it.",
+  "settings.proxy.add.title": "Add proxy",
+  "settings.proxy.add.description":
+    "Only a local address, for example 127.0.0.1:7890. A remote address, including a Japan node, is not saved.",
+  "settings.proxy.add.action": "Add",
+  "settings.proxy.detect.title": "Auto-detect",
+  "settings.proxy.detect.description":
+    "Look at the local proxy in system settings first, then try 127.0.0.1:7890. A remote address or a Japan node is not chosen.",
+  "settings.proxy.detect.action": "Auto-detect",
+  "settings.proxy.placeholder": "127.0.0.1:7890",
+  "settings.proxy.scheme.socks5": "SOCKS5",
+  "settings.proxy.scheme.http": "HTTP",
+  "settings.proxy.delete": "Delete proxy",
+  "settings.proxy.status.connected": "{scheme}: connected (local connect {ms} ms)",
+  "settings.proxy.status.connectedNoPing": "{scheme}: connected (local port is open)",
+  "settings.proxy.status.closed": "The local port is not listening. This will not fall through to the system proxy.",
+  "settings.proxy.status.off": "Off. The address is kept for the next time this is on.",
+  "settings.proxy.status.empty": "No proxy yet.",
+  "settings.proxy.error.remote": "A remote address is not saved, including a Japan node.",
+  "settings.proxy.error.invalid": "This address cannot be used. Write 127.0.0.1:7890, with no username or password.",
+  "settings.proxy.error.noneFound": "No local proxy was found. 127.0.0.1:7890 is not listening either.",
   "settings.sections.label": "Settings sections",
   "settings.panel.resize": "Resize right panel",
   // A failed read or save of the app preferences on the General, Notifications, Dynamic Island and Updates tabs.

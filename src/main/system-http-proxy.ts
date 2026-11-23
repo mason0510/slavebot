@@ -15,6 +15,12 @@
  * `HTTP_PROXY` is not a machine proxy and is ignored. A listening port does not prove the
  * proxy can reach the origin.
  *
+ * A registered user override is decided before the OS hop. Null defers to the OS. `direct`
+ * forces direct and does not read the OS, so a Japan system proxy cannot win while the user
+ * owns the decision. A user hop is applied and the OS hop is not read. A thrown reader is
+ * direct. The startup switch still reads only the OS: the preference file is loaded later,
+ * and `setProxy` then replaces the switch.
+ *
  * Algorithm RefreshSystemHttpProxy: every 10 seconds, and before a Signal window opens, read
  * the OS proxy again. A new accepting hop replaces the session proxy and closes old
  * connections. No accepting hop clears a previously applied hop to direct. The same hop is
@@ -26,7 +32,8 @@ import { execFileSync, spawnSync } from "node:child_process";
 import { createOpenBotLogger } from "@openbot/logging";
 import { app, net, type Session, session } from "electron";
 
-import { proxyRefreshAction } from "./system-http-proxy-choice";
+import { proxyEndpoint, type UserProxySessionDecision } from "../backend/user-proxy-choice";
+import { proxyRefreshAction, sessionHop } from "./system-http-proxy-choice";
 
 const logger = createOpenBotLogger("system-http-proxy");
 
@@ -39,6 +46,8 @@ type AcceptingHop = Exclude<ProxyHop, { kind: "direct" }>;
 
 let fetchPatched = false;
 let appliedHopKey: string | null = null;
+let userProxyOverrideReader: (() => UserProxySessionDecision) | null = null;
+let lastSessionHop: AcceptingHop | null = null;
 let refreshTimer: ReturnType<typeof setInterval> | null = null;
 let refreshChain: Promise<void> = Promise.resolve();
 
@@ -112,15 +121,38 @@ export function startSystemHttpProxyRefresh(targetUrl: string): () => void {
 }
 
 /**
- * Put the same OS hop on one window session before that window opens Signal.
+ * Register the saved user proxy. Guarantees a later refresh asks this before the OS.
+ * Null removes the override, so the next refresh may use the OS hop again.
+ * Does not refresh by itself, and does not read the preference file.
+ */
+export function setUserProxyOverrideReader(reader: (() => UserProxySessionDecision) | null): void {
+  userProxyOverrideReader = reader;
+}
+
+/**
+ * The user's decision for this refresh. Guarantees a missing reader defers to the OS.
+ * A thrown reader is direct, so a Japan OS proxy cannot win while the user owns the switch.
+ * Does not log the address.
+ */
+function readUserProxyOverride(): UserProxySessionDecision {
+  if (!userProxyOverrideReader) return null;
+  try {
+    return userProxyOverrideReader();
+  } catch {
+    logger.warn("The user proxy could not be read. Account HTTP stays direct.");
+    return { kind: "direct" };
+  }
+}
+
+/**
+ * Put the decided hop on one window session before that window opens Signal.
  *
- * Guarantees: when the OS has a proxy, `setProxy` uses one rule for every scheme, including `wss`.
- * No accepting hop sets the window session to direct, so a dead startup hop does not stay.
- * Does not prove the later socket opens.
+ * Guarantees: the refresh that just ran supplies the hop, so the reader is not probed twice.
+ * No hop sets the window session to direct. Does not prove the later socket opens.
  */
 export async function ensureChromiumProxy(target: Session): Promise<void> {
   await refreshSystemHttpProxy(signalAccountUrl());
-  const hop = acceptingMachineProxySync();
+  const hop = lastSessionHop;
   if (!hop) {
     await target.setProxy({ mode: "direct" });
     return;
@@ -147,7 +179,10 @@ function signalAccountUrl(): string {
  * `mode: "direct"`. Does not use `resolveProxy` to resurrect a port that just failed TCP.
  */
 async function refreshOnce(targetUrl: string): Promise<void> {
-  const hop = await readAcceptingMachineProxy(targetUrl);
+  const override = readUserProxyOverride();
+  const osHop = override === null ? await readAcceptingMachineProxy(targetUrl) : null;
+  const hop = sessionHop(override, osHop);
+  lastSessionHop = hop;
   const action = proxyRefreshAction(appliedHopKey, hop);
   if (action === "keep") return;
   if (action === "direct" || !hop) {
@@ -337,7 +372,7 @@ function parseFirstProxyHop(pac: string): ProxyHop {
  * Chromium `proxyRules` for one hop. Loopback bypass stays in `proxyBypassRules`.
  */
 function chromiumProxyRules(hop: Exclude<ProxyHop, { kind: "direct" }>): string {
-  const endpoint = `${hop.host}:${hop.port}`;
+  const endpoint = proxyEndpoint(hop.host, hop.port);
   // One proxy URL covers http, https, ws, and wss. A scheme rule can leave wss DIRECT.
   return hop.kind === "socks" ? `socks5://${endpoint}` : `http://${endpoint}`;
 }

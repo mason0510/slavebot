@@ -23,6 +23,7 @@ import {
   type AnalyticsPreference,
   type AppAppearancePreference,
   type AppBehaviorPreference,
+  type UserProxyPreference,
   type AppInfo,
   type AppInterfaceSizePreference,
   type AppLanguagePreference,
@@ -379,6 +380,32 @@ export function decodeAppBehaviorPreference(value: unknown): AppBehaviorPreferen
     keepRunningInBackground: nullableBoolean(preference, "keepRunningInBackground"),
     keepAwake: nullableBoolean(preference, "keepAwake"),
     keepAwakeOnBattery: nullableBoolean(preference, "keepAwakeOnBattery"),
+  };
+}
+
+const USER_PROXY_SCHEMES = ["http", "socks5", "none"] as const;
+const USER_PROXY_SOURCES = ["manual", "auto", "none"] as const;
+const USER_PROXY_ERRORS = ["remote", "invalid", "none-found"] as const;
+
+/**
+ * The preference main sends the proxy panel. Guarantees every field is present and one of the
+ * known values. Does not apply the hop, and does not accept a scheme outside the list.
+ */
+export function decodeUserProxyPreference(value: unknown): UserProxyPreference {
+  const preference = decodeRecord(value, "user proxy preference");
+  const { scheme, source, error } = preference;
+  if (!isOneOf(USER_PROXY_SCHEMES, scheme)) throw new Error("Invalid scheme.");
+  if (!isOneOf(USER_PROXY_SOURCES, source)) throw new Error("Invalid source.");
+  if (error !== null && !isOneOf(USER_PROXY_ERRORS, error)) throw new Error("Invalid error.");
+  return {
+    enabled: requiredBoolean(preference, "enabled"),
+    source,
+    scheme,
+    host: requiredString(preference, "host"),
+    port: requiredNumber(preference, "port"),
+    accepting: requiredBoolean(preference, "accepting"),
+    pingMs: nullableNumber(preference, "pingMs"),
+    error,
   };
 }
 

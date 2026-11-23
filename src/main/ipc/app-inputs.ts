@@ -42,6 +42,7 @@ import type {
   SubmitSkillInput,
   UninstallSkillInput,
   UpdatePreferenceChange,
+  UserProxyChange,
   VerifyEmailCodeInput,
 } from "@openbot/contracts/ipc";
 import {
@@ -188,6 +189,26 @@ export function parseAppBehaviorPreferenceChange(input: unknown): AppBehaviorPre
     ["launchAtLogin", "keepRunningInBackground", "keepAwake", "keepAwakeOnBattery"],
     "The app behavior setting is required.",
   );
+}
+
+/**
+ * One proxy panel change. Guarantees a manual address longer than 300 characters is rejected
+ * without echoing it. Does not decide whether the host is loopback.
+ */
+export function parseUserProxyChange(input: unknown): UserProxyChange {
+  if (!isDynamicRecord(input)) throw new Error("A proxy change is required.");
+  if (input.action === "enabled") {
+    if (typeof input.enabled !== "boolean") throw new Error("The proxy switch must be true or false.");
+    return { action: "enabled", enabled: input.enabled };
+  }
+  if (input.action === "clear") return { action: "clear" };
+  if (input.action === "detect") return { action: "detect" };
+  if (input.action === "manual") {
+    if (typeof input.text !== "string" || input.text.length > 300) throw new Error("The proxy address is required.");
+    if (input.scheme !== "http" && input.scheme !== "socks5") throw new Error("The proxy scheme is required.");
+    return { action: "manual", text: input.text, scheme: input.scheme };
+  }
+  throw new Error("A proxy change is required.");
 }
 
 export function parseUpdatePreference(input: unknown): UpdatePreferenceChange {

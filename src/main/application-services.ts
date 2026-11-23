@@ -150,6 +150,7 @@ import { AnalyticsPreferenceService } from "./analytics-preference-service";
 import { readAnalyticsPreference, saveAnalyticsDefault } from "./analytics-preference-store";
 import { providerAuthKind } from "./analytics-provider-auth";
 import { AppBehaviorService } from "./app-behavior-service";
+import { UserProxyService } from "./user-proxy-service";
 import { AppearanceService } from "./appearance-service";
 import { ApprovalAutomation, readApprovalAutomation } from "./approval-automation-store";
 import { AutomationServer } from "./automation-server";
@@ -307,7 +308,12 @@ import { SignalIngress } from "./signal-ingress";
 import { SkillMarketplaceService } from "./skill-marketplace-service";
 import { SLACK_DEV_CALLBACK_PATH, startSlackDevCallbackServer } from "./slack-dev-callback-server";
 import { SpeechPreferenceStore } from "./speech-preference-store";
-import { applySystemHttpProxy, startSystemHttpProxyRefresh } from "./system-http-proxy";
+import {
+  applySystemHttpProxy,
+  refreshSystemHttpProxy,
+  setUserProxyOverrideReader,
+  startSystemHttpProxyRefresh,
+} from "./system-http-proxy";
 import { TeamStore } from "./team-store";
 import { TeamWebRtcBridge } from "./team-webrtc-bridge";
 import { TeamWebRtcClientTransport } from "./team-webrtc-client-transport";
@@ -370,6 +376,7 @@ const REMOTE_SESSION_REUSE_PREFERENCE_FILE = "openbot-remote-session-reuse-prefe
 const EXTERNAL_LINK_PREFERENCE_FILE = "openbot-external-link-preference-v1.json";
 const REMOTE_NETWORK_ROUTE_PREFERENCE_FILE = "openbot-remote-network-route-v1.json";
 const APP_BEHAVIOR_PREFERENCE_FILE = "openbot-app-behavior-preference-v1.json";
+const USER_PROXY_PREFERENCE_FILE = "openbot-user-proxy-preference-v1.json";
 const DYNAMIC_ISLAND_PREFERENCE_FILE = "openbot-dynamic-island-preference-v1.json";
 const BROWSER_STATE_FILE = "openbot-browser-state-v1.json";
 const SIDEBAR_LAYOUT_FILE = "openbot-sidebar-layout-v1.json";
@@ -597,6 +604,7 @@ export interface ApplicationServices {
   remoteNetworkRoute: RemoteNetworkRoutePreferenceStore;
   remoteSessionCache: RemoteSessionCache;
   appBehavior: AppBehaviorService;
+  userProxy: UserProxyService;
   agentInitialization: AgentInitializationGate<AgentLifecycleFailed>;
   sidebarLayout: SidebarLayoutStore;
   host: HostService;
@@ -967,9 +975,22 @@ export async function createApplicationServices({
     process.env.OPENBOT_AUTH_API_URL,
     app.isPackaged ? "https://api-attendant.mwcpool.uk" : "http://127.0.0.1:3100",
   );
+  const userProxy = new UserProxyService({
+    path: join(app.getPath("userData"), USER_PROXY_PREFERENCE_FILE),
+    onChanged: () => {
+      void refreshSystemHttpProxy(centralAuthApiUrl);
+    },
+  });
+  await runCauseEffect(userProxy.load());
+  userProxy.syncEnvironment();
+  setUserProxyOverrideReader(() => userProxy.syncEnvironment());
   await applySystemHttpProxy(centralAuthApiUrl);
   const stopProxyRefresh = startSystemHttpProxyRefresh(centralAuthApiUrl);
-  teardown.push(TEARDOWN_ORDER.machineProxy, "the machine proxy refresh", stopProxyRefresh);
+  teardown.push(TEARDOWN_ORDER.machineProxy, "the machine proxy refresh", () => {
+    stopProxyRefresh();
+    setUserProxyOverrideReader(null);
+    userProxy.clearEnvironment();
+  });
   const centralAuth = new CentralAuthManager({
     apiUrl: centralAuthApiUrl,
     mobileConnectApiUrl: readMobileConnectApiUrl(process.env.OPENBOT_MOBILE_AUTH_API_URL, centralAuthApiUrl),
@@ -3327,6 +3348,7 @@ export async function createApplicationServices({
     remoteNetworkRoute,
     remoteSessionCache,
     appBehavior,
+    userProxy,
     agentInitialization,
     hostUpdateCoordinator,
     requestedUpdate: remoteUpdate,

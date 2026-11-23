@@ -50,6 +50,7 @@ import { renderProfileShareImage } from "./profile-share-image";
 import { createSettingsAgentsSection } from "./SettingsAgentsSection";
 import { SettingsDynamicIslandTab } from "./SettingsDynamicIslandTab";
 import { SettingsGeneralTab } from "./SettingsGeneralTab";
+import { SettingsProxyTab } from "./SettingsProxyTab";
 import { SettingsNotificationsTab } from "./SettingsNotificationsTab";
 import { SettingsVoiceTab } from "./SettingsVoiceTab";
 import { dynamicIslandSettingsShown, navItem, navItems, type SettingsTab, settingsTabShown } from "./settings-tabs";
@@ -203,6 +204,7 @@ export function SettingsModal(props: SettingsModalProps) {
         value === "profile" ||
         value === "billing" ||
         value === "mobile-connect" ||
+        value === "proxy" ||
         value === "updates"
       ) {
         setActiveTab(value);
@@ -383,6 +385,10 @@ export function SettingsModal(props: SettingsModalProps) {
             canRevokeDevice={Boolean(props.onRevokeMobileConnectedDevice)}
             canSetRoute={Boolean(props.onSetRemoteNetworkRoute)}
           />
+        </Tabs.Content>
+
+        <Tabs.Content value="proxy" class="settings-modal-tab-panel" data-tab="proxy">
+          <SettingsProxyTab />
         </Tabs.Content>
 
         <Tabs.Content value="updates" class="settings-modal-tab-panel" data-tab="updates">

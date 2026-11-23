@@ -185,3 +185,20 @@
 .voice-server-dialog .voice-server-line .settings-modal-select {
   width: 100%;
 }
+
+.settings-proxy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--openbot-space-2);
+}
+
+.settings-proxy-hop {
+  display: flex;
+  align-items: center;
+  gap: var(--openbot-space-2);
+}
+
+.settings-proxy-status {
+  margin: 0;
+}

@@ -25,6 +25,7 @@ import type { AgentDefaultsPreferenceStore } from "../agent-defaults-preference-
 import type { AgentMemoryLimitSetting } from "../agent-memory-limit-preference-store";
 import type { AnalyticsPreferenceService } from "../analytics-preference-service";
 import type { AppBehaviorService } from "../app-behavior-service";
+import type { UserProxyService } from "../user-proxy-service";
 import type { AppearanceService } from "../appearance-service";
 import type { ApprovalAutomation } from "../approval-automation-store";
 import type { BusyMessageModePreferenceStore } from "../busy-message-mode-preference-store";
@@ -45,6 +46,7 @@ import {
   parseAnalyticsPreference,
   parseAppAppearancePreference,
   parseAppBehaviorPreferenceChange,
+  parseUserProxyChange,
   parseAppInterfaceSizePreference,
   parseAppLanguagePreference,
   parseAppLogoColorPreference,
@@ -113,6 +115,7 @@ export interface AppIpcDependencies {
   /** Opens a web page in the program that the user chose in Settings. */
   openLink: (url: string) => Promise<void>;
   appBehavior: AppBehaviorService;
+  userProxy: UserProxyService;
   language: LanguageService;
   logoColor: LogoColorService;
   appearance: AppearanceService;
@@ -146,6 +149,7 @@ export function appIpcHandlers({
   externalLinks,
   openLink,
   appBehavior,
+  userProxy,
   language,
   logoColor,
   appearance,
@@ -233,6 +237,8 @@ export function appIpcHandlers({
       setAppBehaviorPreference: payloadHandler(parseAppBehaviorPreferenceChange, (parsed) =>
         runCauseEffect(appBehavior.set(parsed)),
       ),
+      getUserProxyPreference: handler(() => userProxy.view()),
+      setUserProxyPreference: payloadHandler(parseUserProxyChange, (parsed) => userProxy.apply(parsed)),
       getAppLanguagePreference: handler(() => language.preference),
       setAppLanguagePreference: payloadHandler(parseAppLanguagePreference, (parsed) =>
         runCauseEffect(language.set(parsed)),
